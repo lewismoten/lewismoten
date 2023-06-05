@@ -1,5 +1,5 @@
 ### Hi there 👋
 
 - 👨‍💼 I own Code Jamboree LLC https://www.codejamboree.com
-- 💼 My Resume [Lewis Moten Resume.pdf](2023-06-05 resume for Lewis Moten.pdf)
+- 💼 My Resume [2023-06-05 resume for Lewis Moten.pdf](https://github.com/lewismoten/lewismoten/files/11655725/2023-06-05.resume.for.Lewis.Moten.pdf)
 - 📆 Schedule a meeting via https://calendly.com/codejamboree

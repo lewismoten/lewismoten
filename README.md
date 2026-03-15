@@ -1,6 +1,8 @@
-### Hi there 👋
+### Hi, I’m Lewis 👋
 
-- 👨‍💼 I own my personal blog at https://lewismoten.com
-- 👨‍💼 I own Code Jamboree LLC https://www.codejamboree.com
-- 💼 My Resume [2023-06-05 resume for Lewis Moten.pdf](https://github.com/lewismoten/lewismoten/files/11655725/2023-06-05.resume.for.Lewis.Moten.pdf)
-- 📆 Schedule a meeting via https://calendly.com/codejamboree
+I’m a Senior Frontend Developer, technologist, and community advocate focused on building systems that work for people—not just machines.
+
+- 🌐 Personal site & writing: https://lewismoten.com  
+- 🛠️ Founder, Code Jamboree LLC: https://www.codejamboree.com  
+- 📄 Career & resume: https://lewismoten.com/employment/  
+- 📅 Schedule time with me: https://calendly.com/lewismoten  

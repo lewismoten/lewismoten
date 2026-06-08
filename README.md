@@ -34,3 +34,8 @@ I build things that work—for people, not just machines—and sometimes they ev
 ---
 
 > This profile—and my site—is a living archive of things I’ve built, explored, and questioned along the way.
+
+## 🤖 AI Attempts to build this page
+- [OpenAI ChatGPT](ai-openai-chatgpt.md)
+- [Anthropic's Claude](ai-anthropic-claude.md)
+- [Google Gemini](ai-google-gemini.md)

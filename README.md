@@ -31,6 +31,8 @@ I build things that work—for people, not just machines—and sometimes they ev
 [![Emoji: Explore Unicode Emoji for JavaScript](./emoji-social-preview-mini.jpg "Emoji Explorer")](https://github.com/lewismoten/emoji)
 [![Shoomi's HomePage: The beginning of all dreams](./athens-acropolis-4507-social-preview-mini.jpg "Shoomi's HomePage")](https://github.com/lewismoten/athens-acropolis-4507)
 [![Tiny Pockets Press: Little books. Big imagination.](./tiny-pockets-press-social-preview-mini.jpg "Tiny Pockets Press")](https://github.com/lewismoten/Tiny-Pockets-Press)
+[![Data Over Audio: Transfer text & files through sound.](./data-over-audio-social-preview-mini.jpg "Data Over Audio")](https://github.com/lewismoten/data-over-audio)
+
 
 ---
 

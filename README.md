@@ -22,6 +22,10 @@ I build things that work—for people, not just machines—and sometimes they ev
 - Bridge legacy tech with modern solutions  
 - Advocate for accessibility and digital inclusion  
 
+## Projects
+
+[![storage-d64: Visualize, optimize, and repair Commodore 64 disk images](./storage-d64-social-preview-mini.jpg "Tools for Commodore 64 disk images")](https://github.com/lewismoten/storage-d64)
+
 ---
 
 ## 🧩 Beyond Code

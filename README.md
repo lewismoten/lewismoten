@@ -33,6 +33,7 @@ I build things that work—for people, not just machines—and sometimes they ev
 [![Tiny Pockets Press: Little books. Big imagination.](./tiny-pockets-press-social-preview-mini.jpg "Tiny Pockets Press")](https://github.com/lewismoten/Tiny-Pockets-Press)
 [![Data Over Audio: Transfer text & files through sound.](./data-over-audio-social-preview-mini.jpg "Data Over Audio")](https://github.com/lewismoten/data-over-audio)
 [![Phone Exhibit: Restoring the Signal](./phone-exhibit-social-preview-mini.jpg "Phone Exhibit")](https://github.com/lewismoten/Phone-Exhibit)
+[![QR Code Generator: Create. Style. Understand.](./qr-social-preview-mini.jpg "QR Code Generator")](https://github.com/lewismoten/qr)
 
 ---
 

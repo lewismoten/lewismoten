@@ -25,6 +25,7 @@ I build things that work—for people, not just machines—and sometimes they ev
 ## Projects
 
 [![storage-d64: Visualize, optimize, and repair Commodore 64 disk images](./storage-d64-social-preview-mini.jpg "Tools for Commodore 64 disk images")](https://github.com/lewismoten/storage-d64)
+[![dreamy-tags: Tag cloud for Wordpress Blogs](./dreamy-tags-social-preview-mini.jpg "Dreamy Tags")](https://github.com/lewismoten/dreamy-tags)
 
 ---
 

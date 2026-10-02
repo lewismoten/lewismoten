@@ -29,6 +29,8 @@ I build things that work—for people, not just machines—and sometimes they ev
 [![palace-9: Tic-tac-toe & model inspection](./palace-9-social-preview-mini.jpg "Palace-9")](https://github.com/lewismoten/palace-9)
 [![zogograph client: Clear server monitoring](./zogograph-client-social-preview-mini.jpg "Zogograph Client")](https://github.com/lewismoten/zogograph-client)
 [![Emoji: Explore Unicode Emoji for JavaScript](./emoji-social-preview-mini.jpg "Emoji Explorer")](https://github.com/lewismoten/emoji)
+[![Shoomi's HomePage: The beginning of all dreams](./athens-acropolis-4507-social-preview-mini.jpg "Shoomi's HomePage")](https://github.com/lewismoten/athens-acropolis-4507)
+
 
 ---
 

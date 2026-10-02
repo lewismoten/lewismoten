@@ -27,6 +27,7 @@ I build things that work—for people, not just machines—and sometimes they ev
 [![storage-d64: Visualize, optimize, and repair Commodore 64 disk images](./storage-d64-social-preview-mini.jpg "Tools for Commodore 64 disk images")](https://github.com/lewismoten/storage-d64)
 [![dreamy-tags: Tag cloud for Wordpress Blogs](./dreamy-tags-social-preview-mini.jpg "Dreamy Tags")](https://github.com/lewismoten/dreamy-tags)
 [![palace-9: Tic-tac-toe & model inspection](./palace-9-social-preview-mini.jpg "Palace-9")](https://github.com/lewismoten/palace-9)
+[![zogograph client: Clear server monitoring](./zogograph-client-social-preview-mini.jpg "Zogograph Client")](https://github.com/lewismoten/zogograph-client)
 
 ---
 

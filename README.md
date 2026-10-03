@@ -34,6 +34,7 @@ I build things that work—for people, not just machines—and sometimes they ev
 [![Data Over Audio: Transfer text & files through sound.](./data-over-audio-social-preview-mini.jpg "Data Over Audio")](https://github.com/lewismoten/data-over-audio)
 [![Phone Exhibit: Restoring the Signal](./phone-exhibit-social-preview-mini.jpg "Phone Exhibit")](https://github.com/lewismoten/Phone-Exhibit)
 [![QR Code Generator: Create. Style. Understand.](./qr-social-preview-mini.jpg "QR Code Generator")](https://github.com/lewismoten/qr)
+[![Sculpted Prim Toolkit: 2D sculpt maps. 3D models.](./sculpted-prim-toolkit-social-preview.jpg "Sculpted Prim Toolkit")](https://github.com/lewismoten/sculpted-prim-toolkit)
 
 ---
 

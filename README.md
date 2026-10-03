@@ -1,26 +1,17 @@
-# Hi, I’m Lewis 👋
+[Career history and resume](https://lewismoten.com/employment/) · [Blog](https://lewismoten.com/blog/) · [Email](mailto:lewismoten@gmail.com) · [LinkedIn](https://www.linkedin.com/in/lewismoten/)
 
-I build things that work—for people, not just machines—and sometimes they even behave.
+## Start here
 
-**Senior Frontend Developer | Civic Volunteer | Builder of Odd but Useful Things**
+- **React and TypeScript:** [Public-ledger explorer](https://github.com/lewismoten/wcfac-general-ledger) — filtering and visualizing public financial data.
+- **Applied AI:** [Palace-9](https://lewismoten.github.io/palace-9/) — a playable browser lab and inspector for a compact model trained from scratch.
+- **Server operations:** [Zogograph Client](https://github.com/lewismoten/zogograph-client) — telemetry, alerts, and AI-assisted diagnostics with cost tracking.
+- **Interactive tools:** [D64 Storage Lab](https://lewismoten.github.io/storage-d64/) — visual disk repair, recovery, and read-efficiency experiments.
 
----
+## What I work with
 
-## 🌐 Connect & Explore
-
-- 📝 Blog & Projects: https://lewismoten.com  
-- 🛠️ Code Jamboree LLC: https://www.codejamboree.com  
-- 📄 Career & Resume: https://lewismoten.com/employment/  
-- 📅 Schedule a Meeting: https://calendly.com/lewismoten  
-
----
-
-## 🧠 What I Do
-
-- Build modern web applications (React, Node, PHP, C#)  
-- Translate complex systems into usable tools  
-- Bridge legacy tech with modern solutions  
-- Advocate for accessibility and digital inclusion  
+- **Front end:** React, TypeScript, JavaScript, accessible interfaces, data visualization, and browser APIs.
+- **Applied AI:** PyTorch, model training and validation, MoE architectures, Ollama, llama.cpp, local inference, and tool calling.
+- **Services and delivery:** Node.js, PHP, C#/.NET, SQLite and SQL, Linux hosting, Forgejo, CI/CD, and WHM/cPanel automation. 
 
 ## Projects
 
@@ -38,20 +29,9 @@ I build things that work—for people, not just machines—and sometimes they ev
 | <img src="./tiny-pockets-press-social-preview-mini.jpg" alt="Tiny Pockets Press social preview" width="320"> | **Tiny Pockets Press \| Miniature publishing**<br>A modular JavaScript editor for miniature books, with layout and imposition logic and separate interior and cover print/PDF views.<br>[Live demo](https://lewismoten.github.io/Tiny-Pockets-Press/#editor) · [Source](https://github.com/lewismoten/Tiny-Pockets-Press) · [Videos](https://www.youtube.com/watch?v=w9IwuwX7BkE&list=PLAgk77H8yVCA) |
 | <img src="./athens-acropolis-4507-social-preview-mini.jpg" alt="Shoomi's HomePage social preview" width="320"> | **Shoomi's HomePage \| GeoCities restoration**<br>A 1990s web restoration with a Canvas recreation of its Java applet marquee, Web Audio MIDI playback, and a browser version of a Visual Basic color editor.<br>[Live demo](https://lewismoten.github.io/Athens-Acropolis-4507/) · [Source](https://github.com/lewismoten/Athens-Acropolis-4507) · [Videos](https://www.youtube.com/watch?v=UgJgb0VUaHw&list=PLI4A73VhrZT4) |
 
----
 
-## 🧩 Beyond Code
+## Beyond code
 
-- 📚 Archivist of ideas, projects, and local history  
-- 🎈 Community volunteer & occasional clown performer  
-- 🧱 Founder of a LEGO Users Group  
-- 🎵 Creator of experimental music and narrative projects  
+I volunteer with local history and library projects, started a LEGO users group, and sometimes perform as a clown. I like projects that connect technology with something people can actually use, explore, or enjoy.
 
----
-
-> This profile—and my site—is a living archive of things I’ve built, explored, and questioned along the way.
-
-## 🤖 AI Attempts to build this page
-- [OpenAI ChatGPT](ai-openai-chatgpt.md)
-- [Anthropic's Claude](ai-anthropic-claude.md)
-- [Google Gemini](ai-google-gemini.md)
+[Code Jamboree LLC](https://www.codejamboree.com/) · [Schedule a conversation](https://calendly.com/lewismoten)

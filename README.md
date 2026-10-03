@@ -4,7 +4,9 @@
 
 I turn complex data and workflows into usable web applications. I've programmed professionally since 1997, and my recent work spans interactive front ends, small local AI models, browser tools, and the infrastructure that runs them. I'm based in Front Royal, Virginia and interested in senior front-end engineering and AI application roles.
 
-[Career history and resume](https://lewismoten.com/employment/) · [Blog](https://lewismoten.com/blog/) · [Email](mailto:lewismoten@gmail.com) · [LinkedIn](https://www.linkedin.com/in/lewismoten/)
+[Career history](https://lewismoten.com/employment/) · [Blog](https://lewismoten.com/blog/) · [Email](mailto:lewismoten@gmail.com) · [LinkedIn](https://www.linkedin.com/in/lewismoten/)
+
+**Career documents:** [Introduction letter (PDF)](./2026-10-02%20intro%20letter%20for%20Lewis%20Moten.pdf) · [Resume (PDF)](./2026-10-02%20resume%20for%20Lewis%20Moten.pdf) · [Selected projects (PDF)](./2026-10-02%20selected%20projects%20for%20Lewis%20Moten.pdf)
 
 ## Start here
 

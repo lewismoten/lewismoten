@@ -4,7 +4,7 @@
 # metadata is not left in stale PDF objects.
 #
 # Example:
-#   ./resume/update-pdf-metadata.sh "resume/2026-10-02 resume for Lewis Moten.pdf" \
+#   ./resume/update-pdf-metadata.sh resume/2026-10-02-resume-for-lewis-moten.pdf \
 #     --title "Lewis Moten - Resume" \
 #     --subject "Professional resume for a senior front-end engineer." \
 #     --keywords "Lewis Moten, resume, React, TypeScript, applied AI"
@@ -43,7 +43,7 @@ Options:
   -h, --help         Show this help.
 
 Example:
-  ./resume/update-pdf-metadata.sh "resume/2026-10-02 selected projects for Lewis Moten.pdf" \
+  ./resume/update-pdf-metadata.sh resume/2026-10-02-selected-projects-for-lewis-moten.pdf \
     --title "Lewis Moten - Selected Projects" \
     --subject "Portfolio of front-end engineering and applied AI projects." \
     --keywords "Lewis Moten, portfolio, JavaScript, React, applied AI"

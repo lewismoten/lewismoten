@@ -6,7 +6,7 @@ I turn complex data and workflows into usable web applications. I've programmed 
 
 [Career history](https://lewismoten.com/employment/) · [Blog](https://lewismoten.com/blog/) · [Email](mailto:lewismoten@gmail.com) · [LinkedIn](https://www.linkedin.com/in/lewismoten/)
 
-**Career documents:** [Introduction letter (PDF)](./resume/2026-10-02%20intro%20letter%20for%20Lewis%20Moten.pdf) · [Resume (PDF)](./resume/2026-10-02%20resume%20for%20Lewis%20Moten.pdf) · [Selected projects (PDF)](./resume/2026-10-02%20selected%20projects%20for%20Lewis%20Moten.pdf)
+**Career documents:** [Introduction letter (PDF)](./resume/2026-10-02-intro-letter-for-lewis-moten.pdf) · [Resume (PDF)](./resume/2026-10-02-resume-for-lewis-moten.pdf) · [Selected projects (PDF)](./resume/2026-10-02-selected-projects-for-lewis-moten.pdf)
 
 ## Start here
 

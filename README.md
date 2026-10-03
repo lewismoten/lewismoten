@@ -1,3 +1,9 @@
+# Lewis Moten
+
+**Senior front-end engineer | React, TypeScript, and applied AI**
+
+I turn complex data and workflows into usable web applications. I've programmed professionally since 1997, and my recent work spans interactive front ends, small local AI models, browser tools, and the infrastructure that runs them. I'm based in Front Royal, Virginia and interested in senior front-end engineering and AI application roles.
+
 [Career history and resume](https://lewismoten.com/employment/) · [Blog](https://lewismoten.com/blog/) · [Email](mailto:lewismoten@gmail.com) · [LinkedIn](https://www.linkedin.com/in/lewismoten/)
 
 ## Start here
@@ -32,6 +38,6 @@
 
 ## Beyond code
 
-I volunteer with local history and library projects, started a LEGO users group, and sometimes perform as a clown. I like projects that connect technology with something people can actually use, explore, or enjoy.
+I volunteer with local history and library projects, started a LEGO users group, and sometimes perform as a clown. I like projects that connect technology with something people can actually use, explore, or enjoy. I also created [The Bard of Bizarre](https://thebardofbizarre.com/), a multimedia project built around my lyrics and a 16-track concept album with AI-generated music and visuals. [Listen on Spotify and other services](https://distrokid.com/hyperfollow/thebardofbizarre/re-cubicle-13) · [Watch “Time Is a Flat Liar”](https://distrokid.com/videos/watch/dv-L9yj4VzE2)
 
 [Code Jamboree LLC](https://www.codejamboree.com/) · [Schedule a conversation](https://calendly.com/lewismoten)

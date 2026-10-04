@@ -4,6 +4,11 @@
 from argparse import ArgumentParser
 from html import escape
 from pathlib import Path
+import sys
+
+# Allow `python3 build.py` from scripts/resume as well as the shell wrapper.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from update_projects import load_catalog, update_readme
 
 import yaml
 from PIL import Image as PILImage
@@ -18,9 +23,6 @@ from reportlab.platypus import (
     BaseDocTemplate, Frame, HRFlowable, Image, KeepTogether, PageBreak,
     PageTemplate, Paragraph, Spacer, Table, TableStyle,
 )
-from project_data import load_catalog, update_readme
-
-
 BASE = Path(__file__).resolve().parent
 REPO = BASE.parent.parent
 pdfmetrics.registerFont(TTFont('DejaVu', str(BASE / 'fonts/DejaVuSans.ttf')))

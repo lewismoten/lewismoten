@@ -1,20 +1,26 @@
-# Order for the profile table and the three-page selected-projects PDF.
+# Grouping and order for the profile table; PDF pages are selected separately.
 title: Selected Projects | Front-End Engineering, Applied AI & Creative Tools
 intro: Public work and live demos with source links where available.
-profile_order:
-  - crystal-9
-  - crystal-palace
-  - zogograph-client
-  - palace-9
-  - storage-d64
-  - sculpted-prim-toolkit
-  - data-over-audio
-  - emoji
-  - dreamy-tags
-  - phone-exhibit
-  - qr
-  - tiny-pockets-press
-  - athens-acropolis-4507
+profile_groups:
+  - heading: Applied AI and model engineering
+    projects:
+      - crystal-9
+      - crystal-palace
+      - palace-9
+      - zogograph-client
+  - heading: Browser tools and visualization
+    projects:
+      - storage-d64
+      - sculpted-prim-toolkit
+      - data-over-audio
+      - emoji
+      - qr
+  - heading: Publishing and interactive experiences
+    projects:
+      - dreamy-tags
+      - phone-exhibit
+      - tiny-pockets-press
+      - athens-acropolis-4507
 pdf_pages:
   - kicker: Project index / 01
     heading: Applied AI and visualization

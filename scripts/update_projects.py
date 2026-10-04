@@ -7,7 +7,7 @@ import re
 import yaml
 
 
-REPO = Path(__file__).resolve().parents[2]
+REPO = Path(__file__).resolve().parent.parent
 PROJECTS = REPO / 'projects'
 START = '<!-- PROJECTS:START -->'
 END = '<!-- PROJECTS:END -->'
@@ -23,11 +23,22 @@ def read_yaml(path):
 
 def load_catalog():
     index = read_yaml(PROJECTS / 'index.yaml')
-    profile_order = index['profile_order']
+    profile_groups = index['profile_groups']
+    if not isinstance(profile_groups, list) or not profile_groups:
+        raise ValueError('profile_groups needs at least one category')
+    headings = [group['heading'] for group in profile_groups]
+    if any(not isinstance(heading, str) or not heading.strip() for heading in headings):
+        raise ValueError('Each profile group needs a heading')
+    if len(headings) != len(set(headings)):
+        raise ValueError('Duplicate heading in profile_groups')
+    if any(not isinstance(group['projects'], list) or not group['projects']
+           for group in profile_groups):
+        raise ValueError('Each profile group needs at least one project')
+    profile_order = [slug for group in profile_groups for slug in group['projects']]
     pdf_pages = index['pdf_pages']
     all_slugs = profile_order + [slug for page in pdf_pages for slug in page['projects']]
     if len(profile_order) != len(set(profile_order)):
-        raise ValueError('Duplicate slug in profile_order')
+        raise ValueError('Duplicate slug in profile_groups')
     cards = {}
     for slug in set(all_slugs):
         if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', slug):
@@ -46,7 +57,7 @@ def load_catalog():
         cards[slug] = card
     unlisted = {path.stem for path in PROJECTS.glob('*.yaml')} - {'index'} - set(profile_order)
     if unlisted:
-        raise ValueError(f'Project files missing from profile_order: {sorted(unlisted)}')
+        raise ValueError(f'Project files missing from profile_groups: {sorted(unlisted)}')
     for page in pdf_pages:
         if len(page['projects']) != 4:
             raise ValueError(f"{page['kicker']}: PDF pages need exactly four project cards")
@@ -60,19 +71,23 @@ def markdown_link(label, url):
 
 
 def project_table(index, cards):
-    lines = ['| Project image | Project |', '| :--- | :--- |']
-    for slug in index['profile_order']:
-        card = cards[slug]
-        source = next((link['url'] for link in card['links']
-                       if link['label'] == 'Source'), card['links'][0]['url'])
-        image = f'./projects/{card["image"]}'
-        preview = f'[![{card["name"]}]({image})]({source})'
-        title = html_escape(card['title'], quote=False).replace('|', r'\|')
-        description = html_escape(card['description'], quote=False)
-        links = ' · '.join(markdown_link(link['label'], link['url'])
-                           for link in card['links'])
-        lines.append(f'| {preview} | **{title}**<br>{description}<br>{links} |')
-    return '\n'.join(lines)
+    lines = []
+    for group in index['profile_groups']:
+        lines += [f"### {group['heading']}", '', '| Project image | Project |',
+                  '| :--- | :--- |']
+        for slug in group['projects']:
+            card = cards[slug]
+            source = next((link['url'] for link in card['links']
+                           if link['label'] == 'Source'), card['links'][0]['url'])
+            image = f'./projects/{card["image"]}'
+            preview = f'[![{card["name"]}]({image})]({source})'
+            title = html_escape(card['title'], quote=False).replace('|', r'\|')
+            description = html_escape(card['description'], quote=False)
+            links = ' · '.join(markdown_link(link['label'], link['url'])
+                               for link in card['links'])
+            lines.append(f'| {preview} | **{title}**<br>{description}<br>{links} |')
+        lines.append('')
+    return '\n'.join(lines).rstrip()
 
 
 def update_readme(index, cards):

@@ -1,5 +1,7 @@
 # Lewis Moten
 
+![Lewis Moten: Curiosity, made useful.](./assets/social-preview.jpg)
+
 **Senior front-end engineer | React, TypeScript, and applied AI**
 
 I turn complex data and workflows into usable web applications. I've programmed professionally since 1997, and my recent work spans interactive front ends, small local AI models, browser tools, and the infrastructure that runs them. I'm based in Front Royal, Virginia and interested in senior front-end engineering and AI application roles.

@@ -6,7 +6,7 @@ I turn complex data and workflows into usable web applications. I've programmed 
 
 [Career history](https://lewismoten.com/employment/) · [Blog](https://lewismoten.com/blog/) · [Email](mailto:lewismoten@gmail.com) · [LinkedIn](https://www.linkedin.com/in/lewismoten/)
 
-**Career documents:** [Introduction letter (PDF)](./resume/2026-10-02-intro-letter-for-lewis-moten.pdf) · [Resume (PDF)](./resume/2026-10-02-resume-for-lewis-moten.pdf) · [Selected projects (PDF)](./resume/2026-10-02-selected-projects-for-lewis-moten.pdf)
+**Career documents:** [Introduction letter (PDF)](./resume/2026-10-04-intro-letter-for-lewis-moten.pdf) · [Resume (PDF)](./resume/2026-10-04-resume-for-lewis-moten.pdf) · [Selected projects (PDF)](./resume/2026-10-04-selected-projects-for-lewis-moten.pdf)
 
 ## Start here
 
@@ -25,7 +25,7 @@ I turn complex data and workflows into usable web applications. I've programmed 
 
 | Project image | Project |
 | :--- | :--- |
-| [![Crystal Palace 9](./projects/crystal-palace.jpg)](https://github.com/lewismoten/crystal-palace) | **Crystal Palace 9 \| Commodore 64 LLM**<br>A playable tic-tac-toe lab uses a language model with a Mixture of Experts trained from scratch to run in under 64kb of memory written in assembly for the 6502 and limited graphics.<br>[Source](https://github.com/lewismoten/crystal-palace) [Video](https://www.youtube.com/watch?v=UJME73NxyfA) |
+| [![Crystal Palace 9](./projects/crystal-palace.jpg)](https://github.com/lewismoten/crystal-palace) | **Crystal Palace 9 \| AI on 8-bit hardware**<br>Built a Commodore 64 tic-tac-toe game around Crystal-9, a compact mixture-of-experts model trained to choose moves. Adapted inference and a command-room interface to the machine's tight memory and 8 x 8 multicolor graphics constraints.<br>[Source](https://github.com/lewismoten/crystal-palace) [Video](https://www.youtube.com/watch?v=UJME73NxyfA) |
 | [![Zogograph Client](./projects/zogograph-client.jpg)](https://github.com/lewismoten/zogograph-client) | **Zogograph Client \| AI-assisted server monitoring**<br>PHP/SQLite collectors and a JavaScript dashboard make server telemetry, alerts, and diagnostics readable. An AI assistant calls diagnostic tools and tracks the cost of an investigation.<br>[Source](https://github.com/lewismoten/zogograph-client) · [Videos](https://www.youtube.com/watch?v=OKndBMPknmQ&list=PLaLeerEZeFMs) |
 | [![Palace-9](./projects/palace-9.jpg)](https://github.com/lewismoten/palace-9) | **Palace-9 \| Local model inspection**<br>A playable tic-tac-toe lab pairs a deterministic controller with a compact MoE model trained from scratch. It uses the Qwen2-MoE architecture for Ollama and llama.cpp compatibility without a custom fork; the browser inspects checkpoints locally.<br>[Live demo](https://lewismoten.github.io/palace-9/) · [Source](https://github.com/lewismoten/palace-9) · [Ollama](https://ollama.com/lewismoten/palace-9) · [Hugging Face](https://huggingface.co/lewismoten/palace-9) · [Video](https://www.youtube.com/watch?v=J7bgpmks_KM) |
 | [![D64 Storage Lab](./projects/storage-d64.jpg)](https://github.com/lewismoten/storage-d64) | **D64 Storage Lab \| Repair and optimization**<br>A JavaScript workbench maps Commodore 64 disk sectors and file chains, estimates read efficiency, repairs corruption, restores deleted files, and compares optimized and fragmented layouts.<br>[Live demo](https://lewismoten.github.io/storage-d64/) · [Source](https://github.com/lewismoten/storage-d64) · [Video](https://www.youtube.com/watch?v=cXeIy4AZewY) |

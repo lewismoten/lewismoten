@@ -1,0 +1,41 @@
+date: October 4, 2026
+salutation: Dear Hiring Team,
+paragraphs:
+  - >-
+    I am interested in senior front-end engineering and AI application roles
+    where I can make complex systems useful to the people working with them.
+    I have built production web software for enterprise platforms, health
+    technology, and federal programs, and I continue to build and operate my
+    own applications and infrastructure.
+  - >-
+    At Decipher Technology Studios, I developed React and Redux-Saga interfaces
+    around data visualization and document and video processing, then
+    contributed Go ingestion services connected to Kafka. Before that, I led
+    front-end work on Deltek's transition from Vision to the browser-based
+    Vantagepoint platform. At Code Jamboree, I work in React, TypeScript,
+    testing, and localization, translating designs into usable components
+    and maintaining applications across technology generations.
+  - >-
+    My recent projects show the direction I want to take that experience.
+    I built a React/TypeScript explorer for public financial records, D64
+    Storage Lab for visualizing and repairing Commodore disk images, and
+    Zogograph, a server-monitoring product with AI diagnostic tool calls and
+    cost tracking. Palace-9 pairs a playable JavaScript minimax demo and
+    local checkpoint inspector with a compact model trained from scratch.
+    I used the Qwen2-MoE architecture to make its mixture-of-experts layers
+    compatible with Ollama and llama.cpp without a custom fork. I also run an
+    OpenClaw/Forgejo workflow in which agents take and review tasks, build
+    runners deploy previews, and my cPanel integration creates test subdomains
+    with SSL. That work keeps me close to model behavior, operational
+    constraints, and reliable delivery.
+  - >-
+    I would bring a broad engineering view to a team: careful UI work,
+    comfort with services and data, and a habit of testing what a system
+    actually does. I would welcome a conversation about the problems your
+    team is solving and where my experience could help.
+closing: Sincerely,
+signature: Lewis Moten
+links:
+  - {label: Portfolio, text: lewismoten.com/employment/, url: 'https://lewismoten.com/employment/'}
+  - {label: Model, text: Palace-9, url: 'https://github.com/lewismoten/palace-9'}
+  - {label: Code, text: GitHub, url: 'https://github.com/lewismoten'}

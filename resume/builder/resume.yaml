@@ -1,0 +1,145 @@
+name: Lewis Moten
+output_date: '2026-10-04'
+tagline: Senior Front-End Engineer | React, TypeScript & AI Applications
+location: Front Royal, VA
+phone: (530) 539-4775
+email: lewismoten@gmail.com
+links:
+  - {label: lewismoten.com, url: 'https://lewismoten.com/'}
+  - {label: github.com/lewismoten, url: 'https://github.com/lewismoten'}
+  - {label: huggingface.co/lewismoten, url: 'https://huggingface.co/lewismoten'}
+
+profile: >-
+  Senior engineer who turns complex data and workflows into clear, accessible
+  web applications. Production experience across React/TypeScript, enterprise
+  platforms, health technology, and federal systems; recent independent work
+  spans local AI orchestration, compact model design, and Linux web hosting.
+
+strengths:
+  - label: Front end
+    text: >-
+      JavaScript, TypeScript, React, Redux/Redux-Saga, Angular, HTML/CSS,
+      Sass, Canvas, SVG, Highcharts, Recharts, MUI, Vite, Webpack
+  - label: Applications
+    text: >-
+      Node.js, REST APIs, C#/.NET, PHP, Go, SQL Server, PostgreSQL, MariaDB,
+      SQLite, Kafka, Docker, internationalization, Section 508 accessibility
+  - label: Quality & operations
+    text: >-
+      Jest, Jasmine, TestCafe, Ghost Inspector, Jenkins, Git, Forgejo, Linux,
+      WHM/cPanel API, DNS, TLS/SSL, CI/CD
+  - label: Applied AI
+    text: >-
+      Python, PyTorch, Ollama, llama.cpp, OpenClaw, Hermes, local inference,
+      MoE training, quantization, model validation, tool calling
+
+experience:
+  - title: Senior Front-End Engineer / Owner
+    organization: Code Jamboree LLC, Front Royal, VA
+    dates: 2022-Present
+    bullets:
+      - >-
+        Build React/Redux and TypeScript interfaces from Figma designs,
+        including localized workflows and interactive charts with Highcharts
+        and Canvas.
+      - >-
+        Write unit, integration, and browser tests with Jest, TestCafe, and
+        Ghost Inspector; integrate test and deployment work with Jenkins and
+        Agile/Jira teams.
+      - >-
+        Modernized an AngularJS 1.3 application to Angular 16, built
+        cross-browser extensions, and delivered WordPress and small-business
+        web solutions.
+  - title: Software Engineer
+    organization: Decipher Technology Studios, Alexandria, VA
+    dates: 2019-2022
+    bullets:
+      - >-
+        Developed React and Redux-Saga interfaces for an enterprise
+        service-mesh platform, supporting data visualization and
+        video/document processing workflows.
+      - >-
+        Built Go services for ingestion and resource management, integrating
+        Kafka pipelines, status messages, Docker, and Elasticsearch.
+  - title: Senior Software Development Lead
+    organization: The Goal, Inc. / Deltek Vantagepoint
+    dates: 2016-2019
+    bullets:
+      - >-
+        Led front-end work in the transition from Deltek Vision to the
+        browser-based Vantagepoint platform; contributed to single-page
+        architecture, build automation, and cross-team standards.
+      - >-
+        Worked across JavaScript, Node.js, Sass, Webpack, C#/.NET, SQL Server,
+        and internationalization.
+  - title: Senior Web Developer
+    organization: ViiMed, Washington, DC
+    dates: 2015-2016
+    bullets:
+      - >-
+        Built responsive Angular and React applications connecting
+        Bluetooth-enabled medical devices, REST services, and offline
+        synchronization; served as Scrum Master.
+  - title: Senior Web Developer / Consultant
+    organization: Analysis Research Planning Corporation
+    dates: 2011-2015
+    bullets:
+      - >-
+        Developed legal and research systems using C#, ASP.NET MVC, Ruby on
+        Rails, SOAP/REST, and SQL; used paired programming, code reviews, and
+        test-driven development.
+  - title: Technical Lead / Applications Architect / Software Engineer
+    organization: CSC
+    dates: 2001-2011
+    bullets:
+      - >-
+        Delivered federal and enterprise web, contract, and knowledge
+        systems; modernized ASP/VB6 applications to .NET and SQL Server,
+        supported PKI integrations, and applied Section 508 standards.
+
+experience_page_break_after: 3
+
+projects:
+  - title: Public-ledger explorer
+    link: {label: Source code, url: 'https://github.com/lewismoten/wcfac-general-ledger'}
+    description: >-
+      Built a React/TypeScript, MUI, Recharts, and PHP/MariaDB app for examining
+      public financial data, with 15 multi-value filters, shareable query
+      states, charts, and a virtualized table.
+  - title: Palace-9 AI model and browser inspector
+    link: {label: Code and demo, url: 'https://github.com/lewismoten/palace-9'}
+    description: >-
+      Built a playable JavaScript minimax demo and local model-weight inspector
+      alongside a compact causal model trained from scratch. It uses the
+      Qwen2-MoE architecture for Ollama/llama.cpp compatibility without a
+      custom fork; F16, Q6_K, and Q4_K_M releases each passed 978,003
+      exhaustive runtime cases.
+  - title: Zogograph
+    link: {label: Public client code, url: 'https://github.com/lewismoten/zogograph-client'}
+    description: >-
+      Built PHP/SQLite collectors and a JavaScript monitoring dashboard with
+      alerts, AI diagnostic tool calls, and per-investigation cost tracking.
+  - title: Agent development & deployment platform
+    context: Private Forgejo
+    description: >-
+      Operate OpenClaw agents that pick up and review tasks, Forgejo build
+      runners that publish previews, and a cPanel API integration that
+      provisions test subdomains with SSL; use SQLite for lightweight project
+      data.
+  - title: Tiny Pockets Press
+    link: {label: Code and demo, url: 'https://github.com/lewismoten/Tiny-Pockets-Press'}
+    description: >-
+      Built a modular JavaScript miniature-book editor with layout and
+      imposition logic plus separate interior and cover print/PDF views.
+  - title: D64 Storage Lab
+    link: {label: Live demo, url: 'https://lewismoten.github.io/storage-d64/'}
+    description: >-
+      Built a browser-native JavaScript D64 toolkit with reusable disk helpers,
+      sector and read-efficiency visualization, repair diagnostics,
+      deleted-file recovery, and optimize/deoptimize controls.
+
+education:
+  - degree: Associate of Arts, Information Technology
+    school: University of Phoenix, 2008
+  - degree: Industrial Design Technology coursework
+    school: Art Institute of Pittsburgh

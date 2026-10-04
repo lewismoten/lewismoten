@@ -1,0 +1,13 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Zogograph Client
+title: Zogograph Client | AI-assisted server monitoring
+image: zogograph-client.jpg
+description: >-
+  PHP/SQLite collectors and a JavaScript dashboard make server telemetry, alerts,
+  and diagnostics readable. An AI assistant calls diagnostic tools and tracks the
+  cost of an investigation.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/zogograph-client
+  - label: Videos
+    url: https://www.youtube.com/watch?v=OKndBMPknmQ&list=PLaLeerEZeFMs

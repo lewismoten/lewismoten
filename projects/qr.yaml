@@ -1,0 +1,12 @@
+# Project card used by the profile README and selected-projects PDF.
+name: QR Code Generator
+title: QR Code Generator | Creator and inspector
+image: qr.jpg
+description: >-
+  A browser tool backed by a first-party ES module for mixed segmentation, versions
+  1-40, Reed-Solomon correction, mask selection, and structural inspection.
+links:
+  - label: Live demo
+    url: https://qr.lewismoten.com/
+  - label: Source
+    url: https://github.com/lewismoten/qr

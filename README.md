@@ -11,7 +11,7 @@ I turn complex data and workflows into usable web applications. I've programmed 
 ## Start here
 
 - **React and TypeScript:** [Public-ledger explorer](https://github.com/lewismoten/wcfac-general-ledger) — filtering and visualizing public financial data.
-- **Applied AI:** [Palace-9](https://lewismoten.github.io/palace-9/) — a playable browser lab and inspector for a compact model trained from scratch.
+- **Applied AI:** [Crystal-9](https://github.com/lewismoten/crystal-9) — a compact, validated MoE model built for tight memory limits.
 - **Server operations:** [Zogograph Client](https://github.com/lewismoten/zogograph-client) — telemetry, alerts, and AI-assisted diagnostics with cost tracking.
 - **Interactive tools:** [D64 Storage Lab](https://lewismoten.github.io/storage-d64/) — visual disk repair, recovery, and read-efficiency experiments.
 
@@ -23,8 +23,10 @@ I turn complex data and workflows into usable web applications. I've programmed 
 
 ## Projects
 
+<!-- PROJECTS:START -->
 | Project image | Project |
 | :--- | :--- |
+| [![Crystal-9](./projects/crystal-9.jpg)](https://github.com/lewismoten/crystal-9) | **Crystal-9 \| Tiny MoE for 8-bit hardware**<br>Redesigned a sparse MoE tic-tac-toe policy for a 13-token vocabulary and tight memory budgets. Released a 46,299-byte packed INT4 artifact for a custom local runtime, with zero policy misses across 294,778 legal histories. A compact adaptation powers Crystal Palace 9 on the C64.<br>[Source](https://github.com/lewismoten/crystal-9) · [Hugging Face](https://huggingface.co/lewismoten/crystal-9) |
 | [![Crystal Palace 9](./projects/crystal-palace.jpg)](https://github.com/lewismoten/crystal-palace) | **Crystal Palace 9 \| AI on 8-bit hardware**<br>Built a Commodore 64 tic-tac-toe game around Crystal-9, a compact mixture-of-experts model trained to choose moves. Adapted inference and a command-room interface to the machine's tight memory and 8 x 8 multicolor graphics constraints.<br>[Source](https://github.com/lewismoten/crystal-palace) · [Video](https://www.youtube.com/watch?v=UJME73NxyfA) |
 | [![Zogograph Client](./projects/zogograph-client.jpg)](https://github.com/lewismoten/zogograph-client) | **Zogograph Client \| AI-assisted server monitoring**<br>PHP/SQLite collectors and a JavaScript dashboard make server telemetry, alerts, and diagnostics readable. An AI assistant calls diagnostic tools and tracks the cost of an investigation.<br>[Source](https://github.com/lewismoten/zogograph-client) · [Videos](https://www.youtube.com/watch?v=OKndBMPknmQ&list=PLaLeerEZeFMs) |
 | [![Palace-9](./projects/palace-9.jpg)](https://github.com/lewismoten/palace-9) | **Palace-9 \| Local model inspection**<br>A playable tic-tac-toe lab pairs a deterministic controller with a compact MoE model trained from scratch. It uses the Qwen2-MoE architecture for Ollama and llama.cpp compatibility without a custom fork; the browser inspects checkpoints locally.<br>[Live demo](https://lewismoten.github.io/palace-9/) · [Source](https://github.com/lewismoten/palace-9) · [Ollama](https://ollama.com/lewismoten/palace-9) · [Hugging Face](https://huggingface.co/lewismoten/palace-9) · [Video](https://www.youtube.com/watch?v=J7bgpmks_KM) |
@@ -37,7 +39,7 @@ I turn complex data and workflows into usable web applications. I've programmed 
 | [![QR Code Generator](./projects/qr.jpg)](https://github.com/lewismoten/qr) | **QR Code Generator \| Creator and inspector**<br>A browser tool backed by a first-party ES module for mixed segmentation, versions 1-40, Reed-Solomon correction, mask selection, and structural inspection.<br>[Live demo](https://qr.lewismoten.com/) · [Source](https://github.com/lewismoten/qr) |
 | [![Tiny Pockets Press](./projects/tiny-pockets-press.jpg)](https://github.com/lewismoten/Tiny-Pockets-Press) | **Tiny Pockets Press \| Miniature publishing**<br>A modular JavaScript editor for miniature books, with layout and imposition logic and separate interior and cover print/PDF views.<br>[Live demo](https://lewismoten.github.io/Tiny-Pockets-Press/#editor) · [Source](https://github.com/lewismoten/Tiny-Pockets-Press) · [Videos](https://www.youtube.com/watch?v=w9IwuwX7BkE&list=PLAgk77H8yVCA) |
 | [![Shoomi's HomePage](./projects/athens-acropolis-4507.jpg)](https://github.com/lewismoten/Athens-Acropolis-4507) | **Shoomi's HomePage \| GeoCities restoration**<br>A 1990s web restoration with a Canvas recreation of its Java applet marquee, Web Audio MIDI playback, and a browser version of a Visual Basic color editor.<br>[Live demo](https://lewismoten.github.io/Athens-Acropolis-4507/) · [Source](https://github.com/lewismoten/Athens-Acropolis-4507) · [Videos](https://www.youtube.com/watch?v=UgJgb0VUaHw&list=PLI4A73VhrZT4) |
-
+<!-- PROJECTS:END -->
 
 ## Beyond code
 

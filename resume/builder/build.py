@@ -18,6 +18,7 @@ from reportlab.platypus import (
     BaseDocTemplate, Frame, HRFlowable, Image, KeepTogether, PageBreak,
     PageTemplate, Paragraph, Spacer, Table, TableStyle,
 )
+from project_data import load_catalog, update_readme
 
 
 BASE = Path(__file__).resolve().parent
@@ -167,12 +168,10 @@ def build_letter(out, profile, data):
     CareerDoc(out, 'letter').build(story)
 
 
-def image_for(relative):
-    path = (BASE / relative).resolve()
+def image_for(image_path):
+    path = Path(image_path).resolve()
     if not path.is_file():
-        raise FileNotFoundError(f'Missing project image: {relative}\n'
-                                f'Expected at {path}\n'
-                                'Edit its image field in projects.yaml or add the file.')
+        raise FileNotFoundError(f'Missing project image: {path}')
     return path
 
 
@@ -205,7 +204,7 @@ def build_projects(out, data):
 
     def project_row(item):
         actions = '  |  '.join(link(x['label'], x['url']) for x in item.get('links', []))
-        row = Table([[fit(item['image'], 220, 110), [
+        row = Table([[fit(item['image_path'], 220, 110), [
             para(plain(item['title']), title),
             para(plain(item['description']), description),
             para(actions, links),
@@ -230,22 +229,24 @@ def build_projects(out, data):
     CareerDoc(out, 'projects', page_total=len(data['pages'])).build(story)
 
 
-def validate_images(data):
-    for page in data['pages']:
-        for project in page['projects']:
-            image_for(project['image'])
-
-
 def main():
     parser = ArgumentParser(description=__doc__)
     parser.add_argument('--output-dir', type=Path, default=REPO / 'resume',
                         help='Where PDFs go; default is the repository resume/ folder')
+    parser.add_argument('--only', choices=('all', 'resume', 'letter', 'projects'),
+                        default='all', help='Build one document or all three')
+    parser.add_argument('--update-readme', action='store_true',
+                        help='Also regenerate the Projects table in the root README')
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
     profile = read_yaml('resume.yaml')
     letter = read_yaml('letter.yaml')
-    projects = read_yaml('projects.yaml')
-    validate_images(projects)
+    index, cards = load_catalog()
+    projects = {
+        'title': index['title'], 'intro': index['intro'],
+        'pages': [{**page, 'projects': [cards[slug] for slug in page['projects']]}
+                  for page in index['pdf_pages']],
+    }
     prefix = profile['output_date']
     outputs = [
         (build_resume, f'{prefix}-resume-for-lewis-moten.pdf', (profile,)),
@@ -253,6 +254,8 @@ def main():
         (build_projects, f'{prefix}-selected-projects-for-lewis-moten.pdf', (projects,)),
     ]
     for builder, filename, content in outputs:
+        if args.only != 'all' and builder.__name__ != 'build_' + args.only:
+            continue
         destination = args.output_dir / filename
         builder(destination, *content)
         expected = {'build_resume': 2, 'build_letter': 1,
@@ -264,6 +267,9 @@ def main():
                 'Check for overflow and adjust the layout/page breaks before publishing.'
             )
         print(destination)
+    if args.update_readme:
+        changed = update_readme(index, cards)
+        print('Updated README.md projects table' if changed else 'README.md projects table is current')
 
 
 if __name__ == '__main__':

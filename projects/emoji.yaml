@@ -1,0 +1,15 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Emoji Explorer
+title: Emoji Explorer | Unicode and pixel font
+image: emoji.jpg
+description: >-
+  A localized Unicode explorer with version and sequence filters, favorites, keyboard
+  navigation, and offline PWA support. Includes a custom 12 x 12 Pixel Emoji font
+  and pixel editor.
+links:
+  - label: Live demo
+    url: https://lewismoten.github.io/emoji/
+  - label: Source
+    url: https://github.com/lewismoten/emoji
+  - label: npm
+    url: https://www.npmjs.com/package/@lewismoten/emoji

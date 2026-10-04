@@ -1,0 +1,14 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Crystal-9
+title: Crystal-9 | Tiny MoE for 8-bit hardware
+image: crystal-9.jpg
+description: >-
+  Redesigned a sparse MoE tic-tac-toe policy for a 13-token vocabulary and tight
+  memory budgets. Released a 46,299-byte packed INT4 artifact for a custom local
+  runtime, with zero policy misses across 294,778 legal histories. A compact
+  adaptation powers Crystal Palace 9 on the C64.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/crystal-9
+  - label: Hugging Face
+    url: https://huggingface.co/lewismoten/crystal-9

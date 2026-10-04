@@ -1,0 +1,12 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Dreamy Tags
+title: Dreamy Tags | WordPress plugin
+image: dreamy-tags.jpg
+description: >-
+  An open-source PHP/Gutenberg plugin for category- and tag-filtered clouds, with
+  exclusion rules and minimum-use thresholds. Published as a block, widget, and shortcode.
+links:
+  - label: Plugin directory
+    url: https://wordpress.org/plugins/dreamy-tags/
+  - label: Source
+    url: https://github.com/lewismoten/dreamy-tags

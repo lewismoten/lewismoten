@@ -1,0 +1,14 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Data Over Audio
+title: Data Over Audio | Web Audio API
+image: data-over-audio.jpg
+description: >-
+  Transfers text and binary data through sound using MFSK modulation, packetization,
+  CRC checks, Hamming error correction, interleaving, and repeat requests.
+links:
+  - label: Live demo
+    url: https://lewismoten.github.io/data-over-audio/
+  - label: Source
+    url: https://github.com/lewismoten/data-over-audio
+  - label: Videos
+    url: https://www.youtube.com/watch?v=_6qxB3gKN_E&list=PLEyaach61fdU-OPcb5Aqgah2l6TTsaLia

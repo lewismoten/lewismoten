@@ -1,0 +1,17 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Restoring the Signal
+title: Restoring the Signal | Dialable exhibit
+image: phone-exhibit.jpg
+description: >-
+  A live installation at Stone Branch Center for the Arts joins Raspberry Pi, Asterisk,
+  and a PHP contribution site. It handles telephone audio, dialplans, transcription,
+  and TTY support.
+links:
+  - label: Live demo
+    url: https://phone.lewismoten.com/
+  - label: Source
+    url: https://github.com/lewismoten/Phone-Exhibit
+  - label: Videos
+    url: https://www.youtube.com/watch?v=kmOV7_2MKPg&list=PLHG0YVBnnA7k
+  - label: Press and photos
+    url: https://www.nvdaily.com/nvdaily/dial-i-for-interactive-new-exhibit-celebrates-150-years-of-communication/article_06d37f43-5f2d-5ee3-9621-2dc1853ef4c2.html

@@ -1,0 +1,19 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Palace-9
+title: Palace-9 | Local model inspection
+image: palace-9.jpg
+description: >-
+  A playable tic-tac-toe lab pairs a deterministic controller with a compact MoE model
+  trained from scratch. It uses the Qwen2-MoE architecture for Ollama and llama.cpp
+  compatibility without a custom fork; the browser inspects checkpoints locally.
+links:
+  - label: Live demo
+    url: https://lewismoten.github.io/palace-9/
+  - label: Source
+    url: https://github.com/lewismoten/palace-9
+  - label: Ollama
+    url: https://ollama.com/lewismoten/palace-9
+  - label: Hugging Face
+    url: https://huggingface.co/lewismoten/palace-9
+  - label: Video
+    url: https://www.youtube.com/watch?v=J7bgpmks_KM

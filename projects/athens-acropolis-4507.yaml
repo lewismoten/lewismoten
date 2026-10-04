@@ -1,0 +1,14 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Shoomi's HomePage
+title: Shoomi's HomePage | GeoCities restoration
+image: athens-acropolis-4507.jpg
+description: >-
+  A 1990s web restoration with a Canvas recreation of its Java applet marquee, Web
+  Audio MIDI playback, and a browser version of a Visual Basic color editor.
+links:
+  - label: Live demo
+    url: https://lewismoten.github.io/Athens-Acropolis-4507/
+  - label: Source
+    url: https://github.com/lewismoten/Athens-Acropolis-4507
+  - label: Videos
+    url: https://www.youtube.com/watch?v=UgJgb0VUaHw&list=PLI4A73VhrZT4

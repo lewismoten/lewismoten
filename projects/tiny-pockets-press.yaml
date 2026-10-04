@@ -1,0 +1,14 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Tiny Pockets Press
+title: Tiny Pockets Press | Miniature publishing
+image: tiny-pockets-press.jpg
+description: >-
+  A modular JavaScript editor for miniature books, with layout and imposition logic
+  and separate interior and cover print/PDF views.
+links:
+  - label: Live demo
+    url: https://lewismoten.github.io/Tiny-Pockets-Press/#editor
+  - label: Source
+    url: https://github.com/lewismoten/Tiny-Pockets-Press
+  - label: Videos
+    url: https://www.youtube.com/watch?v=w9IwuwX7BkE&list=PLAgk77H8yVCA

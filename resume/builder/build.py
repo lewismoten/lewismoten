@@ -89,7 +89,7 @@ class CareerDoc(BaseDocTemplate):
         self.page_total = page_total
         super().__init__(
             str(filename), pagesize=letter, leftMargin=51, rightMargin=51,
-            topMargin=45, bottomMargin=43, author='Lewis Moten',
+            topMargin=45, bottomMargin=43, author='Lewis Moten', invariant=1,
             title={'resume': 'Lewis Moten - Resume',
                    'letter': 'Lewis Moten - Cover Letter',
                    'projects': 'Lewis Moten - Selected Projects'}[kind],

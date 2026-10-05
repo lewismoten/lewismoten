@@ -10,7 +10,6 @@ profile_groups:
       - zogograph-client
   - heading: Browser tools and visualization
     projects:
-      - storage-d64
       - sculpted-prim-toolkit
       - data-over-audio
       - emoji
@@ -21,6 +20,10 @@ profile_groups:
       - phone-exhibit
       - tiny-pockets-press
       - athens-acropolis-4507
+  - heading: 8-bit retro Commedore 64 projects
+    projects:
+      - storage-d64
+      - sector-256
 pdf_pages:
   - kicker: Project index / 01
     heading: Applied AI and visualization

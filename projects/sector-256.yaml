@@ -1,0 +1,12 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Sector 256
+title: Sector 256 | Tiny programs for the C64
+image: sector-256.png
+description: >-
+  Built a graphical Commodore 64 launcher for games, utilities, demos, and
+  experiments with stored payloads of 256 bytes or less. Combines 6502 assembly,
+  shared routines, and a Python build pipeline to package programs into a D64
+  disk image, with automated machine-code tests.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/sector-256

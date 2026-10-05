@@ -53,7 +53,7 @@ I turn complex data and workflows into usable web applications. I've programmed 
 | [![Tiny Pockets Press](./projects/tiny-pockets-press.jpg)](https://github.com/lewismoten/Tiny-Pockets-Press) | **Tiny Pockets Press \| Miniature publishing**<br>A modular JavaScript editor for miniature books, with layout and imposition logic and separate interior and cover print/PDF views.<br>[Live demo](https://lewismoten.github.io/Tiny-Pockets-Press/#editor) · [Source](https://github.com/lewismoten/Tiny-Pockets-Press) · [Videos](https://www.youtube.com/watch?v=w9IwuwX7BkE&list=PLAgk77H8yVCA) |
 | [![Shoomi's HomePage](./projects/athens-acropolis-4507.jpg)](https://github.com/lewismoten/Athens-Acropolis-4507) | **Shoomi's HomePage \| GeoCities restoration**<br>A 1990s web restoration with a Canvas recreation of its Java applet marquee, Web Audio MIDI playback, and a browser version of a Visual Basic color editor.<br>[Live demo](https://lewismoten.github.io/Athens-Acropolis-4507/) · [Source](https://github.com/lewismoten/Athens-Acropolis-4507) · [Videos](https://www.youtube.com/watch?v=UgJgb0VUaHw&list=PLI4A73VhrZT4) |
 
-### 8-bit retro Commedore 64 projects
+### 8-bit retro Commodore 64 projects
 
 | Project image | Project |
 | :--- | :--- |

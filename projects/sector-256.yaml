@@ -8,5 +8,9 @@ description: >-
   shared routines, and a Python build pipeline to package programs into a D64
   disk image, with automated machine-code tests.
 links:
+  - label: Live demo
+    url: https://lewismoten.github.io/sector-256/
   - label: Source
     url: https://github.com/lewismoten/sector-256
+  - label: Video
+    url: https://www.youtube.com/watch?v=dptHv4-RSWo

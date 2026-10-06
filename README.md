@@ -58,7 +58,7 @@ I turn complex data and workflows into usable web applications. I've programmed 
 | Project image | Project |
 | :--- | :--- |
 | [![D64 Storage Lab](./projects/storage-d64.jpg)](https://github.com/lewismoten/storage-d64) | **D64 Storage Lab \| Repair and optimization**<br>A JavaScript workbench maps Commodore 64 disk sectors and file chains, estimates read efficiency, repairs corruption, restores deleted files, and compares optimized and fragmented layouts.<br>[Live demo](https://lewismoten.github.io/storage-d64/) · [Source](https://github.com/lewismoten/storage-d64) · [Video](https://www.youtube.com/watch?v=cXeIy4AZewY) |
-| [![Sector 256](./projects/sector-256.png)](https://github.com/lewismoten/sector-256) | **Sector 256 \| Tiny programs for the C64**<br>Built a graphical Commodore 64 launcher for games, utilities, demos, and experiments with stored payloads of 256 bytes or less. Combines 6502 assembly, shared routines, and a Python build pipeline to package programs into a D64 disk image, with automated machine-code tests.<br>[Source](https://github.com/lewismoten/sector-256) |
+| [![Sector 256](./projects/sector-256.png)](https://github.com/lewismoten/sector-256) | **Sector 256 \| Tiny programs for the C64**<br>Built a graphical Commodore 64 launcher for games, utilities, demos, and experiments with stored payloads of 256 bytes or less. Combines 6502 assembly, shared routines, and a Python build pipeline to package programs into a D64 disk image, with automated machine-code tests.<br>[Live demo](https://lewismoten.github.io/sector-256/) · [Source](https://github.com/lewismoten/sector-256) · [Video](https://www.youtube.com/watch?v=dptHv4-RSWo) |
 <!-- PROJECTS:END -->
 
 ## Beyond code

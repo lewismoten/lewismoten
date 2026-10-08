@@ -24,6 +24,9 @@ profile_groups:
     projects:
       - storage-d64
       - sector-256
+  - heading: Government Transparency
+    projects:
+      - stream-scribe
 pdf_pages:
   - kicker: Project index / 01
     heading: Applied AI and visualization

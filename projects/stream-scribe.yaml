@@ -1,0 +1,13 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Stream Scribe
+title: Stream Scribe | Independent meeting archive and research
+image: stream-scribe.jpg
+description: >-
+  Developing an independent archive and research tool for livestreamed government
+  meetings. Captures video, transcribes locally with Whisper, and supports searching
+  transcripts and navigating thumbnails while meetings are still live. Adds speaker,
+  topic, and vote annotations, exports short clips, and fills capture gaps from
+  official recordings. Built with React, TypeScript, Node.js, and SQLite.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/streamscribe

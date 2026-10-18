@@ -4,6 +4,7 @@ intro: Public work and live demos with source links where available.
 profile_groups:
   - heading: Applied AI and model engineering
     projects:
+      - local-agent-lab
       - crystal-9
       - crystal-palace
       - palace-9
@@ -31,8 +32,8 @@ pdf_pages:
   - kicker: Project index / 01
     heading: Applied AI and visualization
     projects:
+      - local-agent-lab
       - zogograph-client
-      - palace-9
       - crystal-9
       - storage-d64
   - kicker: Project index / 02

@@ -1,4 +1,3 @@
-date: October 4, 2026
 salutation: Dear Hiring Team,
 paragraphs:
   - >-
@@ -20,14 +19,13 @@ paragraphs:
     I built a React/TypeScript explorer for public financial records, D64
     Storage Lab for visualizing and repairing Commodore disk images, and
     Zogograph, a server-monitoring product with AI diagnostic tool calls and
-    cost tracking. Palace-9 pairs a playable JavaScript minimax demo and
-    local checkpoint inspector with a compact model trained from scratch.
-    I used the Qwen2-MoE architecture to make its mixture-of-experts layers
-    compatible with Ollama and llama.cpp without a custom fork. I also run an
-    OpenClaw/Forgejo workflow in which agents take and review tasks, build
-    runners deploy previews, and my cPanel integration creates test subdomains
-    with SSL. That work keeps me close to model behavior, operational
-    constraints, and reliable delivery.
+    cost tracking. Local Agent Lab is a React/TypeScript browser workspace for
+    coding, research, and scheduled agents, with local models, optional Ollama
+    and API profiles, and portable project storage. I also run an OpenClaw/Forgejo
+    workflow in which agents take and review tasks, build runners deploy
+    previews, and my cPanel integration creates test subdomains with SSL.
+    That work keeps me close to model behavior, operational constraints, and
+    reliable delivery.
   - >-
     I would bring a broad engineering view to a team: careful UI work,
     comfort with services and data, and a habit of testing what a system
@@ -37,5 +35,5 @@ closing: Sincerely,
 signature: Lewis Moten
 links:
   - {label: Portfolio, text: lewismoten.com/employment/, url: 'https://lewismoten.com/employment/'}
-  - {label: Model, text: Palace-9, url: 'https://github.com/lewismoten/palace-9'}
+  - {label: Project, text: Local Agent Lab, url: 'https://github.com/lewismoten/local-agent-lab'}
   - {label: Code, text: GitHub, url: 'https://github.com/lewismoten'}

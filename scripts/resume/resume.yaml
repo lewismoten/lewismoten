@@ -1,5 +1,4 @@
 name: Lewis Moten
-output_date: '2026-10-04'
 tagline: Senior Front-End Engineer | React, TypeScript & AI Applications
 location: Front Royal, VA
 phone: (530) 539-4775
@@ -100,32 +99,24 @@ experience:
 experience_page_break_after: 3
 
 projects:
+  - title: Local Agent Lab
+    link: {label: Code and demo, url: 'https://github.com/lewismoten/local-agent-lab'}
+    description: >-
+      Built a React/TypeScript browser workspace for local AI chat, coding,
+      research, and scheduled agents. It supports browser models, Ollama, and
+      API providers while keeping project files and conversations in a local
+      folder or on a removable drive.
   - title: Public-ledger explorer
     link: {label: Source code, url: 'https://github.com/lewismoten/wcfac-general-ledger'}
     description: >-
       Built a React/TypeScript, MUI, Recharts, and PHP/MariaDB app for examining
       public financial data, with 15 multi-value filters, shareable query
       states, charts, and a virtualized table.
-  - title: Palace-9 AI model and browser inspector
-    link: {label: Code and demo, url: 'https://github.com/lewismoten/palace-9'}
-    description: >-
-      Built a playable JavaScript minimax demo and local model-weight inspector
-      alongside a compact causal model trained from scratch. It uses the
-      Qwen2-MoE architecture for Ollama/llama.cpp compatibility without a
-      custom fork; F16, Q6_K, and Q4_K_M releases each passed 978,003
-      exhaustive runtime cases.
   - title: Zogograph
     link: {label: Public client code, url: 'https://github.com/lewismoten/zogograph-client'}
     description: >-
       Built PHP/SQLite collectors and a JavaScript monitoring dashboard with
       alerts, AI diagnostic tool calls, and per-investigation cost tracking.
-  - title: Agent development & deployment platform
-    context: Private Forgejo
-    description: >-
-      Operate OpenClaw agents that pick up and review tasks, Forgejo build
-      runners that publish previews, and a cPanel API integration that
-      provisions test subdomains with SSL; use SQLite for lightweight project
-      data.
   - title: Tiny Pockets Press
     link: {label: Code and demo, url: 'https://github.com/lewismoten/Tiny-Pockets-Press'}
     description: >-

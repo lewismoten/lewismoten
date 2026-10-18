@@ -2,8 +2,11 @@
 """Build the three career PDFs from editable YAML and repo project images."""
 
 from argparse import ArgumentParser
+from datetime import date
 from html import escape
 from pathlib import Path
+import re
+import shutil
 import sys
 
 # Allow `python3 build.py` from scripts/resume as well as the shell wrapper.
@@ -158,9 +161,10 @@ def build_resume(out, data):
     CareerDoc(out, 'resume', page_total=2).build(story)
 
 
-def build_letter(out, profile, data):
+def build_letter(out, profile, data, build_date):
     story = header(profile, model_link=False)
-    story += [Spacer(1, 29), para(plain(data['date']), LETTER_SMALL),
+    date_label = f'{build_date:%B} {build_date.day}, {build_date.year}'
+    story += [Spacer(1, 29), para(plain(date_label), LETTER_SMALL),
               Spacer(1, 18), para(plain(data['salutation']), LETTER_BODY)]
     story += [para(plain(text), LETTER_BODY) for text in data['paragraphs']]
     story += [Spacer(1, 7), para(plain(data['closing']), LETTER_BODY),
@@ -231,6 +235,36 @@ def build_projects(out, data):
     CareerDoc(out, 'projects', page_total=len(data['pages'])).build(story)
 
 
+def update_career_links(filenames):
+    path = REPO / 'README.md'
+    original = path.read_text(encoding='utf-8')
+    lines = original.splitlines(keepends=True)
+    matches = [index for index, line in enumerate(lines)
+               if line.startswith('**Career documents:**')]
+    if len(matches) != 1:
+        raise ValueError('README.md must have exactly one Career documents line')
+    index = matches[0]
+    labels = {
+        'resume-for-lewis-moten.pdf': 'Resume (PDF)',
+        'intro-letter-for-lewis-moten.pdf': 'Introduction letter (PDF)',
+        'selected-projects-for-lewis-moten.pdf': 'Selected projects (PDF)',
+    }
+    for filename in filenames:
+        suffix = filename[11:]  # Remove the YYYY-MM-DD- prefix.
+        pattern = r'(\[' + re.escape(labels[suffix]) + r'\]\()\./resume/[^)]+(\))'
+        lines[index], count = re.subn(
+            pattern,
+            lambda match: match.group(1) + './resume/current/' + suffix + match.group(2),
+            lines[index],
+        )
+        if count != 1:
+            raise ValueError(f'README.md must link exactly one {suffix}')
+    updated = ''.join(lines)
+    if updated != original:
+        path.write_text(updated, encoding='utf-8')
+    return updated != original
+
+
 def main():
     parser = ArgumentParser(description=__doc__)
     parser.add_argument('--output-dir', type=Path, default=REPO / 'resume',
@@ -240,7 +274,6 @@ def main():
     parser.add_argument('--update-readme', action='store_true',
                         help='Also regenerate the Projects table in the root README')
     args = parser.parse_args()
-    args.output_dir.mkdir(parents=True, exist_ok=True)
     profile = read_yaml('resume.yaml')
     letter = read_yaml('letter.yaml')
     index, cards = load_catalog()
@@ -249,16 +282,23 @@ def main():
         'pages': [{**page, 'projects': [cards[slug] for slug in page['projects']]}
                   for page in index['pdf_pages']],
     }
-    prefix = profile['output_date']
+    build_date = date.today()
+    prefix = build_date.isoformat()
+    archive_dir = args.output_dir / f'{build_date.year:04d}' / f'{build_date.month:02d}' / f'{build_date.day:02d}'
+    current_dir = args.output_dir / 'current'
+    archive_dir.mkdir(parents=True, exist_ok=True)
+    current_dir.mkdir(parents=True, exist_ok=True)
     outputs = [
         (build_resume, f'{prefix}-resume-for-lewis-moten.pdf', (profile,)),
-        (build_letter, f'{prefix}-intro-letter-for-lewis-moten.pdf', (profile, letter)),
+        (build_letter, f'{prefix}-intro-letter-for-lewis-moten.pdf',
+         (profile, letter, build_date)),
         (build_projects, f'{prefix}-selected-projects-for-lewis-moten.pdf', (projects,)),
     ]
+    built_files = []
     for builder, filename, content in outputs:
         if args.only != 'all' and builder.__name__ != 'build_' + args.only:
             continue
-        destination = args.output_dir / filename
+        destination = archive_dir / filename
         builder(destination, *content)
         expected = {'build_resume': 2, 'build_letter': 1,
                     'build_projects': len(projects['pages'])}[builder.__name__]
@@ -269,6 +309,14 @@ def main():
                 'Check for overflow and adjust the layout/page breaks before publishing.'
             )
         print(destination)
+        built_files.append((filename, destination))
+    for filename, archive in built_files:
+        current = current_dir / filename[11:]
+        shutil.copyfile(archive, current)
+        print(current)
+    if args.output_dir.resolve() == (REPO / 'resume').resolve():
+        if update_career_links([filename for filename, _ in built_files]):
+            print('Updated README.md career-document links')
     if args.update_readme:
         changed = update_readme(index, cards)
         print('Updated README.md projects table' if changed else 'README.md projects table is current')

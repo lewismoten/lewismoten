@@ -8,7 +8,7 @@ I turn complex data and workflows into usable web applications. I've programmed 
 
 [Career history](https://lewismoten.com/employment/) · [Blog](https://lewismoten.com/blog/) · [Email](mailto:lewismoten@gmail.com) · [LinkedIn](https://www.linkedin.com/in/lewismoten/)
 
-**Career documents:** [Introduction letter (PDF)](./resume/2026-10-04-intro-letter-for-lewis-moten.pdf) · [Resume (PDF)](./resume/2026-10-04-resume-for-lewis-moten.pdf) · [Selected projects (PDF)](./resume/2026-10-04-selected-projects-for-lewis-moten.pdf)
+**Career documents:** [Introduction letter (PDF)](./resume/current/intro-letter-for-lewis-moten.pdf) · [Resume (PDF)](./resume/current/resume-for-lewis-moten.pdf) · [Selected projects (PDF)](./resume/current/selected-projects-for-lewis-moten.pdf)
 
 ## Start here
 
@@ -30,6 +30,7 @@ I turn complex data and workflows into usable web applications. I've programmed 
 
 | Project image | Project |
 | :--- | :--- |
+| [![Local Agent Lab](./projects/local-agent-lab.jpg)](https://github.com/lewismoten/local-agent-lab) | **Local Agent Lab \| Portable AI workspace**<br>Built a React and TypeScript browser workspace for coding, research, and scheduled agents. Runs small models locally or connects to Ollama and API providers, with project files and conversations stored in a browser folder or on a removable drive.<br>[Live demo](https://lewismoten.github.io/local-agent-lab/) · [Source](https://github.com/lewismoten/local-agent-lab) |
 | [![Crystal-9](./projects/crystal-9.jpg)](https://github.com/lewismoten/crystal-9) | **Crystal-9 \| Tiny MoE for 8-bit hardware**<br>Redesigned a sparse MoE tic-tac-toe policy for a 13-token vocabulary and tight memory budgets. Released a 46,299-byte packed INT4 artifact for a custom local runtime, with zero policy misses across 294,778 legal histories. A compact adaptation powers Crystal Palace 9 on the C64.<br>[Source](https://github.com/lewismoten/crystal-9) · [Hugging Face](https://huggingface.co/lewismoten/crystal-9) |
 | [![Crystal Palace 9](./projects/crystal-palace.jpg)](https://github.com/lewismoten/crystal-palace) | **Crystal Palace 9 \| AI on 8-bit hardware**<br>Built a Commodore 64 tic-tac-toe game around Crystal-9, a compact mixture-of-experts model trained to choose moves. Adapted inference and a command-room interface to the machine's tight memory and 8 x 8 multicolor graphics constraints.<br>[Source](https://github.com/lewismoten/crystal-palace) · [Video](https://www.youtube.com/watch?v=UJME73NxyfA) |
 | [![Palace-9](./projects/palace-9.jpg)](https://github.com/lewismoten/palace-9) | **Palace-9 \| Local model inspection**<br>A playable tic-tac-toe lab pairs a deterministic controller with a compact MoE model trained from scratch. It uses the Qwen2-MoE architecture for Ollama and llama.cpp compatibility without a custom fork; the browser inspects checkpoints locally.<br>[Live demo](https://lewismoten.github.io/palace-9/) · [Source](https://github.com/lewismoten/palace-9) · [Ollama](https://ollama.com/lewismoten/palace-9) · [Hugging Face](https://huggingface.co/lewismoten/palace-9) · [Video](https://www.youtube.com/watch?v=J7bgpmks_KM) |

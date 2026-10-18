@@ -43,9 +43,12 @@ You can also run these from inside `scripts/resume`:
 python3 build.py --only projects --output-dir /path/to/preview
 ```
 
-`build.sh` writes the three PDFs to `resume/`. Pass options through to `build.py`,
-for example `./scripts/resume/build.sh --only projects`. To refresh the project
-PDF and profile table together, run:
+`build.sh` writes dated archives to `resume/YYYY/MM/DD/` and copies the PDFs
+to stable, undated names in `resume/current/`. It uses the local date when the
+command runs for the archive prefix and the letter date. The career-document
+links in the root README point to `resume/current/`. Pass options through to
+`build.py`, for example `./scripts/resume/build.sh --only projects`. To refresh
+the project PDF and profile table together, run:
 
 ```bash
 ./scripts/resume/build.sh --only projects
@@ -83,9 +86,9 @@ A card can appear in the profile without appearing in the PDF; Shoomi's
 HomePage currently does. The builder checks filenames, image existence,
 page counts, and duplicate entries before publishing the new PDFs.
 
-Change `scripts/resume/resume.yaml` to edit resume copy or the `output_date`
-prefix, and `scripts/resume/letter.yaml` to edit the introduction letter. If
-`output_date` changes,
-update the three career-document links in the root README after rebuilding.
+Change `scripts/resume/resume.yaml` to edit resume copy and
+`scripts/resume/letter.yaml` to edit the introduction letter. The build script
+sets the date when it runs; preview builds with `--output-dir` use the same
+archive and current layout inside that directory and leave README links alone.
 Review each PDF visually after changing descriptions or images; a long card
 can overflow its page.

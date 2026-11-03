@@ -17,6 +17,7 @@ profile_groups:
       - qr
   - heading: Publishing and interactive experiences
     projects:
+      - gamemaker-sandbox
       - dreamy-tags
       - phone-exhibit
       - tiny-pockets-press

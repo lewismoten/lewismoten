@@ -93,12 +93,12 @@
     }
   ],
   "beyond": [
-    "I'm in the clown club at the Shrine in Manassas and perform for community events. I like projects that connect technology with something people can actually use, explore, or enjoy.",
+    "I'm in the clown club at the Shrine in Manassas and perform for community events. I like projects that connect technology with something people can actually use, explore, or enjoy. I collect certifications, some serious (CPR/AED, BLS, Narcan) and some not (an honorary degree in comedic science).",
     "I also created [The Bard of Bizarre](https://thebardofbizarre.com/), a multimedia project built around my lyrics and a 16-track concept album with AI-generated music and visuals. [Listen on Spotify and other services](https://distrokid.com/hyperfollow/thebardofbizarre/re-cubicle-13) · [Watch \"Time Is a Flat Liar\"](https://distrokid.com/videos/watch/dv-L9yj4VzE2)",
     "My company is [Code Jamboree LLC](https://www.codejamboree.com/)."
   ],
   "experience": [
-    "**CSC, USCIS contract.** I led a team upgrading from VB6 to C#/.NET. That was software, not websites.",
+    "**CSC, USCIS contract.** I led a team upgrading a desktop application from VB6 to C#/.NET.",
     "**Solution Street, Deltek project.** I led a team and often focused on build tools, bringing development builds down from 20 minutes to 2 minutes. I also upgraded CanJS and Steel to webpack, because the earlier platform chosen before I got there had become stale and unsupported compared to other community frameworks.",
     "**Code Jamboree LLC.** My own company, just me, with no team or employees. My recent projects were built here."
   ],

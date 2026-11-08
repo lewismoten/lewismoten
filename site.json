@@ -93,7 +93,7 @@
     }
   ],
   "beyond": [
-    "I volunteer with local history and library projects, started a LEGO users group, and sometimes perform as a clown. I like projects that connect technology with something people can actually use, explore, or enjoy.",
+    "I sometimes perform as a clown. I like projects that connect technology with something people can actually use, explore, or enjoy.",
     "I also created [The Bard of Bizarre](https://thebardofbizarre.com/), a multimedia project built around my lyrics and a 16-track concept album with AI-generated music and visuals. [Listen on Spotify and other services](https://distrokid.com/hyperfollow/thebardofbizarre/re-cubicle-13) · [Watch \"Time Is a Flat Liar\"](https://distrokid.com/videos/watch/dv-L9yj4VzE2)",
     "My company is [Code Jamboree LLC](https://www.codejamboree.com/)."
   ],
@@ -101,5 +101,18 @@
     "**CSC, USCIS contract.** I led a team upgrading from VB6 to C#/.NET. That was software, not websites.",
     "**Solution Street, Deltek project.** I led a team and often focused on build tools, bringing development builds down from 20 minutes to 2 minutes. I also upgraded CanJS and Steel to webpack, because the earlier platform chosen before I got there had become stale and unsupported compared to other community frameworks.",
     "**Code Jamboree LLC.** My own company, just me, with no team or employees. My recent projects were built here."
+  ],
+  "community": [
+    "Trustee of my local nonprofit public library (fourth year). I learned in detail how nonprofit libraries operate and compared their costs with municipal libraries.",
+    "I speak regularly at local government meetings, using FOIA requests and detailed reading of public documents and hearing comments.",
+    "Formerly appointed to the Town of Front Royal Board of Zoning Appeals (one year).",
+    "Freemasons: Junior Warden of my local lodge, soon Senior Warden. I have conferred a degree and given presentations on the lodge's history and on how Masons stay out of politics.",
+    "Founded the Apple Valley Shrine Club. I am its parade coordinator, and was its secretary last year.",
+    "Warren Heritage Society archives committee. I gave a presentation on the Tabard Inn Library and its history in Front Royal.",
+    "I co-manage the AV booth at my church: mixer, wireless and headset microphones, and assistive-listening systems. I wrote proposals for multi-platform streaming and two more choir displays over PoE network cable, and repaired two broken units, saving $200.",
+    "Chamber of Commerce member and event volunteer. I completed the Chamber's leadership class and the Sheriff's Office citizens academy.",
+    "Sons of the American Revolution: flag retirement ceremonies, wreath placements, and public education.",
+    "Volunteer at the thermal shelter (weekly for years, now monthly), senior center visits, and food drives.",
+    "Founded a LEGO users group, with a shared module system so members' mountain-trail modules connect."
   ]
 }

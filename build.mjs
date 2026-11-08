@@ -367,14 +367,26 @@ const notFound = page({
 });
 
 // ---------- write ----------
+// Root links ("/projects/x/") become relative ("../x/index.html") so the built pages also open
+// straight from the file system; "index.html" is spelled out because file:// has no directory index.
+// The 404 page is served at any depth, so its links point at the full site URL instead.
+function relativize(html, path) {
+  const depth = path.split('/').filter(Boolean).length - (path.endsWith('/') ? 0 : 1);
+  const up = depth ? '../'.repeat(depth) : './';
+  return html.replace(/(href|src)="\/(?!\/)([^"#?]*)([^"]*)"/g, (_, attr, target, rest) => {
+    const file = target === '' || target.endsWith('/') ? `${target}index.html` : target;
+    return `${attr}="${up}${file}${rest}"`;
+  });
+}
+const absolutize = (html) => html.replace(/(href|src)="\/(?!\/)/g, `$1="${BASE}/`);
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 for (const p of pages) {
   const dir = join(OUT, p.path);
   mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, 'index.html'), p.html);
+  writeFileSync(join(dir, 'index.html'), relativize(p.html, p.path));
 }
-writeFileSync(join(OUT, '404.html'), notFound);
+writeFileSync(join(OUT, '404.html'), absolutize(notFound));
 writeFileSync(join(OUT, 'feed.xml'), feed);
 writeFileSync(join(OUT, 'sitemap.xml'), sitemap);
 writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${BASE}/sitemap.xml\n`);

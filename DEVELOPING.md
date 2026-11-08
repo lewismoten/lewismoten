@@ -31,6 +31,8 @@ npx http-server docs -p 8150
 
 (or any static server that serves `docs/` as the site root).
 
+Or open `docs/index.html` straight from the file system: the build writes every link between pages as a relative link ending in `index.html`, so it works without a server. The 404 page is the exception (GitHub serves it at any depth), so its links go to the live site.
+
 ## Add a project
 
 Add an object to `content/projects.json`:

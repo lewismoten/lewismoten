@@ -3,10 +3,10 @@ name: Local Agent Lab
 title: Local Agent Lab | Portable AI workspace
 image: local-agent-lab.jpg
 description: >-
-  Built a React and TypeScript browser workspace for coding, research, and
-  scheduled agents. Runs small models locally or connects to Ollama and API
-  providers, with project files and conversations stored in a browser folder
-  or on a removable drive.
+  Built a private React and TypeScript AI workspace for chat, code, images,
+  and audio. Runs models in the browser or on a local Ollama server, so it
+  works offline and conversations never have to leave the device; API
+  providers are optional. Projects stay in a folder or on a removable drive.
 links:
   - label: Live demo
     url: https://lewismoten.github.io/local-agent-lab/

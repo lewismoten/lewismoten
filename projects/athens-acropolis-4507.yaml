@@ -2,6 +2,7 @@
 name: Shoomi's HomePage
 title: Shoomi's HomePage | GeoCities restoration
 image: athens-acropolis-4507.jpg
+site_slug: athens-acropolis  # its More details page on the portfolio site
 description: >-
   A 1990s web restoration with a Canvas recreation of its Java applet marquee, Web
   Audio MIDI playback, and a browser version of a Visual Basic color editor.

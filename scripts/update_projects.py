@@ -1,6 +1,7 @@
 """Load project cards beside their images and render the profile project table."""
 
 from html import escape as html_escape
+import json
 from pathlib import Path
 import re
 
@@ -11,6 +12,16 @@ REPO = Path(__file__).resolve().parent.parent
 PROJECTS = REPO / 'projects'
 START = '<!-- PROJECTS:START -->'
 END = '<!-- PROJECTS:END -->'
+SITE = 'https://lewismoten.github.io/lewismoten'
+SITE_PROJECTS = REPO / 'site' / 'content' / 'projects.json'
+
+
+def site_pages():
+    """Slugs that have a More details page on the portfolio site (site/)."""
+    if not SITE_PROJECTS.is_file():
+        return set()
+    with SITE_PROJECTS.open(encoding='utf-8') as stream:
+        return {project['slug'] for project in json.load(stream)['projects']}
 
 
 def read_yaml(path):
@@ -71,6 +82,7 @@ def markdown_link(label, url):
 
 
 def project_table(index, cards):
+    pages = site_pages()
     lines = []
     for group in index['profile_groups']:
         lines += [f"### {group['heading']}", '', '| Project image | Project |',
@@ -83,8 +95,11 @@ def project_table(index, cards):
             preview = f'[![{card["name"]}]({image})]({source})'
             title = html_escape(card['title'], quote=False).replace('|', r'\|')
             description = html_escape(card['description'], quote=False)
-            links = ' · '.join(markdown_link(link['label'], link['url'])
-                               for link in card['links'])
+            all_links = [(link['label'], link['url']) for link in card['links']]
+            page = card.get('site_slug', slug)
+            if page in pages:
+                all_links.append(('More details', f'{SITE}/projects/{page}/'))
+            links = ' · '.join(markdown_link(label, url) for label, url in all_links)
             lines.append(f'| {preview} | **{title}**<br>{description}<br>{links} |')
         lines.append('')
     return '\n'.join(lines).rstrip()

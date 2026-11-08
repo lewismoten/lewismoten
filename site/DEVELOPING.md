@@ -1,6 +1,6 @@
-# Developing lewismoten.github.io
+# Developing the portfolio site
 
-How my portfolio site is laid out and built. `README.md` is the repository's front page on GitHub, so it reads as a profile instead; `build.mjs` writes it from the same content as the site, so don't edit it by hand.
+How my portfolio site is laid out and built. It lives in `site/` of my profile repository; the profile `README.md` at the root is separate (its project tables come from `projects/*.yaml` through `scripts/update-projects.sh`). The site is served at https://lewismoten.github.io/lewismoten/.
 
 The site: a home page, a case study for each project, and short dated project posts that link to my blog for the long write-ups. It is plain static HTML made by one small Node script, with no framework and no dependencies.
 
@@ -8,14 +8,13 @@ The site: a home page, a case study for each project, and short dated project po
 
 | Path | What it holds |
 | --- | --- |
-| `build.mjs` | The build script. Reads the content, writes `docs/` and `README.md`. |
-| `readme.mjs` | Writes `README.md` (the GitHub front page) from `site.json` and the projects. |
+| `build.mjs` | The build script. Reads the content, writes `../docs/`. |
 | `site.json` | Name, headline, intro, About text, contact links, resume links, navigation. |
 | `content/projects.json` | One entry per project, in groups. |
 | `content/posts/*.md` | One short post per file. |
 | `img/` | Images. `img/projects/<slug>.jpg` is the project's social preview (640 x 320, the hero and the `og:image`). `<slug>-sm.jpg` is its miniature (320 x 160) for cards. |
-| `static/` | CSS, the theme and filter scripts, favicon. Copied to `docs/` as is. |
-| `docs/` | The built site. Committed. Never edit it by hand. |
+| `static/` | CSS, the theme and filter scripts, favicon. Copied to `../docs/` as is. |
+| `../docs/` | The built site, at the repository root so GitHub Pages can serve it. Committed. Never edit it by hand. |
 
 ## Build
 
@@ -23,15 +22,15 @@ The site: a home page, a case study for each project, and short dated project po
 node build.mjs
 ```
 
-Needs Node 20 or newer. It rebuilds `docs/` from scratch and stops with a message if a post or project is missing a required field. To look at it locally:
+Needs Node 20 or newer. Run it from `site/`. It rebuilds `../docs/` from scratch and stops with a message if a post or project is missing a required field. To look at it locally:
 
 ```sh
-npx http-server docs -p 8150
+npx http-server ../docs -p 8150
 ```
 
 (or any static server that serves `docs/` as the site root).
 
-Or open `docs/index.html` straight from the file system: the build writes every link between pages as a relative link ending in `index.html`, so it works without a server. The 404 page is the exception (GitHub serves it at any depth), so its links go to the live site.
+Or open `../docs/index.html` straight from the file system: the build writes every link between pages as a relative link ending in `index.html`, so it works without a server. The 404 page is the exception (GitHub serves it at any depth), so its links go to the live site.
 
 ## Add a project
 
@@ -67,8 +66,9 @@ Every image line is `path | alt text | width | height`, with an optional fifth p
 The site is served from the `docs/` folder of the `main` branch (Settings, Pages, Deploy from a branch, `main`, `/docs`). There is no GitHub Action; I build on my Mac and commit `docs/`.
 
 ```sh
+cd site
 node build.mjs
-git add -A
+git add . ../docs
 git commit -m "Update site"
 git push
 ```

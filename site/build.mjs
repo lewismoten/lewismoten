@@ -1,12 +1,11 @@
 // Builds the static site into docs/ from content/projects.json, content/posts/*.md and site.json.
 // No dependencies. Run: node build.mjs
-import { writeReadme } from './readme.mjs';
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, cpSync, rmSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
-const OUT = join(ROOT, 'docs');
+const OUT = join(ROOT, '..', 'docs');
 const site = JSON.parse(readFileSync(join(ROOT, 'site.json'), 'utf8'));
 const { groups, projects, groupNotes = {} } = JSON.parse(readFileSync(join(ROOT, 'content/projects.json'), 'utf8'));
 const BASE = site.url;
@@ -404,5 +403,4 @@ writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${BASE
 writeFileSync(join(OUT, '.nojekyll'), '');
 cpSync(join(ROOT, 'static'), OUT, { recursive: true });
 cpSync(join(ROOT, 'img'), join(OUT, 'img'), { recursive: true });
-writeReadme(ROOT, site, groups, projects, groupNotes);
-console.log(`built ${pages.length + 1} pages, ${projects.length} projects, ${posts.length} posts -> docs/`);
+console.log(`built ${pages.length + 1} pages, ${projects.length} projects, ${posts.length} posts -> ../docs/`);

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palace-9: Local model inspection | Lewis Moten</title>
+<meta name="description" content="A playable tic-tac-toe lab that pairs a deterministic controller with a compact MoE model trained from scratch, and a browser inspector that reads the checkpoint locally.">
+<link rel="canonical" href="https://lewismoten.github.io/lewismoten/projects/palace-9/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Palace-9: Local model inspection | Lewis Moten">
+<meta property="og:description" content="A playable tic-tac-toe lab that pairs a deterministic controller with a compact MoE model trained from scratch, and a browser inspector that reads the checkpoint locally.">
+<meta property="og:url" content="https://lewismoten.github.io/lewismoten/projects/palace-9/">
+<meta property="og:image" content="https://lewismoten.github.io/lewismoten/img/projects/palace-9.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Palace-9: Local model inspection | Lewis Moten">
+<meta name="twitter:description" content="A playable tic-tac-toe lab that pairs a deterministic controller with a compact MoE model trained from scratch, and a browser inspector that reads the checkpoint locally.">
+<meta name="twitter:image" content="https://lewismoten.github.io/lewismoten/img/projects/palace-9.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Applied AI and model engineering</nav>
+<article class="project">
+<h1>Palace-9</h1>
+<p class="sub">Local model inspection</p>
+<img class="hero-img" src="../../img/projects/palace-9.jpg" alt="Palace-9: Tic-tac-toe &amp; model inspection" width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">A playable tic-tac-toe lab that pairs a deterministic controller with a compact MoE model trained from scratch, and a browser inspector that reads the checkpoint locally.</p>
+<p class="links"><a class="btn" href="https://lewismoten.github.io/palace-9/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/palace-9">Source</a> <a class="btn" href="https://ollama.com/lewismoten/palace-9">Ollama</a> <a class="btn" href="https://huggingface.co/lewismoten/palace-9">Hugging Face</a> <a class="btn" href="https://www.youtube.com/watch?v=J7bgpmks_KM">Video</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>I wanted to look inside a small model, not only run it. That meant keeping two things separate: a perfect-play controller for the game, and a trained model that reads raw move histories.</p>
+<h3>Outcome</h3><p>A live demo, a published Ollama model, and a Hugging Face release.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A 3x3 simulation with 0-, 1-, and 2-player modes. A deterministic minimax policy in browser JavaScript is the perfect-play oracle. A separate compact causal model uses the Qwen2-MoE architecture, so it works with Ollama and llama.cpp without a custom fork. The browser decodes the packed FP32, F16, Q6_K, or Q4_K_M release artifact locally and computes a forward trace from its weights.</p>
+<h3>Hard parts</h3><p>Keeping real and fictional parts apart. The site never calls Ollama; its board moves come from the local oracle, and the visualizer is a local trace. The map, DEFCON strip, trajectories, and cipher are labeled visual fiction. My September post on the project describes the visualization, training, and tokenizer problems I hit, and how they led to the smaller Crystal-9.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>Qwen2-MoE</li><li>Ollama</li><li>llama.cpp</li><li>JavaScript</li><li>Model visualization</li></ul></section>
+<section><h2>Posts about it</h2><ul class="plain"><li><time datetime="2026-09-22">September 22, 2026</time> — <a href="../../posts/2026-09-22-tic-tac-toe-and-crystal-palace-9/index.html">Tic-tac-toe and Crystal Palace 9</a></li></ul></section>
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

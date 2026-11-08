@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dreamy Tags: WordPress plugin | Lewis Moten</title>
+<meta name="description" content="An open-source PHP and Gutenberg plugin that shows tag clouds filtered by category and tag, with exclusion rules and minimum-use thresholds.">
+<link rel="canonical" href="https://lewismoten.github.io/lewismoten/projects/dreamy-tags/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Dreamy Tags: WordPress plugin | Lewis Moten">
+<meta property="og:description" content="An open-source PHP and Gutenberg plugin that shows tag clouds filtered by category and tag, with exclusion rules and minimum-use thresholds.">
+<meta property="og:url" content="https://lewismoten.github.io/lewismoten/projects/dreamy-tags/">
+<meta property="og:image" content="https://lewismoten.github.io/lewismoten/img/projects/dreamy-tags.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dreamy Tags: WordPress plugin | Lewis Moten">
+<meta name="twitter:description" content="An open-source PHP and Gutenberg plugin that shows tag clouds filtered by category and tag, with exclusion rules and minimum-use thresholds.">
+<meta name="twitter:image" content="https://lewismoten.github.io/lewismoten/img/projects/dreamy-tags.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Publishing and interactive experiences</nav>
+<article class="project">
+<h1>Dreamy Tags</h1>
+<p class="sub">WordPress plugin</p>
+<img class="hero-img" src="../../img/projects/dreamy-tags.jpg" alt="Dreamy Tags banner" width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">An open-source PHP and Gutenberg plugin that shows tag clouds filtered by category and tag, with exclusion rules and minimum-use thresholds.</p>
+<p class="links"><a class="btn" href="https://github.com/lewismoten/dreamy-tags">Source</a> <a class="btn" href="https://wordpress.org/plugins/dreamy-tags/">Plugin directory</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>A WordPress tag cloud normally lists every tag. On a site with many topics, I wanted a cloud of only the tags that appear within a chosen category or tag.</p>
+<h3>Outcome</h3><p>Listed in the WordPress Plugin Directory, so anyone can install it from Plugins, Add New.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A plugin published as a Block Editor block, a widget, and a shortcode. Options include the categories a post must belong to, whether child categories count, the tags a post must have, tags to exclude, auto-exclusion of the filter tags themselves, and a minimum number of appearances before a tag shows. Block settings map directly to the shortcode options.</p>
+<h3>Hard parts</h3><p>Performance on larger sites. The block scans at most 2000 posts by default, and developers can change that with the <code>dreamy_tags_max_posts</code> filter.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>PHP</li><li>WordPress</li><li>Gutenberg</li><li>Open source</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Over Audio: Web Audio API | Lewis Moten</title>
+<meta name="description" content="Sends text and binary files through sound using MFSK, packets, CRC checks, Hamming error correction, interleaving, and repeat requests.">
+<link rel="canonical" href="https://lewismoten.github.io/lewismoten/projects/data-over-audio/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Data Over Audio: Web Audio API | Lewis Moten">
+<meta property="og:description" content="Sends text and binary files through sound using MFSK, packets, CRC checks, Hamming error correction, interleaving, and repeat requests.">
+<meta property="og:url" content="https://lewismoten.github.io/lewismoten/projects/data-over-audio/">
+<meta property="og:image" content="https://lewismoten.github.io/lewismoten/img/projects/data-over-audio.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Data Over Audio: Web Audio API | Lewis Moten">
+<meta name="twitter:description" content="Sends text and binary files through sound using MFSK, packets, CRC checks, Hamming error correction, interleaving, and repeat requests.">
+<meta name="twitter:image" content="https://lewismoten.github.io/lewismoten/img/projects/data-over-audio.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Browser tools and visualization</nav>
+<article class="project">
+<h1>Data Over Audio</h1>
+<p class="sub">Web Audio API</p>
+<img class="hero-img" src="../../img/projects/data-over-audio.jpg" alt="Data Over Audio" width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">Sends text and binary files through sound using MFSK, packets, CRC checks, Hamming error correction, interleaving, and repeat requests.</p>
+<p class="links"><a class="btn" href="https://lewismoten.github.io/data-over-audio/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/data-over-audio">Source</a> <a class="btn" href="https://www.youtube.com/watch?v=_6qxB3gKN_E&amp;list=PLEyaach61fdU-OPcb5Aqgah2l6TTsaLia">Videos</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>The experiment's goal was to transfer text or a binary file using sound waves, between two browsers or on one device.</p>
+<h3>Outcome</h3><p>Using only telephone frequencies (300 Hz to 3.4 kHz), one laptop alone reached just under 1 Kbps. Between a laptop and a mobile phone it was much slower: 138 bps for telephone frequencies and 538 bps for human hearing frequencies, and about half of that effective once error correction and packet headers are counted. It is a pure JavaScript app, with Vite only for local running.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>Binary data is modulated with many oscillators using multi-frequency shift keying (MFSK), and the audio analyzer demodulates it again. Data is split into packets with CRC checks so failed packets can be discarded, Hamming codes so the receiver can try to repair a packet, and interleaving. An Automatic Repeat Request mode asks again for packets that failed, and the receiver lists packet errors.</p>
+<h3>Hard parts</h3><p>I found the first packet often failed, and it carries the length header, so there is an option to send it twice. Sender and receiver must share the same frequencies, FSK pairs, packetization, and sampling period.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>Web Audio API</li><li>JavaScript</li><li>MFSK</li><li>Error correction</li><li>Signal processing</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

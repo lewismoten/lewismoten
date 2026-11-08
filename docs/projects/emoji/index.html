@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emoji Explorer: Unicode and pixel font | Lewis Moten</title>
+<meta name="description" content="A localized, installable Unicode emoji explorer with sequence filters and offline support, plus a 12 x 12 Pixel Emoji font and an npm package of lookup packs.">
+<link rel="canonical" href="https://lewismoten.github.io/lewismoten/projects/emoji/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Emoji Explorer: Unicode and pixel font | Lewis Moten">
+<meta property="og:description" content="A localized, installable Unicode emoji explorer with sequence filters and offline support, plus a 12 x 12 Pixel Emoji font and an npm package of lookup packs.">
+<meta property="og:url" content="https://lewismoten.github.io/lewismoten/projects/emoji/">
+<meta property="og:image" content="https://lewismoten.github.io/lewismoten/img/projects/emoji.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Emoji Explorer: Unicode and pixel font | Lewis Moten">
+<meta name="twitter:description" content="A localized, installable Unicode emoji explorer with sequence filters and offline support, plus a 12 x 12 Pixel Emoji font and an npm package of lookup packs.">
+<meta name="twitter:image" content="https://lewismoten.github.io/lewismoten/img/projects/emoji.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Browser tools and visualization</nav>
+<article class="project">
+<h1>Emoji Explorer</h1>
+<p class="sub">Unicode and pixel font</p>
+<img class="hero-img" src="../../img/projects/emoji.jpg" alt="Emoji Explorer: Unicode emoji for JavaScript" width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">A localized, installable Unicode emoji explorer with sequence filters and offline support, plus a 12 x 12 Pixel Emoji font and an npm package of lookup packs.</p>
+<p class="links"><a class="btn" href="https://lewismoten.github.io/emoji/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/emoji">Source</a> <a class="btn" href="https://www.npmjs.com/package/@lewismoten/emoji">npm</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>Emoji keep growing, and operating-system fonts on older devices stop updating. Finding the right sequence, such as a skin-tone, hair, gender, family, or joined (ZWJ) variant, is also harder than it looks.</p>
+<h3>Outcome</h3><p>A live explorer, a downloadable fallback font, and a typed npm package where editors autocomplete exact emoji keys and show the emoji name and glyph in declaration comments.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>Three connected projects in one repository. Emoji Explorer is a localized research and discovery app with search, version and sequence filters, sequence visualization, rendering diagnostics, favorites, keyboard navigation, and offline support. Pixel Emoji is an original 12 x 12 color font with a pixel-art editor, made to give newer emoji to devices with outdated fonts. The npm package <code>@lewismoten/emoji</code> holds typed lookup packs of every Unicode-recommended fully-qualified sequence.</p>
+<h3>Hard parts</h3><p>Keeping proposed Emoji 18.0 candidates separate from released emoji across the package, the Explorer, and the font. The root export is a small curated pack, and the full lookup is imported only when needed, in both ES module and CommonJS forms.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>JavaScript</li><li>TypeScript</li><li>Unicode</li><li>PWA</li><li>npm</li><li>Accessibility</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

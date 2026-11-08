@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Visual SourceSafe Journal Monitor Service: VB.NET Windows service, January 2004 | Lewis Moten</title>
+<meta name="description" content="A Windows service that watches a Visual SourceSafe database and sends alerts and daily reports, so a team in several time zones stops waiting on exclusive checkouts.">
+<link rel="canonical" href="https://lewismoten.github.io/projects/vss-journal-monitor/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Visual SourceSafe Journal Monitor Service: VB.NET Windows service, January 2004 | Lewis Moten">
+<meta property="og:description" content="A Windows service that watches a Visual SourceSafe database and sends alerts and daily reports, so a team in several time zones stops waiting on exclusive checkouts.">
+<meta property="og:url" content="https://lewismoten.github.io/projects/vss-journal-monitor/">
+<meta property="og:image" content="https://lewismoten.github.io/img/projects/vss-journal-monitor.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Visual SourceSafe Journal Monitor Service: VB.NET Windows service, January 2004 | Lewis Moten">
+<meta name="twitter:description" content="A Windows service that watches a Visual SourceSafe database and sends alerts and daily reports, so a team in several time zones stops waiting on exclusive checkouts.">
+<meta name="twitter:image" content="https://lewismoten.github.io/img/projects/vss-journal-monitor.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="/feed.xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="/">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/projects/" aria-current="page">Projects</a></li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="/projects/">Projects</a> / Earlier open source</nav>
+<article class="project">
+<h1>Visual SourceSafe Journal Monitor Service</h1>
+<p class="sub">VB.NET Windows service, January 2004</p>
+<img class="hero-img" src="/img/projects/vss-journal-monitor.jpg" alt="A VSS Monitor daily report email and a Windows Messenger pop-up." width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">A Windows service that watches a Visual SourceSafe database and sends alerts and daily reports, so a team in several time zones stops waiting on exclusive checkouts.</p>
+<p class="links"><a class="btn" href="https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/VBNet/VSSMonitorService">Source</a> <a class="btn" href="https://github.com/lewismoten/Lewies-Code-Library-PSC">My Planet Source Code archive (2000s)</a></p>
+<p class="tags"><span>VB.NET</span><span>.NET</span><span>Windows service</span><span>SQL Server</span></p>
+<section><h2>The problem</h2><p>I worked with remote teammates in other time zones, and Visual SourceSafe used exclusive checkouts. A file checked out overnight somewhere else meant waiting.</p></section>
+<section><h2>What I built</h2><p>A service built from scratch, inspired by Doug Schmidt's SSMonitor. It reads the SourceSafe journal and sends alerts by email, MSN or Windows Messenger, or a plug-in. Each alert has its own filters and recipients, and each user has a time zone. Daily reports include who checked in without a comment. Storage is SQL Server or XML, and there is an installer.</p></section>
+<section><h2>Results</h2><p>Published on Planet Source Code in January 2004.</p></section>
+<section><h2>My role</h2><p>Author.</p></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="/feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="/theme.js" defer></script>
+</body>
+</html>

@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT = join(ROOT, 'docs');
 const site = JSON.parse(readFileSync(join(ROOT, 'site.json'), 'utf8'));
-const { groups, projects } = JSON.parse(readFileSync(join(ROOT, 'content/projects.json'), 'utf8'));
+const { groups, projects, groupNotes = {} } = JSON.parse(readFileSync(join(ROOT, 'content/projects.json'), 'utf8'));
 const BASE = site.url;
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -232,7 +232,7 @@ ${posts.slice(0, 3).map((p) => postBlock(p, { mini: true })).join('\n')}
 </div>
 ${groups
   .map(
-    (g) => `<section class="group" aria-labelledby="g-${groups.indexOf(g)}"><h2 id="g-${groups.indexOf(g)}">${esc(g)}</h2>
+    (g) => `<section class="group" aria-labelledby="g-${groups.indexOf(g)}"><h2 id="g-${groups.indexOf(g)}">${esc(g)}</h2>${groupNotes[g] ? `\n<p>${inline(groupNotes[g])}</p>` : ''}
 <ul class="grid">${projects.filter((p) => p.group === g).map(card).join('\n')}</ul></section>`,
   )
   .join('\n')}

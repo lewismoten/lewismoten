@@ -46,12 +46,15 @@
 <img class="hero-img" src="../../img/projects/storage-d64.jpg" alt="storage-d64 disk layout visualizer" width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">A browser workbench that maps Commodore 64 disk sectors and file chains, estimates read efficiency, repairs corruption, restores deleted files, and compares optimized and fragmented layouts.</p>
 <p class="links"><a class="btn" href="https://lewismoten.github.io/storage-d64/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/storage-d64">Source</a> <a class="btn" href="https://www.youtube.com/watch?v=cXeIy4AZewY">Video</a></p>
-<p class="tags"><span>JavaScript</span><span>Data visualization</span><span>Commodore 64</span><span>Disk formats</span><span>Binary parsing</span></p>
-<section><h2>The problem</h2><p>Some disk images generated with AI help passed basic validation but failed to load in emulators. A pass or fail wasn't enough; I needed to see the disk's structure and connect suspicious bytes to the structures they affect.</p></section>
-<section><h2>What I built</h2><p>A reusable JavaScript support layer and an interactive visual lab. You can create, load, inspect, and download 35-, 40-, and 42-track images, browse a visual disk map, and follow directory and file-sector chains. The lab finds the structural problems I met in real generated images, offers targeted repairs, and has an Auto Repair for low-risk fixes. You can drop files onto an image and download files directly.</p></section>
-<section><h2>Hard parts</h2><p>Once integrity was covered, the question became how placement affects reading. The lab models a stock 1541 from its DOS ROM: rotation, head stepping, read-ahead, and the slow C64 serial bus. A speed map shows the delay each link adds to a stock LOAD and how closely the layout follows the DOS placement rule.</p></section>
-<section><h2>Results</h2><p>Optimize and Deoptimize make layout tradeoffs visible and testable. A live lab is on GitHub Pages.</p></section>
-<section><h2>My role</h2><p>Author and maintainer.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>Some disk images generated with AI help passed basic validation but failed to load in emulators. A pass or fail wasn't enough; I needed to see the disk's structure and connect suspicious bytes to the structures they affect.</p>
+<h3>Outcome</h3><p>Optimize and Deoptimize make layout tradeoffs visible and testable. A live lab is on GitHub Pages.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A reusable JavaScript support layer and an interactive visual lab. You can create, load, inspect, and download 35-, 40-, and 42-track images, browse a visual disk map, and follow directory and file-sector chains. The lab finds the structural problems I met in real generated images, offers targeted repairs, and has an Auto Repair for low-risk fixes. You can drop files onto an image and download files directly.</p>
+<h3>Hard parts</h3><p>Once integrity was covered, the question became how placement affects reading. The lab models a stock 1541 from its DOS ROM: rotation, head stepping, read-ahead, and the slow C64 serial bus. A speed map shows the delay each link adds to a stock LOAD and how closely the layout follows the DOS placement rule.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>JavaScript</li><li>Data visualization</li><li>Commodore 64</li><li>Disk formats</li><li>Binary parsing</li></ul></section>
 
 </article>
 </main>

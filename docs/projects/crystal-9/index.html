@@ -46,12 +46,15 @@
 <img class="hero-img" src="../../img/projects/crystal-9.jpg" alt="Crystal-9: Tiny model. Nine possibilities" width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">A compact, validated mixture-of-experts tic-tac-toe policy model: a 46,299-byte packed INT4 artifact with zero policy misses across 294,778 legal histories.</p>
 <p class="links"><a class="btn" href="https://github.com/lewismoten/crystal-9">Source</a> <a class="btn" href="https://huggingface.co/lewismoten/crystal-9">Hugging Face</a></p>
-<p class="tags"><span>PyTorch</span><span>MoE</span><span>INT4</span><span>Model validation</span><span>Python</span></p>
-<section><h2>The problem</h2><p>A model that has to run on tight memory budgets can't borrow a general vocabulary or a standard runtime. The goal was the smallest truthful local MoE tic-tac-toe policy model, built clean-room.</p></section>
-<section><h2>What I built</h2><p>A sparse MoE policy redesigned around a 13-token game vocabulary and an eight-token move-history context. The locked design is a 32-wide hidden state, 8 attention heads with 2 KV heads, a 64-wide dense intermediate, and 9 routed experts with top-2 routing. A packed INT4 artifact was released for a custom local runtime.</p></section>
-<section><h2>Hard parts</h2><p>Precision is a policy, not a promise. FP32 is the baseline; F16, Q6_K, Q4_K_M, Q3_K, Q2_K, and experimental 1-bit-family formats are only candidates. A format is publishable after the exact target runtime passes the complete legal-policy and invalid-input gates. The custom vocabulary is separate from the earlier Ollama-compatible one, so Crystal-9 has to prove token-ID parity before claiming Ollama compatibility. For a standard llama.cpp or Ollama model I point to Palace-9.</p></section>
-<section><h2>Results</h2><p>The released artifact is 46,299 bytes, with zero policy misses across 294,778 legal histories. A compact adaptation powers Crystal Palace 9 on the Commodore 64. Releases are packaged with checksums when a version tag is pushed.</p></section>
-<section><h2>My role</h2><p>Designer, director, maintainer, and publisher. Code and documentation were developed with assistance from GPT-5.6-terra Med, accessed through Hermes with Honcho for project memory.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>A model that has to run on tight memory budgets can't borrow a general vocabulary or a standard runtime. The goal was the smallest truthful local MoE tic-tac-toe policy model, built clean-room.</p>
+<h3>Outcome</h3><p>The released artifact is 46,299 bytes, with zero policy misses across 294,778 legal histories. A compact adaptation powers Crystal Palace 9 on the Commodore 64. Releases are packaged with checksums when a version tag is pushed.</p>
+<h3>My role</h3><p>Designer, director, maintainer, and publisher. Code and documentation were developed with assistance from GPT-5.6-terra Med, accessed through Hermes with Honcho for project memory.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A sparse MoE policy redesigned around a 13-token game vocabulary and an eight-token move-history context. The locked design is a 32-wide hidden state, 8 attention heads with 2 KV heads, a 64-wide dense intermediate, and 9 routed experts with top-2 routing. A packed INT4 artifact was released for a custom local runtime.</p>
+<h3>Hard parts</h3><p>Precision is a policy, not a promise. FP32 is the baseline; F16, Q6_K, Q4_K_M, Q3_K, Q2_K, and experimental 1-bit-family formats are only candidates. A format is publishable after the exact target runtime passes the complete legal-policy and invalid-input gates. The custom vocabulary is separate from the earlier Ollama-compatible one, so Crystal-9 has to prove token-ID parity before claiming Ollama compatibility. For a standard llama.cpp or Ollama model I point to Palace-9.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>PyTorch</li><li>MoE</li><li>INT4</li><li>Model validation</li><li>Python</li></ul></section>
 
 </article>
 </main>

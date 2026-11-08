@@ -46,12 +46,15 @@
 <img class="hero-img" src="../../img/projects/dreamy-tags.jpg" alt="Dreamy Tags banner" width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">An open-source PHP and Gutenberg plugin that shows tag clouds filtered by category and tag, with exclusion rules and minimum-use thresholds.</p>
 <p class="links"><a class="btn" href="https://github.com/lewismoten/dreamy-tags">Source</a> <a class="btn" href="https://wordpress.org/plugins/dreamy-tags/">Plugin directory</a></p>
-<p class="tags"><span>PHP</span><span>WordPress</span><span>Gutenberg</span><span>Open source</span></p>
-<section><h2>The problem</h2><p>A WordPress tag cloud normally lists every tag. On a site with many topics, I wanted a cloud of only the tags that appear within a chosen category or tag.</p></section>
-<section><h2>What I built</h2><p>A plugin published as a Block Editor block, a widget, and a shortcode. Options include the categories a post must belong to, whether child categories count, the tags a post must have, tags to exclude, auto-exclusion of the filter tags themselves, and a minimum number of appearances before a tag shows. Block settings map directly to the shortcode options.</p></section>
-<section><h2>Hard parts</h2><p>Performance on larger sites. The block scans at most 2000 posts by default, and developers can change that with the <code>dreamy_tags_max_posts</code> filter.</p></section>
-<section><h2>Results</h2><p>Listed in the WordPress Plugin Directory, so anyone can install it from Plugins, Add New.</p></section>
-<section><h2>My role</h2><p>Author and maintainer.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>A WordPress tag cloud normally lists every tag. On a site with many topics, I wanted a cloud of only the tags that appear within a chosen category or tag.</p>
+<h3>Outcome</h3><p>Listed in the WordPress Plugin Directory, so anyone can install it from Plugins, Add New.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A plugin published as a Block Editor block, a widget, and a shortcode. Options include the categories a post must belong to, whether child categories count, the tags a post must have, tags to exclude, auto-exclusion of the filter tags themselves, and a minimum number of appearances before a tag shows. Block settings map directly to the shortcode options.</p>
+<h3>Hard parts</h3><p>Performance on larger sites. The block scans at most 2000 posts by default, and developers can change that with the <code>dreamy_tags_max_posts</code> filter.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>PHP</li><li>WordPress</li><li>Gutenberg</li><li>Open source</li></ul></section>
 
 </article>
 </main>

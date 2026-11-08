@@ -46,12 +46,15 @@
 <img class="hero-img" src="../../img/projects/zogograph-client.jpg" alt="Zogograph dashboard social preview" width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">PHP and SQLite collectors with a JavaScript dashboard make server telemetry, alerts, and diagnostics readable, and an AI assistant calls diagnostic tools and tracks what an investigation costs.</p>
 <p class="links"><a class="btn" href="https://github.com/lewismoten/zogograph-client">Source</a> <a class="btn" href="https://www.youtube.com/watch?v=OKndBMPknmQ&amp;list=PLaLeerEZeFMs">Videos</a></p>
-<p class="tags"><span>PHP</span><span>SQLite</span><span>JavaScript</span><span>WHM/cPanel</span><span>Tool calling</span><span>Linux hosting</span></p>
-<section><h2>The problem</h2><p>A monitor you have to remember to look at tells you afterwards. Zogograph answers three questions: what is happening now, what is growing, and where to go to fix it. It also emails when something jumps, and it can tell you before a home directory fills up.</p></section>
-<section><h2>What I built</h2><p>A PHP account collector run by cron, a host collector run by root from WHM's crontab (it sees what CageFS hides from the account), and a static dashboard that talks to a single API file. Readings go into SQLite databases that are never served. A health page depends on nothing, so it works when the rest does not. A setup wizard runs in a browser or at a prompt. An AI assistant calls diagnostic tools and tracks the cost of an investigation.</p></section>
-<section><h2>Hard parts</h2><p>The account collector and the host collector see different things, so they run separately. Collectors are command-line only, with <code>.htaccess</code> denying them over HTTP, and the README documents migration safety.</p></section>
-<section><h2>Results</h2><p>The source release has no dependencies and ships a CycloneDX software bill of materials, third-party notices, and a security policy. It is source-available under FSL-1.1-Apache-2.0, and each release becomes Apache-2.0 two years after it ships.</p></section>
-<section><h2>My role</h2><p>Author and maintainer.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>A monitor you have to remember to look at tells you afterwards. Zogograph answers three questions: what is happening now, what is growing, and where to go to fix it. It also emails when something jumps, and it can tell you before a home directory fills up.</p>
+<h3>Outcome</h3><p>The source release has no dependencies and ships a CycloneDX software bill of materials, third-party notices, and a security policy. It is source-available under FSL-1.1-Apache-2.0, and each release becomes Apache-2.0 two years after it ships.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A PHP account collector run by cron, a host collector run by root from WHM's crontab (it sees what CageFS hides from the account), and a static dashboard that talks to a single API file. Readings go into SQLite databases that are never served. A health page depends on nothing, so it works when the rest does not. A setup wizard runs in a browser or at a prompt. An AI assistant calls diagnostic tools and tracks the cost of an investigation.</p>
+<h3>Hard parts</h3><p>The account collector and the host collector see different things, so they run separately. Collectors are command-line only, with <code>.htaccess</code> denying them over HTTP, and the README documents migration safety.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>PHP</li><li>SQLite</li><li>JavaScript</li><li>WHM/cPanel</li><li>Tool calling</li><li>Linux hosting</li></ul></section>
 
 </article>
 </main>

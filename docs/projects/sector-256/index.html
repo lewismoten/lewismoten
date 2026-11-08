@@ -46,12 +46,15 @@
 <img class="hero-img" src="../../img/projects/sector-256.jpg" alt="Sector 256: One block. Many worlds." width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">A graphical Commodore 64 launcher for games, utilities, demos, and experiments whose stored payloads are 256 bytes or less.</p>
 <p class="links"><a class="btn" href="https://lewismoten.github.io/sector-256/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/sector-256">Source</a> <a class="btn" href="https://www.youtube.com/watch?v=dptHv4-RSWo">Video</a></p>
-<p class="tags"><span>6502 assembly</span><span>Python</span><span>Commodore 64</span><span>Build pipeline</span><span>Automated testing</span></p>
-<section><h2>The problem</h2><p>One disk block holds 256 bytes. How much can a program do inside one? The limit is a disk-storage constraint, not a runtime one: launched programs run at $c000 and share a launcher API.</p></section>
-<section><h2>What I built</h2><p>A graphical launcher with a catalog of 288 programs, written in 6502 assembly with shared routines and a Python build pipeline. The build packages programs into a D64 disk image, and also writes a standalone PRG for each program, each with a BASIC loader and its own copy of the 795-byte API implementation. Automated machine-code tests check the programs.</p></section>
-<section><h2>Hard parts</h2><p>Every catalog payload has to fit in 256 bytes, so programs lean on the shared launcher API instead of carrying their own routines.</p></section>
-<section><h2>Results</h2><p>A playable disk image for VICE or a real 1541, a standalone PRG and a ZIP for every program, and a static catalog page on GitHub Pages that can send a program to a C64.</p></section>
-<section><h2>My role</h2><p>Author and maintainer.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>One disk block holds 256 bytes. How much can a program do inside one? The limit is a disk-storage constraint, not a runtime one: launched programs run at $c000 and share a launcher API.</p>
+<h3>Outcome</h3><p>A playable disk image for VICE or a real 1541, a standalone PRG and a ZIP for every program, and a static catalog page on GitHub Pages that can send a program to a C64.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A graphical launcher with a catalog of 288 programs, written in 6502 assembly with shared routines and a Python build pipeline. The build packages programs into a D64 disk image, and also writes a standalone PRG for each program, each with a BASIC loader and its own copy of the 795-byte API implementation. Automated machine-code tests check the programs.</p>
+<h3>Hard parts</h3><p>Every catalog payload has to fit in 256 bytes, so programs lean on the shared launcher API instead of carrying their own routines.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>6502 assembly</li><li>Python</li><li>Commodore 64</li><li>Build pipeline</li><li>Automated testing</li></ul></section>
 
 </article>
 </main>

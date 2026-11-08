@@ -46,12 +46,15 @@
 <img class="hero-img" src="../../img/projects/phone-exhibit.jpg" alt="Restoring the Signal" width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">A live installation at Stone Branch Center for the Arts that joins a Raspberry Pi, Asterisk, and a PHP contribution site, with telephone audio, dialplans, transcription, and TTY support.</p>
 <p class="links"><a class="btn" href="https://phone.lewismoten.com/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/Phone-Exhibit">Source</a> <a class="btn" href="https://www.youtube.com/watch?v=kmOV7_2MKPg&amp;list=PLHG0YVBnnA7k">Videos</a> <a class="btn" href="https://www.nvdaily.com/nvdaily/dial-i-for-interactive-new-exhibit-celebrates-150-years-of-communication/article_06d37f43-5f2d-5ee3-9621-2dc1853ef4c2.html">Press and photos</a></p>
-<p class="tags"><span>PHP</span><span>Asterisk</span><span>Raspberry Pi</span><span>ffmpeg</span><span>Audio</span><span>Accessibility</span></p>
-<section><h2>The problem</h2><p>An exhibit celebrating 150 years of communication needed a phone visitors could dial, and a way for people to contribute audio to it.</p></section>
-<section><h2>What I built</h2><p>A live installation at Stone Branch Center for the Arts built from a Raspberry Pi, an Asterisk PBX server, and a PHP contribution site. The site converts audio with a 300-3000 Hz high-pass filter into 8 kHz, 16-bit mono WAV files to sound like a telephone and match what Asterisk plays. Transcriptions use AI, and Minimodem handles TTY teletype machines. A deploy script uploads only the files whose hash or size changed, using a remote manifest.</p></section>
-<section><h2>Hard parts</h2><p>Secrets. FTP credentials are kept out of the project folder, even in ignored files, because local tools working in the repository can read anything saved there. The deploy script reads them from a file in my home directory.</p></section>
-<section><h2>Results</h2><p>A working public exhibit with a live website. The local newspaper covered it as an interactive exhibit celebrating 150 years of communication.</p></section>
-<section><h2>My role</h2><p>Author and maintainer.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>An exhibit celebrating 150 years of communication needed a phone visitors could dial, and a way for people to contribute audio to it.</p>
+<h3>Outcome</h3><p>A working public exhibit with a live website. The local newspaper covered it as an interactive exhibit celebrating 150 years of communication.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A live installation at Stone Branch Center for the Arts built from a Raspberry Pi, an Asterisk PBX server, and a PHP contribution site. The site converts audio with a 300-3000 Hz high-pass filter into 8 kHz, 16-bit mono WAV files to sound like a telephone and match what Asterisk plays. Transcriptions use AI, and Minimodem handles TTY teletype machines. A deploy script uploads only the files whose hash or size changed, using a remote manifest.</p>
+<h3>Hard parts</h3><p>Secrets. FTP credentials are kept out of the project folder, even in ignored files, because local tools working in the repository can read anything saved there. The deploy script reads them from a file in my home directory.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>PHP</li><li>Asterisk</li><li>Raspberry Pi</li><li>ffmpeg</li><li>Audio</li><li>Accessibility</li></ul></section>
 
 </article>
 </main>

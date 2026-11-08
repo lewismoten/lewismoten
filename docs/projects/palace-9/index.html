@@ -46,12 +46,15 @@
 <img class="hero-img" src="../../img/projects/palace-9.jpg" alt="Palace-9: Tic-tac-toe &amp; model inspection" width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">A playable tic-tac-toe lab that pairs a deterministic controller with a compact MoE model trained from scratch, and a browser inspector that reads the checkpoint locally.</p>
 <p class="links"><a class="btn" href="https://lewismoten.github.io/palace-9/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/palace-9">Source</a> <a class="btn" href="https://ollama.com/lewismoten/palace-9">Ollama</a> <a class="btn" href="https://huggingface.co/lewismoten/palace-9">Hugging Face</a> <a class="btn" href="https://www.youtube.com/watch?v=J7bgpmks_KM">Video</a></p>
-<p class="tags"><span>Qwen2-MoE</span><span>Ollama</span><span>llama.cpp</span><span>JavaScript</span><span>Model visualization</span></p>
-<section><h2>The problem</h2><p>I wanted to look inside a small model, not only run it. That meant keeping two things separate: a perfect-play controller for the game, and a trained model that reads raw move histories.</p></section>
-<section><h2>What I built</h2><p>A 3x3 simulation with 0-, 1-, and 2-player modes. A deterministic minimax policy in browser JavaScript is the perfect-play oracle. A separate compact causal model uses the Qwen2-MoE architecture, so it works with Ollama and llama.cpp without a custom fork. The browser decodes the packed FP32, F16, Q6_K, or Q4_K_M release artifact locally and computes a forward trace from its weights.</p></section>
-<section><h2>Hard parts</h2><p>Keeping real and fictional parts apart. The site never calls Ollama; its board moves come from the local oracle, and the visualizer is a local trace. The map, DEFCON strip, trajectories, and cipher are labeled visual fiction. My September post on the project describes the visualization, training, and tokenizer problems I hit, and how they led to the smaller Crystal-9.</p></section>
-<section><h2>Results</h2><p>A live demo, a published Ollama model, and a Hugging Face release.</p></section>
-<section><h2>My role</h2><p>Author and maintainer.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>I wanted to look inside a small model, not only run it. That meant keeping two things separate: a perfect-play controller for the game, and a trained model that reads raw move histories.</p>
+<h3>Outcome</h3><p>A live demo, a published Ollama model, and a Hugging Face release.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A 3x3 simulation with 0-, 1-, and 2-player modes. A deterministic minimax policy in browser JavaScript is the perfect-play oracle. A separate compact causal model uses the Qwen2-MoE architecture, so it works with Ollama and llama.cpp without a custom fork. The browser decodes the packed FP32, F16, Q6_K, or Q4_K_M release artifact locally and computes a forward trace from its weights.</p>
+<h3>Hard parts</h3><p>Keeping real and fictional parts apart. The site never calls Ollama; its board moves come from the local oracle, and the visualizer is a local trace. The map, DEFCON strip, trajectories, and cipher are labeled visual fiction. My September post on the project describes the visualization, training, and tokenizer problems I hit, and how they led to the smaller Crystal-9.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>Qwen2-MoE</li><li>Ollama</li><li>llama.cpp</li><li>JavaScript</li><li>Model visualization</li></ul></section>
 <section><h2>Posts about it</h2><ul class="plain"><li><time datetime="2026-09-22">September 22, 2026</time> — <a href="../../posts/2026-09-22-tic-tac-toe-and-crystal-palace-9/index.html">Tic-tac-toe and Crystal Palace 9</a></li></ul></section>
 </article>
 </main>

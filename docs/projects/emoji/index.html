@@ -46,12 +46,15 @@
 <img class="hero-img" src="../../img/projects/emoji.jpg" alt="Emoji Explorer: Unicode emoji for JavaScript" width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">A localized, installable Unicode emoji explorer with sequence filters and offline support, plus a 12 x 12 Pixel Emoji font and an npm package of lookup packs.</p>
 <p class="links"><a class="btn" href="https://lewismoten.github.io/emoji/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/emoji">Source</a> <a class="btn" href="https://www.npmjs.com/package/@lewismoten/emoji">npm</a></p>
-<p class="tags"><span>JavaScript</span><span>TypeScript</span><span>Unicode</span><span>PWA</span><span>npm</span><span>Accessibility</span></p>
-<section><h2>The problem</h2><p>Emoji keep growing, and operating-system fonts on older devices stop updating. Finding the right sequence, such as a skin-tone, hair, gender, family, or joined (ZWJ) variant, is also harder than it looks.</p></section>
-<section><h2>What I built</h2><p>Three connected projects in one repository. Emoji Explorer is a localized research and discovery app with search, version and sequence filters, sequence visualization, rendering diagnostics, favorites, keyboard navigation, and offline support. Pixel Emoji is an original 12 x 12 color font with a pixel-art editor, made to give newer emoji to devices with outdated fonts. The npm package <code>@lewismoten/emoji</code> holds typed lookup packs of every Unicode-recommended fully-qualified sequence.</p></section>
-<section><h2>Hard parts</h2><p>Keeping proposed Emoji 18.0 candidates separate from released emoji across the package, the Explorer, and the font. The root export is a small curated pack, and the full lookup is imported only when needed, in both ES module and CommonJS forms.</p></section>
-<section><h2>Results</h2><p>A live explorer, a downloadable fallback font, and a typed npm package where editors autocomplete exact emoji keys and show the emoji name and glyph in declaration comments.</p></section>
-<section><h2>My role</h2><p>Author and maintainer.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>Emoji keep growing, and operating-system fonts on older devices stop updating. Finding the right sequence, such as a skin-tone, hair, gender, family, or joined (ZWJ) variant, is also harder than it looks.</p>
+<h3>Outcome</h3><p>A live explorer, a downloadable fallback font, and a typed npm package where editors autocomplete exact emoji keys and show the emoji name and glyph in declaration comments.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>Three connected projects in one repository. Emoji Explorer is a localized research and discovery app with search, version and sequence filters, sequence visualization, rendering diagnostics, favorites, keyboard navigation, and offline support. Pixel Emoji is an original 12 x 12 color font with a pixel-art editor, made to give newer emoji to devices with outdated fonts. The npm package <code>@lewismoten/emoji</code> holds typed lookup packs of every Unicode-recommended fully-qualified sequence.</p>
+<h3>Hard parts</h3><p>Keeping proposed Emoji 18.0 candidates separate from released emoji across the package, the Explorer, and the font. The root export is a small curated pack, and the full lookup is imported only when needed, in both ES module and CommonJS forms.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>JavaScript</li><li>TypeScript</li><li>Unicode</li><li>PWA</li><li>npm</li><li>Accessibility</li></ul></section>
 
 </article>
 </main>

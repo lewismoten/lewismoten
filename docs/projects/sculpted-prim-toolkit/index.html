@@ -46,12 +46,15 @@
 <img class="hero-img" src="../../img/projects/sculpted-prim-toolkit.jpg" alt="Sculpted Prim Toolkit" width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">Decodes Second Life-style RGB sculpt maps into editable 3D geometry in the browser, with exports to PNG, glTF/GLB, OBJ, and STL.</p>
 <p class="links"><a class="btn" href="https://lewismoten.github.io/sculpted-prim-toolkit/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/sculpted-prim-toolkit">Source</a> <a class="btn" href="https://www.youtube.com/watch?v=egAIXJwAAHw&amp;list=PLIyz44ZkJ3sk">Videos</a></p>
-<p class="tags"><span>Three.js</span><span>WebGL</span><span>JavaScript</span><span>3D export</span></p>
-<section><h2>The problem</h2><p>A sculpted prim stores its shape as position data in the red, green, and blue channels of an image. Without a tool, that shape is hard to see, inspect, or change.</p></section>
-<section><h2>What I built</h2><p>An in-browser viewer and editor that reads the RGB position data and turns it into an interactive Three.js model. Camera views include orbit, orthographic, perspective, isometric, and face-oriented. You can show wireframes, point clouds, NURBS surfaces, and performance statistics, and select and edit single vertices from the 2D map or the 3D scene. Textures can be applied, along with generated vertex-color, density, distance, and face-angle maps.</p></section>
-<section><h2>Hard parts</h2><p>Editing happens in two places, the 2D map and the 3D scene, and the tool previews source RGB data, selected pixel coordinates, rows, columns, and mesh statistics. Unused map pixels can be shown several ways, including a live camera view.</p></section>
-<section><h2>Results</h2><p>Exports a PNG sculpt map, and glTF, GLB, OBJ (with optional MTL and PNG texture), or binary STL models. It runs as a static page from GitHub Pages with no server runtime.</p></section>
-<section><h2>My role</h2><p>Author and maintainer.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>A sculpted prim stores its shape as position data in the red, green, and blue channels of an image. Without a tool, that shape is hard to see, inspect, or change.</p>
+<h3>Outcome</h3><p>Exports a PNG sculpt map, and glTF, GLB, OBJ (with optional MTL and PNG texture), or binary STL models. It runs as a static page from GitHub Pages with no server runtime.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>An in-browser viewer and editor that reads the RGB position data and turns it into an interactive Three.js model. Camera views include orbit, orthographic, perspective, isometric, and face-oriented. You can show wireframes, point clouds, NURBS surfaces, and performance statistics, and select and edit single vertices from the 2D map or the 3D scene. Textures can be applied, along with generated vertex-color, density, distance, and face-angle maps.</p>
+<h3>Hard parts</h3><p>Editing happens in two places, the 2D map and the 3D scene, and the tool previews source RGB data, selected pixel coordinates, rows, columns, and mesh statistics. Unused map pixels can be shown several ways, including a live camera view.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>Three.js</li><li>WebGL</li><li>JavaScript</li><li>3D export</li></ul></section>
 
 </article>
 </main>

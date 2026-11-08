@@ -46,12 +46,15 @@
 <img class="hero-img" src="../../img/projects/local-agent-lab.jpg" alt="Local Agent Lab: Local Models. Portable Workspaces." width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">A React and TypeScript browser workspace for coding, research, and scheduled agents that runs small models locally and keeps projects on a folder or removable drive.</p>
 <p class="links"><a class="btn" href="https://lewismoten.github.io/local-agent-lab/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/local-agent-lab">Source</a></p>
-<p class="tags"><span>React</span><span>TypeScript</span><span>Vite</span><span>Local AI</span><span>Ollama</span><span>PWA</span></p>
-<section><h2>The problem</h2><p>People who share computers, or who use public library computers, usually can't keep an AI workspace of their own. I wanted one that someone could carry on a USB drive, without buying a computer or subscribing to an AI service.</p></section>
-<section><h2>What I built</h2><p>A browser workspace built with React, TypeScript, and Vite for coding, research, and scheduled agents. It runs small models in the browser, or connects to optional Ollama and API profiles. Projects and conversations live in a folder or on a removable drive, with browser storage as a fallback. It also covers browser image generation, depth maps, SVG tracing, text to speech, voice profiles, and transcription, and it installs as a web app that can reload offline.</p></section>
-<section><h2>Hard parts</h2><p>Browsers differ in what they allow. A folder workspace needs desktop Chrome or Edge, model capability varies by device, and scheduled agents only run while the app tab is open. Removing a drive safely needed an <strong>Eject workspace</strong> step that stops new work, waits for active file operations, and unloads browser models. Nothing downloads automatically; optional engines and models are fetched on request and can resume.</p></section>
-<section><h2>Results</h2><p>A live demo you can try today. The README keeps an honest feature table with each current limit beside it: image editing, face animation, and production-quality mesh reconstruction are still open work, and there is no verified generative image-to-video.</p></section>
-<section><h2>My role</h2><p>Author and maintainer.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>People who share computers, or who use public library computers, usually can't keep an AI workspace of their own. I wanted one that someone could carry on a USB drive, without buying a computer or subscribing to an AI service.</p>
+<h3>Outcome</h3><p>A live demo you can try today. The README keeps an honest feature table with each current limit beside it: image editing, face animation, and production-quality mesh reconstruction are still open work, and there is no verified generative image-to-video.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A browser workspace built with React, TypeScript, and Vite for coding, research, and scheduled agents. It runs small models in the browser, or connects to optional Ollama and API profiles. Projects and conversations live in a folder or on a removable drive, with browser storage as a fallback. It also covers browser image generation, depth maps, SVG tracing, text to speech, voice profiles, and transcription, and it installs as a web app that can reload offline.</p>
+<h3>Hard parts</h3><p>Browsers differ in what they allow. A folder workspace needs desktop Chrome or Edge, model capability varies by device, and scheduled agents only run while the app tab is open. Removing a drive safely needed an <strong>Eject workspace</strong> step that stops new work, waits for active file operations, and unloads browser models. Nothing downloads automatically; optional engines and models are fetched on request and can resume.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>React</li><li>TypeScript</li><li>Vite</li><li>Local AI</li><li>Ollama</li><li>PWA</li></ul></section>
 
 </article>
 </main>

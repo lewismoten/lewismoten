@@ -46,12 +46,15 @@
 <img class="hero-img" src="../../img/projects/tiny-pockets-press.jpg" alt="Tiny Pockets Press" width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">A modular JavaScript editor for miniature books, with page layout, imposition logic, and separate interior and cover print and PDF views.</p>
 <p class="links"><a class="btn" href="https://lewismoten.github.io/Tiny-Pockets-Press/#editor">Live demo</a> <a class="btn" href="https://github.com/lewismoten/Tiny-Pockets-Press">Source</a> <a class="btn" href="https://www.youtube.com/watch?v=w9IwuwX7BkE&amp;list=PLAgk77H8yVCA">Videos</a></p>
-<p class="tags"><span>JavaScript</span><span>Print layout</span><span>Imposition</span><span>Markdown</span><span>PDF</span></p>
-<section><h2>The problem</h2><p>A miniature book has to be laid out so that its pages, folded and cut, come out in the right order. That is an imposition problem, and it is easy to get wrong by hand.</p></section>
-<section><h2>What I built</h2><p>A browser editor for miniature books, split into small JavaScript modules: configuration, state, Markdown and media handling, a layout engine, page rendering, imposition, a library, the editor, export, and the app shell. It keeps interior and cover as separate print and PDF views, and includes a sample book as data.</p></section>
-<section><h2>Hard parts</h2><p>Version 6.1 is a syntax-corrected build of version 6. I rebuilt the JavaScript modules to remove invalid escaped strings and broken regular-expression literals, and added a <code>node --check</code> validation step to packaging so that cannot slip through again.</p></section>
-<section><h2>Results</h2><p>A live editor on GitHub Pages that runs locally with one command.</p></section>
-<section><h2>My role</h2><p>Author and maintainer.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>A miniature book has to be laid out so that its pages, folded and cut, come out in the right order. That is an imposition problem, and it is easy to get wrong by hand.</p>
+<h3>Outcome</h3><p>A live editor on GitHub Pages that runs locally with one command.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A browser editor for miniature books, split into small JavaScript modules: configuration, state, Markdown and media handling, a layout engine, page rendering, imposition, a library, the editor, export, and the app shell. It keeps interior and cover as separate print and PDF views, and includes a sample book as data.</p>
+<h3>Hard parts</h3><p>Version 6.1 is a syntax-corrected build of version 6. I rebuilt the JavaScript modules to remove invalid escaped strings and broken regular-expression literals, and added a <code>node --check</code> validation step to packaging so that cannot slip through again.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>JavaScript</li><li>Print layout</li><li>Imposition</li><li>Markdown</li><li>PDF</li></ul></section>
 
 </article>
 </main>

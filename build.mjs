@@ -148,6 +148,7 @@ function card(p) {
 <p class="sub">${esc(p.subtitle)}</p>
 <p>${esc(p.pitch)}</p>
 <p class="tags">${p.tags.slice(0, 4).map((t) => `<span>${esc(t)}</span>`).join('')}</p>
+<p class="more"><a href="/projects/${p.slug}/">More details<span class="vh"> about ${esc(p.title)}</span></a></p>
 </div>
 </li>`;
 }
@@ -225,7 +226,7 @@ ${posts.slice(0, 3).map((p) => postBlock(p, { mini: true })).join('\n')}
       title: 'Projects',
       description: `${projects.length} public projects: applied AI, browser tools, interactive publishing, Commodore 64 software, and government transparency.`,
       body: `<h1>Projects</h1>
-<p>Public work with live demos and source. Each one has a short case study.</p>
+<p>Public work with live demos and source. Each one has a More details page with an executive summary and a technical overview.</p>
 <div class="filter" id="filter" hidden>
 <label for="tagsel">Filter by tag</label>
 <select id="tagsel"><option value="">All tags</option>${tags.map((t) => `<option value="${esc(t)}">${esc(t)} (${tagCount[t]})</option>`).join('')}</select>
@@ -245,13 +246,23 @@ ${groups
 // Project pages
 for (const p of projects) {
   const rel = posts.filter((x) => x.project === p.slug);
+  // Two parts: a plain summary for someone deciding, then how it works for someone technical.
+  const part = (title, subs) => {
+    const body = subs.filter(([, v]) => v).map(([h, v]) => `<h3>${h}</h3>${markdown(v)}`).join('\n');
+    return body ? `<section class="part" id="${title.toLowerCase().replace(/ /g, '-')}"><h2>${title}</h2>\n${body}</section>` : '';
+  };
+  const stack = `<ul class="tags plain-tags">${p.tags.map((t) => `<li>${esc(t)}</li>`).join('')}</ul>`;
   const sections = [
-    ['The problem', p.problem],
-    ['What I built', p.built],
-    ['Hard parts', p.hard],
-    ['Results', p.results],
-    ['My role', p.role],
-  ].filter(([, v]) => v);
+    part('Executive summary', [
+      ['Why it exists', p.problem],
+      ['Outcome', p.results],
+      ['My role', p.role],
+    ]),
+    part('Technical overview', [
+      ['How it works', p.built],
+      ['Hard parts', p.hard],
+    ]).replace(/<\/section>$/, `<h3>Stack</h3>\n${stack}</section>`),
+  ];
   add(
     `/projects/${p.slug}/`,
     page({
@@ -267,8 +278,8 @@ for (const p of projects) {
 <img class="hero-img" src="${heroOf(p)}" alt="${esc(p.alt)}" width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">${esc(p.pitch)}</p>
 <p class="links">${projectLinks(p).map(([l, u]) => `<a class="btn" href="${esc(u)}">${esc(l)}</a>`).join(' ')}</p>
-<p class="tags">${p.tags.map((t) => `<span>${esc(t)}</span>`).join('')}</p>
-${sections.map(([h, v]) => `<section><h2>${h}</h2>${markdown(v)}</section>`).join('\n')}
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+${sections.join('\n')}
 ${rel.length ? `<section><h2>Posts about it</h2><ul class="plain">${rel.map((x) => `<li><time datetime="${x.date}">${dateLabel(x.date)}</time> — <a href="/posts/${x.slug}/">${esc(x.title)}</a></li>`).join('')}</ul></section>` : ''}
 </article>`,
     }),

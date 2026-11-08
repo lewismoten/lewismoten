@@ -46,11 +46,14 @@
 <img class="hero-img" src="../../img/projects/vss-journal-monitor.jpg" alt="A VSS Monitor daily report email and a Windows Messenger pop-up." width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">A Windows service that watches a Visual SourceSafe database and sends alerts and daily reports, so a team in several time zones stops waiting on exclusive checkouts.</p>
 <p class="links"><a class="btn" href="https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/VBNet/VSSMonitorService">Source</a> <a class="btn" href="https://github.com/lewismoten/Lewies-Code-Library-PSC">My Planet Source Code archive (2000s)</a></p>
-<p class="tags"><span>VB.NET</span><span>.NET</span><span>Windows service</span><span>SQL Server</span></p>
-<section><h2>The problem</h2><p>I worked with remote teammates in other time zones, and Visual SourceSafe used exclusive checkouts. A file checked out overnight somewhere else meant waiting.</p></section>
-<section><h2>What I built</h2><p>A service built from scratch, inspired by Doug Schmidt's SSMonitor. It reads the SourceSafe journal and sends alerts by email, MSN or Windows Messenger, or a plug-in. Each alert has its own filters and recipients, and each user has a time zone. Daily reports include who checked in without a comment. Storage is SQL Server or XML, and there is an installer.</p></section>
-<section><h2>Results</h2><p>Published on Planet Source Code in January 2004.</p></section>
-<section><h2>My role</h2><p>Author.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>I worked with remote teammates in other time zones, and Visual SourceSafe used exclusive checkouts. A file checked out overnight somewhere else meant waiting.</p>
+<h3>Outcome</h3><p>Published on Planet Source Code in January 2004.</p>
+<h3>My role</h3><p>Author.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A service built from scratch, inspired by Doug Schmidt's SSMonitor. It reads the SourceSafe journal and sends alerts by email, MSN or Windows Messenger, or a plug-in. Each alert has its own filters and recipients, and each user has a time zone. Daily reports include who checked in without a comment. Storage is SQL Server or XML, and there is an installer.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>VB.NET</li><li>.NET</li><li>Windows service</li><li>SQL Server</li></ul></section>
 
 </article>
 </main>

@@ -46,12 +46,15 @@
 <img class="hero-img" src="../../img/projects/qr.jpg" alt="QR Code Generator" width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">A browser tool backed by my own ES module for QR codes, with mixed segmentation, versions 1-40, Reed-Solomon correction, mask selection, and structural inspection.</p>
 <p class="links"><a class="btn" href="https://qr.lewismoten.com/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/qr">Source</a></p>
-<p class="tags"><span>JavaScript</span><span>ES modules</span><span>Reed-Solomon</span><span>Testing</span><span>Performance budgets</span></p>
-<section><h2>The problem</h2><p>Most QR tools only make a code. I wanted one that also lets you look at how the code is built.</p></section>
-<section><h2>What I built</h2><p>A first-party QR encoder, published as a stable, self-contained ES module (<code>dist/qr.min.js</code>) that the app reuses and anyone else can download or import. The app covers mixed segmentation, versions 1 through 40, Reed-Solomon error correction, mask selection, and structural inspection. Browser code is organized into app and encoder folders with separate JavaScript and CSS entry points.</p></section>
-<section><h2>Hard parts</h2><p>Staying small. The project pins its single development dependency and has a <code>verify</code> command that runs source linting, tests with coverage thresholds, the production build, and asset-budget checks. The size audit estimates transferred HTML, CSS, and JavaScript using the same Brotli quality as the local server.</p></section>
-<section><h2>Results</h2><p>A live generator at qr.lewismoten.com and an encoder module you can import on its own. The README names git.lewismoten.com as the canonical repository.</p></section>
-<section><h2>My role</h2><p>Author and maintainer.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>Most QR tools only make a code. I wanted one that also lets you look at how the code is built.</p>
+<h3>Outcome</h3><p>A live generator at qr.lewismoten.com and an encoder module you can import on its own. The README names git.lewismoten.com as the canonical repository.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A first-party QR encoder, published as a stable, self-contained ES module (<code>dist/qr.min.js</code>) that the app reuses and anyone else can download or import. The app covers mixed segmentation, versions 1 through 40, Reed-Solomon error correction, mask selection, and structural inspection. Browser code is organized into app and encoder folders with separate JavaScript and CSS entry points.</p>
+<h3>Hard parts</h3><p>Staying small. The project pins its single development dependency and has a <code>verify</code> command that runs source linting, tests with coverage thresholds, the production build, and asset-budget checks. The size audit estimates transferred HTML, CSS, and JavaScript using the same Brotli quality as the local server.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>JavaScript</li><li>ES modules</li><li>Reed-Solomon</li><li>Testing</li><li>Performance budgets</li></ul></section>
 
 </article>
 </main>

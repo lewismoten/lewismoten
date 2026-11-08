@@ -52,3 +52,11 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;overflow-w
 p,li{overflow-wrap:break-word}
 @media (max-width:480px){body{font-size:16px}h1{font-size:1.7rem}.theme{margin-left:0}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.cardbody{display:flex;flex-direction:column;flex:1}
+.card .more{margin-top:auto;padding-top:.4rem;font-weight:600}
+.toc{margin:.75rem 0 0;color:var(--muted)}
+.part{border-top:1px solid var(--line);margin-top:1.5rem;padding-top:.5rem}
+.part h3{font-size:1.05rem;margin:1rem 0 .25rem}
+.plain-tags{list-style:none;padding:0}
+.plain-tags li{font-size:.8rem;border:1px solid var(--line);border-radius:999px;padding:0 .6rem;color:var(--muted)}

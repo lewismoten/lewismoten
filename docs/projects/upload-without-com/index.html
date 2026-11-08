@@ -46,12 +46,15 @@
 <img class="hero-img" src="../../img/projects/upload-without-com.jpg" alt="The Upload Files Without COM version 3 example page." width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">A pure-ASP parser for multipart form uploads, so a site on IIS could accept files without buying a COM component.</p>
 <p class="links"><a class="btn" href="https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/ASP/UploadFilesWithoutCOMv3">Source</a> <a class="btn" href="https://sourceforge.net/p/openwiki/patches/1">OpenWiki attachment patch that uses it</a> <a class="btn" href="https://lists.evolt.org/archive/Week-of-Mon-20080630/125069.html">2008 evolt.org thread: a developer used it on several client sites</a> <a class="btn" href="https://github.com/lewismoten/Lewies-Code-Library-PSC">My Planet Source Code archive (2000s)</a></p>
-<p class="tags"><span>Classic ASP</span><span>VBScript</span><span>ADODB</span></p>
-<section><h2>The problem</h2><p>In 2001, accepting an upload in classic ASP on IIS meant buying a component from one of two companies, about $700, and finding a host willing to install a DLL.</p></section>
-<section><h2>What I built</h2><p>I read the RFC for multipart form uploads and wrote a parser in plain ASP. It saved files to disk or to a database, for free. Version 1 (1/13/2001) used classes instead of dictionary objects. Version 2 (3/20/2002) was faster, fixed bugs and commented every step. Version 3 (9/1/2003) has an object-oriented interface, saves binary data through ADODB, manages memory so larger files work, shows a real-time progress bar, and comes with a FAQ and a support site.</p></section>
-<section><h2>Hard parts</h2><p>Parsing raw binary form data with only what a shared host already had, and keeping memory in check for large files.</p></section>
-<section><h2>Results</h2><p>It was my most famous published code and won an award on Planet Source Code. The OpenWiki project had an attachment patch that used it, and in 2008 a developer on the evolt.org list said they had used it on several client sites.</p></section>
-<section><h2>My role</h2><p>Author. Three versions: January 2001, March 2002, September 2003.</p></section>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>In 2001, accepting an upload in classic ASP on IIS meant buying a component from one of two companies, about $700, and finding a host willing to install a DLL.</p>
+<h3>Outcome</h3><p>It was my most famous published code and won an award on Planet Source Code. The OpenWiki project had an attachment patch that used it, and in 2008 a developer on the evolt.org list said they had used it on several client sites.</p>
+<h3>My role</h3><p>Author. Three versions: January 2001, March 2002, September 2003.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>I read the RFC for multipart form uploads and wrote a parser in plain ASP. It saved files to disk or to a database, for free. Version 1 (1/13/2001) used classes instead of dictionary objects. Version 2 (3/20/2002) was faster, fixed bugs and commented every step. Version 3 (9/1/2003) has an object-oriented interface, saves binary data through ADODB, manages memory so larger files work, shows a real-time progress bar, and comes with a FAQ and a support site.</p>
+<h3>Hard parts</h3><p>Parsing raw binary form data with only what a shared host already had, and keeping memory in check for large files.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>Classic ASP</li><li>VBScript</li><li>ADODB</li></ul></section>
 
 </article>
 </main>

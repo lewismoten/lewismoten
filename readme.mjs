@@ -46,7 +46,7 @@ export function writeReadme(root, site, groups, projects, groupNotes) {
   out.push('');
 
   out.push('## Projects', '');
-  out.push(`Each project has a longer case study on [the portfolio site](${site.url}/projects/).`, '');
+  out.push(`Each project's **More details** page, on [the portfolio site](${site.url}/projects/), has an executive summary and a technical overview.`, '');
   for (const g of groups) {
     const list = projects.filter((p) => p.group === g);
     if (!list.length) continue;
@@ -55,7 +55,7 @@ export function writeReadme(root, site, groups, projects, groupNotes) {
     out.push('| Project image | Project |', '| :--- | :--- |');
     for (const p of list) {
       const pic = `[![${cell(p.alt)}](./img/projects/${p.slug}-sm.jpg)](${caseStudy(p)})`;
-      const ls = [...links(p), ['Case study', caseStudy(p)]].map(([t, u]) => `[${cell(t)}](${u})`).join(' · ');
+      const ls = [...links(p), ['More details', caseStudy(p)]].map(([t, u]) => `[${cell(t)}](${u})`).join(' · ');
       const title = p.subtitle ? `${p.title} | ${p.subtitle}` : p.title;
       out.push(`| ${pic} | **${cell(title)}**<br>${cell(p.pitch)}<br>${ls} |`);
     }

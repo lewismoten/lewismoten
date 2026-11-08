@@ -39,7 +39,7 @@ Add an object to `content/projects.json`:
 
 - `slug`, `title`, `subtitle`, `group` (one of the `groups` at the top), `featured` (true shows it on the home page), `pitch` (one sentence), `tags`, `alt` (the preview image's alt text).
 - `links`: `demo`, `source`, and lists `video`, `press`, `other`, each `{ "label", "url" }`.
-- Case study text: `problem`, `built`, `hard`, `results`, `role`. Keep it 120 to 250 words in all and only say what the repository or my own pages say. A missing `hard` or `results` is skipped.
+- Details page text: `problem`, `results` and `role` make the Executive summary; `built`, `hard` and the `tags` (as Stack) make the Technical overview. Keep it 120 to 250 words in all and only say what the repository or my own pages say. A missing `hard` or `results` is skipped.
 - Images: the repository's social preview, saved as `img/projects/<slug>.jpg` (640 x 320, under about 150 KB) and a miniature `img/projects/<slug>-sm.jpg` (320 x 160, under about 30 KB). On macOS: `sips -s format jpeg -s formatOptions 75 -z 160 320 in.png --out img/projects/<slug>-sm.jpg`.
 
 Text in the case-study fields can use `**bold**`, `*italic*`, `` `code` `` and `[links](https://...)`.

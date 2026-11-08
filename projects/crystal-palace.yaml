@@ -3,9 +3,10 @@ name: Crystal Palace 9
 title: Crystal Palace 9 | AI on 8-bit hardware
 image: crystal-palace.jpg
 description: >-
-  Built a Commodore 64 tic-tac-toe game around Crystal-9, a compact mixture-of-experts
-  model trained to choose moves. Adapted inference and a command-room interface to
-  the machine's tight memory and 8 x 8 multicolor graphics constraints.
+  Built a Commodore 64 tic-tac-toe game whose AI moves come from a real neural
+  network running in 6502 assembly, with a command-room interface in 8 x 8
+  multicolor graphics. Now powered by Falken-9, a complete AI-vs-AI game takes
+  just over a minute, down from about 20 with the original Crystal-9 weights.
 links:
   - label: Source
     url: https://github.com/lewismoten/crystal-palace

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Falken-9: a whole AI-vs-AI game in just over a minute | Lewis Moten</title>
+<meta name="description" content="Crystal Palace 9, my Commodore 64 tic-tac-toe game, now runs on Falken-9, a new model I trained for the C64's arithmetic and memory from the start. The whole 5,195-byte model stays in RAM, so a comple">
+<link rel="canonical" href="https://lewismoten.github.io/lewismoten/posts/2026-11-02-falken-9-a-game-in-a-minute/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Falken-9: a whole AI-vs-AI game in just over a minute | Lewis Moten">
+<meta property="og:description" content="Crystal Palace 9, my Commodore 64 tic-tac-toe game, now runs on Falken-9, a new model I trained for the C64's arithmetic and memory from the start. The whole 5,195-byte model stays in RAM, so a comple">
+<meta property="og:url" content="https://lewismoten.github.io/lewismoten/posts/2026-11-02-falken-9-a-game-in-a-minute/">
+<meta property="og:image" content="https://lewismoten.github.io/lewismoten/img/projects/falken-9.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Falken-9: a whole AI-vs-AI game in just over a minute | Lewis Moten">
+<meta name="twitter:description" content="Crystal Palace 9, my Commodore 64 tic-tac-toe game, now runs on Falken-9, a new model I trained for the C64's arithmetic and memory from the start. The whole 5,195-byte model stays in RAM, so a comple">
+<meta name="twitter:image" content="https://lewismoten.github.io/lewismoten/img/projects/falken-9.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html">Projects</a></li>
+<li><a href="../../posts/index.html" aria-current="page">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../posts/index.html">Posts</a></nav><article class="post">
+<h1>Falken-9: a whole AI-vs-AI game in just over a minute</h1>
+<p class="meta"><time datetime="2026-11-02">November 2, 2026</time> · Project: <a href="../../projects/falken-9/index.html">Falken-9</a></p>
+<ul class="shots"><li><img src="../../img/projects/falken-9.jpg" alt="Crystal Palace 9 title screen on the Commodore 64" width="640" height="320" loading="lazy" decoding="async" class="pixel"></li><li><img src="../../img/posts/falken-9-tensor-workflow.jpg" alt="Falken-9 tensor workflow: decoded weights for each layer, from the board embeddings through attention, the router and four experts to the output" width="1200" height="897" loading="lazy" decoding="async"></li></ul>
+<p>Crystal Palace 9, my Commodore 64 tic-tac-toe game, now runs on Falken-9, a new model I trained for the C64's arithmetic and memory from the start. The whole 5,195-byte model stays in RAM, so a complete AI-vs-AI game takes just over a minute in an emulator. The earlier model took about 20 minutes.</p>
+<p>The second picture is the tensor workflow: every decoded weight, from the board embeddings through attention, the router and the four experts. The research report probes the network with interventions and charts what it found.</p>
+<p><a href="https://github.com/lewismoten/falken-9/blob/main/report.md">Read the Falken-9 research report</a></p>
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

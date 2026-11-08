@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Falken-9: A neural network designed for the Commodore 64 | Lewis Moten</title>
+<meta name="description" content="A mixture-of-experts tic-tac-toe model trained for the Commodore 64 from the start: a 5,195-byte model that stays in RAM and now lets Crystal Palace 9 play a complete AI-vs-AI game in just over a minute.">
+<link rel="canonical" href="https://lewismoten.github.io/lewismoten/projects/falken-9/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Falken-9: A neural network designed for the Commodore 64 | Lewis Moten">
+<meta property="og:description" content="A mixture-of-experts tic-tac-toe model trained for the Commodore 64 from the start: a 5,195-byte model that stays in RAM and now lets Crystal Palace 9 play a complete AI-vs-AI game in just over a minute.">
+<meta property="og:url" content="https://lewismoten.github.io/lewismoten/projects/falken-9/">
+<meta property="og:image" content="https://lewismoten.github.io/lewismoten/img/projects/falken-9.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Falken-9: A neural network designed for the Commodore 64 | Lewis Moten">
+<meta name="twitter:description" content="A mixture-of-experts tic-tac-toe model trained for the Commodore 64 from the start: a 5,195-byte model that stays in RAM and now lets Crystal Palace 9 play a complete AI-vs-AI game in just over a minute.">
+<meta name="twitter:image" content="https://lewismoten.github.io/lewismoten/img/projects/falken-9.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Applied AI and model engineering</nav>
+<article class="project">
+<h1>Falken-9</h1>
+<p class="sub">A neural network designed for the Commodore 64</p>
+<img class="hero-img" src="../../img/projects/falken-9.jpg" alt="Crystal Palace 9 title screen on the Commodore 64: Number of players? 1 player vs AI, 2 player vs player, 0 AI vs AI." width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">A mixture-of-experts tic-tac-toe model trained for the Commodore 64 from the start: a 5,195-byte model that stays in RAM and now lets Crystal Palace 9 play a complete AI-vs-AI game in just over a minute.</p>
+<p class="links"><a class="btn" href="https://lewismoten.github.io/falken-9/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/falken-9">Source</a> <a class="btn" href="https://huggingface.co/lewismoten/falken-9">Hugging Face</a> <a class="btn" href="https://github.com/lewismoten/falken-9/blob/main/report.md">Research report</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>Crystal-9 proved a learned network could run on a C64, but its weights had to be paged from disk and a self-play game took roughly 20 minutes. I wanted a network designed around the C64's arithmetic, memory and responsiveness, small enough to verify and investigate exhaustively, without hiding a move table or minimax behind it.</p>
+<h3>Outcome</h3><p>A 5,195-byte model packet with all 627 canonical boards passing assembled numerical checks. Crystal Palace 9, now powered by Falken-9, plays a complete AI-vs-AI game in just over a minute in an emulator, down from about 20 minutes with the earlier model. The project ships a ready-to-run PRG and D64, an exact-integer ONNX graph for Netron, a tensor-workflow chart and a research report with annotated figures. Tested in emulators only so far.</p>
+<h3>My role</h3><p>Designer, director and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>Falken-9 searches model width, expert count and numerical precision against the whole deployment cost on the C64. The accepted model has nine board-square tokens, width 8, four learned experts with top-2 routing, real full-board attention and exact integer execution in 6502 assembly. Symmetry reduces the learned domain to 627 canonical boards; a fixed wrapper restores the original board, masks occupied squares and applies a documented tie order. The whole model stays in RAM, and every AI move runs it.</p>
+<h3>Hard parts</h3><p>Keeping it honest. The network predicts the complete set of optimal moves, because mapping one canonical move back would break tie behavior. Offline minimax supplies labels and checks but is never a gameplay fallback, and exact logits, packed arithmetic, chosen moves and whole games each have their own evidence gate. Interpreting the network was its own project: the research report probes it with interventions and counterexamples, and found context-dependent effects rather than a tidy fork expert or block neuron.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>PyTorch</li><li>MoE</li><li>6502 assembly</li><li>Commodore 64</li><li>Integer inference</li><li>Interpretability</li><li>ONNX</li></ul></section>
+<section><h2>Posts about it</h2><ul class="plain"><li><time datetime="2026-11-02">November 2, 2026</time> — <a href="../../posts/2026-11-02-falken-9-a-game-in-a-minute/index.html">Falken-9: a whole AI-vs-AI game in just over a minute</a></li></ul></section>
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

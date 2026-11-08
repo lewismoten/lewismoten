@@ -28,7 +28,10 @@
     "blog": "https://lewismoten.com/blog/",
     "linkedin": "https://www.linkedin.com/in/lewismoten/",
     "calendly": "https://calendly.com/lewismoten",
-    "github": "https://github.com/lewismoten"
+    "github": "https://github.com/lewismoten",
+    "huggingface": "https://huggingface.co/lewismoten",
+    "ollama": "https://ollama.com/lewismoten",
+    "npm": "https://www.npmjs.com/~lewismoten"
   },
   "resume": [
     {
@@ -116,5 +119,31 @@
     "Founded a LEGO users group, with a shared module system so members' mountain-trail modules connect.",
     "I keep my CPR/AED training current, completed Basic Life Support (BLS) at my last renewal, and am trained in Narcan administration.",
     "As Dedric Mauriac in Second Life, I organized a Relay for Life fundraising team in 2007 and 2008 ([my blog posts](https://dedricmauriac.wordpress.com/?s=relay))."
+  ],
+  "packages": [
+    {
+      "name": "@lewismoten/gamemaker-sandbox-engine",
+      "text": "Plays RSD Game-Maker games in the browser from their original DOS files: readers and writers for every Game-Maker format, OPL2/CMF audio, screen, input and fonts."
+    },
+    {
+      "name": "@lewismoten/gamemaker-sandbox-archives",
+      "text": "Finds Game-Maker games inside ZIP and self-extracting archives, extracts them and writes new ZIPs."
+    },
+    {
+      "name": "@lewismoten/gamemaker-sandbox-tools",
+      "text": "Development tools for building and checking games in Game-Maker formats: drawing, palettes, music, PNG and headless play."
+    },
+    {
+      "name": "@lewismoten/emoji",
+      "text": "Named emoji Unicode values with types, so editors autocomplete exact emoji keys."
+    },
+    {
+      "name": "@lewismoten/pixel-emoji",
+      "text": "A compact 12 x 12 color fallback font for newer Unicode emoji."
+    },
+    {
+      "name": "@lewismoten/mysql-migrations",
+      "text": "Maintains database migrations for projects that use the mysql package."
+    }
   ]
 }

@@ -6,6 +6,7 @@ profile_groups:
     projects:
       - local-agent-lab
       - crystal-9
+      - falken-9
       - crystal-palace
       - palace-9
       - zogograph-client

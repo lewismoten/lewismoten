@@ -36,6 +36,13 @@
 <summary>Within two days, RSD Game-Maker gained a handheld player, 94 playable lessons, graduation features, and a level generator. Read how it came together on my blog.</summary>
 </entry>
 <entry>
+<title>Falken-9: a whole AI-vs-AI game in just over a minute</title>
+<link href="https://lewismoten.github.io/lewismoten/posts/2026-11-02-falken-9-a-game-in-a-minute/"/>
+<id>https://lewismoten.github.io/lewismoten/posts/2026-11-02-falken-9-a-game-in-a-minute/</id>
+<updated>2026-11-02T12:00:00Z</updated>
+<summary>Crystal Palace 9, my Commodore 64 tic-tac-toe game, now runs on Falken-9, a new model I trained for the C64's arithmetic and memory from the start. The whole 5,195-byte model stays in RAM, so a complete AI-vs-AI game takes just over a minute in an emulator. The earlier model took about 20 minutes. The second picture is the tensor workflow: every decoded weight, from the board embeddings through attention, the router and the four experts. The research report probes the network with interventions and charts what it found.</summary>
+</entry>
+<entry>
 <title>Tic-tac-toe and Crystal Palace 9</title>
 <link href="https://lewismoten.github.io/lewismoten/posts/2026-09-22-tic-tac-toe-and-crystal-palace-9/"/>
 <id>https://lewismoten.github.io/lewismoten/posts/2026-09-22-tic-tac-toe-and-crystal-palace-9/</id>

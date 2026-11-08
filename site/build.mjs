@@ -335,6 +335,10 @@ ${site.about.map((x) => `<p>${inline(x)}</p>`).join('\n')}
 <p>${site.resume.map((r) => link(r.href, r.label + ' (PDF)')).join(' · ')}</p>
 <h2>Beyond code</h2>
 ${site.beyond.map((x) => `<p>${inline(x)}</p>`).join('\n')}
+<h2>Packages on npm</h2>
+<ul>${site.packages.map((p) => `<li>${link('https://www.npmjs.com/package/' + p.name, p.name)}: ${esc(p.text)}</li>`).join('')}</ul>
+<h2>Profiles</h2>
+<ul class="plain"><li>${link(site.links.github, 'GitHub')}</li><li>${link(site.links.huggingface, 'Hugging Face')} (models and a dataset)</li><li>${link(site.links.ollama, 'Ollama')}</li><li>${link(site.links.npm, 'npm')}</li></ul>
 <h2>Contact</h2>
 <ul class="plain"><li>${link('mailto:' + site.email, site.email)}</li><li>${link(site.links.linkedin, 'LinkedIn')}</li><li>${link(site.links.calendly, 'Schedule a conversation')}</li></ul>`,
   }),

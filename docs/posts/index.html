@@ -74,6 +74,14 @@
 <p><a href="https://lewismoten.com/2026/11/06/pocket-players-pixel-diplomas-and-a-growing-game-maker-sandbox/">Read the full post on my blog</a></p>
 </article>
 <article class="post">
+<h2><a href="../posts/2026-11-02-falken-9-a-game-in-a-minute/index.html">Falken-9: a whole AI-vs-AI game in just over a minute</a></h2>
+<p class="meta"><time datetime="2026-11-02">November 2, 2026</time> · Project: <a href="../projects/falken-9/index.html">Falken-9</a></p>
+<ul class="shots"><li><img src="../img/projects/falken-9.jpg" alt="Crystal Palace 9 title screen on the Commodore 64" width="640" height="320" loading="lazy" decoding="async" class="pixel"></li><li><img src="../img/posts/falken-9-tensor-workflow.jpg" alt="Falken-9 tensor workflow: decoded weights for each layer, from the board embeddings through attention, the router and four experts to the output" width="1200" height="897" loading="lazy" decoding="async"></li></ul>
+<p>Crystal Palace 9, my Commodore 64 tic-tac-toe game, now runs on Falken-9, a new model I trained for the C64's arithmetic and memory from the start. The whole 5,195-byte model stays in RAM, so a complete AI-vs-AI game takes just over a minute in an emulator. The earlier model took about 20 minutes.</p>
+<p>The second picture is the tensor workflow: every decoded weight, from the board embeddings through attention, the router and the four experts. The research report probes the network with interventions and charts what it found.</p>
+<p><a href="https://github.com/lewismoten/falken-9/blob/main/report.md">Read the Falken-9 research report</a></p>
+</article>
+<article class="post">
 <h2><a href="../posts/2026-09-22-tic-tac-toe-and-crystal-palace-9/index.html">Tic-tac-toe and Crystal Palace 9</a></h2>
 <p class="meta"><time datetime="2026-09-22">September 22, 2026</time> · Project: <a href="../projects/palace-9/index.html">Palace-9</a></p>
 <ul class="shots"><li><img src="../img/projects/palace-9.jpg" alt="Palace-9: Tic-tac-toe and model inspection" width="640" height="320" loading="lazy" decoding="async"></li><li><img src="../img/projects/crystal-palace.jpg" alt="Crystal Palace 9" width="640" height="320" loading="lazy" decoding="async"></li></ul>

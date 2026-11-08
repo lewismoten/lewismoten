@@ -98,7 +98,7 @@
     "My company is [Code Jamboree LLC](https://www.codejamboree.com/)."
   ],
   "experience": [
-    "**CSC, USCIS contract.** I led a team upgrading a desktop application from VB6 to C#/.NET.",
+    "**CSC, USCIS contract.** I led a team upgrading a desktop application from VB6 to C#/.NET. The system also ran on a mainframe and an old Btrieve database with a SQL layer I often had to work around, and I traced problems into C code written many years earlier. I also made the application drive an obscure, outdated check franker and labeler: its only documentation was in Japanese, so I translated it and wrote the commands to run it over a serial port.",
     "**Solution Street, Deltek project.** I led a team and often focused on build tools, bringing development builds down from 20 minutes to 2 minutes. I also upgraded CanJS and Steel to webpack, because the earlier platform chosen before I got there had become stale and unsupported compared to other community frameworks.",
     "**Code Jamboree LLC.** My own company, just me, with no team or employees. My recent projects were built here."
   ],

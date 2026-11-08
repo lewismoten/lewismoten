@@ -317,6 +317,8 @@ ${site.about.map((x) => `<p>${inline(x)}</p>`).join('\n')}
 <ul>${site.skills.map((s) => `<li><strong>${esc(s.label)}:</strong> ${esc(s.text)}</li>`).join('')}</ul>
 <h2>Experience highlights</h2>
 <ul>${site.experience.map((x) => `<li>${inline(x)}</li>`).join('')}</ul>
+<h2>Community and leadership</h2>
+<ul>${site.community.map((x) => `<li>${inline(x)}</li>`).join('')}</ul>
 <h2>Career history</h2>
 <p>The full <a href="${site.links.career}">career history</a> is on my site. My <a href="${site.resume[1].href}">resume (PDF)</a> and the other career documents are linked below.</p>
 <p>${site.resume.map((r) => link(r.href, r.label + ' (PDF)')).join(' · ')}</p>

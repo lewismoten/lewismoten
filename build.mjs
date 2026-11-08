@@ -315,8 +315,10 @@ add(
 ${site.about.map((x) => `<p>${inline(x)}</p>`).join('\n')}
 <h2>What I work with</h2>
 <ul>${site.skills.map((s) => `<li><strong>${esc(s.label)}:</strong> ${esc(s.text)}</li>`).join('')}</ul>
+<h2>Experience highlights</h2>
+<ul>${site.experience.map((x) => `<li>${inline(x)}</li>`).join('')}</ul>
 <h2>Career history</h2>
-<p>My <a href="${site.links.career}">career history</a> is on my site. My <a href="${site.resume[1].href}">resume (PDF)</a> and the other career documents are linked below.</p>
+<p>The full <a href="${site.links.career}">career history</a> is on my site. My <a href="${site.resume[1].href}">resume (PDF)</a> and the other career documents are linked below.</p>
 <p>${site.resume.map((r) => link(r.href, r.label + ' (PDF)')).join(' · ')}</p>
 <h2>Beyond code</h2>
 ${site.beyond.map((x) => `<p>${inline(x)}</p>`).join('\n')}

@@ -317,6 +317,7 @@ for (const s of series.filter((x) => x.page)) {
 <article class="project">
 <h1>${esc(c.title)}</h1>
 ${c.intro.map((x) => `<p${x === c.intro[0] ? ' class="lede"' : ''}>${inline(x)}</p>`).join('\n')}
+${c.origins ? `<section class="part"><h2>${esc(c.origins.title)}</h2><ul>${c.origins.items.map((x) => `<li>${inline(x)}</li>`).join('')}</ul></section>` : ''}
 <section class="part"><h2>Side by side</h2>
 <div class="tablewrap" tabindex="0" role="region" aria-label="${esc(c.title)} compared"><table class="compare">
 <thead>${head}</thead>

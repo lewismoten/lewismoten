@@ -3,19 +3,78 @@
   "description": "Four steps from a browser-trained model to a neural network designed for the Commodore 64: Palace-9, Crystal-9, Crystal Palace 9 and Falken-9, side by side.",
   "intro": [
     "Over six weeks in the fall of 2026 I built the same small game four times, each time asking a harder question: can I train a model and publish it? Can I make it lean? Can a real neural network run on a Commodore 64? And can one be designed for the C64 from the start?",
-    "Tic-tac-toe is small enough to check every position, so every step could be tested exhaustively instead of sampled. All four names come from *WarGames*: Crystal Palace was the NORAD call sign where the computer plays against itself, and Dr. Stephen Falken built the AI."
+    "Tic-tac-toe is small enough to check every position, so every step could be tested exhaustively instead of sampled, and it's a game I had been teaching computers to play for more than a decade. All four names come from *WarGames*: Crystal Palace was the NORAD call sign where the computer plays against itself, and Dr. Stephen Falken built the AI."
   ],
-  "columns": ["Palace-9", "Crystal-9", "Crystal Palace 9 (first version)", "Falken-9"],
+  "columns": [
+    "Palace-9",
+    "Crystal-9",
+    "Crystal Palace 9 (first version)",
+    "Falken-9"
+  ],
   "rows": [
-    ["Built", "September 21 to 22, 2026", "September 23 to 29, 2026", "September 24 to October 31, 2026", "October 31 to November 1, 2026"],
-    ["What it is", "A model lineage: a browser-trained policy, then a real routed mixture of experts, then a separately trained model in Qwen2-MoE's shape so Ollama can run it", "A new, leaner attention and mixture-of-experts model with its own 13-token vocabulary and runtime", "A Commodore 64 game that runs Crystal-9's original weights (a port, not a new model)", "A new model designed around the C64's arithmetic and memory, which now powers the game"],
-    ["Size", "648,528 parameters (a 5,632-wide shared expert inherited from the format is most of it); GGUF files of 1.1 to 1.3 MB", "24,726 parameters; released INT4 model 46,299 bytes; an INT2 research copy 20,737 bytes", "48 disk packets holding 13,938 bytes of weights, loaded from disk during each move", "A 5,195-byte model that stays in memory"],
-    ["Design", "Width 36, nine experts with top-2 routing, a 261-token byte vocabulary", "Width 32, eight attention heads, nine 32-wide experts with top-2 selection", "INT4 weights with 16-bit scales, run in fixed-point 6502 assembly", "Width 8, four experts with top-2 routing, nine board-square tokens, exact integer math"],
-    ["Trained on", "JavaScript workers in the browser, then custom CUDA and PyTorch on an RTX 3080 Ti", "PyTorch on an RTX 3080 Ti, then quantized step by step", "No training: the weights came from Crystal-9 unchanged", "PyTorch, first on the RTX 3080 Ti, then on a single CPU thread"],
-    ["Runs on", "llama.cpp, Ollama and a browser weight inspector", "Its own Python and JavaScript runtimes", "A Commodore 64 (tested in Py65 and VICE)", "A Commodore 64 (tested in py65 and VICE)"],
-    ["How it was checked", "Zero errors on 294,777 valid and 683,226 generated invalid move histories", "Zero misses on all 294,778 move histories at full precision, INT4 and INT3; any trial with one miss was rejected", "436 passing tests; 13 complete output vectors matched byte for byte between Py65 and real-ROM VICE", "All 627 canonical boards exact; 294,778 move histories audited; causal probing of the frozen network"],
-    ["AI assistant", "GPT-5.6-terra through Hermes", "GPT-5.6-terra through Hermes", "GPT-5.6-terra, then GPT-6.1 Sol from mid-October, through Hermes", "GPT-6.1 Sol through Hermes"],
-    ["AI-vs-AI game", "Shown on the website", "Not a game", "About 20 minutes", "Just over a minute"]
+    [
+      "Built",
+      "September 21 to 22, 2026",
+      "September 23 to 29, 2026",
+      "September 24 to October 31, 2026",
+      "October 31 to November 1, 2026"
+    ],
+    [
+      "What it is",
+      "A model lineage: a browser-trained policy, then a real routed mixture of experts, then a separately trained model in Qwen2-MoE's shape so Ollama can run it",
+      "A new, leaner attention and mixture-of-experts model with its own 13-token vocabulary and runtime",
+      "A Commodore 64 game that runs Crystal-9's original weights (a port, not a new model)",
+      "A new model designed around the C64's arithmetic and memory, which now powers the game"
+    ],
+    [
+      "Size",
+      "648,528 parameters (a 5,632-wide shared expert inherited from the format is most of it); GGUF files of 1.1 to 1.3 MB",
+      "24,726 parameters; released INT4 model 46,299 bytes; an INT2 research copy 20,737 bytes",
+      "48 disk packets holding 13,938 bytes of weights, loaded from disk during each move",
+      "A 5,195-byte model that stays in memory"
+    ],
+    [
+      "Design",
+      "Width 36, nine experts with top-2 routing, a 261-token byte vocabulary",
+      "Width 32, eight attention heads, nine 32-wide experts with top-2 selection",
+      "INT4 weights with 16-bit scales, run in fixed-point 6502 assembly",
+      "Width 8, four experts with top-2 routing, nine board-square tokens, exact integer math"
+    ],
+    [
+      "Trained on",
+      "JavaScript workers in the browser, then custom CUDA and PyTorch on an RTX 3080 Ti",
+      "PyTorch on an RTX 3080 Ti, then quantized step by step",
+      "No training: the weights came from Crystal-9 unchanged",
+      "PyTorch, first on the RTX 3080 Ti, then on a single CPU thread"
+    ],
+    [
+      "Runs on",
+      "llama.cpp, Ollama and a browser weight inspector",
+      "Its own Python and JavaScript runtimes",
+      "A Commodore 64 (tested in Py65 and VICE)",
+      "A Commodore 64 (tested in py65 and VICE)"
+    ],
+    [
+      "How it was checked",
+      "Zero errors on 294,777 valid and 683,226 generated invalid move histories",
+      "Zero misses on all 294,778 move histories at full precision, INT4 and INT3; any trial with one miss was rejected",
+      "436 passing tests; 13 complete output vectors matched byte for byte between Py65 and real-ROM VICE",
+      "All 627 canonical boards exact; 294,778 move histories audited; causal probing of the frozen network"
+    ],
+    [
+      "AI assistant",
+      "GPT-5.6-terra through Hermes",
+      "GPT-5.6-terra through Hermes",
+      "GPT-5.6-terra, then GPT-6.1 Sol from mid-October, through Hermes",
+      "GPT-6.1 Sol through Hermes"
+    ],
+    [
+      "AI-vs-AI game",
+      "Shown on the website",
+      "Not a game",
+      "About 20 minutes",
+      "Just over a minute"
+    ]
   ],
   "steps": [
     {
@@ -35,5 +94,14 @@
       "text": "Falken-9 took every lesson at once: search the width, expert count and precision against what the C64 can afford; read the board instead of the move history; use symmetry to cut the problem to 627 boards; keep the whole model in memory; compute with exact integers. Then I probed the frozen network to see how it decides. Crystal Palace 9 now runs on it, and a full AI-vs-AI game takes just over a minute."
     }
   ],
-  "notes": "Numbers come from each project's saved training records and test reports. Every result is on the generated set of tic-tac-toe positions, and the C64 results are from emulators (Py65 and VICE), not a physical machine. Game times are informal emulator observations."
+  "notes": "Numbers come from each project's saved training records and test reports. Every result is on the generated set of tic-tac-toe positions, and the C64 results are from emulators (Py65 and VICE), not a physical machine. Game times are informal emulator observations.",
+  "origins": {
+    "title": "Where it started",
+    "items": [
+      "**2014:** [tic-tac-toe](https://github.com/lewismoten/tic-tac-toe), an offline mobile game in JavaScript and HTML5 whose AI follows Newell and Simon's 1972 tic-tac-toe program, with Jasmine tests.",
+      "**2015:** [Tic-Tac-Toe in Second Life](https://github.com/lewismoten/Tic-Tac-Toe-lsl), with four levels from a random player to one that forks and blocks forks.",
+      "**2016:** my first [artificial neural network](https://github.com/lewismoten/artificial-neural-network), written from scratch in JavaScript with a genetic algorithm (mutation and crossover) and XOR, AND and OR examples. Its tic-tac-toe trial pitted 200 small networks (9 inputs, 5 hidden, 9 outputs) against each other and against random and unbeatable bots, ranked by Elo; an illegal move ended the game as \"Cheater!\". For it I published two npm packages, [octothorpe](https://github.com/lewismoten/octothorpe) to draw the board and [octothorpe-xo](https://github.com/lewismoten/octothorpe-xo) to play it, plus a rule-based [tic-tac-toe AI](https://github.com/lewismoten/tic-tac-toe-ai).",
+      "**2019:** [6502 assembly practice](https://github.com/lewismoten/6502-program-1), including files for Ben Eater's 6502 breadboard computer, the chip the C64 work came back to."
+    ]
+  }
 }

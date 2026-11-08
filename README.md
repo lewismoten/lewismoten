@@ -74,4 +74,4 @@ Axe (WCAG 2.2 AA and best practices) at 1440 and 390 pixels wide, in light and d
 
 ## Credits
 
-Project previews are each repository's own social preview. Some were made with AI image tools, as noted in those repositories. This site's build script, styles, and content structure were written with Claude (Claude Sonnet 5.5, Anthropic), and I edited the text.
+Project previews are each repository's own social preview. How each preview was made is noted in its own repository. The build script, styles, and first draft of the case studies were written with Claude (Claude Sonnet 5.5, Anthropic) from my repositories and pages.

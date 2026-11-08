@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stream Scribe: Independent meeting archive and research | Lewis Moten</title>
+<meta name="description" content="An independent archive and research tool for livestreamed government meetings: capture, local Whisper transcription, search, and annotation. Still in development.">
+<link rel="canonical" href="https://lewismoten.github.io/projects/stream-scribe/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Stream Scribe: Independent meeting archive and research | Lewis Moten">
+<meta property="og:description" content="An independent archive and research tool for livestreamed government meetings: capture, local Whisper transcription, search, and annotation. Still in development.">
+<meta property="og:url" content="https://lewismoten.github.io/projects/stream-scribe/">
+<meta property="og:image" content="https://lewismoten.github.io/img/projects/stream-scribe.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stream Scribe: Independent meeting archive and research | Lewis Moten">
+<meta name="twitter:description" content="An independent archive and research tool for livestreamed government meetings: capture, local Whisper transcription, search, and annotation. Still in development.">
+<meta name="twitter:image" content="https://lewismoten.github.io/img/projects/stream-scribe.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Government Transparency</nav>
+<article class="project">
+<h1>Stream Scribe</h1>
+<p class="sub">Independent meeting archive and research</p>
+<img class="hero-img" src="../../img/projects/stream-scribe.jpg" alt="Stream Scribe: capture, search, research. Independent archives for live government meetings." width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">An independent archive and research tool for livestreamed government meetings: capture, local Whisper transcription, search, and annotation. Still in development.</p>
+<p class="links"><a class="btn" href="https://github.com/lewismoten/streamscribe">Source</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>Public meetings are streamed live, and an independent record of them helps people review who spoke, the agenda, and the votes. This tool keeps that archive on your own computer.</p>
+<h3>Outcome</h3><p>In development. The source is public; there is no live demo yet.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A tool that records a livestream, fills capture gaps from the official recording, and transcribes it on your own computer with Whisper. You can search transcripts and navigate thumbnails while the meeting is live, add speaker, topic, and vote annotations, and export short clips. Notes, transcripts, and clips can be published with links back to the official sources. It is built with React, TypeScript, Node.js, and SQLite.</p>
+<h3>Hard parts</h3><p>Three ways to run it from one codebase: on your own computer with everything, in a browser with your data kept there (from a fork on GitHub Pages), or against a shared hub on PHP hosting for scheduled recorders, accounts, publishing, and podcasts.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>React</li><li>TypeScript</li><li>Node.js</li><li>SQLite</li><li>Whisper</li><li>ffmpeg</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

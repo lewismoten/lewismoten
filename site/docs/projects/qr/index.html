@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QR Code Generator: Creator and inspector | Lewis Moten</title>
+<meta name="description" content="A browser tool backed by my own ES module for QR codes, with mixed segmentation, versions 1-40, Reed-Solomon correction, mask selection, and structural inspection.">
+<link rel="canonical" href="https://lewismoten.github.io/projects/qr/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="QR Code Generator: Creator and inspector | Lewis Moten">
+<meta property="og:description" content="A browser tool backed by my own ES module for QR codes, with mixed segmentation, versions 1-40, Reed-Solomon correction, mask selection, and structural inspection.">
+<meta property="og:url" content="https://lewismoten.github.io/projects/qr/">
+<meta property="og:image" content="https://lewismoten.github.io/img/projects/qr.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="QR Code Generator: Creator and inspector | Lewis Moten">
+<meta name="twitter:description" content="A browser tool backed by my own ES module for QR codes, with mixed segmentation, versions 1-40, Reed-Solomon correction, mask selection, and structural inspection.">
+<meta name="twitter:image" content="https://lewismoten.github.io/img/projects/qr.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Browser tools and visualization</nav>
+<article class="project">
+<h1>QR Code Generator</h1>
+<p class="sub">Creator and inspector</p>
+<img class="hero-img" src="../../img/projects/qr.jpg" alt="QR Code Generator" width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">A browser tool backed by my own ES module for QR codes, with mixed segmentation, versions 1-40, Reed-Solomon correction, mask selection, and structural inspection.</p>
+<p class="links"><a class="btn" href="https://qr.lewismoten.com/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/qr">Source</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>Most QR tools only make a code. I wanted one that also lets you look at how the code is built.</p>
+<h3>Outcome</h3><p>A live generator at qr.lewismoten.com and an encoder module you can import on its own. The README names git.lewismoten.com as the canonical repository.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A first-party QR encoder, published as a stable, self-contained ES module (<code>dist/qr.min.js</code>) that the app reuses and anyone else can download or import. The app covers mixed segmentation, versions 1 through 40, Reed-Solomon error correction, mask selection, and structural inspection. Browser code is organized into app and encoder folders with separate JavaScript and CSS entry points.</p>
+<h3>Hard parts</h3><p>Staying small. The project pins its single development dependency and has a <code>verify</code> command that runs source linting, tests with coverage thresholds, the production build, and asset-budget checks. The size audit estimates transferred HTML, CSS, and JavaScript using the same Brotli quality as the local server.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>JavaScript</li><li>ES modules</li><li>Reed-Solomon</li><li>Testing</li><li>Performance budgets</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

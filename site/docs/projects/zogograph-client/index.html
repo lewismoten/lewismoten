@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zogograph Client: AI-assisted server monitoring | Lewis Moten</title>
+<meta name="description" content="PHP and SQLite collectors with a JavaScript dashboard make server telemetry, alerts, and diagnostics readable, and an AI assistant calls diagnostic tools and tracks what an investigation costs.">
+<link rel="canonical" href="https://lewismoten.github.io/projects/zogograph-client/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Zogograph Client: AI-assisted server monitoring | Lewis Moten">
+<meta property="og:description" content="PHP and SQLite collectors with a JavaScript dashboard make server telemetry, alerts, and diagnostics readable, and an AI assistant calls diagnostic tools and tracks what an investigation costs.">
+<meta property="og:url" content="https://lewismoten.github.io/projects/zogograph-client/">
+<meta property="og:image" content="https://lewismoten.github.io/img/projects/zogograph-client.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Zogograph Client: AI-assisted server monitoring | Lewis Moten">
+<meta name="twitter:description" content="PHP and SQLite collectors with a JavaScript dashboard make server telemetry, alerts, and diagnostics readable, and an AI assistant calls diagnostic tools and tracks what an investigation costs.">
+<meta name="twitter:image" content="https://lewismoten.github.io/img/projects/zogograph-client.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Applied AI and model engineering</nav>
+<article class="project">
+<h1>Zogograph Client</h1>
+<p class="sub">AI-assisted server monitoring</p>
+<img class="hero-img" src="../../img/projects/zogograph-client.jpg" alt="Zogograph dashboard social preview" width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">PHP and SQLite collectors with a JavaScript dashboard make server telemetry, alerts, and diagnostics readable, and an AI assistant calls diagnostic tools and tracks what an investigation costs.</p>
+<p class="links"><a class="btn" href="https://github.com/lewismoten/zogograph-client">Source</a> <a class="btn" href="https://www.youtube.com/watch?v=OKndBMPknmQ&amp;list=PLaLeerEZeFMs">Videos</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>A monitor you have to remember to look at tells you afterwards. Zogograph answers three questions: what is happening now, what is growing, and where to go to fix it. It also emails when something jumps, and it can tell you before a home directory fills up.</p>
+<h3>Outcome</h3><p>The source release has no dependencies and ships a CycloneDX software bill of materials, third-party notices, and a security policy. It is source-available under FSL-1.1-Apache-2.0, and each release becomes Apache-2.0 two years after it ships.</p>
+<h3>My role</h3><p>Author and maintainer.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A PHP account collector run by cron, a host collector run by root from WHM's crontab (it sees what CageFS hides from the account), and a static dashboard that talks to a single API file. Readings go into SQLite databases that are never served. A health page depends on nothing, so it works when the rest does not. A setup wizard runs in a browser or at a prompt. An AI assistant calls diagnostic tools and tracks the cost of an investigation.</p>
+<h3>Hard parts</h3><p>The account collector and the host collector see different things, so they run separately. Collectors are command-line only, with <code>.htaccess</code> denying them over HTTP, and the README documents migration safety.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>PHP</li><li>SQLite</li><li>JavaScript</li><li>WHM/cPanel</li><li>Tool calling</li><li>Linux hosting</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

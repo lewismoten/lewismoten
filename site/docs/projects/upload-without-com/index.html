@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Upload Files Without COM: Classic ASP file uploads, 2001 to 2003 | Lewis Moten</title>
+<meta name="description" content="A pure-ASP parser for multipart form uploads, so a site on IIS could accept files without buying a COM component.">
+<link rel="canonical" href="https://lewismoten.github.io/projects/upload-without-com/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Upload Files Without COM: Classic ASP file uploads, 2001 to 2003 | Lewis Moten">
+<meta property="og:description" content="A pure-ASP parser for multipart form uploads, so a site on IIS could accept files without buying a COM component.">
+<meta property="og:url" content="https://lewismoten.github.io/projects/upload-without-com/">
+<meta property="og:image" content="https://lewismoten.github.io/img/projects/upload-without-com.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Upload Files Without COM: Classic ASP file uploads, 2001 to 2003 | Lewis Moten">
+<meta name="twitter:description" content="A pure-ASP parser for multipart form uploads, so a site on IIS could accept files without buying a COM component.">
+<meta name="twitter:image" content="https://lewismoten.github.io/img/projects/upload-without-com.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Earlier open source</nav>
+<article class="project">
+<h1>Upload Files Without COM</h1>
+<p class="sub">Classic ASP file uploads, 2001 to 2003</p>
+<img class="hero-img" src="../../img/projects/upload-without-com.jpg" alt="The Upload Files Without COM version 3 example page." width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">A pure-ASP parser for multipart form uploads, so a site on IIS could accept files without buying a COM component.</p>
+<p class="links"><a class="btn" href="https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/ASP/UploadFilesWithoutCOMv3">Source</a> <a class="btn" href="https://sourceforge.net/p/openwiki/patches/1">OpenWiki attachment patch that uses it</a> <a class="btn" href="https://lists.evolt.org/archive/Week-of-Mon-20080630/125069.html">2008 evolt.org thread: a developer used it on several client sites</a> <a class="btn" href="https://github.com/lewismoten/Lewies-Code-Library-PSC">My Planet Source Code archive (2000s)</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>In 2001, accepting an upload in classic ASP on IIS meant buying a component from one of two companies, about $700, and finding a host willing to install a DLL.</p>
+<h3>Outcome</h3><p>It was my most famous published code and won an award on Planet Source Code. The OpenWiki project had an attachment patch that used it, and in 2008 a developer on the evolt.org list said they had used it on several client sites.</p>
+<h3>My role</h3><p>Author. Three versions: January 2001, March 2002, September 2003.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>I read the RFC for multipart form uploads and wrote a parser in plain ASP. It saved files to disk or to a database, for free. Version 1 (1/13/2001) used classes instead of dictionary objects. Version 2 (3/20/2002) was faster, fixed bugs and commented every step. Version 3 (9/1/2003) has an object-oriented interface, saves binary data through ADODB, manages memory so larger files work, shows a real-time progress bar, and comes with a FAQ and a support site.</p>
+<h3>Hard parts</h3><p>Parsing raw binary form data with only what a shared host already had, and keeping memory in check for large files.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>Classic ASP</li><li>VBScript</li><li>ADODB</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

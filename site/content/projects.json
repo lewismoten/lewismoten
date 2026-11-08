@@ -1,0 +1,631 @@
+{
+  "groups": [
+    "Applied AI and model engineering",
+    "Browser tools and visualization",
+    "Publishing and interactive experiences",
+    "8-bit retro Commodore 64 projects",
+    "Government Transparency",
+    "Earlier open source"
+  ],
+  "projects": [
+    {
+      "slug": "local-agent-lab",
+      "title": "Local Agent Lab",
+      "subtitle": "Portable AI workspace",
+      "group": "Applied AI and model engineering",
+      "featured": true,
+      "pitch": "A private AI workspace for chat, code, images, and audio that runs on local models, even offline, so conversations never have to leave your device.",
+      "tags": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Privacy",
+        "Local AI",
+        "Ollama",
+        "PWA"
+      ],
+      "alt": "Local Agent Lab: Local Models. Portable Workspaces.",
+      "links": {
+        "demo": "https://lewismoten.github.io/local-agent-lab/",
+        "source": "https://github.com/lewismoten/local-agent-lab"
+      },
+      "role": "Author and maintainer.",
+      "problem": "Most AI tools send every conversation to a frontier model in someone else's data center. I wanted privacy without depending on those models: a workspace that keeps working without an internet connection, keeps conversations on the device, and that someone could carry on a USB drive, even to a shared or public library computer, without buying a computer or subscribing to an AI service.",
+      "built": "A browser workspace built with React, TypeScript, and Vite for chat, coding, research, and scheduled agents. It runs small models in the browser or on a local web server through Ollama, so it works offline with no data leaving the device; API profiles are optional. Projects and conversations live in a folder or on a removable drive, with browser storage as a fallback. It also covers browser image generation, depth maps, SVG tracing, text to speech, voice profiles, and transcription, and it installs as a web app that can reload offline.",
+      "hard": "Browsers differ in what they allow. A folder workspace needs desktop Chrome or Edge, model capability varies by device, and scheduled agents only run while the app tab is open. Removing a drive safely needed an **Eject workspace** step that stops new work, waits for active file operations, and unloads browser models. Nothing downloads automatically; optional engines and models are fetched on request and can resume.",
+      "results": "A live demo you can try today. The README keeps an honest feature table with each current limit beside it: image editing, face animation, and production-quality mesh reconstruction are still open work, and there is no verified generative image-to-video."
+    },
+    {
+      "slug": "crystal-9",
+      "title": "Crystal-9",
+      "subtitle": "Tiny MoE for 8-bit hardware",
+      "group": "Applied AI and model engineering",
+      "featured": true,
+      "pitch": "A compact, validated mixture-of-experts tic-tac-toe policy model: a 46,299-byte packed INT4 artifact with zero policy misses across 294,778 legal histories.",
+      "tags": [
+        "PyTorch",
+        "MoE",
+        "INT4",
+        "Model validation",
+        "Python"
+      ],
+      "alt": "Crystal-9: Tiny model. Nine possibilities",
+      "links": {
+        "source": "https://github.com/lewismoten/crystal-9",
+        "other": [
+          {
+            "label": "Hugging Face",
+            "url": "https://huggingface.co/lewismoten/crystal-9"
+          }
+        ]
+      },
+      "role": "Designer, director, maintainer, and publisher. Code and documentation were developed with assistance from GPT-5.6-terra Med, accessed through Hermes with Honcho for project memory.",
+      "problem": "A model that has to run on tight memory budgets can't borrow a general vocabulary or a standard runtime. The goal was the smallest truthful local MoE tic-tac-toe policy model, built clean-room.",
+      "built": "A sparse MoE policy redesigned around a 13-token game vocabulary and an eight-token move-history context. The locked design is a 32-wide hidden state, 8 attention heads with 2 KV heads, a 64-wide dense intermediate, and 9 routed experts with top-2 routing. A packed INT4 artifact was released for a custom local runtime.",
+      "hard": "Precision is a policy, not a promise. FP32 is the baseline; F16, Q6_K, Q4_K_M, Q3_K, Q2_K, and experimental 1-bit-family formats are only candidates. A format is publishable after the exact target runtime passes the complete legal-policy and invalid-input gates. The custom vocabulary is separate from the earlier Ollama-compatible one, so Crystal-9 has to prove token-ID parity before claiming Ollama compatibility. For a standard llama.cpp or Ollama model I point to Palace-9.",
+      "results": "The released artifact is 46,299 bytes, with zero policy misses across 294,778 legal histories. A compact adaptation powers Crystal Palace 9 on the Commodore 64. Releases are packaged with checksums when a version tag is pushed."
+    },
+    {
+      "slug": "crystal-palace",
+      "title": "Crystal Palace 9",
+      "subtitle": "AI on 8-bit hardware",
+      "group": "Applied AI and model engineering",
+      "featured": false,
+      "pitch": "A Commodore 64 tic-tac-toe project built around the original Crystal-9 packed INT4 weights, run from a 1541 disk.",
+      "tags": [
+        "6502 assembly",
+        "Commodore 64",
+        "Python",
+        "PyTorch",
+        "Model packaging"
+      ],
+      "alt": "Crystal Palace 9",
+      "links": {
+        "source": "https://github.com/lewismoten/crystal-palace",
+        "video": [
+          {
+            "label": "Video",
+            "url": "https://www.youtube.com/watch?v=UJME73NxyfA"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "Could the original Crystal-9 neural-network weights run on a Commodore 64 from a 1541 disk? The repository, called Crystal Palace 64 (CP64), treats this as a feasibility project, with no substitute move table, hand-written policy, distilled model, or requantized weights.",
+      "built": "A command-room interface and presentation assets drawn for the machine's 8 x 8 multicolor graphics, a disk-backed INFO archive, a playable human board, and 6502 assembly with an isolated module that materializes the original tokens. Python scripts export 48 pageable model packets from the verified Crystal-9 release and package everything into a D64 disk image. A static GitHub Pages asset editor supports the artwork.",
+      "hard": "Memory and disk. The runtime memory and disk-paging design, the D64 layout, and the packet map each have their own document in the repository, and bounded engineering gates check the original weights step by step.",
+      "results": "A ready-to-load disk image built by one command, and a regression suite for source and assets. The README is plain about status: the project is not yet a claim of full player-versus-AI model gameplay."
+    },
+    {
+      "slug": "palace-9",
+      "title": "Palace-9",
+      "subtitle": "Local model inspection",
+      "group": "Applied AI and model engineering",
+      "featured": false,
+      "pitch": "A playable tic-tac-toe lab that pairs a deterministic controller with a compact MoE model trained from scratch, and a browser inspector that reads the checkpoint locally.",
+      "tags": [
+        "Qwen2-MoE",
+        "Ollama",
+        "llama.cpp",
+        "JavaScript",
+        "Model visualization"
+      ],
+      "alt": "Palace-9: Tic-tac-toe & model inspection",
+      "links": {
+        "demo": "https://lewismoten.github.io/palace-9/",
+        "source": "https://github.com/lewismoten/palace-9",
+        "video": [
+          {
+            "label": "Video",
+            "url": "https://www.youtube.com/watch?v=J7bgpmks_KM"
+          }
+        ],
+        "other": [
+          {
+            "label": "Ollama",
+            "url": "https://ollama.com/lewismoten/palace-9"
+          },
+          {
+            "label": "Hugging Face",
+            "url": "https://huggingface.co/lewismoten/palace-9"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "I wanted to look inside a small model, not only run it. That meant keeping two things separate: a perfect-play controller for the game, and a trained model that reads raw move histories.",
+      "built": "A 3x3 simulation with 0-, 1-, and 2-player modes. A deterministic minimax policy in browser JavaScript is the perfect-play oracle. A separate compact causal model uses the Qwen2-MoE architecture, so it works with Ollama and llama.cpp without a custom fork. The browser decodes the packed FP32, F16, Q6_K, or Q4_K_M release artifact locally and computes a forward trace from its weights.",
+      "hard": "Keeping real and fictional parts apart. The site never calls Ollama; its board moves come from the local oracle, and the visualizer is a local trace. The map, DEFCON strip, trajectories, and cipher are labeled visual fiction. My September post on the project describes the visualization, training, and tokenizer problems I hit, and how they led to the smaller Crystal-9.",
+      "results": "A live demo, a published Ollama model, and a Hugging Face release."
+    },
+    {
+      "slug": "zogograph-client",
+      "title": "Zogograph Client",
+      "subtitle": "AI-assisted server monitoring",
+      "group": "Applied AI and model engineering",
+      "featured": true,
+      "pitch": "PHP and SQLite collectors with a JavaScript dashboard make server telemetry, alerts, and diagnostics readable, and an AI assistant calls diagnostic tools and tracks what an investigation costs.",
+      "tags": [
+        "PHP",
+        "SQLite",
+        "JavaScript",
+        "WHM/cPanel",
+        "Tool calling",
+        "Linux hosting"
+      ],
+      "alt": "Zogograph dashboard social preview",
+      "links": {
+        "source": "https://github.com/lewismoten/zogograph-client",
+        "video": [
+          {
+            "label": "Videos",
+            "url": "https://www.youtube.com/watch?v=OKndBMPknmQ&list=PLaLeerEZeFMs"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "A monitor you have to remember to look at tells you afterwards. Zogograph answers three questions: what is happening now, what is growing, and where to go to fix it. It also emails when something jumps, and it can tell you before a home directory fills up.",
+      "built": "A PHP account collector run by cron, a host collector run by root from WHM's crontab (it sees what CageFS hides from the account), and a static dashboard that talks to a single API file. Readings go into SQLite databases that are never served. A health page depends on nothing, so it works when the rest does not. A setup wizard runs in a browser or at a prompt. An AI assistant calls diagnostic tools and tracks the cost of an investigation.",
+      "hard": "The account collector and the host collector see different things, so they run separately. Collectors are command-line only, with `.htaccess` denying them over HTTP, and the README documents migration safety.",
+      "results": "The source release has no dependencies and ships a CycloneDX software bill of materials, third-party notices, and a security policy. It is source-available under FSL-1.1-Apache-2.0, and each release becomes Apache-2.0 two years after it ships."
+    },
+    {
+      "slug": "sculpted-prim-toolkit",
+      "title": "Sculpted Prim Toolkit",
+      "subtitle": "Three.js editor",
+      "group": "Browser tools and visualization",
+      "featured": false,
+      "pitch": "Decodes Second Life-style RGB sculpt maps into editable 3D geometry in the browser, with exports to PNG, glTF/GLB, OBJ, and STL.",
+      "tags": [
+        "Three.js",
+        "WebGL",
+        "JavaScript",
+        "3D export"
+      ],
+      "alt": "Sculpted Prim Toolkit",
+      "links": {
+        "demo": "https://lewismoten.github.io/sculpted-prim-toolkit/",
+        "source": "https://github.com/lewismoten/sculpted-prim-toolkit",
+        "video": [
+          {
+            "label": "Videos",
+            "url": "https://www.youtube.com/watch?v=egAIXJwAAHw&list=PLIyz44ZkJ3sk"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "A sculpted prim stores its shape as position data in the red, green, and blue channels of an image. Without a tool, that shape is hard to see, inspect, or change.",
+      "built": "An in-browser viewer and editor that reads the RGB position data and turns it into an interactive Three.js model. Camera views include orbit, orthographic, perspective, isometric, and face-oriented. You can show wireframes, point clouds, NURBS surfaces, and performance statistics, and select and edit single vertices from the 2D map or the 3D scene. Textures can be applied, along with generated vertex-color, density, distance, and face-angle maps.",
+      "hard": "Editing happens in two places, the 2D map and the 3D scene, and the tool previews source RGB data, selected pixel coordinates, rows, columns, and mesh statistics. Unused map pixels can be shown several ways, including a live camera view.",
+      "results": "Exports a PNG sculpt map, and glTF, GLB, OBJ (with optional MTL and PNG texture), or binary STL models. It runs as a static page from GitHub Pages with no server runtime."
+    },
+    {
+      "slug": "data-over-audio",
+      "title": "Data Over Audio",
+      "subtitle": "Web Audio API",
+      "group": "Browser tools and visualization",
+      "featured": true,
+      "pitch": "Sends text and binary files through sound using MFSK, packets, CRC checks, Hamming error correction, interleaving, and repeat requests.",
+      "tags": [
+        "Web Audio API",
+        "JavaScript",
+        "MFSK",
+        "Error correction",
+        "Signal processing"
+      ],
+      "alt": "Data Over Audio",
+      "links": {
+        "demo": "https://lewismoten.github.io/data-over-audio/",
+        "source": "https://github.com/lewismoten/data-over-audio",
+        "video": [
+          {
+            "label": "Videos",
+            "url": "https://www.youtube.com/watch?v=_6qxB3gKN_E&list=PLEyaach61fdU-OPcb5Aqgah2l6TTsaLia"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "The experiment's goal was to transfer text or a binary file using sound waves, between two browsers or on one device.",
+      "built": "Binary data is modulated with many oscillators using multi-frequency shift keying (MFSK), and the audio analyzer demodulates it again. Data is split into packets with CRC checks so failed packets can be discarded, Hamming codes so the receiver can try to repair a packet, and interleaving. An Automatic Repeat Request mode asks again for packets that failed, and the receiver lists packet errors.",
+      "hard": "I found the first packet often failed, and it carries the length header, so there is an option to send it twice. Sender and receiver must share the same frequencies, FSK pairs, packetization, and sampling period.",
+      "results": "Using only telephone frequencies (300 Hz to 3.4 kHz), one laptop alone reached just under 1 Kbps. Between a laptop and a mobile phone it was much slower: 138 bps for telephone frequencies and 538 bps for human hearing frequencies, and about half of that effective once error correction and packet headers are counted. It is a pure JavaScript app, with Vite only for local running."
+    },
+    {
+      "slug": "emoji",
+      "title": "Emoji Explorer",
+      "subtitle": "Unicode and pixel font",
+      "group": "Browser tools and visualization",
+      "featured": false,
+      "pitch": "A localized, installable Unicode emoji explorer with sequence filters and offline support, plus a 12 x 12 Pixel Emoji font and an npm package of lookup packs.",
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "Unicode",
+        "PWA",
+        "npm",
+        "Accessibility"
+      ],
+      "alt": "Emoji Explorer: Unicode emoji for JavaScript",
+      "links": {
+        "demo": "https://lewismoten.github.io/emoji/",
+        "source": "https://github.com/lewismoten/emoji",
+        "other": [
+          {
+            "label": "npm",
+            "url": "https://www.npmjs.com/package/@lewismoten/emoji"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "Emoji keep growing, and operating-system fonts on older devices stop updating. Finding the right sequence, such as a skin-tone, hair, gender, family, or joined (ZWJ) variant, is also harder than it looks.",
+      "built": "Three connected projects in one repository. Emoji Explorer is a localized research and discovery app with search, version and sequence filters, sequence visualization, rendering diagnostics, favorites, keyboard navigation, and offline support. Pixel Emoji is an original 12 x 12 color font with a pixel-art editor, made to give newer emoji to devices with outdated fonts. The npm package `@lewismoten/emoji` holds typed lookup packs of every Unicode-recommended fully-qualified sequence.",
+      "hard": "Keeping proposed Emoji 18.0 candidates separate from released emoji across the package, the Explorer, and the font. The root export is a small curated pack, and the full lookup is imported only when needed, in both ES module and CommonJS forms.",
+      "results": "A live explorer, a downloadable fallback font, and a typed npm package where editors autocomplete exact emoji keys and show the emoji name and glyph in declaration comments."
+    },
+    {
+      "slug": "qr",
+      "title": "QR Code Generator",
+      "subtitle": "Creator and inspector",
+      "group": "Browser tools and visualization",
+      "featured": false,
+      "pitch": "A browser tool backed by my own ES module for QR codes, with mixed segmentation, versions 1-40, Reed-Solomon correction, mask selection, and structural inspection.",
+      "tags": [
+        "JavaScript",
+        "ES modules",
+        "Reed-Solomon",
+        "Testing",
+        "Performance budgets"
+      ],
+      "alt": "QR Code Generator",
+      "links": {
+        "demo": "https://qr.lewismoten.com/",
+        "source": "https://github.com/lewismoten/qr"
+      },
+      "role": "Author and maintainer.",
+      "problem": "Most QR tools only make a code. I wanted one that also lets you look at how the code is built.",
+      "built": "A first-party QR encoder, published as a stable, self-contained ES module (`dist/qr.min.js`) that the app reuses and anyone else can download or import. The app covers mixed segmentation, versions 1 through 40, Reed-Solomon error correction, mask selection, and structural inspection. Browser code is organized into app and encoder folders with separate JavaScript and CSS entry points.",
+      "hard": "Staying small. The project pins its single development dependency and has a `verify` command that runs source linting, tests with coverage thresholds, the production build, and asset-budget checks. The size audit estimates transferred HTML, CSS, and JavaScript using the same Brotli quality as the local server.",
+      "results": "A live generator at qr.lewismoten.com and an encoder module you can import on its own. The README names git.lewismoten.com as the canonical repository."
+    },
+    {
+      "slug": "gamemaker-sandbox",
+      "title": "Game-Maker: Sandbox Edition",
+      "subtitle": "DOS engine port and visual editors",
+      "group": "Publishing and interactive experiences",
+      "featured": true,
+      "pitch": "RSD Game-Maker 3.0 reimplemented and extended in TypeScript: original DOS file formats, browser editors, OPL2 audio, offline play, automated level checks, and an interactive 1994 desktop.",
+      "tags": [
+        "TypeScript",
+        "Vite",
+        "Web Audio",
+        "File formats",
+        "npm packages",
+        "Automated testing",
+        "AI-assisted development"
+      ],
+      "alt": "Game-Maker: Sandbox Edition. Make 1994 DOS games. No programming.",
+      "links": {
+        "demo": "https://lewismoten.github.io/GameMaker-SandboxEdition/",
+        "source": "https://github.com/lewismoten/GameMaker-SandboxEdition",
+        "video": [
+          {
+            "label": "Video",
+            "url": "https://www.youtube.com/watch?v=0riemzdF8gc"
+          }
+        ]
+      },
+      "role": "Maintainer of the fork. Much of the recent code was written by AI agents under my direction, as my blog posts describe.",
+      "problem": "RSD Game-Maker 3.0 was a 1991-1995 game construction kit, and its source was released under the MIT License in 2014. I shoveled Fort Ashby driveways in the winter of 1992 to buy it. This fork makes and plays DOS-style games in a web browser, with no programming, and keeps the original DOS files intact.",
+      "built": "A port, not a PC emulator: Game-Maker and its PLAYGAME player are re-implemented in TypeScript from the released C source. Games are read and written byte for byte in the original formats, so a game made here still runs in DOS Game-Maker and DOSBox. There are three ways in: a 1994 desk with a simulated PC, the DOS screen alone, and a point-and-click web editor. A Level check plays each scene on the real engine, draws a heat map, marks places a player can get stuck, and offers fixes; a bot can record a walkthrough. The engine, archive tools, and builders are reusable npm packages. Original games are written entirely in code.",
+      "hard": "Matching the original exactly. The same code must make the same bytes: a check builds each game twice into separate folders and fails if any file differs, and another reads every original file, writes it back, and compares. Refactors must not change a generated byte.",
+      "results": "A live, playable site with offline play and desktop exports. My November 2026 posts describe the project's growth, including a parallel-AI-agent workflow and the 3.2.0 release."
+    },
+    {
+      "slug": "dreamy-tags",
+      "title": "Dreamy Tags",
+      "subtitle": "WordPress plugin",
+      "group": "Publishing and interactive experiences",
+      "featured": false,
+      "pitch": "An open-source PHP and Gutenberg plugin that shows tag clouds filtered by category and tag, with exclusion rules and minimum-use thresholds.",
+      "tags": [
+        "PHP",
+        "WordPress",
+        "Gutenberg",
+        "Open source"
+      ],
+      "alt": "Dreamy Tags banner",
+      "links": {
+        "other": [
+          {
+            "label": "Plugin directory",
+            "url": "https://wordpress.org/plugins/dreamy-tags/"
+          }
+        ],
+        "source": "https://github.com/lewismoten/dreamy-tags"
+      },
+      "role": "Author and maintainer.",
+      "problem": "A WordPress tag cloud normally lists every tag. On a site with many topics, I wanted a cloud of only the tags that appear within a chosen category or tag.",
+      "built": "A plugin published as a Block Editor block, a widget, and a shortcode. Options include the categories a post must belong to, whether child categories count, the tags a post must have, tags to exclude, auto-exclusion of the filter tags themselves, and a minimum number of appearances before a tag shows. Block settings map directly to the shortcode options.",
+      "hard": "Performance on larger sites. The block scans at most 2000 posts by default, and developers can change that with the `dreamy_tags_max_posts` filter.",
+      "results": "Listed in the WordPress Plugin Directory, so anyone can install it from Plugins, Add New."
+    },
+    {
+      "slug": "phone-exhibit",
+      "title": "Restoring the Signal",
+      "subtitle": "Dialable exhibit",
+      "group": "Publishing and interactive experiences",
+      "featured": true,
+      "pitch": "A live installation at Stone Branch Center for the Arts that joins a Raspberry Pi, Asterisk, and a PHP contribution site, with telephone audio, dialplans, transcription, and TTY support.",
+      "tags": [
+        "PHP",
+        "Asterisk",
+        "Raspberry Pi",
+        "ffmpeg",
+        "Audio",
+        "Accessibility"
+      ],
+      "alt": "Restoring the Signal",
+      "links": {
+        "demo": "https://phone.lewismoten.com/",
+        "source": "https://github.com/lewismoten/Phone-Exhibit",
+        "video": [
+          {
+            "label": "Videos",
+            "url": "https://www.youtube.com/watch?v=kmOV7_2MKPg&list=PLHG0YVBnnA7k"
+          }
+        ],
+        "press": [
+          {
+            "label": "Press and photos",
+            "url": "https://www.nvdaily.com/nvdaily/dial-i-for-interactive-new-exhibit-celebrates-150-years-of-communication/article_06d37f43-5f2d-5ee3-9621-2dc1853ef4c2.html"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "An exhibit celebrating 150 years of communication needed a phone visitors could dial, and a way for people to contribute audio to it.",
+      "built": "A live installation at Stone Branch Center for the Arts built from a Raspberry Pi, an Asterisk PBX server, and a PHP contribution site. The site converts audio with a 300-3000 Hz high-pass filter into 8 kHz, 16-bit mono WAV files to sound like a telephone and match what Asterisk plays. Transcriptions use AI, and Minimodem handles TTY teletype machines. A deploy script uploads only the files whose hash or size changed, using a remote manifest.",
+      "hard": "Secrets. FTP credentials are kept out of the project folder, even in ignored files, because local tools working in the repository can read anything saved there. The deploy script reads them from a file in my home directory.",
+      "results": "A working public exhibit with a live website. The local newspaper covered it as an interactive exhibit celebrating 150 years of communication."
+    },
+    {
+      "slug": "tiny-pockets-press",
+      "title": "Tiny Pockets Press",
+      "subtitle": "Miniature publishing",
+      "group": "Publishing and interactive experiences",
+      "featured": false,
+      "pitch": "A modular JavaScript editor for miniature books, with page layout, imposition logic, and separate interior and cover print and PDF views.",
+      "tags": [
+        "JavaScript",
+        "Print layout",
+        "Imposition",
+        "Markdown",
+        "PDF"
+      ],
+      "alt": "Tiny Pockets Press",
+      "links": {
+        "demo": "https://lewismoten.github.io/Tiny-Pockets-Press/#editor",
+        "source": "https://github.com/lewismoten/Tiny-Pockets-Press",
+        "video": [
+          {
+            "label": "Videos",
+            "url": "https://www.youtube.com/watch?v=w9IwuwX7BkE&list=PLAgk77H8yVCA"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "A miniature book has to be laid out so that its pages, folded and cut, come out in the right order. That is an imposition problem, and it is easy to get wrong by hand.",
+      "built": "A browser editor for miniature books, split into small JavaScript modules: configuration, state, Markdown and media handling, a layout engine, page rendering, imposition, a library, the editor, export, and the app shell. It keeps interior and cover as separate print and PDF views, and includes a sample book as data.",
+      "hard": "Version 6.1 is a syntax-corrected build of version 6. I rebuilt the JavaScript modules to remove invalid escaped strings and broken regular-expression literals, and added a `node --check` validation step to packaging so that cannot slip through again.",
+      "results": "A live editor on GitHub Pages that runs locally with one command."
+    },
+    {
+      "slug": "athens-acropolis",
+      "title": "Shoomi's HomePage",
+      "subtitle": "GeoCities restoration",
+      "group": "Publishing and interactive experiences",
+      "featured": false,
+      "pitch": "A restoration of my first web page from the 1990s, with a Canvas recreation of its Java applet marquee, Web Audio MIDI playback, and a browser version of a Visual Basic color editor.",
+      "tags": [
+        "JavaScript",
+        "Canvas",
+        "Web Audio",
+        "Web restoration",
+        "CSS"
+      ],
+      "alt": "Shoomi's HomePage: The Beginning of All Dreams",
+      "links": {
+        "demo": "https://lewismoten.github.io/Athens-Acropolis-4507/",
+        "source": "https://github.com/lewismoten/Athens-Acropolis-4507",
+        "video": [
+          {
+            "label": "Videos",
+            "url": "https://www.youtube.com/watch?v=UgJgb0VUaHw&list=PLI4A73VhrZT4"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "I got a GeoCities page in the 1990s, my first web page, under the account name moonhalo and the persona Shoomi. I archived it on a CD resume in 1999. Today's browsers can't run its Java applet, its embedded MIDI, or its Visual Basic editor.",
+      "built": "A partly modernized archive that still looks and sounds like the original. The Java applet marquee is recreated with HTML5 canvas, using the original message flow. A small Web Audio sampler player reads the original MIDI file directly. The title font loads as a webfont, which restores the look of the navigation and page titles. The old Visual Basic color writer is recreated as a browser app with a palette picker, per-letter colors, gradient HTML output, and a live preview.",
+      "hard": "Making the original experience viewable in a current browser without legacy plugins or local font installs.",
+      "results": "The original experience works in a current browser, with the restoration notes kept in the README."
+    },
+    {
+      "slug": "storage-d64",
+      "title": "D64 Storage Lab",
+      "subtitle": "Repair and optimization",
+      "group": "8-bit retro Commodore 64 projects",
+      "featured": true,
+      "pitch": "A browser workbench that maps Commodore 64 disk sectors and file chains, estimates read efficiency, repairs corruption, restores deleted files, and compares optimized and fragmented layouts.",
+      "tags": [
+        "JavaScript",
+        "Data visualization",
+        "Commodore 64",
+        "Disk formats",
+        "Binary parsing"
+      ],
+      "alt": "storage-d64 disk layout visualizer",
+      "links": {
+        "demo": "https://lewismoten.github.io/storage-d64/",
+        "source": "https://github.com/lewismoten/storage-d64",
+        "video": [
+          {
+            "label": "Video",
+            "url": "https://www.youtube.com/watch?v=cXeIy4AZewY"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "Some disk images generated with AI help passed basic validation but failed to load in emulators. A pass or fail wasn't enough; I needed to see the disk's structure and connect suspicious bytes to the structures they affect.",
+      "built": "A reusable JavaScript support layer and an interactive visual lab. You can create, load, inspect, and download 35-, 40-, and 42-track images, browse a visual disk map, and follow directory and file-sector chains. The lab finds the structural problems I met in real generated images, offers targeted repairs, and has an Auto Repair for low-risk fixes. You can drop files onto an image and download files directly.",
+      "hard": "Once integrity was covered, the question became how placement affects reading. The lab models a stock 1541 from its DOS ROM: rotation, head stepping, read-ahead, and the slow C64 serial bus. A speed map shows the delay each link adds to a stock LOAD and how closely the layout follows the DOS placement rule.",
+      "results": "Optimize and Deoptimize make layout tradeoffs visible and testable. A live lab is on GitHub Pages."
+    },
+    {
+      "slug": "sector-256",
+      "title": "Sector 256",
+      "subtitle": "Tiny programs for the C64",
+      "group": "8-bit retro Commodore 64 projects",
+      "featured": false,
+      "pitch": "A graphical Commodore 64 launcher for games, utilities, demos, and experiments whose stored payloads are 256 bytes or less.",
+      "tags": [
+        "6502 assembly",
+        "Python",
+        "Commodore 64",
+        "Build pipeline",
+        "Automated testing"
+      ],
+      "alt": "Sector 256: One block. Many worlds.",
+      "links": {
+        "demo": "https://lewismoten.github.io/sector-256/",
+        "source": "https://github.com/lewismoten/sector-256",
+        "video": [
+          {
+            "label": "Video",
+            "url": "https://www.youtube.com/watch?v=dptHv4-RSWo"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "One disk block holds 256 bytes. How much can a program do inside one? The limit is a disk-storage constraint, not a runtime one: launched programs run at $c000 and share a launcher API.",
+      "built": "A graphical launcher with a catalog of 288 programs, written in 6502 assembly with shared routines and a Python build pipeline. The build packages programs into a D64 disk image, and also writes a standalone PRG for each program, each with a BASIC loader and its own copy of the 795-byte API implementation. Automated machine-code tests check the programs.",
+      "hard": "Every catalog payload has to fit in 256 bytes, so programs lean on the shared launcher API instead of carrying their own routines.",
+      "results": "A playable disk image for VICE or a real 1541, a standalone PRG and a ZIP for every program, and a static catalog page on GitHub Pages that can send a program to a C64."
+    },
+    {
+      "slug": "stream-scribe",
+      "title": "Stream Scribe",
+      "subtitle": "Independent meeting archive and research",
+      "group": "Government Transparency",
+      "featured": true,
+      "pitch": "An independent archive and research tool for livestreamed government meetings: capture, local Whisper transcription, search, and annotation. Still in development.",
+      "tags": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "SQLite",
+        "Whisper",
+        "ffmpeg"
+      ],
+      "alt": "Stream Scribe: capture, search, research. Independent archives for live government meetings.",
+      "links": {
+        "source": "https://github.com/lewismoten/streamscribe"
+      },
+      "role": "Author and maintainer.",
+      "problem": "Public meetings are streamed live, and an independent record of them helps people review who spoke, the agenda, and the votes. This tool keeps that archive on your own computer.",
+      "built": "A tool that records a livestream, fills capture gaps from the official recording, and transcribes it on your own computer with Whisper. You can search transcripts and navigate thumbnails while the meeting is live, add speaker, topic, and vote annotations, and export short clips. Notes, transcripts, and clips can be published with links back to the official sources. It is built with React, TypeScript, Node.js, and SQLite.",
+      "hard": "Three ways to run it from one codebase: on your own computer with everything, in a browser with your data kept there (from a fork on GitHub Pages), or against a shared hub on PHP hosting for scheduled recorders, accounts, publishing, and podcasts.",
+      "results": "In development. The source is public; there is no live demo yet."
+    },
+    {
+      "slug": "upload-without-com",
+      "title": "Upload Files Without COM",
+      "subtitle": "Classic ASP file uploads, 2001 to 2003",
+      "group": "Earlier open source",
+      "featured": false,
+      "pitch": "A pure-ASP parser for multipart form uploads, so a site on IIS could accept files without buying a COM component.",
+      "tags": [
+        "Classic ASP",
+        "VBScript",
+        "ADODB"
+      ],
+      "alt": "The Upload Files Without COM version 3 example page.",
+      "links": {
+        "source": "https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/ASP/UploadFilesWithoutCOMv3",
+        "other": [
+          {
+            "label": "OpenWiki attachment patch that uses it",
+            "url": "https://sourceforge.net/p/openwiki/patches/1"
+          },
+          {
+            "label": "2008 evolt.org thread: a developer used it on several client sites",
+            "url": "https://lists.evolt.org/archive/Week-of-Mon-20080630/125069.html"
+          },
+          {
+            "label": "My Planet Source Code archive (2000s)",
+            "url": "https://github.com/lewismoten/Lewies-Code-Library-PSC"
+          }
+        ]
+      },
+      "role": "Author. Three versions: January 2001, March 2002, September 2003.",
+      "problem": "In 2001, accepting an upload in classic ASP on IIS meant buying a component from one of two companies, about $700, and finding a host willing to install a DLL.",
+      "built": "I read the RFC for multipart form uploads and wrote a parser in plain ASP. It saved files to disk or to a database, for free. Version 1 (1/13/2001) used classes instead of dictionary objects. Version 2 (3/20/2002) was faster, fixed bugs and commented every step. Version 3 (9/1/2003) has an object-oriented interface, saves binary data through ADODB, manages memory so larger files work, shows a real-time progress bar, and comes with a FAQ and a support site.",
+      "hard": "Parsing raw binary form data with only what a shared host already had, and keeping memory in check for large files.",
+      "results": "It was my most famous published code and won an award on Planet Source Code. The OpenWiki project had an attachment patch that used it, and in 2008 a developer on the evolt.org list said they had used it on several client sites."
+    },
+    {
+      "slug": "vss-journal-monitor",
+      "title": "Visual SourceSafe Journal Monitor Service",
+      "subtitle": "VB.NET Windows service, January 2004",
+      "group": "Earlier open source",
+      "featured": false,
+      "pitch": "A Windows service that watches a Visual SourceSafe database and sends alerts and daily reports, so a team in several time zones stops waiting on exclusive checkouts.",
+      "tags": [
+        "VB.NET",
+        ".NET",
+        "Windows service",
+        "SQL Server"
+      ],
+      "alt": "A VSS Monitor daily report email and a Windows Messenger pop-up.",
+      "links": {
+        "source": "https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/VBNet/VSSMonitorService",
+        "other": [
+          {
+            "label": "My Planet Source Code archive (2000s)",
+            "url": "https://github.com/lewismoten/Lewies-Code-Library-PSC"
+          }
+        ]
+      },
+      "role": "Author.",
+      "problem": "I worked with remote teammates in other time zones, and Visual SourceSafe used exclusive checkouts. A file checked out overnight somewhere else meant waiting.",
+      "built": "A service built from scratch, inspired by Doug Schmidt's SSMonitor. It reads the SourceSafe journal and sends alerts by email, MSN or Windows Messenger, or a plug-in. Each alert has its own filters and recipients, and each user has a time zone. Daily reports include who checked in without a comment. Storage is SQL Server or XML, and there is an installer.",
+      "results": "Published on Planet Source Code in January 2004."
+    },
+    {
+      "slug": "javascript-sha1",
+      "title": "JavaScript SHA-1",
+      "subtitle": "A hash function in the browser, April 2001",
+      "group": "Earlier open source",
+      "featured": false,
+      "pitch": "A JavaScript port of the SHA-1 hash, published in April 2001, before its collision weaknesses were known.",
+      "tags": [
+        "JavaScript",
+        "Cryptography"
+      ],
+      "alt": "A card showing the SHA-1 digest of abc.",
+      "links": {
+        "source": "https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/JavaScript/SecureHashAlgorithm(SHA-1)",
+        "other": [
+          {
+            "label": "My Planet Source Code archive (2000s)",
+            "url": "https://github.com/lewismoten/Lewies-Code-Library-PSC"
+          }
+        ]
+      },
+      "role": "Author.",
+      "problem": "The function makes a 160-bit digest, 40 hex digits, from a message of any length, and in 2001 there was little hashing code for the browser.",
+      "built": "A JavaScript port of SHA-1 that I published in April 2001.",
+      "results": "Years later, while contracting at a company, I found my own code in their commercial codebase with someone's SHA-256 additions on top. I told them. They checked their history, confirmed it predated me, and announced it to every team."
+    }
+  ],
+  "groupNotes": {
+    "Earlier open source": "Code I published in the 2000s, before the work above. The whole archive is on GitHub as [my Planet Source Code archive (2000s)](https://github.com/lewismoten/Lewies-Code-Library-PSC), and it has its own [browsable catalog](https://lewismoten.github.io/Lewies-Code-Library-PSC/Browse.htm)."
+  }
+}

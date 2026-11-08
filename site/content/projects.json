@@ -100,7 +100,8 @@
       "built": "Falken-9 searches model width, expert count and numerical precision against the whole deployment cost on the C64. The accepted model has nine board-square tokens, width 8, four learned experts with top-2 routing, real full-board attention and exact integer execution in 6502 assembly. Symmetry reduces the learned domain to 627 canonical boards; a fixed wrapper restores the original board, masks occupied squares and applies a documented tie order. The whole model stays in RAM, and every AI move runs it.",
       "hard": "Keeping it honest. The network predicts the complete set of optimal moves, because mapping one canonical move back would break tie behavior. Offline minimax supplies labels and checks but is never a gameplay fallback, and exact logits, packed arithmetic, chosen moves and whole games each have their own evidence gate. Interpreting the network was its own project: the research report probes it with interventions and counterexamples, and found context-dependent effects rather than a tidy fork expert or block neuron.",
       "results": "A 5,195-byte model packet with all 627 canonical boards passing assembled numerical checks. Crystal Palace 9, now powered by Falken-9, plays a complete AI-vs-AI game in just over a minute in an emulator, down from about 20 minutes with the earlier model. The project ships a ready-to-run PRG and D64, an exact-integer ONNX graph for Netron, a tensor-workflow chart and a research report with annotated figures. Tested in emulators only so far.",
-      "role": "Designer, director and maintainer. Development ran through the Hermes agent harness, with PyTorch doing the heavy lifting for training."
+      "role": "Designer, director and maintainer. AI agents (GPT-6.1 Sol through Hermes Agent) ran the training, integer conversion and probing work I directed; PyTorch did the heavy lifting.",
+      "made": "Built October 31 to November 1, 2026. Hermes Agent delegated the training, integer conversion and probing to GPT-6.1 Sol workers (openai-codex provider). Training used Python and PyTorch with AdamW: early experiments on an RTX 3080 Ti compared float, binary and ternary candidates, and the compact models trained on a single CPU thread with binary cross-entropy over the complete set of optimal moves. Falken-9 was trained from scratch, not fine-tuned from Crystal-9, and the 5,195-byte integer packet came from direct conversion with no extra training.\n\nProbing ran on the CPU against frozen weights, not by another model judging answers: linear readouts with held-out splits and shuffled-label controls, ablations, dose-response tests, activation patching, paired lesions, and attention, router and gate interventions. Integer forwards were checked against an independent arbitrary-integer oracle across 627 canonical positions, 4,520 boards and 294,778 histories. C64 execution was checked with 64tass, py65 and VICE; inspection used ONNX Runtime, Netron and Pillow, with pytest for the tests."
     },
     {
       "slug": "crystal-palace",
@@ -680,5 +681,16 @@
   ],
   "groupNotes": {
     "Earlier open source": "Code I published in the 2000s, before the work above. The whole archive is on GitHub as [my Planet Source Code archive (2000s)](https://github.com/lewismoten/Lewies-Code-Library-PSC), and it has its own [browsable catalog](https://lewismoten.github.io/Lewies-Code-Library-PSC/Browse.htm)."
-  }
+  },
+  "series": [
+    {
+      "name": "The tic-tac-toe models",
+      "slugs": [
+        "palace-9",
+        "crystal-9",
+        "crystal-palace",
+        "falken-9"
+      ]
+    }
+  ]
 }

@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT = join(ROOT, '..', 'docs');
 const site = JSON.parse(readFileSync(join(ROOT, 'site.json'), 'utf8'));
-const { groups, projects, groupNotes = {} } = JSON.parse(readFileSync(join(ROOT, 'content/projects.json'), 'utf8'));
+const { groups, projects, groupNotes = {}, series = [] } = JSON.parse(readFileSync(join(ROOT, 'content/projects.json'), 'utf8'));
 const BASE = site.url;
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -243,6 +243,18 @@ ${groups
 }
 
 // Project pages
+// A numbered strip linking the projects of a series, with the current one marked.
+function seriesStrip(p) {
+  const s = series.find((x) => x.slugs.includes(p.slug));
+  if (!s) return '';
+  const items = s.slugs
+    .map((slug, i) => {
+      const q = bySlug[slug];
+      return slug === p.slug ? `<li aria-current="page"><strong>${i + 1}. ${esc(q.title)}</strong></li>` : `<li><a href="/projects/${slug}/">${i + 1}. ${esc(q.title)}</a></li>`;
+    })
+    .join('');
+  return `<nav class="series" aria-label="${esc(s.name)}"><p>Part of a series: ${esc(s.name)}</p><ol>${items}</ol></nav>\n`;
+}
 for (const p of projects) {
   const rel = posts.filter((x) => x.project === p.slug);
   // Two parts: a plain summary for someone deciding, then how it works for someone technical.
@@ -260,6 +272,7 @@ for (const p of projects) {
     part('Technical overview', [
       ['How it works', p.built],
       ['Hard parts', p.hard],
+      ['How it was made', p.made],
     ]).replace(/<\/section>$/, `<h3>Stack</h3>\n${stack}</section>`),
   ];
   add(
@@ -277,7 +290,7 @@ for (const p of projects) {
 <img class="hero-img" src="${heroOf(p)}" alt="${esc(p.alt)}" width="640" height="320" decoding="async" fetchpriority="high">
 <p class="lede">${esc(p.pitch)}</p>
 <p class="links">${projectLinks(p).map(([l, u]) => `<a class="btn" href="${esc(u)}">${esc(l)}</a>`).join(' ')}</p>
-<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+${seriesStrip(p)}<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
 ${sections.join('\n')}
 ${rel.length ? `<section><h2>Posts about it</h2><ul class="plain">${rel.map((x) => `<li><time datetime="${x.date}">${dateLabel(x.date)}</time> — <a href="/posts/${x.slug}/">${esc(x.title)}</a></li>`).join('')}</ul></section>` : ''}
 </article>`,

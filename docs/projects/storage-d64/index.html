@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D64 Storage Lab: Repair and optimization | Lewis Moten</title>
+<meta name="description" content="A browser workbench that maps Commodore 64 disk sectors and file chains, estimates read efficiency, repairs corruption, restores deleted files, and compares optimized and fragmented layouts.">
+<link rel="canonical" href="https://lewismoten.github.io/projects/storage-d64/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="D64 Storage Lab: Repair and optimization | Lewis Moten">
+<meta property="og:description" content="A browser workbench that maps Commodore 64 disk sectors and file chains, estimates read efficiency, repairs corruption, restores deleted files, and compares optimized and fragmented layouts.">
+<meta property="og:url" content="https://lewismoten.github.io/projects/storage-d64/">
+<meta property="og:image" content="https://lewismoten.github.io/img/projects/storage-d64.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="D64 Storage Lab: Repair and optimization | Lewis Moten">
+<meta name="twitter:description" content="A browser workbench that maps Commodore 64 disk sectors and file chains, estimates read efficiency, repairs corruption, restores deleted files, and compares optimized and fragmented layouts.">
+<meta name="twitter:image" content="https://lewismoten.github.io/img/projects/storage-d64.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="/feed.xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="/">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/projects/" aria-current="page">Projects</a></li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme" aria-label="Switch between light and dark theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="/projects/">Projects</a> / 8-bit retro Commodore 64 projects</nav>
+<article class="project">
+<h1>D64 Storage Lab</h1>
+<p class="sub">Repair and optimization</p>
+<img class="hero-img" src="/img/projects/storage-d64.jpg" alt="storage-d64 disk layout visualizer" width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">A browser workbench that maps Commodore 64 disk sectors and file chains, estimates read efficiency, repairs corruption, restores deleted files, and compares optimized and fragmented layouts.</p>
+<p class="links"><a class="btn" href="https://lewismoten.github.io/storage-d64/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/storage-d64">Source</a> <a class="btn" href="https://www.youtube.com/watch?v=cXeIy4AZewY">Video</a></p>
+<p class="tags"><span>JavaScript</span><span>Data visualization</span><span>Commodore 64</span><span>Disk formats</span><span>Binary parsing</span></p>
+<section><h2>The problem</h2><p>Some disk images generated with AI help passed basic validation but failed to load in emulators. A pass or fail wasn't enough; I needed to see the disk's structure and connect suspicious bytes to the structures they affect.</p></section>
+<section><h2>What I built</h2><p>A reusable JavaScript support layer and an interactive visual lab. You can create, load, inspect, and download 35-, 40-, and 42-track images, browse a visual disk map, and follow directory and file-sector chains. The lab finds the structural problems I met in real generated images, offers targeted repairs, and has an Auto Repair for low-risk fixes. You can drop files onto an image and download files directly.</p></section>
+<section><h2>Hard parts</h2><p>Once integrity was covered, the question became how placement affects reading. The lab models a stock 1541 from its DOS ROM: rotation, head stepping, read-ahead, and the slow C64 serial bus. A speed map shows the delay each link adds to a stock LOAD and how closely the layout follows the DOS placement rule.</p></section>
+<section><h2>Results</h2><p>Optimize and Deoptimize make layout tradeoffs visible and testable. A live lab is on GitHub Pages.</p></section>
+<section><h2>My role</h2><p>Author and maintainer.</p></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="/feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="/theme.js" defer></script>
+</body>
+</html>

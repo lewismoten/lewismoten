@@ -608,12 +608,28 @@
         "source": "https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/ASP/UploadFilesWithoutCOMv3",
         "other": [
           {
-            "label": "OpenWiki attachment patch that uses it",
-            "url": "https://sourceforge.net/p/openwiki/patches/1"
+            "label": "Version 2 on Planet Source Code (archived 2010: 210,297 views, 231 comments)",
+            "url": "https://web.archive.org/web/20101229090110/http://www.pscode.com/vb/scripts/ShowCode.asp?txtCodeId=7361&lngWId=4"
           },
           {
-            "label": "2008 evolt.org thread: a developer used it on several client sites",
-            "url": "https://lists.evolt.org/archive/Week-of-Mon-20080630/125069.html"
+            "label": "Version 3 on Planet Source Code (archived)",
+            "url": "https://web.archive.org/web/20200604164655/http://planet-source-code.com/vb/scripts/ShowCode.asp?txtCodeId=8525&lngWId=4"
+          },
+          {
+            "label": "Stack Overflow, 2012: \"solution credit goes to Lewis Moten\"",
+            "url": "https://stackoverflow.com/a/12200970"
+          },
+          {
+            "label": "evolt.org list, 2008: used on several client sites (archived)",
+            "url": "https://web.archive.org/web/20240910180039/https://lists.evolt.org/archive/Week-of-Mon-20080630/125069.html"
+          },
+          {
+            "label": "WebmasterWorld, 2006: a reader points to it",
+            "url": "https://www.webmasterworld.com/forum47/3290.htm"
+          },
+          {
+            "label": "Tek-Tips, 2007: a developer's upload built on it",
+            "url": "https://www.tek-tips.com/threads/uploading-images-to-a-record.1338773"
           },
           {
             "label": "My Planet Source Code archive (2000s)",
@@ -625,7 +641,7 @@
       "problem": "In 2001, accepting an upload in classic ASP on IIS meant buying a component from one of two companies, about $700, and finding a host willing to install a DLL.",
       "built": "I read the RFC for multipart form uploads and wrote a parser in plain ASP. It saved files to disk or to a database, for free. Version 1 (1/13/2001) used classes instead of dictionary objects. Version 2 (3/20/2002) was faster, fixed bugs and commented every step. Version 3 (9/1/2003) has an object-oriented interface, saves binary data through ADODB, manages memory so larger files work, shows a real-time progress bar, and comes with a FAQ and a support site.",
       "hard": "Parsing raw binary form data with only what a shared host already had, and keeping memory in check for large files.",
-      "results": "It was my most famous published code and won an award on Planet Source Code. The OpenWiki project had an attachment patch that used it, and in 2008 a developer on the evolt.org list said they had used it on several client sites."
+      "results": "It was my most famous published code and won an award on Planet Source Code. By the end of 2010, version 2's page there had been read 210,297 times, rated by 50 users and drawn 231 comments from 2002 to 2010. Developers kept recommending it for years: an OpenWiki attachment patch on SourceForge (2003) was built on it, a WebmasterWorld reader pointed others to it in 2006, a developer on the evolt.org list said in 2008 that they had used it on several client sites, and a 2012 Stack Overflow answer to \"How to upload files with asp-classic\" (now over 100,000 views) used it, with \"solution credit goes to Lewis Moten\"."
     },
     {
       "slug": "vss-journal-monitor",

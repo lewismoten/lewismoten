@@ -110,7 +110,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : ''}
 ${site.nav.map((n) => `<li><a href="${n.href}"${path === n.href || (n.href !== '/' && path.startsWith(n.href)) ? ' aria-current="page"' : ''}>${esc(n.label)}</a></li>`).join('\n')}
 </ul>
 </nav>
-<button class="theme" type="button" id="theme" aria-label="Switch between light and dark theme">Theme</button>
+<button class="theme" type="button" id="theme">Theme</button>
 </div>
 </header>
 <main id="main" class="wrap">
@@ -283,7 +283,7 @@ add(
     description: 'Short, dated project updates with screenshots. Long write-ups are on my blog.',
     body: `<h1>Posts</h1>
 <p>Short, dated updates with screenshots. The long write-ups are on <a href="${site.links.blog}">my blog</a>. <a href="/feed.xml">Subscribe with the feed.</a></p>
-${posts.map((p) => postBlock(p)).join('\n')}`,
+${posts.map((p) => postBlock(p, { heading: "h2" })).join('\n')}`,
   }),
 );
 for (const post of posts) {

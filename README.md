@@ -25,7 +25,7 @@ I turn complex data and workflows into usable web applications. I've programmed 
 
 ## Projects
 
-Each project's **More details** page on [my portfolio site](https://lewismoten.github.io/lewismoten/projects/) has an executive summary and a technical overview.
+Each project's **More details** page on [my portfolio site](https://lewismoten.github.io/lewismoten/projects/) has an executive summary and a technical overview. Palace-9, Crystal-9, Crystal Palace 9 and Falken-9 are one series, compared side by side in [The tic-tac-toe models](https://lewismoten.github.io/lewismoten/series/tic-tac-toe-models/).
 
 <!-- PROJECTS:START -->
 ### Applied AI and model engineering

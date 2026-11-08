@@ -253,7 +253,8 @@ function seriesStrip(p) {
       return slug === p.slug ? `<li aria-current="page"><strong>${i + 1}. ${esc(q.title)}</strong></li>` : `<li><a href="/projects/${slug}/">${i + 1}. ${esc(q.title)}</a></li>`;
     })
     .join('');
-  return `<nav class="series" aria-label="${esc(s.name)}"><p>Part of a series: ${esc(s.name)}</p><ol>${items}</ol></nav>\n`;
+  const name = s.page ? `<a href="/series/${s.page}/">${esc(s.name)}</a>` : esc(s.name);
+  return `<nav class="series" aria-label="${esc(s.name)}"><p>Part of a series: ${name}</p><ol>${items}</ol></nav>\n`;
 }
 for (const p of projects) {
   const rel = posts.filter((x) => x.project === p.slug);
@@ -293,6 +294,38 @@ for (const p of projects) {
 ${seriesStrip(p)}<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
 ${sections.join('\n')}
 ${rel.length ? `<section><h2>Posts about it</h2><ul class="plain">${rel.map((x) => `<li><time datetime="${x.date}">${dateLabel(x.date)}</time> — <a href="/posts/${x.slug}/">${esc(x.title)}</a></li>`).join('')}</ul></section>` : ''}
+</article>`,
+    }),
+  );
+}
+
+// Series pages: a side-by-side table of the projects and what each step taught the next.
+for (const s of series.filter((x) => x.page)) {
+  const c = JSON.parse(readFileSync(join(ROOT, 'content/series', `${s.page}.json`), 'utf8'));
+  const head = `<tr><th scope="col"><span class="vh">Property</span></th>${s.slugs.map((slug, i) => `<th scope="col"><a href="/projects/${slug}/">${esc(c.columns[i])}</a></th>`).join('')}</tr>`;
+  const rows = c.rows.map(([label, ...cells]) => `<tr><th scope="row">${esc(label)}</th>${cells.map((x) => `<td>${inline(x)}</td>`).join('')}</tr>`).join('\n');
+  const path = `/series/${s.page}/`;
+  add(
+    path,
+    page({
+      path,
+      title: c.title,
+      description: c.description,
+      image: heroOf(bySlug[s.slugs[s.slugs.length - 1]]),
+      type: 'article',
+      body: `<nav aria-label="Breadcrumb" class="crumb"><a href="/projects/">Projects</a> / Series</nav>
+<article class="project">
+<h1>${esc(c.title)}</h1>
+${c.intro.map((x) => `<p${x === c.intro[0] ? ' class="lede"' : ''}>${inline(x)}</p>`).join('\n')}
+<section class="part"><h2>Side by side</h2>
+<div class="tablewrap" tabindex="0" role="region" aria-label="${esc(c.title)} compared"><table class="compare">
+<thead>${head}</thead>
+<tbody>${rows}</tbody>
+</table></div></section>
+<section class="part"><h2>What each step taught the next</h2>
+${c.steps.map((x, i) => `<h3><a href="/projects/${s.slugs[i]}/">${esc(x.title)}</a></h3>${markdown(x.text)}`).join('\n')}
+</section>
+<p class="note">${inline(c.notes)}</p>
 </article>`,
     }),
   );

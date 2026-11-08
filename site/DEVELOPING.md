@@ -41,7 +41,7 @@ Add an object to `content/projects.json`:
 - Details page text: `problem`, `results` and `role` make the Executive summary; `built`, `hard` and the `tags` (as Stack) make the Technical overview. An optional `made` (how it was made: tools, models, methods) shows there as How it was made. Keep it 120 to 250 words in all and only say what the repository or my own pages say. A missing `hard` or `results` is skipped.
 - Images: the repository's social preview, saved as `img/projects/<slug>.jpg` (640 x 320, under about 150 KB) and a miniature `img/projects/<slug>-sm.jpg` (320 x 160, under about 30 KB). On macOS: `sips -s format jpeg -s formatOptions 75 -z 160 320 in.png --out img/projects/<slug>-sm.jpg`.
 
-Projects that belong together go in `series` at the top of `content/projects.json` (a name and the slugs in order); each of their pages shows a numbered Part of a series strip.
+Projects that belong together go in `series` at the top of `content/projects.json` (a name and the slugs in order); each of their pages shows a numbered Part of a series strip. Give a series a `page` and write `content/series/<page>.json` (title, description, intro, columns, rows, steps, notes) for its own side-by-side page at `/series/<page>/`.
 
 Text in the case-study fields can use `**bold**`, `*italic*`, `` `code` `` and `[links](https://...)`.
 

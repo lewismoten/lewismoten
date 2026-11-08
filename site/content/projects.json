@@ -61,10 +61,10 @@
       },
       "role": "Designer, director, maintainer, and publisher. Code and documentation were developed with assistance from GPT-5.6-terra Med, accessed through Hermes with Honcho for project memory.",
       "problem": "A model that has to run on tight memory budgets can't borrow a general vocabulary or a standard runtime. The goal was the smallest truthful local MoE tic-tac-toe policy model, built clean-room.",
-      "built": "A sparse MoE policy redesigned around a 13-token game vocabulary and an eight-token move-history context. The locked design is a 32-wide hidden state, 8 attention heads with 2 KV heads, a 64-wide dense intermediate, and 9 routed experts with top-2 routing. A packed INT4 artifact was released for a custom local runtime.",
+      "built": "A separately trained attention and mixture-of-experts policy with its own 13-token vocabulary and an eight-move history: token and position embeddings, one causal attention layer with 8 heads at width 32, a learned router, and 9 experts (each 32 to 32 to 32) with top-2 selection, 24,726 parameters in all. INT4 and INT3 versions run in independent packed runtimes, and an INT4 artifact was released for a custom local runtime.",
       "hard": "Precision is a policy, not a promise. FP32 is the baseline; F16, Q6_K, Q4_K_M, Q3_K, Q2_K, and experimental 1-bit-family formats are only candidates. A format is publishable after the exact target runtime passes the complete legal-policy and invalid-input gates. The custom vocabulary is separate from the earlier Ollama-compatible one, so Crystal-9 has to prove token-ID parity before claiming Ollama compatibility. For a standard llama.cpp or Ollama model I point to Palace-9.",
       "results": "The released artifact is 46,299 bytes, with zero policy misses across 294,778 legal histories. A compact adaptation powers Crystal Palace 9 on the Commodore 64. Releases are packaged with checksums when a version tag is pushed.",
-      "made": "Crystal-9 made the network smaller and gave each layer 32 nodes, to use tensor operations that compute 32 values at the same time. In the end that was more than the task needed, a lesson that went into Falken-9. The name, like Palace-9's, comes from Crystal Palace, the NORAD call sign in *WarGames*."
+      "made": "Crystal-9 made the network smaller and gave each layer 32 nodes, to use tensor operations that compute 32 values at the same time. In the end that was more than the task needed, a lesson that went into Falken-9. The name, like Palace-9's, comes from Crystal Palace, the NORAD call sign in *WarGames*.\n\nTraining used PyTorch with AdamW on an RTX 3080 Ti: 100 epochs over all 294,778 move histories reached zero misses at full precision. Quantization went in stages, part of the network at a time, with quantization-aware training at each step; a trial that ended with even one miss was rejected. INT2 was explored as research, ending in a 20,737-byte copy that still had zero misses but wasn't released. A tensor inspector drew every weight as an image, and tests compared the Python and JavaScript runtimes."
     },
     {
       "slug": "falken-9",
@@ -134,11 +134,11 @@
           }
         ]
       },
-      "role": "Author and maintainer.",
+      "role": "Designer, director and maintainer. AI coding assistants: GPT-5.6-terra, then GPT-6.1 Sol from mid-October, through Hermes.",
       "problem": "Could the original Crystal-9 neural-network weights run on a Commodore 64 from a 1541 disk? The repository, called Crystal Palace 64 (CP64), treats this as a feasibility project, with no substitute move table, hand-written policy, distilled model, or requantized weights.",
       "built": "A command-room interface and presentation assets drawn for the machine's 8 x 8 multicolor graphics, a disk-backed INFO archive, a playable human board, and 6502 assembly with an isolated module that materializes the original tokens. Python scripts export 48 pageable model packets from the verified Crystal-9 release and package everything into a D64 disk image. A static GitHub Pages asset editor supports the artwork.",
-      "hard": "Memory and disk. The runtime memory and disk-paging design, the D64 layout, and the packet map each have their own document in the repository, and bounded engineering gates check the original weights step by step.",
-      "results": "The first version ran the original Crystal-9 weights on the C64, which proved it was possible but took roughly 20 minutes for a self-play game. The game now runs Falken-9, a model designed for the C64, and a complete AI-vs-AI game takes just over a minute in an emulator, with progress feedback, console animation and sound during each move's thinking.",
+      "hard": "Memory and disk. Crystal-9 didn't fit in the C64's memory, so its original INT4 weights travel as 48 disk packets and load during each move, run in fixed-point 6502 math. Testing in VICE with the real C64 and 1541 ROMs found bugs a simpler emulator hid: a disk load that relocated to the wrong address, and an eight-bit memory offset that wrapped later history slots onto earlier ones. Later releases grouped tensors to cut disk loads per move from many to 12.",
+      "results": "The first version ran the original Crystal-9 weights on the C64: 436 passing tests, and 13 complete output vectors that matched byte for byte between Py65 and real-ROM VICE, over full human-against-model and AI-vs-AI games. It proved the idea but took roughly 20 minutes for a self-play game. The game now runs Falken-9, a model designed for the C64, and a complete AI-vs-AI game takes just over a minute in an emulator, with progress feedback, console animation and sound during each move's thinking.",
       "made": "I chose the Commodore 64 because I enjoy the 6502 processor and many emulators exist for it. I often watch The 8-Bit Guy's videos about the chip, and I built Ben Eater's 6502 computer, which still sits on a breadboard in my basement. Most of the work on the first version went into loading each layer from disk, because Crystal-9 was too big for the C64's memory.\n\nThe name joins the two models, Palace-9 and Crystal-9, both named for Crystal Palace, the NORAD call sign in *WarGames* where an AI plays against itself. Like the Palace-9 website, the game has a Cold War theme: the computer plays itself over maps of the USA and USSR. Lessons from it went into Falken-9, which now powers the game."
     },
     {
@@ -180,12 +180,12 @@
           }
         ]
       },
-      "role": "Author and maintainer.",
+      "role": "Designer, director, maintainer and publisher. AI coding assistant: GPT-5.6-terra (medium reasoning) through Hermes, with Honcho for project memory.",
       "problem": "I wanted to look inside a small model, not only run it. That meant keeping two things separate: a perfect-play controller for the game, and a trained model that reads raw move histories.",
       "built": "A 3x3 simulation with 0-, 1-, and 2-player modes. A deterministic minimax policy in browser JavaScript is the perfect-play oracle. A separate compact causal model uses the Qwen2-MoE architecture, so it works with Ollama and llama.cpp without a custom fork. The browser decodes the packed FP32, F16, Q6_K, or Q4_K_M release artifact locally and computes a forward trace from its weights.",
       "hard": "Keeping real and fictional parts apart. The site never calls Ollama; its board moves come from the local oracle, and the visualizer is a local trace. The map, DEFCON strip, trajectories, and cipher are labeled visual fiction. My September post on the project describes the visualization, training, and tokenizer problems I hit, and how they led to the smaller Crystal-9.",
-      "results": "A live demo, a published Ollama model, and a Hugging Face release.",
-      "made": "Palace-9 started as a model trained in the web browser; then I moved training to PyTorch on my GPU. Along the way I learned to publish models and make them run on Ollama. With no control over the token set, the first model was very large, so I worked it down to the smallest vocabulary possible. The architecture follows Qwen2-MoE only so that Ollama knows how to run its mixture of experts; it is not a Qwen model.\n\nThe website has a Cold War theme, after Crystal Palace, the NORAD call sign in *WarGames* where an AI plays against itself. The computer plays itself over maps of the USA and USSR, missiles launch with each player's mark and speed up as the game goes on, and a launch code is worked out digit by digit, but the last digit never locks in."
+      "results": "A live demo, a published Ollama model, and a Hugging Face release in F16, Q6_K and Q4_K_M GGUF. Each GGUF file had zero errors in llama.cpp on 294,777 valid and 683,226 generated invalid move histories. A routing analysis across every history showed which experts favored which kinds of positions, as a description rather than a causal test.",
+      "made": "Palace-9 started as a model trained in the web browser; then I moved training to PyTorch on my GPU. Along the way I learned to publish models and make them run on Ollama. With no control over the token set, the first model was very large, so I worked it down to the smallest vocabulary possible. The architecture follows Qwen2-MoE only so that Ollama knows how to run its mixture of experts; it is not a Qwen model.\n\nThe website has a Cold War theme, after Crystal Palace, the NORAD call sign in *WarGames* where an AI plays against itself. The computer plays itself over maps of the USA and USSR, missiles launch with each player's mark and speed up as the game goes on, and a launch code is worked out digit by digit, but the last digit never locks in.\n\nThe browser model went through three designs: a dense network under an illustrative expert diagram, then a real trainable soft-routed mixture of experts, then the separately trained Qwen2-MoE model that became the release. Training ran in JavaScript workers, then custom CUDA compiled with nvcc, then PyTorch with AdamW on an RTX 3080 Ti. The release model has 648,528 parameters; one last history error was fixed with 24 focused training updates. Conversion used llama.cpp's GGUF tools, and Q8_0 wasn't possible because the layer widths don't fit its 32-value blocks, so Q6_K took its place."
     },
     {
       "slug": "zogograph-client",
@@ -683,7 +683,8 @@
     }
   ],
   "groupNotes": {
-    "Earlier open source": "Code I published in the 2000s, before the work above. The whole archive is on GitHub as [my Planet Source Code archive (2000s)](https://github.com/lewismoten/Lewies-Code-Library-PSC), and it has its own [browsable catalog](https://lewismoten.github.io/Lewies-Code-Library-PSC/Browse.htm)."
+    "Earlier open source": "Code I published in the 2000s, before the work above. The whole archive is on GitHub as [my Planet Source Code archive (2000s)](https://github.com/lewismoten/Lewies-Code-Library-PSC), and it has its own [browsable catalog](https://lewismoten.github.io/Lewies-Code-Library-PSC/Browse.htm).",
+    "Applied AI and model engineering": "Four of these projects are one series, built step by step: [The tic-tac-toe models](/series/tic-tac-toe-models/), side by side."
   },
   "series": [
     {
@@ -693,7 +694,8 @@
         "crystal-9",
         "crystal-palace",
         "falken-9"
-      ]
+      ],
+      "page": "tic-tac-toe-models"
     }
   ]
 }

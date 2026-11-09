@@ -1,0 +1,15 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Ghost Jack
+title: Ghost Jack | Eyes, ears and a mouth for AI agents
+image: ghostjack.jpg
+description: >-
+  Built a local bridge and cyberpunk control deck that gives people and AI
+  agents eyes, ears and a mouth through a $2 thrift-store pan/tilt camera,
+  with no cloud app. Reverse-engineered its sign-in, live RTSP stream,
+  pan/tilt, night vision and speaker (found through the vendor's old Flash
+  engine), with recording and a three.js aiming model.
+links:
+  - label: Live demo
+    url: https://lewismoten.github.io/ghostjack/
+  - label: Source
+    url: https://github.com/lewismoten/ghostjack

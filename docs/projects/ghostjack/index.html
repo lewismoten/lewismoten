@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghost Jack: Eyes, ears and a mouth for AI agents | Lewis Moten</title>
+<meta name="description" content="A local bridge and cyberpunk control deck that gives people and AI agents eyes, ears and a mouth in meatspace through a $2 thrift-store pan/tilt camera, with no cloud app.">
+<link rel="canonical" href="https://lewismoten.github.io/lewismoten/projects/ghostjack/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Ghost Jack: Eyes, ears and a mouth for AI agents | Lewis Moten">
+<meta property="og:description" content="A local bridge and cyberpunk control deck that gives people and AI agents eyes, ears and a mouth in meatspace through a $2 thrift-store pan/tilt camera, with no cloud app.">
+<meta property="og:url" content="https://lewismoten.github.io/lewismoten/projects/ghostjack/">
+<meta property="og:image" content="https://lewismoten.github.io/lewismoten/img/projects/ghostjack.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ghost Jack: Eyes, ears and a mouth for AI agents | Lewis Moten">
+<meta name="twitter:description" content="A local bridge and cyberpunk control deck that gives people and AI agents eyes, ears and a mouth in meatspace through a $2 thrift-store pan/tilt camera, with no cloud app.">
+<meta name="twitter:image" content="https://lewismoten.github.io/lewismoten/img/projects/ghostjack.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Applied AI and model engineering</nav>
+<article class="project">
+<h1>Ghost Jack</h1>
+<p class="sub">Eyes, ears and a mouth for AI agents</p>
+<img class="hero-img" src="../../img/projects/ghostjack.jpg" alt="Ghost Jack: One glass eye. A dozen voices. A neon wireframe pan/tilt camera." width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">A local bridge and cyberpunk control deck that gives people and AI agents eyes, ears and a mouth in meatspace through a $2 thrift-store pan/tilt camera, with no cloud app.</p>
+<p class="links"><a class="btn" href="https://lewismoten.github.io/ghostjack/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/ghostjack">Source</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>I wanted AI agents to be able to look at my workbench, listen and talk to me, without a cloud service watching my room. A $2 thrift-store camera seemed perfect, but its maker says it only works through its phone app: no local video, no RTSP.</p>
+<h3>Outcome</h3><p>A working 0.1 release: see, listen, aim, night vision, speak and record, all local, with a public demo of the deck and a dated log of how each piece was found.</p>
+<h3>My role</h3><p>Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5); Glassmouth's character sketch came from a conversation with GPT-6.1 Sol.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A Node service on my Mac that signs in to the camera by driving the camera's own web page in a headless browser, then talks to its private API: 1080p snapshots, a live RTSP stream (H.264 and AAC) repackaged so browsers can play it, pan and tilt, night vision, image settings and the clock, plus speech through the camera's speaker. A control deck (plain HTML, CSS and JavaScript with three.js) puts the controls on the video, with a 3D model of the camera to aim with, recording, and Glassmouth, a dry night-shift character voice. It runs behind an access token, on this computer only unless shared over Tailscale.</p>
+<h3>Hard parts</h3><p>Everything the maker said wasn't possible. The talk protocol lived in long-gone browser plugins; the vendor's leftover 2013 Flash engine showed it publishes the microphone over RTMP, and only AAC at 16 kHz plays. Each talk address works once, and an unused one jams the speaker until a power cycle. The speaker is alarm-loud, wakes on sound and clips first syllables, so the bridge caps levels and sends a wake pulse first. Pan and tilt moves queue and can't be stopped, and the camera never reports where it points.</p>
+<h3>How it was made</h3><p>Discovery started on an isolated cable: tcpdump showed the camera's built-in address and a discovery broadcast, then its own web app's JavaScript showed the API. The character, the cyberpunk wording and the one-screen layout came from my own testing at the desk.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>Node.js</li><li>Reverse engineering</li><li>RTSP</li><li>ffmpeg</li><li>three.js</li><li>Web Audio</li><li>AI agents</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

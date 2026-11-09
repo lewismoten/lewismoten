@@ -5,6 +5,7 @@ profile_groups:
   - heading: Applied AI and model engineering
     projects:
       - local-agent-lab
+      - ghostjack
       - crystal-9
       - falken-9
       - crystal-palace

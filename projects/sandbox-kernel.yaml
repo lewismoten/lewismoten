@@ -1,0 +1,17 @@
+# Project card used by the profile README and selected-projects PDF.
+name: sandbox-kernel
+title: sandbox-kernel | A small bare-metal kernel for your own OS
+image: sandbox-kernel.jpg
+description: >-
+  Built a small bare-metal kernel for the Raspberry Pi Zero W that loads your
+  own operating system as one user-mode program from the SD card. It has A/B
+  kernel slots with trial boot and confirm, recovery to a diagnostic program,
+  a POSIX-style ABI, an e-ink status panel and USB development commands.
+  Game-Maker OS is the first OS built on it.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/sandbox-kernel
+  - label: The guide
+    url: https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md
+  - label: Game-Maker OS
+    url: https://github.com/lewismoten/gamemaker-os

@@ -64,6 +64,44 @@
       "made": "Discovery started on an isolated cable: tcpdump showed the camera's built-in address and a discovery broadcast, then its own web app's JavaScript showed the API. The character, the cyberpunk wording and the one-screen layout came from my own testing at the desk."
     },
     {
+      "slug": "sandbox-kernel",
+      "title": "sandbox-kernel",
+      "subtitle": "A small bare-metal kernel for your own OS",
+      "group": "Publishing and interactive experiences",
+      "featured": true,
+      "pitch": "A small, reusable bare-metal kernel that starts on a Raspberry Pi Zero W and loads your own operating system as one user-mode program from the SD card.",
+      "tags": [
+        "C",
+        "ARM",
+        "Bare metal",
+        "Raspberry Pi Zero W",
+        "E-ink",
+        "FAT32",
+        "USB",
+        "JavaScript"
+      ],
+      "alt": "sandbox-kernel: A small bare-metal kernel for your own OS, with a pixel-art chip badge beside a block of colored squares.",
+      "links": {
+        "source": "https://github.com/lewismoten/sandbox-kernel",
+        "other": [
+          {
+            "label": "The guide",
+            "url": "https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md"
+          },
+          {
+            "label": "Game-Maker OS",
+            "url": "https://github.com/lewismoten/gamemaker-os"
+          }
+        ]
+      },
+      "problem": "I want anyone to be able to make their own operating system without first writing the part that talks to the hardware. That should include a JavaScript one, so it needs to be very easy to build a custom OS on top. I picked the Raspberry Pi Zero W as the lowest common denominator. The kernel isn't meant to stay Raspberry Pi-only.",
+      "built": "A kernel in C that runs bare metal on the Pi Zero W. It keeps two kernel slots, A and B, and updates into the idle one with a trial boot that has to be confirmed, so a bad update falls back. The operating system is one user-mode ELF file on the SD card. If it fails, the kernel recovers to a DIAG program and a recovery console. Programs get a POSIX-style ABI: files, framebuffer, input, clock, cache and saves in `/OS/SAVES`. An e-ink panel shows status, and USB development commands send files and updates from a computer. [Game-Maker OS](https://github.com/lewismoten/gamemaker-os) is the first OS built on it.",
+      "hard": "The kernel has to protect itself from the program it loads, so a broken OS can't take the board down with it. Updates have to survive a failed boot. Work in progress: HDMI audio, a USB keyboard through OTG, and HDMI-CEC.",
+      "results": "M0 is qualified on the Zero W v1.1 and M1 is in progress. [The guide](https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md) covers boot, what a program may do and developing over USB, so someone can start their own OS.",
+      "role": "Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art was made with ChatGPT GPT-6.1 Sol from my directions.",
+      "made": "The kernel, its tests and its documentation were written with Claude Code and reviewed by an agent on my Linux machine. The social preview image was made with ChatGPT GPT-6.1 Sol from my directions."
+    },
+    {
       "slug": "crystal-9",
       "title": "Crystal-9",
       "subtitle": "Tiny MoE for 8-bit hardware",

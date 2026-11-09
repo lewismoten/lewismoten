@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>sandbox-kernel: A small bare-metal kernel for your own OS | Lewis Moten</title>
+<meta name="description" content="A small, reusable bare-metal kernel that starts on a Raspberry Pi Zero W and loads your own operating system as one user-mode program from the SD card.">
+<link rel="canonical" href="https://lewismoten.github.io/lewismoten/projects/sandbox-kernel/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="sandbox-kernel: A small bare-metal kernel for your own OS | Lewis Moten">
+<meta property="og:description" content="A small, reusable bare-metal kernel that starts on a Raspberry Pi Zero W and loads your own operating system as one user-mode program from the SD card.">
+<meta property="og:url" content="https://lewismoten.github.io/lewismoten/projects/sandbox-kernel/">
+<meta property="og:image" content="https://lewismoten.github.io/lewismoten/img/projects/sandbox-kernel.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="sandbox-kernel: A small bare-metal kernel for your own OS | Lewis Moten">
+<meta name="twitter:description" content="A small, reusable bare-metal kernel that starts on a Raspberry Pi Zero W and loads your own operating system as one user-mode program from the SD card.">
+<meta name="twitter:image" content="https://lewismoten.github.io/lewismoten/img/projects/sandbox-kernel.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Publishing and interactive experiences</nav>
+<article class="project">
+<h1>sandbox-kernel</h1>
+<p class="sub">A small bare-metal kernel for your own OS</p>
+<img class="hero-img" src="../../img/projects/sandbox-kernel.jpg" alt="sandbox-kernel: A small bare-metal kernel for your own OS, with a pixel-art chip badge beside a block of colored squares." width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">A small, reusable bare-metal kernel that starts on a Raspberry Pi Zero W and loads your own operating system as one user-mode program from the SD card.</p>
+<p class="links"><a class="btn" href="https://github.com/lewismoten/sandbox-kernel">Source</a> <a class="btn" href="https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md">The guide</a> <a class="btn" href="https://github.com/lewismoten/gamemaker-os">Game-Maker OS</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>I want anyone to be able to make their own operating system without first writing the part that talks to the hardware. That should include a JavaScript one, so it needs to be very easy to build a custom OS on top. I picked the Raspberry Pi Zero W as the lowest common denominator. The kernel isn't meant to stay Raspberry Pi-only.</p>
+<h3>Outcome</h3><p>M0 is qualified on the Zero W v1.1 and M1 is in progress. <a href="https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md">The guide</a> covers boot, what a program may do and developing over USB, so someone can start their own OS.</p>
+<h3>My role</h3><p>Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art was made with ChatGPT GPT-6.1 Sol from my directions.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A kernel in C that runs bare metal on the Pi Zero W. It keeps two kernel slots, A and B, and updates into the idle one with a trial boot that has to be confirmed, so a bad update falls back. The operating system is one user-mode ELF file on the SD card. If it fails, the kernel recovers to a DIAG program and a recovery console. Programs get a POSIX-style ABI: files, framebuffer, input, clock, cache and saves in <code>/OS/SAVES</code>. An e-ink panel shows status, and USB development commands send files and updates from a computer. <a href="https://github.com/lewismoten/gamemaker-os">Game-Maker OS</a> is the first OS built on it.</p>
+<h3>Hard parts</h3><p>The kernel has to protect itself from the program it loads, so a broken OS can't take the board down with it. Updates have to survive a failed boot. Work in progress: HDMI audio, a USB keyboard through OTG, and HDMI-CEC.</p>
+<h3>How it was made</h3><p>The kernel, its tests and its documentation were written with Claude Code and reviewed by an agent on my Linux machine. The social preview image was made with ChatGPT GPT-6.1 Sol from my directions.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>C</li><li>ARM</li><li>Bare metal</li><li>Raspberry Pi Zero W</li><li>E-ink</li><li>FAT32</li><li>USB</li><li>JavaScript</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

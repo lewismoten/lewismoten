@@ -39,7 +39,7 @@
 </div>
 </header>
 <main id="main" class="wrap">
-<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Publishing and interactive experiences</nav>
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Embedded systems and hardware</nav>
 <article class="project">
 <h1>sandbox-kernel</h1>
 <p class="sub">A small bare-metal kernel for your own OS</p>
@@ -49,11 +49,11 @@
 <nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
 <section class="part" id="executive-summary"><h2>Executive summary</h2>
 <h3>Why it exists</h3><p>I want anyone to be able to make their own operating system without first writing the part that talks to the hardware. That should include a JavaScript one, so it needs to be very easy to build a custom OS on top. I picked the Raspberry Pi Zero W as the lowest common denominator. The kernel isn't meant to stay Raspberry Pi-only.</p>
-<h3>Outcome</h3><p>M0 is qualified on the Zero W v1.1 and M1 is in progress. <a href="https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md">The guide</a> covers boot, what a program may do and developing over USB, so someone can start their own OS.</p>
+<h3>Outcome</h3><p>M0 is qualified on the Zero W v1.1 and M1 is in progress. HDMI sound now plays on a board: a test tone comes out of the TV, and game music is in testing. An e-ink API lets an OS show its own title and page, and the kernel reads the OTG ID pin at boot and shows OTG on the e-ink panel, with keyboard input next. <a href="https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md">The guide</a> covers boot, what a program may do and developing over USB, and a Hello World example gives a first program to start from.</p>
 <h3>My role</h3><p>Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art was made with ChatGPT GPT-6.1 Sol from my directions.</p></section>
 <section class="part" id="technical-overview"><h2>Technical overview</h2>
 <h3>How it works</h3><p>A kernel in C that runs bare metal on the Pi Zero W. It keeps two kernel slots, A and B, and updates into the idle one with a trial boot that has to be confirmed, so a bad update falls back. The operating system is one user-mode ELF file on the SD card. If it fails, the kernel recovers to a DIAG program and a recovery console. Programs get a POSIX-style ABI: files, framebuffer, input, clock, cache and saves in <code>/OS/SAVES</code>. An e-ink panel shows status, and USB development commands send files and updates from a computer. <a href="https://github.com/lewismoten/gamemaker-os">Game-Maker OS</a> is the first OS built on it.</p>
-<h3>Hard parts</h3><p>The kernel has to protect itself from the program it loads, so a broken OS can't take the board down with it. Updates have to survive a failed boot. Work in progress: HDMI audio, a USB keyboard through OTG, and HDMI-CEC.</p>
+<h3>Hard parts</h3><p>The kernel has to protect itself from the program it loads, so a broken OS can't take the board down with it. Updates have to survive a failed boot. Work in progress: game music over HDMI, a USB keyboard through OTG, and HDMI-CEC.</p>
 <h3>How it was made</h3><p>The kernel, its tests and its documentation were written with Claude Code and reviewed by an agent on my Linux machine. The social preview image was made with ChatGPT GPT-6.1 Sol from my directions.</p><h3>Stack</h3>
 <ul class="tags plain-tags"><li>C</li><li>ARM</li><li>Bare metal</li><li>Raspberry Pi Zero W</li><li>E-ink</li><li>FAT32</li><li>USB</li><li>JavaScript</li></ul></section>
 

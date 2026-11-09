@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game-Maker Pocket: DOS games in your pocket on a cheap ESP32 touch screen | Lewis Moten</title>
+<meta name="description" content="A pocket player for Game-Maker: Sandbox Edition games on cheap ESP32 touch-screen boards, with a web flasher that installs it from the browser.">
+<link rel="canonical" href="https://lewismoten.github.io/lewismoten/projects/gamemaker-pocket/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Game-Maker Pocket: DOS games in your pocket on a cheap ESP32 touch screen | Lewis Moten">
+<meta property="og:description" content="A pocket player for Game-Maker: Sandbox Edition games on cheap ESP32 touch-screen boards, with a web flasher that installs it from the browser.">
+<meta property="og:url" content="https://lewismoten.github.io/lewismoten/projects/gamemaker-pocket/">
+<meta property="og:image" content="https://lewismoten.github.io/lewismoten/img/projects/gamemaker-pocket.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Game-Maker Pocket: DOS games in your pocket on a cheap ESP32 touch screen | Lewis Moten">
+<meta name="twitter:description" content="A pocket player for Game-Maker: Sandbox Edition games on cheap ESP32 touch-screen boards, with a web flasher that installs it from the browser.">
+<meta name="twitter:image" content="https://lewismoten.github.io/lewismoten/img/projects/gamemaker-pocket.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Embedded systems and hardware</nav>
+<article class="project">
+<h1>Game-Maker Pocket</h1>
+<p class="sub">DOS games in your pocket on a cheap ESP32 touch screen</p>
+<img class="hero-img" src="../../img/projects/gamemaker-pocket.jpg" alt="Game-Maker Pocket: DOS games in your pocket. A castle badge beside a 3.5-inch ESP32 touch board showing the game library." width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">A pocket player for Game-Maker: Sandbox Edition games on cheap ESP32 touch-screen boards, with a web flasher that installs it from the browser.</p>
+<p class="links"><a class="btn" href="https://lewismoten.github.io/gamemaker-pocket/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/gamemaker-pocket">Source</a> <a class="btn" href="https://github.com/lewismoten/gamemaker-os">Game-Maker OS</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>I wanted to carry my Game-Maker games in a pocket-sized player that costs a few dollars. The ESP32 touch-screen boards sold cheaply online have a screen and a microSD slot, so the question was how much of a 1990s DOS game could fit on one.</p>
+<h3>Outcome</h3><p>Two boards run it from a flashed image, with the Starters in the board's own flash and more games on a microSD card in a /pocket folder. The web flasher offers a Player-only, a Starter-courses or a Player-plus-starter-games install per board, and the host tests cover the play loop, cards and controls on the Mac. It pairs with <a href="https://github.com/lewismoten/gamemaker-os">Game-Maker OS</a> for the Raspberry Pi.</p>
+<h3>My role</h3><p>Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art, including the social preview and favicon, was made with ChatGPT GPT-6.1 Sol from my directions.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>Firmware in C++ for two boards, the ESP32-2432S028 (2.8 inch) and the ESP32-3248S035 (3.5 inch). It plays the Starter lessons from the games' real DOS files, packed small, and a library from a microSD card with categories, search and a library browser. It has touch controls for fingers and a stylus, a settings screen, a status strip and the PC speaker sounds. A first-start setup walks through each display's mirror, orientation, colors and touch calibration. The packs are made by Game-Maker: Sandbox Edition. A GitHub Pages install page, using ESP Web Tools, lets a visitor pick a board and flash it from Chrome or Edge.</p>
+<h3>Hard parts</h3><p>The play rules had to be ported to a board with 4 MB of flash while still matching the web engine, which follows PLAYGAME. The 2.8 inch boards also come in several display revisions, so the screen can be mirrored, rotated or the wrong color until the setup is done. Sound is the PC speaker only for now, with no Sound Blaster clips or music yet.</p>
+<h3>How it was made</h3><p>The firmware, tests and install page were written with Claude Code and reviewed by an agent on my Linux machine. The social preview, favicon and hand art came from ChatGPT and my directions, and Claude drew the small category icons in code.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>C++</li><li>ESP32</li><li>PlatformIO</li><li>LittleFS</li><li>microSD</li><li>ESP Web Tools</li><li>Python</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 {
   "groups": [
     "Applied AI and model engineering",
+    "Embedded systems and hardware",
     "Browser tools and visualization",
     "Publishing and interactive experiences",
     "8-bit retro Commodore 64 projects",
@@ -67,7 +68,7 @@
       "slug": "sandbox-kernel",
       "title": "sandbox-kernel",
       "subtitle": "A small bare-metal kernel for your own OS",
-      "group": "Publishing and interactive experiences",
+      "group": "Embedded systems and hardware",
       "featured": true,
       "pitch": "A small, reusable bare-metal kernel that starts on a Raspberry Pi Zero W and loads your own operating system as one user-mode program from the SD card.",
       "tags": [
@@ -96,10 +97,77 @@
       },
       "problem": "I want anyone to be able to make their own operating system without first writing the part that talks to the hardware. That should include a JavaScript one, so it needs to be very easy to build a custom OS on top. I picked the Raspberry Pi Zero W as the lowest common denominator. The kernel isn't meant to stay Raspberry Pi-only.",
       "built": "A kernel in C that runs bare metal on the Pi Zero W. It keeps two kernel slots, A and B, and updates into the idle one with a trial boot that has to be confirmed, so a bad update falls back. The operating system is one user-mode ELF file on the SD card. If it fails, the kernel recovers to a DIAG program and a recovery console. Programs get a POSIX-style ABI: files, framebuffer, input, clock, cache and saves in `/OS/SAVES`. An e-ink panel shows status, and USB development commands send files and updates from a computer. [Game-Maker OS](https://github.com/lewismoten/gamemaker-os) is the first OS built on it.",
-      "hard": "The kernel has to protect itself from the program it loads, so a broken OS can't take the board down with it. Updates have to survive a failed boot. Work in progress: HDMI audio, a USB keyboard through OTG, and HDMI-CEC.",
-      "results": "M0 is qualified on the Zero W v1.1 and M1 is in progress. [The guide](https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md) covers boot, what a program may do and developing over USB, so someone can start their own OS.",
+      "hard": "The kernel has to protect itself from the program it loads, so a broken OS can't take the board down with it. Updates have to survive a failed boot. Work in progress: game music over HDMI, a USB keyboard through OTG, and HDMI-CEC.",
+      "results": "M0 is qualified on the Zero W v1.1 and M1 is in progress. HDMI sound now plays on a board: a test tone comes out of the TV, and game music is in testing. An e-ink API lets an OS show its own title and page, and the kernel reads the OTG ID pin at boot and shows OTG on the e-ink panel, with keyboard input next. [The guide](https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md) covers boot, what a program may do and developing over USB, and a Hello World example gives a first program to start from.",
       "role": "Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art was made with ChatGPT GPT-6.1 Sol from my directions.",
       "made": "The kernel, its tests and its documentation were written with Claude Code and reviewed by an agent on my Linux machine. The social preview image was made with ChatGPT GPT-6.1 Sol from my directions."
+    },
+    {
+      "slug": "gamemaker-os",
+      "title": "Game-Maker OS",
+      "subtitle": "DOS Game-Maker games from the SD card, on a Pi Zero W",
+      "group": "Embedded systems and hardware",
+      "featured": true,
+      "pitch": "An operating system that turns a Raspberry Pi Zero W into a Game-Maker machine: it boots to a library of games on a TV and plays their original DOS files straight from the SD card.",
+      "tags": [
+        "C",
+        "ARM",
+        "Raspberry Pi Zero W",
+        "sandbox-kernel",
+        "FAT32",
+        "E-ink",
+        "JavaScript (experimental)"
+      ],
+      "alt": "Game-Maker OS: Play DOS Game-Maker games straight from the SD card. A pixel-art castle badge beside a screenshot of the game library.",
+      "links": {
+        "source": "https://github.com/lewismoten/gamemaker-os",
+        "other": [
+          {
+            "label": "sandbox-kernel",
+            "url": "https://github.com/lewismoten/sandbox-kernel"
+          }
+        ]
+      },
+      "problem": "I wanted my Game-Maker games to run on their own small machine you plug into a TV, with no PC, browser or desktop in between. Game-Maker: Sandbox Edition already plays them in a browser, so the next step was an operating system whose only job is the games.",
+      "built": "A program in C that [sandbox-kernel](https://github.com/lewismoten/sandbox-kernel) loads from the SD card on a Raspberry Pi Zero W. It shows a castle boot splash, then a game library on HDMI with category tabs, cards with each game's title screen read from its own files, and a details page. Play runs the game from its original DOS files with the same play core as the Pocket Player in Game-Maker: Sandbox Edition, shared rather than copied by hand. Leave a game on its details page for 3 seconds and its demo plays in the picture. Saves and high scores live on the card, with a Top Ten like PLAYGAME's. A separate experimental `JS.ELF` runs small JavaScript apps with QuickJS-ng; it is a spike, not the main program.",
+      "hard": "The Zero W has little memory and no operating system underneath, so the library, the game player and the card reader all have to be small and careful. I kept PLAYGAME's behavior, so a game draws the same frames tick for tick as the host tests do, and a saved score survives power loss. The e-ink status screens are drawn but not wired in yet, and sound is still being worked on.",
+      "results": "On a Pi Zero W the library lists games, plays them from their DOS files with the arrow keys, Space and Enter, and keeps saves and high scores. Roll the Dice and five more Starters draw the same frames as the host tests. Input comes from the development computer over USB for now, and the e-ink status, a gamepad and a TV remote are still ahead.",
+      "role": "Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art, including the boot art and social preview, was made with ChatGPT GPT-6.1 Sol from my directions, and Game-Maker OS's background tune was composed in code by Claude.",
+      "made": "The program, its tests and its documentation were written with Claude Code and reviewed by an agent on my Linux machine. The boot art and social preview came from ChatGPT GPT-6.1 Sol and my directions. The library's background tune was composed in code by Claude."
+    },
+    {
+      "slug": "gamemaker-pocket",
+      "title": "Game-Maker Pocket",
+      "subtitle": "DOS games in your pocket on a cheap ESP32 touch screen",
+      "group": "Embedded systems and hardware",
+      "featured": true,
+      "pitch": "A pocket player for Game-Maker: Sandbox Edition games on cheap ESP32 touch-screen boards, with a web flasher that installs it from the browser.",
+      "tags": [
+        "C++",
+        "ESP32",
+        "PlatformIO",
+        "LittleFS",
+        "microSD",
+        "ESP Web Tools",
+        "Python"
+      ],
+      "alt": "Game-Maker Pocket: DOS games in your pocket. A castle badge beside a 3.5-inch ESP32 touch board showing the game library.",
+      "links": {
+        "demo": "https://lewismoten.github.io/gamemaker-pocket/",
+        "source": "https://github.com/lewismoten/gamemaker-pocket",
+        "other": [
+          {
+            "label": "Game-Maker OS",
+            "url": "https://github.com/lewismoten/gamemaker-os"
+          }
+        ]
+      },
+      "problem": "I wanted to carry my Game-Maker games in a pocket-sized player that costs a few dollars. The ESP32 touch-screen boards sold cheaply online have a screen and a microSD slot, so the question was how much of a 1990s DOS game could fit on one.",
+      "built": "Firmware in C++ for two boards, the ESP32-2432S028 (2.8 inch) and the ESP32-3248S035 (3.5 inch). It plays the Starter lessons from the games' real DOS files, packed small, and a library from a microSD card with categories, search and a library browser. It has touch controls for fingers and a stylus, a settings screen, a status strip and the PC speaker sounds. A first-start setup walks through each display's mirror, orientation, colors and touch calibration. The packs are made by Game-Maker: Sandbox Edition. A GitHub Pages install page, using ESP Web Tools, lets a visitor pick a board and flash it from Chrome or Edge.",
+      "hard": "The play rules had to be ported to a board with 4 MB of flash while still matching the web engine, which follows PLAYGAME. The 2.8 inch boards also come in several display revisions, so the screen can be mirrored, rotated or the wrong color until the setup is done. Sound is the PC speaker only for now, with no Sound Blaster clips or music yet.",
+      "results": "Two boards run it from a flashed image, with the Starters in the board's own flash and more games on a microSD card in a /pocket folder. The web flasher offers a Player-only, a Starter-courses or a Player-plus-starter-games install per board, and the host tests cover the play loop, cards and controls on the Mac. It pairs with [Game-Maker OS](https://github.com/lewismoten/gamemaker-os) for the Raspberry Pi.",
+      "role": "Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art, including the social preview and favicon, was made with ChatGPT GPT-6.1 Sol from my directions.",
+      "made": "The firmware, tests and install page were written with Claude Code and reviewed by an agent on my Linux machine. The social preview, favicon and hand art came from ChatGPT and my directions, and Claude drew the small category icons in code."
     },
     {
       "slug": "crystal-9",

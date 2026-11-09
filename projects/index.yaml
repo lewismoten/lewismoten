@@ -11,6 +11,11 @@ profile_groups:
       - crystal-palace
       - palace-9
       - zogograph-client
+  - heading: Embedded systems and hardware
+    projects:
+      - sandbox-kernel
+      - gamemaker-os
+      - gamemaker-pocket
   - heading: Browser tools and visualization
     projects:
       - sculpted-prim-toolkit
@@ -20,7 +25,6 @@ profile_groups:
   - heading: Publishing and interactive experiences
     projects:
       - gamemaker-sandbox
-      - sandbox-kernel
       - dreamy-tags
       - phone-exhibit
       - tiny-pockets-press

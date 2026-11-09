@@ -1,0 +1,15 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Game-Maker OS
+title: Game-Maker OS | DOS Game-Maker games from the SD card, on a Pi Zero W
+image: gamemaker-os.jpg
+description: >-
+  Built an operating system that turns a Raspberry Pi Zero W into a
+  Game-Maker machine. It boots with a castle splash to a game library on a TV,
+  with category tabs, demo previews, saves and high scores, and plays the
+  games' original DOS files from the SD card. It runs on sandbox-kernel; an
+  experimental QuickJS layer runs small JavaScript apps.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/gamemaker-os
+  - label: sandbox-kernel
+    url: https://github.com/lewismoten/sandbox-kernel

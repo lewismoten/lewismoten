@@ -1,0 +1,16 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Game-Maker Pocket
+title: Game-Maker Pocket | DOS games in your pocket
+image: gamemaker-pocket.jpg
+description: >-
+  Built firmware that plays Game-Maker: Sandbox Edition games from their real
+  DOS files on cheap ESP32 touch-screen boards, with a microSD library, touch
+  and stylus controls, a settings screen and a first-start display setup. A
+  GitHub Pages install page flashes a board from Chrome or Edge.
+links:
+  - label: Web flasher
+    url: https://lewismoten.github.io/gamemaker-pocket/
+  - label: Source
+    url: https://github.com/lewismoten/gamemaker-pocket
+  - label: Game-Maker OS
+    url: https://github.com/lewismoten/gamemaker-os

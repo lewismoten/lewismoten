@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game-Maker OS: DOS Game-Maker games from the SD card, on a Pi Zero W | Lewis Moten</title>
+<meta name="description" content="An operating system that turns a Raspberry Pi Zero W into a Game-Maker machine: it boots to a library of games on a TV and plays their original DOS files straight from the SD card.">
+<link rel="canonical" href="https://lewismoten.github.io/lewismoten/projects/gamemaker-os/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Game-Maker OS: DOS Game-Maker games from the SD card, on a Pi Zero W | Lewis Moten">
+<meta property="og:description" content="An operating system that turns a Raspberry Pi Zero W into a Game-Maker machine: it boots to a library of games on a TV and plays their original DOS files straight from the SD card.">
+<meta property="og:url" content="https://lewismoten.github.io/lewismoten/projects/gamemaker-os/">
+<meta property="og:image" content="https://lewismoten.github.io/lewismoten/img/projects/gamemaker-os.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Game-Maker OS: DOS Game-Maker games from the SD card, on a Pi Zero W | Lewis Moten">
+<meta name="twitter:description" content="An operating system that turns a Raspberry Pi Zero W into a Game-Maker machine: it boots to a library of games on a TV and plays their original DOS files straight from the SD card.">
+<meta name="twitter:image" content="https://lewismoten.github.io/lewismoten/img/projects/gamemaker-os.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme">Theme</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Embedded systems and hardware</nav>
+<article class="project">
+<h1>Game-Maker OS</h1>
+<p class="sub">DOS Game-Maker games from the SD card, on a Pi Zero W</p>
+<img class="hero-img" src="../../img/projects/gamemaker-os.jpg" alt="Game-Maker OS: Play DOS Game-Maker games straight from the SD card. A pixel-art castle badge beside a screenshot of the game library." width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">An operating system that turns a Raspberry Pi Zero W into a Game-Maker machine: it boots to a library of games on a TV and plays their original DOS files straight from the SD card.</p>
+<p class="links"><a class="btn" href="https://github.com/lewismoten/gamemaker-os">Source</a> <a class="btn" href="https://github.com/lewismoten/sandbox-kernel">sandbox-kernel</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>I wanted my Game-Maker games to run on their own small machine you plug into a TV, with no PC, browser or desktop in between. Game-Maker: Sandbox Edition already plays them in a browser, so the next step was an operating system whose only job is the games.</p>
+<h3>Outcome</h3><p>On a Pi Zero W the library lists games, plays them from their DOS files with the arrow keys, Space and Enter, and keeps saves and high scores. Roll the Dice and five more Starters draw the same frames as the host tests. Input comes from the development computer over USB for now, and the e-ink status, a gamepad and a TV remote are still ahead.</p>
+<h3>My role</h3><p>Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art, including the boot art and social preview, was made with ChatGPT GPT-6.1 Sol from my directions, and Game-Maker OS's background tune was composed in code by Claude.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A program in C that <a href="https://github.com/lewismoten/sandbox-kernel">sandbox-kernel</a> loads from the SD card on a Raspberry Pi Zero W. It shows a castle boot splash, then a game library on HDMI with category tabs, cards with each game's title screen read from its own files, and a details page. Play runs the game from its original DOS files with the same play core as the Pocket Player in Game-Maker: Sandbox Edition, shared rather than copied by hand. Leave a game on its details page for 3 seconds and its demo plays in the picture. Saves and high scores live on the card, with a Top Ten like PLAYGAME's. A separate experimental <code>JS.ELF</code> runs small JavaScript apps with QuickJS-ng; it is a spike, not the main program.</p>
+<h3>Hard parts</h3><p>The Zero W has little memory and no operating system underneath, so the library, the game player and the card reader all have to be small and careful. I kept PLAYGAME's behavior, so a game draws the same frames tick for tick as the host tests do, and a saved score survives power loss. The e-ink status screens are drawn but not wired in yet, and sound is still being worked on.</p>
+<h3>How it was made</h3><p>The program, its tests and its documentation were written with Claude Code and reviewed by an agent on my Linux machine. The boot art and social preview came from ChatGPT GPT-6.1 Sol and my directions. The library's background tune was composed in code by Claude.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>C</li><li>ARM</li><li>Raspberry Pi Zero W</li><li>sandbox-kernel</li><li>FAT32</li><li>E-ink</li><li>JavaScript (experimental)</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

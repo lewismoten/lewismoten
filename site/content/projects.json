@@ -83,6 +83,7 @@
       ],
       "alt": "sandbox-kernel: A small bare-metal kernel for your own OS, with a pixel-art chip badge beside a block of colored squares.",
       "links": {
+        "demo": "https://lewismoten.github.io/sandbox-kernel/",
         "source": "https://github.com/lewismoten/sandbox-kernel",
         "other": [
           {
@@ -120,6 +121,7 @@
       ],
       "alt": "Game-Maker OS: Play DOS Game-Maker games straight from the SD card. A pixel-art castle badge beside a screenshot of the game library.",
       "links": {
+        "demo": "https://lewismoten.github.io/gamemaker-os/",
         "source": "https://github.com/lewismoten/gamemaker-os",
         "other": [
           {

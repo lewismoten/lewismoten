@@ -161,21 +161,6 @@
   "ndesc": false
  },
  {
-  "name": "Brain-Damaged-Bubblegum-Interceptor",
-  "description": "Brain-Damaged Bubblegum Interceptor",
-  "origin": "2015",
-  "last": "2015",
-  "language": null,
-  "topics": [
-   "placeholder"
-  ],
-  "pages": false,
-  "homepage": "",
-  "thumb": true,
-  "estimate": false,
-  "ndesc": false
- },
- {
   "name": "Unstoppable-Banjo-in-Busytown",
   "description": "Working with client/server architecture in JavaScript: WebSocket and WebRTC experiments",
   "origin": "2015",
@@ -560,22 +545,6 @@
    "arduino",
    "game",
    "maze"
-  ],
-  "pages": false,
-  "homepage": "",
-  "thumb": true,
-  "estimate": false,
-  "ndesc": false
- },
- {
-  "name": "lil-game",
-  "description": "'lil game",
-  "origin": "2016",
-  "last": "2016",
-  "language": null,
-  "topics": [
-   "game",
-   "placeholder"
   ],
   "pages": false,
   "homepage": "",
@@ -1898,7 +1867,7 @@
  },
  {
   "name": "palace-9",
-  "description": "Predictive Autonomous Learning And N\u0335u\u0335c\u0335l\u0335e\u0335a\u0335r Command Evaluation Model",
+  "description": "Predictive Autonomous Learning And N̵u̵c̵l̵e̵a̵r Command Evaluation Model",
   "origin": "2026",
   "last": "2026",
   "language": "JavaScript",
@@ -2145,15 +2114,15 @@
  },
  {
   "name": "pocket-fleet",
-  "description": "Space combat with a Cheap Yellow Display (CYD)",
+  "description": "A bridge simulator for one player or a room: crew stations from browsers, Cheap Yellow Displays and M5 Cardputers over local Wi-Fi",
   "origin": "2026",
   "last": "2026",
-  "language": null,
+  "language": "JavaScript",
   "topics": [
+   "bridge-simulator",
    "cheap-yellow-display",
-   "cyd",
    "esp32",
-   "game"
+   "cardputer"
   ],
   "pages": false,
   "homepage": "",

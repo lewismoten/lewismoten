@@ -5,8 +5,15 @@
 <link href="https://lewismoten.github.io/lewismoten/feed.xml" rel="self"/>
 <link href="https://lewismoten.github.io/lewismoten/posts/"/>
 <id>https://lewismoten.github.io/lewismoten/posts/</id>
-<updated>2026-11-08T12:00:00Z</updated>
+<updated>2026-11-09T12:00:00Z</updated>
 <author><name>Lewis Moten</name></author>
+<entry>
+<title>Drawing Hands, a Pi That Said No, and a $2 Camera Named Ghost Jack</title>
+<link href="https://lewismoten.github.io/lewismoten/posts/2026-11-09-drawing-hands-ghost-jack/"/>
+<id>https://lewismoten.github.io/lewismoten/posts/2026-11-09-drawing-hands-ghost-jack/</id>
+<updated>2026-11-09T12:00:00Z</updated>
+<summary>On Sunday I taught an agent to draw hands from a photo, let a phone video explain why a Pi kept rolling back, and turned a thrift-store camera into Ghost Jack, which now watches the Pi's screen. Game-Maker: Sandbox Edition site 3.3.0 is out. The full write-up is on my blog.</summary>
+</entry>
 <entry>
 <title>Directing the Night Shift: a Pi that plays, a Pocket Player, and site 3.2.0</title>
 <link href="https://lewismoten.github.io/lewismoten/posts/2026-11-08-directing-the-night-shift/"/>

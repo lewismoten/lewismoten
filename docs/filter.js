@@ -9,9 +9,8 @@
   var active = document.getElementById('activetag'), activeName = document.getElementById('activename');
   var btns = Array.prototype.slice.call(document.querySelectorAll('.tagbtn'));
   var items = Array.prototype.slice.call(document.querySelectorAll('.card, .arow'));
-  var texts = items.map(function (c) { return c.textContent.toLowerCase(); });
+  var texts = items.map(function (c) { return (c.textContent + ' ' + c.dataset.tags.replace(/\|/g, ' ')).toLowerCase(); });
   var tag = '', all = false;
-  wrap.hidden = false;
   function apply() {
     var q = search.value.trim().toLowerCase(), shown = 0;
     items.forEach(function (c, i) {
@@ -23,23 +22,38 @@
     btns.forEach(function (b, i) {
       var t = b.dataset.tag, on = t === tag;
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
-      b.parentNode.hidden = q ? t.toLowerCase().indexOf(q) < 0 && !on : !(all || i < limit || on);
+      b.parentNode.hidden = !(all || i < limit || on);
     });
-    more.hidden = !!q;
+    more.hidden = btns.length <= limit;
     more.setAttribute('aria-expanded', all ? 'true' : 'false');
     more.textContent = all ? 'Show fewer tags' : 'Show all tags (' + btns.length + ')';
     active.hidden = !tag;
     activeName.textContent = tag;
-    out.textContent = (tag || q) ? shown + ' of ' + items.length + ' ' + noun + 's shown' : items.length + ' ' + noun + 's';
-    try { history.replaceState(null, '', tag ? '#tag=' + encodeURIComponent(tag) : location.pathname); } catch (e) {}
+    clear.disabled = !tag && !q;
+    out.textContent = (tag || q) ? shown + ' of ' + items.length + ' ' + noun + 's shown' + (shown ? '' : '. Try another search or clear filters.') : items.length + ' ' + noun + 's';
+    // Leave unrelated anchors and query parameters intact.
+    if (tag || /^#tag=/.test(location.hash)) {
+      try { history.replaceState(null, '', location.pathname + location.search + (tag ? '#tag=' + encodeURIComponent(tag) : '')); } catch (e) {}
+    }
   }
   btns.forEach(function (b) {
-    b.addEventListener('click', function () { tag = tag === b.dataset.tag ? '' : b.dataset.tag; apply(); });
+    b.addEventListener('click', function () {
+      // A selected tag outside the first twelve must stay visible when toggled off.
+      if (tag === b.dataset.tag && btns.indexOf(b) >= limit) all = true;
+      tag = tag === b.dataset.tag ? '' : b.dataset.tag;
+      apply();
+    });
   });
   more.addEventListener('click', function () { all = !all; apply(); });
-  clear.addEventListener('click', function () { tag = ''; apply(); search.focus(); });
+  clear.addEventListener('click', function () { tag = ''; search.value = ''; apply(); search.focus(); });
   search.addEventListener('input', apply);
-  var m = location.hash.match(/^#tag=(.+)$/);
-  if (m) tag = decodeURIComponent(m[1]);
-  apply();
+  function readTag() {
+    var m = location.hash.match(/^#tag=(.*)$/), value = '';
+    try { if (m) value = decodeURIComponent(m[1]); } catch (e) {}
+    tag = btns.some(function (b) { return b.dataset.tag === value; }) ? value : '';
+    apply();
+  }
+  window.addEventListener('hashchange', readTag);
+  readTag();
+  wrap.hidden = false;
 })();

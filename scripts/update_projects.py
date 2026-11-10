@@ -12,7 +12,7 @@ REPO = Path(__file__).resolve().parent.parent
 PROJECTS = REPO / 'projects'
 START = '<!-- PROJECTS:START -->'
 END = '<!-- PROJECTS:END -->'
-SITE = 'https://lewismoten.github.io/lewismoten'
+SITE = 'https://lewismoten.github.io'
 SITE_PROJECTS = REPO / 'site' / 'content' / 'projects.json'
 
 

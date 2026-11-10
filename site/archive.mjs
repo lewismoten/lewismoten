@@ -13,14 +13,15 @@ const SHOWN_TAGS = 12;
 export function filterUi(tagCount, noun, esc) {
   const tags = Object.entries(tagCount).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'en', { sensitivity: 'base' }));
   const max = tags[0] ? tags[0][1] : 1;
-  const btn = ([t, n], i) =>
-    `<li><button type="button" class="tagbtn w${Math.min(3, Math.ceil((n / max) * 3))}" data-tag="${esc(t)}" data-i="${i}" aria-pressed="false">${esc(t)} <span class="n">${n}</span></button></li>`;
+  const btn = ([t, n]) =>
+    `<li><button type="button" class="tagbtn w${Math.min(3, Math.ceil((n / max) * 3))}" data-tag="${esc(t)}" aria-pressed="false">${esc(t)} <span class="n">${n}</span></button></li>`;
   return `<div class="filter" id="filter" data-noun="${esc(noun)}" data-shown="${SHOWN_TAGS}" hidden>
 <div class="frow"><label for="fsearch">Search</label><input type="search" id="fsearch" autocomplete="off" placeholder="Search ${esc(noun)}s and tags"></div>
 <ul class="tagcloud" id="tagcloud" aria-label="Tags, most used first">${tags.map(btn).join('')}</ul>
-<p class="frow"><button type="button" class="more-btn" id="tagmore" aria-expanded="false">Show all tags (${tags.length})</button>
-<span id="activetag" hidden>Showing tag <strong id="activename"></strong> <button type="button" class="more-btn" id="tagclear">Clear</button></span></p>
-<p id="filtercount" class="sub" role="status" aria-live="polite"></p>
+<p class="frow"><button type="button" class="more-btn" id="tagmore" aria-controls="tagcloud" aria-expanded="false">Show all tags (${tags.length})</button>
+<span id="activetag" hidden>Showing tag <strong id="activename"></strong></span>
+<button type="button" class="more-btn" id="tagclear" disabled>Clear filters</button></p>
+<p id="filtercount" class="sub" role="status" aria-live="polite" aria-atomic="true"></p>
 </div>`;
 }
 
@@ -98,7 +99,7 @@ ${order
     const id = l.replace(/\W+/g, '-').toLowerCase();
     const items = langs[l].sort((a, b) => a.date.localeCompare(b.date) || a.title.localeCompare(b.title));
     return `<section class="part" aria-labelledby="${id}"><h2 id="${id}">${esc(l)} (${items.length})</h2>
-<div class="tablewrap"><table class="compare psc"><thead><tr><th scope="col">Title</th><th scope="col">Date</th><th scope="col">What it does</th><th scope="col">Code</th></tr></thead><tbody>
+<div class="tablewrap" tabindex="0" role="region" aria-label="${esc(l)} scripts"><table class="compare psc"><thead><tr><th scope="col">Title</th><th scope="col">Date</th><th scope="col">What it does</th><th scope="col">Code</th></tr></thead><tbody>
 ${items
   .map(
     (e) =>

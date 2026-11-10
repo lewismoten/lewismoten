@@ -42,6 +42,7 @@ function parsePost(file) {
     const img = line.match(/^\s+- src: (.+)$/);
     if (img) {
       const [src, alt, w, h, pixel] = img[1].split(' | ').map((x) => x.trim());
+      if (!src || !alt || !(+w > 0) || !(+h > 0)) throw new Error(`${file}: image needs alt text and positive dimensions`);
       fm.images.push({ src, alt, w: +w, h: +h, pixel: pixel === 'pixel' });
       continue;
     }
@@ -63,7 +64,7 @@ const posts = readdirSync(join(ROOT, 'content/posts'))
 
 for (const p of projects) {
   if (!groups.includes(p.group)) throw new Error(`${p.slug}: unknown group`);
-  for (const k of ['pitch', 'problem', 'built', 'role']) if (!p[k]) throw new Error(`${p.slug}: missing ${k}`);
+  for (const k of ['pitch', 'problem', 'built', 'role', 'alt']) if (!p[k]) throw new Error(`${p.slug}: missing ${k}`);
 }
 const bySlug = Object.fromEntries(projects.map((p) => [p.slug, p]));
 
@@ -111,10 +112,10 @@ ${noindex ? '<meta name="robots" content="noindex">' : ''}
 ${site.nav.map((n) => `<li><a href="${n.href}"${path === n.href || (n.href !== '/' && path.startsWith(n.href)) ? ' aria-current="page"' : ''}>${esc(n.label)}</a></li>`).join('\n')}
 </ul>
 </nav>
-<button class="theme" type="button" id="theme">Theme</button>
+<button class="theme" type="button" id="theme" hidden>Theme</button>
 </div>
 </header>
-<main id="main" class="wrap">
+<main id="main" class="wrap" tabindex="-1">
 ${body}
 </main>
 <footer class="foot">
@@ -142,7 +143,7 @@ function projectLinks(p) {
 
 function card(p) {
   return `<li class="card" data-tags="${esc(p.tags.join('|'))}">
-<a class="cardimg" href="/projects/${p.slug}/" tabindex="-1" aria-hidden="true">${img(miniOf(p), '', 320, 160)}</a>
+<a class="cardimg" href="/projects/${p.slug}/" tabindex="-1" aria-hidden="true">${img(miniOf(p), p.title, 320, 160)}</a>
 <div class="cardbody">
 <h3><a href="/projects/${p.slug}/">${esc(p.title)}</a></h3>
 <p class="sub">${esc(p.subtitle)}</p>
@@ -153,14 +154,15 @@ function card(p) {
 </li>`;
 }
 
-function postBlock(post, { mini = false, heading = 'h3' } = {}) {
+function postBlock(post, { mini = false, heading = 'h3', eager = false } = {}) {
   const p = bySlug[post.project];
   const imgs = post.images
-    .map((i) => {
+    .map((i, index) => {
       const src = mini ? miniSrc(i.src) : i.src;
       const w = mini && src !== i.src ? 320 : i.w;
       const h = mini && src !== i.src ? 160 : i.h;
-      return `<li>${img(src, i.alt, w, h, i.pixel ? ' class="pixel"' : '')}</li>`;
+      const image = img(src, i.alt, w, h, i.pixel ? ' class="pixel"' : '');
+      return `<li>${eager && index === 0 ? image.replace('loading="lazy"', 'fetchpriority="high"') : image}</li>`;
     })
     .join('');
   const more = post.blog ? link(post.blog, 'Read the full post on my blog') : post.link ? link(post.link, post.linklabel || 'Open it') : '';
@@ -343,7 +345,7 @@ add(
     description: 'Short, dated project updates with screenshots. Long write-ups are on my blog.',
     body: `<h1>Posts</h1>
 <p>Short, dated updates with screenshots. The long write-ups are on <a href="${site.links.blog}">my blog</a>. <a href="/feed.xml">Subscribe with the feed.</a></p>
-${posts.map((p) => postBlock(p, { heading: "h2" })).join('\n')}`,
+${posts.map((p, i) => postBlock(p, { heading: 'h2', eager: i === 0 })).join('\n')}`,
   }),
 );
 for (const post of posts) {
@@ -356,7 +358,7 @@ for (const post of posts) {
       description: post.text.slice(0, 200),
       image: first && first.src.startsWith('/img/projects/') ? first.src : '/img/social-preview.jpg',
       type: 'article',
-      body: `<nav aria-label="Breadcrumb" class="crumb"><a href="/posts/">Posts</a></nav>${postBlock(post, { heading: 'h1' }).replace(
+      body: `<nav aria-label="Breadcrumb" class="crumb"><a href="/posts/">Posts</a></nav>${postBlock(post, { heading: 'h1', eager: true }).replace(
         /<h1><a [^>]*>(.*?)<\/a><\/h1>/,
         '<h1>$1</h1>',
       )}`,

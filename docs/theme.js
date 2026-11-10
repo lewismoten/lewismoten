@@ -2,8 +2,9 @@
 (function () {
   var b = document.getElementById('theme');
   var root = document.documentElement;
+  var system = matchMedia('(prefers-color-scheme: dark)');
   function current() {
-    return root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    return root.dataset.theme || (system.matches ? 'dark' : 'light');
   }
   function label() { b.textContent = current() === 'dark' ? 'Light theme' : 'Dark theme'; }
   b.addEventListener('click', function () {
@@ -12,5 +13,7 @@
     try { localStorage.setItem('theme', next); } catch (e) {}
     label();
   });
+  system.addEventListener('change', label);
   label();
+  b.hidden = false;
 })();

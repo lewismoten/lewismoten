@@ -1,6 +1,6 @@
 # Developing the portfolio site
 
-How my portfolio site is laid out and built. It lives in `site/` of my profile repository; the profile `README.md` at the root is separate (its project tables come from `projects/*.yaml` through `scripts/update-projects.sh`). The site is served at https://lewismoten.github.io/lewismoten/.
+How my portfolio site is laid out and built. It lives in `site/` of my profile repository; the profile `README.md` at the root is separate (its project tables come from `projects/*.yaml` through `scripts/update-projects.sh`). The site is served at https://lewismoten.github.io/ from the lewismoten.github.io repository (this same code, pushed there); the profile repository lewismoten keeps the README and its own Pages copy at /lewismoten/.
 
 The site: a home page, a case study for each project, and short dated project posts that link to my blog for the long write-ups. It is plain static HTML made by one small Node script, with no framework and no dependencies.
 

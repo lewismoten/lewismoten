@@ -170,6 +170,33 @@
       "made": "The firmware, tests and install page were written with Claude Code and reviewed by an agent on my Linux machine. The social preview, favicon and hand art came from ChatGPT and my directions, and Claude drew the small category icons in code."
     },
     {
+      "slug": "pocket-fleet",
+      "title": "Pocket Fleet",
+      "subtitle": "A co-op starship bridge simulator for browsers, CYDs and Cardputers",
+      "group": "Embedded systems and hardware",
+      "featured": false,
+      "pitch": "A starship bridge simulator for one player or a room full of people, where each person crews a station from a browser, a Cheap Yellow Display or an M5 Cardputer ADV over local Wi-Fi.",
+      "tags": [
+        "JavaScript",
+        "Node.js",
+        "C++",
+        "ESP32",
+        "PlatformIO",
+        "Web Serial",
+        "ESP Web Tools"
+      ],
+      "alt": "Pocket Fleet: a co-op starship bridge simulator. A CYD showing the helm station, a browser forward view of a planet, and an M5 Cardputer ADV.",
+      "links": {
+        "demo": "https://lewismoten.github.io/pocket-fleet/",
+        "source": "https://github.com/lewismoten/pocket-fleet"
+      },
+      "problem": "I wanted a bridge game for a room of people with whatever screens they have: a laptop hosts the fleet, a projector shows the forward view, and everyone else takes a station on a phone browser or a cheap ESP32 board.",
+      "built": "A browser app and a small Node host that uses only the standard library, with shared game rules for both. The host keeps fleet state on the local Wi-Fi; players find fleets, pick a ship and a station (Helm, Weapons, Engineering, Communications) and can lock a fleet or ship with a code. Firmware in C++ runs the same stations on the 2.8 and 3.5 inch CYDs and the M5 Cardputer ADV; a CYD can scan for short 🚀 hotspot names and board a ship. Players start in personal quarters with an animated cadet they can customize, and keep a service record. A flash page installs the firmware from Chrome or Edge with Web Serial.",
+      "hard": "The CYD has a 320 x 240 touch screen, so each station's controls had to fit pages of large buttons. Browser pages cannot scan Wi-Fi or read signal strength, so only the boards list nearby hotspots. The local connection is unencrypted, so the fleet lock is a casual room gate, not account security.",
+      "results": "It plays solo in a browser, including the [GitHub Pages demo](https://lewismoten.github.io/pocket-fleet/), and hosts a room from one computer. The firmware builds for the 2.8 inch CYD with about 50 KB of static RAM and 1.02 MB of app flash; touch calibration and the hotspot gateway still need testing on the boards. The game rules have Node tests.",
+      "role": "Designer and developer. The cadet art was made with an AI image generator from concept portraits."
+    },
+    {
       "slug": "crystal-9",
       "title": "Crystal-9",
       "subtitle": "Tiny MoE for 8-bit hardware",

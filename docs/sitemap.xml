@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://lewismoten.github.io/lewismoten/</loc></url>
 <url><loc>https://lewismoten.github.io/lewismoten/projects/</loc></url>
+<url><loc>https://lewismoten.github.io/lewismoten/archive/</loc></url>
+<url><loc>https://lewismoten.github.io/lewismoten/archive/psc/</loc></url>
 <url><loc>https://lewismoten.github.io/lewismoten/projects/local-agent-lab/</loc></url>
 <url><loc>https://lewismoten.github.io/lewismoten/projects/ghostjack/</loc></url>
 <url><loc>https://lewismoten.github.io/lewismoten/projects/sandbox-kernel/</loc></url>

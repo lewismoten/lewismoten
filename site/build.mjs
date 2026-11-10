@@ -2,6 +2,7 @@
 // No dependencies. Run: node build.mjs
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, cpSync, rmSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
+import { archivePages, filterUi } from './archive.mjs';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
@@ -217,7 +218,6 @@ ${posts.slice(0, 3).map((p) => postBlock(p, { mini: true })).join('\n')}
 {
   const tagCount = {};
   for (const p of projects) for (const t of p.tags) tagCount[t] = (tagCount[t] || 0) + 1;
-  const tags = Object.keys(tagCount).sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }));
   add(
     '/projects/',
     page({
@@ -225,12 +225,8 @@ ${posts.slice(0, 3).map((p) => postBlock(p, { mini: true })).join('\n')}
       title: 'Projects',
       description: `${projects.length} public projects: applied AI, browser tools, interactive publishing, Commodore 64 software, and government transparency.`,
       body: `<h1>Projects</h1>
-<p>Public work with live demos and source. Each one has a More details page with an executive summary and a technical overview.</p>
-<div class="filter" id="filter" hidden>
-<label for="tagsel">Filter by tag</label>
-<select id="tagsel"><option value="">All tags</option>${tags.map((t) => `<option value="${esc(t)}">${esc(t)} (${tagCount[t]})</option>`).join('')}</select>
-<span id="filtercount" role="status" aria-live="polite"></span>
-</div>
+<p>Public work with live demos and source. Each one has a More details page with an executive summary and a technical overview. <a href="/archive/">Everything else, by year</a>.</p>
+${filterUi(tagCount, 'project', esc)}
 ${groups
   .map(
     (g) => `<section class="group" aria-labelledby="g-${groups.indexOf(g)}"><h2 id="g-${groups.indexOf(g)}">${esc(g)}</h2>${groupNotes[g] ? `\n<p>${inline(groupNotes[g])}</p>` : ''}
@@ -240,6 +236,12 @@ ${groups
 <script src="/filter.js" defer></script>`,
     }),
   );
+}
+
+// Archive pages
+{
+  const { pages: ap } = archivePages({ esc, img, projects });
+  for (const a of ap) add(a.path, page(a));
 }
 
 // Project pages

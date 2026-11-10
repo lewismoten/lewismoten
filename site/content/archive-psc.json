@@ -1,0 +1,1262 @@
+[
+ {
+  "title": "Add Custom Errors with MetaBase",
+  "language": "ASP / VBScript",
+  "date": "2001-04-28",
+  "description": "This script interacts with COM objects that communicate with the MetaBase for Internet Information Server. You will be able to define the custom error pages for your website.",
+  "path": "ASP/CustomErrors"
+ },
+ {
+  "title": "Add E-Mail Job to SQL Server",
+  "language": "ASP / VBScript",
+  "date": "2001-06-04",
+  "description": "This script helps start you off to learning how to automate some of your processes with SQL . For this example, I have chosen to send Email through SQL Server using vbScript. Messages are pulled from a table and deleted once they are sent. You need to create a table in the master database called \"Email\" and assign the fields \"To\", \"From\", \"Subject\" and \"Body\". The script will do the rest. If you \"SA\" account has a password, you will need to modify the script to relflect those changes.",
+  "path": "ASP/EmailJobForSQL"
+ },
+ {
+  "title": "ADODBTypeName",
+  "language": "ASP / VBScript",
+  "date": "2002-04-21",
+  "description": "Quickly find out the type of variables returned from your adodb recordset. TypeName() function doesn't do the trick. Databases offer additional data types. This script helps solve type problems without having to lookup the name of the numbers returned.",
+  "path": "ASP/ADODBTypeName"
+ },
+ {
+  "title": "Advanced HTML Encoder",
+  "language": "ASP / VBScript",
+  "date": "2001-05-05",
+  "description": "This code demonstrates how you can convert a string to HTML text format. It goes beyond the power of the Server.HTMLEncode method in that it parses out all HTML tags, changes new-line characters to \"BR\" tags, and also formats double-spacing and tabs.",
+  "path": "ASP/AdvancedHTMLEncoder"
+ },
+ {
+  "title": "Advanced SQL Query Builder",
+  "language": "ASP / VBScript",
+  "date": "2000-08-03",
+  "description": "This code lets visitors to your site perform complex queries. Users may choose if specific words (or phrases) must or must not match - or if they are optional (default).",
+  "path": "ASP/AdvancedSQLQueryBuilder"
+ },
+ {
+  "title": "Allow users to post \"Safe\" HTML",
+  "language": "ASP / VBScript",
+  "date": "2001-05-10",
+  "description": "This code pulls out all the nasty tags that a user sholdn't use when posting content. It also pulls out any javascript events assigned to any tags. A must have if you allow people to post HTML on your site.",
+  "path": "ASP/AllowUsersToPostSafeHTML"
+ },
+ {
+  "title": "ANSI to Unicode",
+  "language": "ASP / VBScript",
+  "date": "2002-02-25",
+  "description": "Converts from ANSI to Unicode very fast. Inspired by code found in UltraFastAspUpload by Cakkie (on PSC). This should work slightly faster then Cakkies due to how some of the code has been arranged.",
+  "path": "ASP/AnsiToUnicode"
+ },
+ {
+  "title": "AuthenticateUser",
+  "language": "ASP / VBScript",
+  "date": "2001-01-12",
+  "description": "Authenticates a user to make sure if they have previously logged into the site. Requires Session(\"UserID\") to be populated. This usually represents the Users ID within a data base. (Users.UserID) If a user is not loged in, they are redirected to a page to attempt a login. This is useful when the ability to \"Auto-Login\" has been enabled to use previously saved login information in the users cookies. When a user is redirected to the login page, The URL they were attempting to view is passed along in the Query String along with the reason why they need to login. If the user was posting data to the protected page (perhaps a session timed out), then the previous page they were posting from is sent as the URL that the user is redirected to after they have successfully logged in. This is done to help reduce errors when visiting a page that expected posted form data.",
+  "path": "ASP/AuthenticateUser"
+ },
+ {
+  "title": "Base 64 Encode / Decode",
+  "language": "ASP / VBScript",
+  "date": "2000-07-18",
+  "description": "Base 64 encodeing is used to convert binary files to a \"safe\" format for transporting files through smtp (email) and other protocols. It is also used for basic authentication. With this code, you can decode the current UserName/Password who is visiting a protected page on your site by requesting one of the serverVariables.",
+  "path": "ASP/Base64EncodeDecode"
+ },
+ {
+  "title": "Binary Data Manipulation",
+  "language": "ASP / VBScript",
+  "date": "2001-07-03",
+  "description": "These two functions allow you to convert between Unicode and Ascii strings. This is great if you are working with the Request.BinaryRead/BinaryWrite methods or binary data within a database.",
+  "path": "ASP/BinaryDataManipulation"
+ },
+ {
+  "title": "Bottom Tabs",
+  "language": "ASP / VBScript",
+  "date": "2002-03-01",
+  "description": "Simulate the tab control found at the bottom of popular programs such as visual Interdev and Front Page.",
+  "path": "ASP/BottomTabs"
+ },
+ {
+  "title": "BreadCrumbs Navigation",
+  "language": "ASP / VBScript",
+  "date": "2002-07-08",
+  "description": "Displays a path to navigate through each subdirectory in the path to your web page. This is called bread crumb navigation. Many sites use this with the words You Are Here. It is suggested that you do not use this type of navigation alone.",
+  "path": "ASP/BreadCrumbsNavigation"
+ },
+ {
+  "title": "Calculate Color Fading",
+  "language": "ASP / VBScript",
+  "date": "2002-07-01",
+  "description": "Shows an example of how to fade from one color to another. This is a bare-bones example to help you get started with calculating a fade across 16 colors.",
+  "path": "ASP/CalculateColorFading"
+ },
+ {
+  "title": "Catching Bogus Addresses",
+  "language": "ASP / VBScript",
+  "date": "2001-07-25",
+  "description": "This article teaches how you can catch bogus email addresses before you register your members on your site. It also demonstrates how you can continue to verify the addresses over a period of time.",
+  "path": "ASP/CatchingBogusAddresses"
+ },
+ {
+  "title": "Client Bandwidth Recorder",
+  "language": "ASP / VBScript",
+  "date": "2001-04-12",
+  "description": "Measures the bandwidth in kbps (kilobits per second) that the client is viewing your website at. Works with modems, dsl, cable modems, network cards and any other means of connecting to the internet.",
+  "path": "ASP/ClientBandwidthRecorder"
+ },
+ {
+  "title": "Color Palette Scriptlet",
+  "language": "ASP / VBScript",
+  "date": "2001-04-28",
+  "description": "Allows users to choose a color from a palette simular to Adobe's color palette.",
+  "path": "ASP/ColorPaletteScriptlet"
+ },
+ {
+  "title": "Color Picker (Fallout)",
+  "language": "ASP / VBScript",
+  "date": "2002-02-28",
+  "description": "Allow users to choose colors from familiar interfaces that are standard to the windows operating system. This one displays a wide range of hues in a color spectrum and fades the saturation. An additional scriptlet appears to change the luminance of each color chosen.",
+  "path": "ASP/ColorPicker(Fallout)"
+ },
+ {
+  "title": "Color Picker 2",
+  "language": "ASP / VBScript",
+  "date": "2001-04-29",
+  "description": "This version of the Color Picker supports just about any browser that uses javascript - Including Netscape 3. The downfall is that you \"must\" run it with a server that allows ASP. A script is included to create \"dynamic\" images of various colors. Thus - more bandwidth is used to allow visitors to choose colors. It is still a great asset to anyone who wishes to allow users to pick colors dynamically to affect the sites layout and design instantly.",
+  "path": "ASP/ColorPicker2"
+ },
+ {
+  "title": "Color Wheel Picker",
+  "language": "ASP / VBScript",
+  "date": "2002-02-27",
+  "description": "I was working on a scriptlet to allow users to choose a color. A color wheel is displayed with an assortment of colors - most of witch are web-safe. Clicking on a color causes it to be outlined and raise an event that a color was chosen. This object mimics one of the color-picker forms found in Microsoft Office 2000. This scriplet does not yet raise events or expose properties. The basics, however are available for you to be amazed.",
+  "path": "ASP/ColorWheelPicker"
+ },
+ {
+  "title": "Common Database Routines",
+  "language": "ASP / VBScript",
+  "date": "2000-07-18",
+  "description": "To assist in interfacing with databases. This script can format variables and return SQL formats. Such as double quoting apposterphies and surrounding strings with quotes, Returning NULL for invalid data types, trimming strings so they do not exceed maximum lengths. This also has some functions so that you can open and close databases more conveiently with just one line of code. You can query a database and get an Array as well with some code.",
+  "path": "ASP/CommonDatabaseRoutines"
+ },
+ {
+  "title": "Contrasting Colors",
+  "language": "ASP / VBScript",
+  "date": "2002-06-17",
+  "description": "Returns a color that is guarenteed to have contrast against the suggested color. Contrast to white is gray, contrast to light blue is dark blue, etc. Demo included.",
+  "path": "ASP/ContrastingColors"
+ },
+ {
+  "title": "Convert Bytes",
+  "language": "ASP / VBScript",
+  "date": "2000-07-18",
+  "description": "This code convert bytes into larger units such as kilobytes, megabytes, gigabytes, and terabytes. I use this with the FileSytemObject so that my users do not see a very large number that doesn't make any sense.",
+  "path": "ASP/ConvertBytes"
+ },
+ {
+  "title": "Convert LongIP to StringIP",
+  "language": "ASP / VBScript",
+  "date": "2000-07-18",
+  "description": "This function converts a Long Number(3232235521) into an IP Address (\"192.168.0.1\").",
+  "path": "ASP/ConvertLongIPToStringIP"
+ },
+ {
+  "title": "Convert StringIP to NumericIP",
+  "language": "ASP / VBScript",
+  "date": "2000-07-18",
+  "description": "Converts a string ip address (\"192.168.0.1\") to a Long number (3232235521). One of the resons to do this would be to store IP addresses in databases. Numbers greatly reduce the size required to store this information.",
+  "path": "ASP/ConvertStringIPToNumericIP"
+ },
+ {
+  "title": "Cookie Debugger",
+  "language": "ASP / VBScript",
+  "date": "2001-06-21",
+  "description": "Creates a list of all cookies and there crumbs along with the values assigned to each one.",
+  "path": "ASP/CookieDebugger"
+ },
+ {
+  "title": "Credit Card Mod 10 Validation",
+  "language": "ASP / VBScript",
+  "date": "2000-07-18",
+  "description": "Based on ANSI X4.13, the LUHN formula (also known as the modulus 10 -- or mod 10 -- algorithm ) is used to generate and/or validate and verify the accuracy of credit-card numbers.",
+  "path": "ASP/CreditCardMod10Validation"
+ },
+ {
+  "title": "Debug QueryString",
+  "language": "ASP / VBScript",
+  "date": "2001-06-21",
+  "description": "Just used for debugging querystring data. Creates an orderd list of field names and the values assigned to each one.",
+  "path": "ASP/DebugQueryString"
+ },
+ {
+  "title": "Deny Website Copiers",
+  "language": "ASP / VBScript",
+  "date": "2002-07-09",
+  "description": "Prevents web caching programs from accessing your website. Helps increase performance of your website against these programs that may cause DOS attacks on websites with slow internet connections - such as the upstream of a cable modem.",
+  "path": "ASP/DenyWebsiteCopiers"
+ },
+ {
+  "title": "Display Accurate Time from NIST",
+  "language": "ASP / VBScript",
+  "date": "2002-05-04",
+  "description": "Display accurate time to your visitors! This script requests the UTC time from a server that is syncronized with an atomic clock. It then adjusts the time according to timezone and if daylight savings time is in effect.",
+  "path": "ASP/DisplayAccurateTimeFromNIST"
+ },
+ {
+  "title": "DOS Date/Time Functions",
+  "language": "ASP / VBScript",
+  "date": "2002-07-05",
+  "description": "DOS stores date and time with 4 bytes. 2 for date, 2 for time. These functions convert those bytes to appropriate vbScript date and time values. I used these within my WinZip file viewer scripts because winzip stored dates in this format.",
+  "path": "ASP/DOSDateTimeFunctions"
+ },
+ {
+  "title": "Dynamic Curve Images",
+  "language": "ASP / VBScript",
+  "date": "2001-04-29",
+  "description": "The script is able to dynamically create GIF images. The 4 positions of a curve - Top Right/Left and Bottom Right/Left. It also creates a transparent image if the position isn't defined. The images returned are 16x16 pixels - except for the transparent image that is 1x1. The curves are made by two colors (Background and Foreground) that you specify. The script calculates all colors in between and returns an image that appears Anti-Aliased (no jagged edges). This script was made to help users customize there own colors, yet still be able to use images throughout the site that do not lock specific colors into the scheme. This demonstration shows the dynamic image generation in action. 4 rounded corners are created with aliasing to prevent that \"blocky\" edge on the corners. Simply enter an HTML color (in hex format) in the form below. If an invalid color is specified, then that color will default to either white (Color1) or Black (Color2).",
+  "path": "ASP/DynamicCurveImages"
+ },
+ {
+  "title": "Dynamic DNS Update IP Parser",
+  "language": "ASP / VBScript",
+  "date": "2003-09-04",
+  "description": "Has ability to go out on the internet and determine what your current IP address is. Also allows you ability to update namecheap.com with your current IP address. Can be modified to use with other dynamic dns services. Thanks goes to Kenny for letting me know about this cheap DNS host!",
+  "path": "ASP/DynamicDNSUpdateIPParser"
+ },
+ {
+  "title": "Dynamic Pixel Image",
+  "language": "ASP / VBScript",
+  "date": "2001-04-29",
+  "description": "Allows you to create 1x1 images of any color including transparent images. (Images can be streatched by defining height and width in image tag)",
+  "path": "ASP/DynamicPixelImage"
+ },
+ {
+  "title": "Dynamic Stylesheet Interaction",
+  "language": "ASP / VBScript",
+  "date": "2002-09-02",
+  "description": "Interact with stylesheets to dynamically change properties.",
+  "path": "ASP/DynamicStylesheetInteraction"
+ },
+ {
+  "title": "encrypt4.asp",
+  "language": "ASP / VBScript",
+  "date": "2002-08-02",
+  "description": "Encrypts text using the enigma algotithm used in World War II. This security is easily breakable, but people seem to be using this. The next step is XOR encryption - which is also easily breakable. Use this only to get an idea behind how security algorithms have evolved over time and identify its weakenesses. This code is an improvement in clarity and support of characters such as NULLs to encrypt2.asp by Barry Beatti - http://www.planet-source-code.com/vb/scripts/ShowCode.asp?lngWId=4&txtCodeId=7211",
+  "path": "ASP/encrypt4"
+ },
+ {
+  "title": "Expose Your Content",
+  "language": "ASP / VBScript",
+  "date": "2002-03-04",
+  "description": "Expose your content through external javascript source files.",
+  "path": "ASP/ExposeYourContent"
+ },
+ {
+  "title": "File/Path/Extension Stripping",
+  "language": "ASP / VBScript",
+  "date": "2000-07-21",
+  "description": "These routines can strip a file name from a path, a directory from a path, and an extension from a path. They can also determine the parent directory path. They are fairly simple routines that I use in misc. places.",
+  "path": "ASP/FilePathExtensionStripping"
+ },
+ {
+  "title": "Find Available File Name",
+  "language": "ASP / VBScript",
+  "date": "2001-08-06",
+  "description": "When a user uploads a file, this function looks for duplicate file names. It incriments the file until an available name is provided and returns that name.",
+  "path": "ASP/FindAvailableFileName"
+ },
+ {
+  "title": "Folder Interface",
+  "language": "ASP / VBScript",
+  "date": "2002-03-16",
+  "description": "Give your users a nice clean interface to navigate, choose, and create new folders.",
+  "path": "ASP/FolderInterface"
+ },
+ {
+  "title": "Forced Download 2",
+  "language": "ASP / VBScript",
+  "date": "2003-09-04",
+  "description": "Allows you to force a file to be downloaded rather then displayed within the users browser. This can be used with Word documents, Excel Spreadsheets, Adobe PDF's, and other files. Script has been optimized to support large downloads and be dynamically called to download any file (except ASP, ASPX, ASA, ASAX, MDB files). Also clears up some problems with currupt files users had been having by clearing all previouse content and headers.",
+  "path": "ASP/ForcedDownload2"
+ },
+ {
+  "title": "Form Data Debugger",
+  "language": "ASP / VBScript",
+  "date": "2001-06-21",
+  "description": "Reads posted form data and returns an HTML formatted display of field names and the values assigned to them.",
+  "path": "ASP/FormDataDebugger"
+ },
+ {
+  "title": "Get In Frames",
+  "language": "ASP / VBScript",
+  "date": "2000-07-21",
+  "description": "Search engines point users to individual web pages. If the page is supposed to be displayed within a set of frames, this code will redirect the users to a specific page using javascript. From there, the new page parses which page it should display and loads up the frames accordingly.",
+  "path": "ASP/GetInFrames"
+ },
+ {
+  "title": "Gibberish Encoding",
+  "language": "ASP / VBScript",
+  "date": "2002-03-13",
+  "description": "Quick way to learn how to speak gibberish. It is sometimes known as \"girl-speak\".",
+  "path": "ASP/GibberishEncoding"
+ },
+ {
+  "title": "Helpful Checkbox Functions",
+  "language": "ASP / VBScript",
+  "date": "2001-05-05",
+  "description": "Ok, I'm uploading something that is very simple this time - but this is one of the most used things that I have. These little functions help me make code smaller and change the wording to users viewing the text next to a check box. I find that if you change the words based on what the user has chosen, it feels a little more comfortable to them.",
+  "path": "ASP/HelpfulCheckboxFunctions"
+ },
+ {
+  "title": "Hex Viewer",
+  "language": "ASP / VBScript",
+  "date": "2001-04-30",
+  "description": "Allows you to view the binary data of any file (GIF, JPG, ZIP, TXT, HTM, ASP) as if you were looking at a common hex viewer. Bytes are displayed as Hex characters and character data is displayed on the right. Starting positions of each row are displayed on the left.",
+  "path": "ASP/HexViewer"
+ },
+ {
+  "title": "Hex/String Conversion",
+  "language": "ASP / VBScript",
+  "date": "2001-07-25",
+  "description": "These functions allow you to easily convert a string to its hex value and back again.",
+  "path": "ASP/HexStringConversion"
+ },
+ {
+  "title": "How to destroy a Shopping Cart",
+  "language": "ASP / VBScript",
+  "date": "2001-05-04",
+  "description": "I often get questions on how to deal with shopping cart data stored within the database that is no longer needed after the user has logged off. The answer is simple and deals with some database calls in the Global.ASA.",
+  "path": "ASP/HowToDestroyAShoppingCart"
+ },
+ {
+  "title": "How to make Dynamic GIF Color Palettes",
+  "language": "ASP / VBScript",
+  "date": "2001-04-30",
+  "description": "In this article, I will walk you through the entire process on how to property create the GIF images, and then transfer them to my custom template file format. From there, an ASP page can read these templates, generate a color palette, and return a GIF image to the browser.",
+  "path": "ASP/HowToMakeDynamicGIFColorPalettes"
+ },
+ {
+  "title": "HTMLDecode",
+  "language": "ASP / VBScript",
+  "date": "2001-08-06",
+  "description": "This function decodes HTML Encoded strings. I found that when some browsers post data, it converts double-byte characters to html encoded characters. This script searches for all numerical entities as well as a few popular named entities. You will need to tell the server and the web browser that you are working with Unicode characters. The code has been included for working with the UTF-7 character set. Enjoy!",
+  "path": "ASP/HTMLDecode"
+ },
+ {
+  "title": "IIS Authentication",
+  "language": "ASP / VBScript",
+  "date": "2002-03-21",
+  "description": "Requests users to login to website with NT Account.",
+  "path": "ASP/IISAuthentication"
+ },
+ {
+  "title": "Image Directory Listing",
+  "language": "ASP / VBScript",
+  "date": "2002-05-06",
+  "description": "Lists thumbnail images within the current directory. Very simple beginner stuff dealing with file scripting object. Handy for viewing your images quickly. Just copy the code and paste it a file called default.asp. Then view the directory on your website.",
+  "path": "ASP/ImageDirectoryListing"
+ },
+ {
+  "title": "Image Drop",
+  "language": "ASP / VBScript",
+  "date": "2002-07-06",
+  "description": "This script allows you to specify an image to fall down the entire height of the web browser. Images drop at random speeds. The number of images dropping may be specified as well. This particular script demonstrates how to drop an image related to the current month. This gives off an interesting effect.",
+  "path": "ASP/ImageDrop"
+ },
+ {
+  "title": "Input Date",
+  "language": "ASP / VBScript",
+  "date": "2000-07-18",
+  "description": "This small snippet will generate 3 drop down boxes that will allow your users to choose a date.",
+  "path": "ASP/InputDate"
+ },
+ {
+  "title": "Lewie's Image Gallery",
+  "language": "ASP / VBScript",
+  "date": "2001-06-22",
+  "description": "Upload, Manage, and Display images within your own personal art gallery. This Image Bank was made for my girl friend so that she could easily add the images and change them on her own. It also offers categories. To administrate, goto admin.asp and type Administrator/Password to login. User accounts can be added and changed in the administration section. You can delete user accounts as long as 1 account will still remain. Images upload without COM.",
+  "path": "ASP/LewiesImageGallery"
+ },
+ {
+  "title": "Lewies Coding Standards",
+  "language": "ASP / VBScript",
+  "date": "2001-06-07",
+  "description": "Peer into the brains of a professional programmer to learn how to become a better coder and more easily maintain your code for management and easily allow others to understand.",
+  "path": "ASP/LewiesCodingStandards"
+ },
+ {
+  "title": "Lewies URLDecode",
+  "language": "ASP / VBScript",
+  "date": "2001-06-22",
+  "description": "Xao Xiong originally posted his version of DecodeURL and asked for a reply for a better way. I replied, but it didn't turn out too well, so i'm posting it here for him to see. The approach i took is that when you look at an encoded URL string, 2 hex characters follow a percent sign. XAO listed a few to translate into actual characters, but he didn't account for all 256 of them. Check it out! See http://www.planetsourcecode.com/xq/ASP/ txtCodeId.6728/lngWId.4/qx/vb/scripts/ ShowCode.htm",
+  "path": "ASP/LewiesURLDecode"
+ },
+ {
+  "title": "Link URLs",
+  "language": "ASP / VBScript",
+  "date": "2000-08-04",
+  "description": "Finds any URL found within specified text and creates a hyper link for http, https, ftp, and email addresses.",
+  "path": "ASP/LinkURLs"
+ },
+ {
+  "title": "LoginNow",
+  "language": "ASP / VBScript",
+  "date": "2001-01-12",
+  "description": "Attempts to log a user into the web site through either cookies or posted form data by validating UserName and password against a database. Redirects users to originally requested pages. Saves/Refreshes/Deletes login data into cookies if requested by user.",
+  "path": "ASP/LoginNow"
+ },
+ {
+  "title": "Membership Server v1.0",
+  "language": "ASP / VBScript",
+  "date": "2001-06-20",
+  "description": "Allows remote login validation of members against a centralized membership service via. ASP. (Simular to MS Passport)",
+  "path": "ASP/MembershipServerv1.0"
+ },
+ {
+  "title": "Novell ASP Login",
+  "language": "ASP / VBScript",
+  "date": "2000-07-28",
+  "description": "This login code validates users against a novell server and gives the look and feel of a Novell Client login screen.",
+  "path": "ASP/NovellASPLogin"
+ },
+ {
+  "title": "Parse Hex value of visitors System Colors",
+  "language": "ASP / VBScript",
+  "date": "2002-08-13",
+  "description": "Parses the hex value of users system colors. Great for creating dynamic images on the fly to blend with the users operating system.",
+  "path": "ASP/ParseHexValueOfVisitorsSystemColors"
+ },
+ {
+  "title": "Parse Metadata from URLs",
+  "language": "ASP / VBScript",
+  "date": "2001-05-04",
+  "description": "This class demonstrates how you can request the HTML of a URL from another website using the XMLHTTP object to spider the web page. (Simular to the methods of the ASPHttp object). The data is parsed and made available through a class object. This code is great if you are thinking about creating a Search Engine - or you just want to verify that URLs exist that users may place in there profiles. Also handy for finding broken links. If your server has IE5, or XML objects from Microsoft installed on it, then you should be able to use this demonstration without any problems.",
+  "path": "ASP/ParseMetadataFromURLs"
+ },
+ {
+  "title": "Phone Number Conversion",
+  "language": "ASP / VBScript",
+  "date": "2001-02-09",
+  "description": "This class is used to interpret phone numbers to and from a database in a specific format. The format is 25 characters long and is explaied withing the script.",
+  "path": "ASP/PhoneNumberConversion"
+ },
+ {
+  "title": "RC4 Class",
+  "language": "ASP / VBScript",
+  "date": "2001-05-08",
+  "description": "Applys Encryption/Decryption to strings. I think just about everyone who has seen my code knows how I love classes. This version is more \"cleaned up\" and thrown into a nice little class for an object oriented feeling. (If only ASP was object oriented, I would be a happy camper). It is also a little more optimized to run quicker if you change the Key/Password often.",
+  "path": "ASP/RC4Class"
+ },
+ {
+  "title": "RC4 Encryption/Decryption",
+  "language": "ASP / VBScript",
+  "date": "2001-05-08",
+  "description": "Encrypts and Decrypts data using the RC4 algorithm and a Key/Password. Many thanks goes to many, many people on PSC and the internet for helping me through this. Sebastions code over at the Visual Basic section was a good start. This code runs quick in one function and is slightly commented. note - RSA patent expired in September 2000.",
+  "path": "ASP/RC4EncryptionDecryption"
+ },
+ {
+  "title": "RCA Encryption Class",
+  "language": "ASP / VBScript",
+  "date": "2001-05-09",
+  "description": "RCA is used for most standard public key/private key encryption techniques. Due to its burden on resources, RCA is generally used to encrypt random session keys wich are then used to encode messages with RC4. RCA also brings digital certificates into the picture. This, and many other \"public\" algorithms using RC4 do not truly make the message secure. Encryption is performed in 8 bit blocks - or 1 byte. Typing \"AAAAAA\", you will see a pattern begin for form with the encrypted data. If someone were to look at the results from encrypting each letter of the alphabet, your data would be compromized. Also, the public/private keys are limited between a range of 1 and about 65000. This is primarily a starting point if you want to enable a more secure encryption scheme, or you just want to learn more about it.",
+  "path": "ASP/RCAEncryptionClass"
+ },
+ {
+  "title": "Read GIF Dimensions",
+  "language": "ASP / VBScript",
+  "date": "2001-04-29",
+  "description": "Reads the Width and the Height of a GIF image. Really nice to have if you need to limit your users with specific image dimensions for profile images, banners, buttons, etc.",
+  "path": "ASP/ReadGIFDimensions"
+ },
+ {
+  "title": "Read Image Dimensions",
+  "language": "ASP / VBScript",
+  "date": "2001-05-02",
+  "description": "Allows you to read the width and height for GIF, JPEG (JPG/JFIF), Bitmap(BMP), and PNG files. You can upload a file or load a binary file from the server in the demonstration. This is great when you allow users to Upload files and need to ensure that they fit within a specific set of boundries (ie - uploading banners). Update - Now supports AVI, MOV, MPG/MPEG, and SWF with support from my brother Lucas Moten. JPEG files have also been fixed to read correctly.",
+  "path": "ASP/ReadImageDimensions"
+ },
+ {
+  "title": "Remote File Explorer",
+  "language": "ASP / VBScript",
+  "date": "2000-07-19",
+  "description": "This script allows you to browse the file system on a remote computer through your web browser.",
+  "path": "ASP/RemoteFileExplorer"
+ },
+ {
+  "title": "Report Navigation",
+  "language": "ASP / VBScript",
+  "date": "2002-07-09",
+  "description": "Gives you an interface to navigate reports by year, quarter, month, week, or day. This is just the navigation alone that I append to the top of different reports.",
+  "path": "ASP/ReportNavigation"
+ },
+ {
+  "title": "Scripting.Decoder for Microsoft Encoding",
+  "language": "ASP / VBScript",
+  "date": "2001-03-11",
+  "description": "This code lets you decode your scripts. It comes in handy if you deleted the original file or wrote over it with the encoded version. Microsoft included a program to encode, but choose not to let us decode with a scrdec program. More details can be found on my site about this script including a live demonstration. Please leave comments here if you wish to inquire about it.",
+  "path": "ASP/Scripting.DecoderForMicrosoftEncoding"
+ },
+ {
+  "title": "Server Timezone Offset",
+  "language": "ASP / VBScript",
+  "date": "2000-08-26",
+  "description": "Returns the hour difference of the servers time from GMT.",
+  "path": "ASP/ServerTimezoneOffset"
+ },
+ {
+  "title": "SHA-1 Hash Algorithm",
+  "language": "ASP / VBScript",
+  "date": "2001-03-22",
+  "description": "for computing a condensed representation of a message or a data file.",
+  "path": "ASP/SHA-1HashAlgorithm"
+ },
+ {
+  "title": "Site Post Check",
+  "language": "ASP / VBScript",
+  "date": "2002-02-14",
+  "description": "Checks the HTTP Referer header to ensure people are not posting from other websites. You can include this file if you use templates on your website, or just include it on the pages that receive form data posts. Warning - someone who knows there stuff can get around this by modifying there HOST file. this isn't 100% fool proof, but it may deter most from posting data from other websites.",
+  "path": "ASP/SitePostCheck"
+ },
+ {
+  "title": "Small Pagination Navigation",
+  "language": "ASP / VBScript",
+  "date": "2001-05-06",
+  "description": "I've coded many dynamic pages that needed the support of displaying data accross multiple pages. Whith this script, it will build a small navigation that you can display at the top and/or bottom of your results to navigate to the next page. It also supports the ability to only display pages within a specified range. (ie - if you have 1000 pages, it will only write links to 5 of the pages closest to the current page being viewed.)",
+  "path": "ASP/SmallPaginationNavigation"
+ },
+ {
+  "title": "Spinner Scriptlet",
+  "language": "ASP / VBScript",
+  "date": "2002-03-02",
+  "description": "Simulates the spinner control found in visual basic on a web page. Author comments included.",
+  "path": "ASP/SpinnerScriptlet"
+ },
+ {
+  "title": "StrConv Unicode/Ascii",
+  "language": "ASP / VBScript",
+  "date": "2003-09-04",
+  "description": "Converts between unicode and ANSI using ADODB Streams and recordsets. I was pressing myself to the limit to find a faster way to convert strings back and forth between unicode and ANSI during file uploads. This version goes the distance and has great speed.",
+  "path": "ASP/StrConvUnicodeAscii"
+ },
+ {
+  "title": "Strip HTML",
+  "language": "ASP / VBScript",
+  "date": "2000-07-18",
+  "description": "Strips any HTML tags from a string and returns the results. I use this for data that users submit through forms to prevent them from using HTML.",
+  "path": "ASP/StripHTML"
+ },
+ {
+  "title": "Switchbox Scriptlet",
+  "language": "ASP / VBScript",
+  "date": "2002-07-06",
+  "description": "Add / Remove / Manage position of items on a list. This scriplet demonstrates how you can allow your users to pick up to 5 flavors of there best ice cream.",
+  "path": "ASP/SwitchboxScriptlet"
+ },
+ {
+  "title": "Table Data Export",
+  "language": "ASP / VBScript",
+  "date": "2001-06-06",
+  "description": "Exports data from a database int Transact-SQL Batch files. Used primarily for exporting data from an access database to an SQL Server.",
+  "path": "ASP/TableDataExport"
+ },
+ {
+  "title": "Total Email Validation",
+  "language": "ASP / VBScript",
+  "date": "2000-07-21",
+  "description": "Validates email addresses. Makes sure the email addresses with IP addresses are not private network addresses. Allows multiple sub-domain levels. verifies characters within domain names. only allows standard length 26 characters for each domain name level, except the top (3 max)",
+  "path": "ASP/TotalEmailValidation"
+ },
+ {
+  "title": "Universal Email Interface",
+  "language": "ASP / VBScript",
+  "date": "2002-03-20",
+  "description": "Lays down a universal interface to sending email. Easier to port to other servers that use different COM objects to send email. Even exposes a list of ProgID's that are installed on the server. (This is the beginnig. But I am sure you can see where the benefit of this code is going)",
+  "path": "ASP/UniversalEmailInterface"
+ },
+ {
+  "title": "Unlimited Alternating Colors",
+  "language": "ASP / VBScript",
+  "date": "2001-07-13",
+  "description": "Demonstrates how to have alternating colors. Most people usually need just two alternating colors, but this method supports a larger list. Both a fixed loop and a conditional loop are provided as examples.",
+  "path": "ASP/UnlimitedAlternatingColors"
+ },
+ {
+  "title": "Upload Files Without COM v3",
+  "language": "ASP / VBScript",
+  "date": "2003-09-01",
+  "description": "Allows you to upload multiple files and fields without purchasing or registering COM objects. Great for shared hosts that frown upon 3rd Party com objects or charge an arm and a leg for them. This script provides an object oriented interface using classes for easier development. The power that this script has over others is that it does not use dictionary objects to store the uploaded files. It also harnesses the power of ADODB to prepare and save binary data to the file system with quick speeds. This is the script that you have been looking for. You can get a really good feel for how the script is used just by reading through the FAQ and examples provided. This script has been tailored to meet the requests of developers who have used previouse versions. The code is comented very well and comes along with examples of how to do common operations, as well as a FAQ. Bugs from version 2 have been fixed, or otherwise throw exceptions to the user giving them details of how to correct the problem (such as giving permission to the internet user account). Memory is managed more efficiently in version 3 that allows for more scaleablity and larger files. By the request of a few developers, progress bars are now supported to notify the user how much information has been received by the server. A website for support has also been created where you can get help from the author, other users of the script, and get any recent revisions or additional examples as they become available.",
+  "path": "ASP/UploadFilesWithoutCOMv3"
+ },
+ {
+  "title": "vbScript ColorCoder v2.0",
+  "language": "ASP / VBScript",
+  "date": "2001-05-08",
+  "description": "This script colorizes your vbScript for display on web pages. All colors can be managed through a style sheet. It seems that those who knew about the results of this version (from browsing my website) always kept asking me for the code and my old version that I refered them to was out-dated and didn't come close enough to there expectations. So peeps - I give to you my most proud and recent version of the color coder.",
+  "path": "ASP/vbScriptColorCoderV2.0"
+ },
+ {
+  "title": "vbScript to HTML Color Coder",
+  "language": "ASP / VBScript",
+  "date": "2000-07-23",
+  "description": "Converts vbScript to HTML to show your code on web pages. Also provides features so that clicking on keywords will create a small pop-up window explaining some details about that keyword and provide a link with more details.",
+  "path": "ASP/vbScriptToHTMLColorCoder"
+ },
+ {
+  "title": "Web Navigation Scriptlet",
+  "language": "ASP / VBScript",
+  "date": "2002-07-06",
+  "description": "Navigate through a website within a small area of the screen.",
+  "path": "ASP/WebNavigationScriptlet"
+ },
+ {
+  "title": "Whois Lookup",
+  "language": "ASP / VBScript",
+  "date": "2001-02-18",
+  "description": "Shows how you can do a WhoIs lookup using a COM object capable of using winsock.",
+  "path": "ASP/WhoisLookup"
+ },
+ {
+  "title": "Whois Lookup with XMLHTTP",
+  "language": "ASP / VBScript",
+  "date": "2001-05-09",
+  "description": "Queries a WhoIs server for for domain information. Useful for people who want to sell domain names. This version uses the XMLHTTP component that is installed on most servers, so there is no additional need to install any extra COM objects.",
+  "path": "ASP/WhoisLookupWithXMLHTTP"
+ },
+ {
+  "title": "Zip File Viewer",
+  "language": "ASP / VBScript",
+  "date": "2002-07-05",
+  "description": "Display a list of files within a zip files archive along with the compressed/uncompressed size, ratio, path, etc. Always wanted to do this, but usually found code refering to winzip or some api calls. This is strait ASP. Performance is not at its best - this is a working concept. You can see the results in action on my website (www.lewismoten.com)",
+  "path": "ASP/ZipFileViewer"
+ },
+ {
+  "title": "Center Popup Windows",
+  "language": "JavaScript",
+  "date": "2002-02-06",
+  "description": "Center popup windows in the middle of your browser.",
+  "path": "JavaScript/CenterPopupWindows"
+ },
+ {
+  "title": "Cross Browser XmlHelper",
+  "language": "JavaScript",
+  "date": "2004-06-15",
+  "description": "Allows you to easily load xml files in MSIE, Netscape, and Mozilla. Read nodes with xpath, select attribute values and text - all with the same interfaces.",
+  "path": "JavaScript/CrossBrowserXmlHelper"
+ },
+ {
+  "title": "Decimal to Hex",
+  "language": "JavaScript",
+  "date": "2001-04-29",
+  "description": "Converts a decimal number to a Hex String (i.e. 255 = 'FF')",
+  "path": "JavaScript/DecimalToHex"
+ },
+ {
+  "title": "Hide Basic Authentication with HMTL Forms",
+  "language": "JavaScript",
+  "date": "2001-02-17",
+  "description": "I figured out how to let my users login with a form rather then using the built in dialog for basic authentication. Only problem is, if they get the username/password wrong, then they will still get that built in dialog. Code has been attatched for anyone who could use it. Very much a barebones demonstration. Works with any form of Basic Authentication (IIS / AuthentiX). Doesn't depend on any specific form of Scripting language on the server. works with cold fusion, perl, asp, etc. Tested with Netscape 3.04, 5, and Internet Explorer 5.5",
+  "path": "JavaScript/HideBasicAuthenticationWithHMTLForms"
+ },
+ {
+  "title": "Lewies Color Picker",
+  "language": "JavaScript",
+  "date": "2004-05-16",
+  "description": "Let your users choose a color through a rich user interface. This color picker looks simular to Adobe Photoshop.",
+  "path": "JavaScript/LewiesColorPicker"
+ },
+ {
+  "title": "Make Absolute URL",
+  "language": "JavaScript",
+  "date": "2001-02-17",
+  "description": "Converts a relevent url to an absolute URL. login.asp would become http://www.yourdomain.com/your/directory/structure/login.asp",
+  "path": "JavaScript/MakeAbsoluteURL"
+ },
+ {
+  "title": "Mouse Looker",
+  "language": "JavaScript",
+  "date": "2004-06-05",
+  "description": "Take 9 pictures of yourself looking in 9 directions and assemble them to look at the users mouse depending on its location relative to your image. My wife thinks it's funny because she asks for money and drags the mouse above and below the image a few times so that I nod \"yes\".",
+  "path": "JavaScript/MouseLooker"
+ },
+ {
+  "title": "Password Security",
+  "language": "JavaScript",
+  "date": "2002-06-29",
+  "description": "Parses the password field and comes back with a percentage of how secure your password is against a hack attempt.",
+  "path": "JavaScript/PasswordSecurity"
+ },
+ {
+  "title": "Request_Cookies",
+  "language": "JavaScript",
+  "date": "2002-05-04",
+  "description": "Gives ASP programmers a familliar interface to request cookies. document.write(Request.Cookies(\"UserName\"))",
+  "path": "JavaScript/Request_Cookies"
+ },
+ {
+  "title": "Request_QueryString",
+  "language": "JavaScript",
+  "date": "2002-04-21",
+  "description": "Allows browser to read querystring variables through javascript.",
+  "path": "JavaScript/Request_QueryString"
+ },
+ {
+  "title": "Secure Hash Algorithm (SHA-1)",
+  "language": "JavaScript",
+  "date": "2001-04-13",
+  "description": "The function generates a 160-bit (40-hex-digits representing 20 bytes) message digest for a given message (String) of any length. The digest is unique to the message. It is not possible to recover the message from the digest. The only way to find the source message for a digest is by the brute force hashing of all possible messages and comparison of their digests.",
+  "path": "JavaScript/SecureHashAlgorithm(SHA-1)"
+ },
+ {
+  "title": "Count Matches",
+  "language": "SQL",
+  "date": "2002-02-22",
+  "description": "Allows you to count how many times a string appears within another string. example - count carriage returns within text. Handles up to 8K characters. Tricks can get around 8K limit for large text fields.",
+  "path": "SQL/CountMatches"
+ },
+ {
+  "title": "Creating Grids",
+  "language": "SQL",
+  "date": "2002-06-15",
+  "description": "Explains how to create grids and walks through the process of optimizing the query for speed. Grid table is populated with rows containing columns of X and Y.",
+  "path": "SQL/CreatingGrids"
+ },
+ {
+  "title": "Find and remove Dupes",
+  "language": "SQL",
+  "date": "2002-02-08",
+  "description": "Find and remove duplicate values within a table.",
+  "path": "SQL/FindAndRemoveDupes"
+ },
+ {
+  "title": "FormatDate",
+  "language": "SQL",
+  "date": "2002-05-22",
+  "description": "Dynamically convert a date to a user-defined format.",
+  "path": "SQL/FormatDate"
+ },
+ {
+  "title": "GrantUserExecuteAll",
+  "language": "SQL",
+  "date": "2002-11-08",
+  "description": "Allows you to specify a username and grant access to execute all SQL stored procedures within the current database. Very useful for developers that create databases with one account, but have programs accessing them through a seperate user account. This is an update to an old piece of code I had on PSC that limited to the public account.",
+  "path": "SQL/GrantUserExecuteAll"
+ },
+ {
+  "title": "Num2Guid Conversion Function",
+  "language": "SQL",
+  "date": "2002-05-24",
+  "description": "Article describing how to convert a decimal to a guid format. Also goes into detail explaining how to convert to other base-N numbers such as a bitmask/binary, octet, trinary, hex, and more. Introduces the benefit of functions with a real-case scenario.",
+  "path": "SQL/Num2GuidConversionFunction"
+ },
+ {
+  "title": "OutlineSort '3.2.10.2'",
+  "language": "SQL",
+  "date": "2002-12-03",
+  "description": "This function pads each number found within each decimal to allow sorting on outline numbers. Fixes problems where 2 comes after 10 in string sorts. An example of how this function is used would appear like this: SELECT OutlineNumber FROM Outline ORDER BY dbo.OutlineSort(OutlineNumber)",
+  "path": "SQL/OutlineSort"
+ },
+ {
+  "title": "Random Pronouncable Password",
+  "language": "SQL",
+  "date": "2001-07-07",
+  "description": "Procedure made in order to create a random password that is somewhat pronouncable and easy to remember.",
+  "path": "SQL/RandomPronouncablePassword"
+ },
+ {
+  "title": "sp_Base64EncodeStr",
+  "language": "SQL",
+  "date": "2000-12-02",
+  "description": "This procedure demonstrates how to instantiate an OLE object. I have used an ActiveX dll called AspConv\u2122 (provided in AspLib\u2122) to encode text with Base64 encoding in this example. The object must be registered on THE DATABASE SERVER (not to be confused with the web server/client/ or application server)",
+  "path": "SQL/sp_Base64EncodeStr"
+ },
+ {
+  "title": "sp_ZipCode_Distance",
+  "language": "SQL",
+  "date": "2000-12-02",
+  "description": "This code looks up 2 zip codes latitude and longitude and determines the distance between the two in miles.",
+  "path": "SQL/sp_ZipCode_Distance"
+ },
+ {
+  "title": "sp_ZipCode_Range",
+  "language": "SQL",
+  "date": "2000-12-02",
+  "description": "Returns all zip codes within a specified range of a specific zip code.",
+  "path": "SQL/sp_ZipCode_Range"
+ },
+ {
+  "title": "sprSearchTable",
+  "language": "SQL",
+  "date": "2002-07-11",
+  "description": "This procedure searches all columns within the table specified. All columns are casted as varchar(1000). If any of the columns contain the query, then all columns are returned. (SQL2K)",
+  "path": "SQL/sprSearchTable"
+ },
+ {
+  "title": "Suggest Available Usernames",
+  "language": "SQL",
+  "date": "2001-07-07",
+  "description": "Procedure created in order to determine if a duplicate user name exists during a sign up process. If a user name does not exist, an empty recordset is returned. Otherwise, any digits found at the end of the username are trimmed, and new usernames that do not yet exist are suggested with a suffix of numbers appended to the end.",
+  "path": "SQL/SuggestAvailableUsernames"
+ },
+ {
+  "title": "Toggle Bit Function",
+  "language": "SQL",
+  "date": "2002-06-03",
+  "description": "Toggle bit fields with a small line of code.",
+  "path": "SQL/ToggleBitFunction"
+ },
+ {
+  "title": "Toggle Table Relations",
+  "language": "SQL",
+  "date": "2002-05-29",
+  "description": "Useful for disabling constraints during database replication. When copying data to another database, use this procedure on the target database first. When finnished, run it again to enable the constraints. I used this because I was working on a database with tables referencing themselves. I couldn't add records when previouse records did not exist. This solved the problem.",
+  "path": "SQL/ToggleTableRelations"
+ },
+ {
+  "title": "Trim",
+  "language": "SQL",
+  "date": "2001-10-15",
+  "description": "Allows you to Trim your strings when querying tables. I'm tired of using the Trim function in my ASP pages and Visual Basic. I created this little feature to trim away within SQL Server itself. This is a User Defined function rather then a stored procedure, so you can use it rite inside your select statements. \"SELECT Trim([FirstName]) FROM [Users]\". Sometimes you may find that you need to prefix the function with the owner - \"SELECT dbo.Trim([FirstName]) FROM [Users]\". Within the SQL Server Enterprise manager you will need to expand the \"Databases\" node. Locate your database and expand the node. Next, find the User Defined Functions node. Right-Mouse-Click and choose \"New User Defined Function ...\". Paste my code into it.",
+  "path": "SQL/Trim"
+ },
+ {
+  "title": "US Government Holidays",
+  "language": "SQL",
+  "date": "2003-07-10",
+  "description": "Provide a date to this function and it will move it to the next US Government Business day - taking holidays into effect. US Government holidays are New Years Day, Birthday of Martin Luther King, Jr., Washington's Birthday, Memorial Day, Independence Day, Labor Day, Columbus Day, Veterans Day, Thanksgiving, and Christmas. Functions provided may be used for other special days as well.",
+  "path": "SQL/USGovernmentHolidays"
+ },
+ {
+  "title": "User Defined Function Intro",
+  "language": "SQL",
+  "date": "2002-03-03",
+  "description": "Brief introduction to user defined functions with examples and benefits explained.",
+  "path": "SQL/UserDefinedFunctionIntro"
+ },
+ {
+  "title": "AssemblyReader",
+  "language": "C#",
+  "date": "2004-06-19",
+  "description": "The assembly reader reads embedded resources as streams from any assembly you may pass to it. By default, it will read from the executing assembly. You can also read the assemblies title, description, configuration, company, product, copyright, trademark, and culture attributes.",
+  "path": "CSharp/AssemblyReader"
+ },
+ {
+  "title": "Base Conversion Utility",
+  "language": "VB.Net",
+  "date": "2004-03-17",
+  "description": "Converts a value from one customized base set to another. No longer are you bound to strict rules. zero does not necesarily have to represent nothing ... even create numbers in DNA (base-4 gatc). Try it out and see what it is all about. Comes with binary, octet, decimal, hex, morse-code, dna, and base64. (base 64 doesn't specifically mean normal base64 encoding)",
+  "path": "VBNet/BaseConversionUtility"
+ },
+ {
+  "title": "Bitmap to Hue",
+  "language": "VB.Net",
+  "date": "2003-02-18",
+  "description": "Supply a bitmap and color and the bitmap is magically transformed to show colors from black to your color. Works with GIF images. Great for greyscale backgrounds that need to keep image but only change shades of color.",
+  "path": "VBNet/BitmapToHue"
+ },
+ {
+  "title": "BitmapTo/FromBase64",
+  "language": "VB.Net",
+  "date": "2003-02-05",
+  "description": "Allows you to convert bitmap images to base64 and back for storage and retrieval in XML files.",
+  "path": "VBNet/BitmapToFromBase64"
+ },
+ {
+  "title": "Choose File User Control",
+  "language": "VB.Net",
+  "date": "2003-09-13",
+  "description": "Drag and drop this control onto your forms so you can allow users to pick the files on there computer they want to use with your program. Pretty simple stuff.",
+  "path": "VBNet/ChooseFileUserControl"
+ },
+ {
+  "title": "clsRandomString",
+  "language": "VB.Net",
+  "date": "2002-11-07",
+  "description": "Creates a variable length random string according to parameters you specify. MinLength, MaxLength, CharacterSet. Uses a Cryptography RandomNumberGenerator object to ensure an accurately random string.",
+  "path": "VBNet/clsRandomString"
+ },
+ {
+  "title": "Dynamic ScriptMapping with Metabase",
+  "language": "ASP.Net",
+  "date": "2003-09-20",
+  "description": "Allows you to assign almost any extension to be processed by the ASPX script processor. You may add, update, and remove the extension progromatically without opening the IIS Manager. Great for those of you who do not have access to the machines desktop (such as hosted at other ISPs).",
+  "path": "ASPNet/DynamicScriptMappingWithMetabase"
+ },
+ {
+  "title": "GetResource",
+  "language": "VB.Net",
+  "date": "2003-02-07",
+  "description": "Reads embeded files from your executable programs (such as xml, images, etc.) Allows you to distribute one program - the exe, but still access your data and images needed with the program.",
+  "path": "VBNet/GetResource"
+ },
+ {
+  "title": "HTTP Formatting",
+  "language": "ASP.Net",
+  "date": "2002-12-03",
+  "description": "Formats HTML source code to prevent users from using scripts and unwanted formatting tags such as Cascading style sheets, ActiveX controls, java applets, etc.",
+  "path": "ASPNet/HTTPFormatting"
+ },
+ {
+  "title": "ID3v1.1 Reader",
+  "language": "VB.Net",
+  "date": "2004-01-25",
+  "description": "Class reads ID3v1.1 tags - Artist, Sont Title, Track, Comment, Year, Album and year. Smaller code and reads more efficiently then other code I've seen on PSC as of today.",
+  "path": "VBNet/ID3v1.1Reader"
+ },
+ {
+  "title": "Image 2 HTML",
+  "language": "VB.Net",
+  "date": "2003-09-04",
+  "description": "Converts an image to HTML table cells. Probably done many times before. This one also creates javascript to invert the image 1 pixel at a time.",
+  "path": "VBNet/Image2HTML"
+ },
+ {
+  "title": "Image Details Dialog",
+  "language": "VB.Net",
+  "date": "2003-04-27",
+  "description": "Dialog box displays an image, its' file name, path, image dimensions, and file size. User may scroll to see full image, and browse to choose another image. If controls are too small, you can always resize them.",
+  "path": "VBNet/ImageDetailsDialog"
+ },
+ {
+  "title": "ImageLink WebControl",
+  "language": "ASP.Net",
+  "date": "2003-10-17",
+  "description": "Functions just like the image control except that you may also provide a navigation url. when the user clicks the image, they go off to the url you specify.",
+  "path": "ASPNet/ImageLinkWebControl"
+ },
+ {
+  "title": "Lewies Validation Code Image - Part 1",
+  "language": "ASP.Net",
+  "date": "2003-10-23",
+  "description": "Prevent content and processes from being misused for spam or inappropriate use. An image is displayed to the end-user. An attempt is made to prevent OCR recognition by agents, spiders, or artificial intelligence to gain access to content or processes. The image will display a \u201ccode\u201d to the user that they are required to enter into a field provided.",
+  "path": "ASPNet/ValidationCodeImage1"
+ },
+ {
+  "title": "Lewies Validation Code Image - Part 2",
+  "language": "ASP.Net",
+  "date": "2003-10-24",
+  "description": "Prevent content and processes from being misused for spam or inappropriate use. An image is displayed to the end-user. An attempt is made to prevent OCR recognition by agents, spiders, or artificial intelligence to gain access to content or processes. The image will display a \u201ccode\u201d to the user that they are required to enter into a field provided.",
+  "path": "ASPNet/ValidationCodeImage2"
+ },
+ {
+  "title": "Page Navigation WebControl",
+  "language": "ASP.Net",
+  "date": "2003-10-11",
+  "description": "Allows users to navigate through each page (kinda like Google). They can click back, next, and page numbers as well. You can customize its output html through design-time. Great for beginners learning how to code web controls.",
+  "path": "ASPNet/PageNavigationWebControl"
+ },
+ {
+  "title": "Play WAV Files",
+  "language": "VB.Net",
+  "date": "2003-02-15",
+  "description": "Allows you to effortlessly play wave files in a seperate thread while your application continues to operate. Now supports playing embedded resource files and Streams.",
+  "path": "VBNet/PlayWAVFiles"
+ },
+ {
+  "title": "Small MSIM example",
+  "language": "VB.Net",
+  "date": "2004-01-17",
+  "description": "quick and dirty example to use instant messenger with windows (MSIM). Logon, Logoff, Display contact list, send a message. Great for people researching for another way other then email to authenticate users.",
+  "path": "VBNet/SmallMsimExample"
+ },
+ {
+  "title": "Thumbnail",
+  "language": "ASP.Net",
+  "date": "2003-10-16",
+  "description": "allows you to dynamically create thumbnails of your images on the fly. Image is resized to its aspect ration to fit within a defined region. You can specify quality of image to reduce bandwidth, and background color to fill in whitespace around image.",
+  "path": "ASPNet/Thumbnail"
+ },
+ {
+  "title": "Visual SourceSafe Journal Monitor Service",
+  "language": "VB.Net",
+  "date": "2004-01-23",
+  "description": "VMS is a windows service developed in .Net that monitors a Microsoft Visual SourceSafe (VSS) database. Customized alerts may be sent based on the defined filters.",
+  "path": "VBNet/VSSMonitorService"
+ },
+ {
+  "title": "Wizard Navigation Control",
+  "language": "VB.Net",
+  "date": "2003-06-22",
+  "description": "Provides simple navigation through multiple steps that you may offer your users in an application. ie - a wizard setup program.",
+  "path": "VBNet/WizardNavigationControl"
+ },
+ {
+  "title": "Alpha Blend Utility",
+  "language": "VB",
+  "date": "2002-08-27",
+  "description": "Blends one image into another image with the opacity based on an alpha channel image provided. Useful for developing tile chipsets for RPG games. Coastal tile chipset provided with 9 sample base tiles for demonstration purpose only - nothing fancy.",
+  "path": "VB/AlphaBlendUtility"
+ },
+ {
+  "title": "ASP Whois Component with sample code",
+  "language": "VB",
+  "date": "2001-02-18",
+  "description": "I was searching on the 'net for a whois COM object and everyone is charging $20 - $250 for a very simple object. I was a little low on cash and had the day off. This COM object includes ASP code and a list of over 250 whois databases on the net.",
+  "path": "VB/WhoisComponent"
+ },
+ {
+  "title": "Average Color In Image",
+  "language": "VB",
+  "date": "2002-09-01",
+  "description": "Returns the average color within a picture box. I use this when creating small maps of tile-based rpg games. I get the avg color of each block, and place the color on the map.",
+  "path": "VB/AverageColorInImage"
+ },
+ {
+  "title": "Binary Convert",
+  "language": "VB",
+  "date": "2000-07-29",
+  "description": "I always thought 0's and 1's were cool as a background to web pages or in the credits to the movie \"Ghost in the Shell\". I found a way to actually make your binary numbers mean something instead of trying to make a lot of random binary numbers on your own. This program looks as the Ascii value (0 - 255) of a character and determines an 8 digit binary number that the number equals to in binary language. It also converts binary language back into strings so you can send binary messages to and from your friends if your really up for it. Take note - A binary text message will be 8 times larger then a regular message. Download: This zip file comes with the executable and the source code. Hopefully it is all self explanitory. This is only the executable itself and does not include the run time dll's. You may need to download a visual basic 6.0 virtual machine.",
+  "path": "VB/BinaryConvert"
+ },
+ {
+  "title": "BitsToNum/NumToBits",
+  "language": "VB",
+  "date": "2001-01-12",
+  "description": "I was reading some binary files and needed some routines to convert numbers back and forth into binary numbers. In this case, I set the procedures to work with binary arrays.",
+  "path": "VB/BitsToNumNumToBits"
+ },
+ {
+  "title": "Color Utility",
+  "language": "VB",
+  "date": "2000-07-23",
+  "description": "This utility is used to find a color and determin its hex, long, and rgb values. it will also give you the name of the color if it matches one of the pre-defined colors recognized by browsers and determine if the color is \"safe\". An additional utility is included to load a picture and determine the color of any pixel used to create the picture.",
+  "path": "VB/ColorUtility"
+ },
+ {
+  "title": "Convert 16 bit colors to 24 bit",
+  "language": "VB",
+  "date": "2001-01-12",
+  "description": "I was working with some files from a game and the colors were in 16 bit. I had to convert them to 24 bit just so that I could view them. These functions do just that.",
+  "path": "VB/Color16To24"
+ },
+ {
+  "title": "Determine if File Is Old",
+  "language": "VB",
+  "date": "2001-06-22",
+  "description": "Determines if a file is old. I use this when I loop through the files in a \"temp\" directory to determine if I should delete old files on a website. Take note - the function looks at the last modified date rather then the date created.",
+  "path": "VB/FileIsOld"
+ },
+ {
+  "title": "DoEvents Demonstration",
+  "language": "VB",
+  "date": "2001-02-19",
+  "description": "The main point here is to show beginners how to allow your code to \"wait\" for other events to take place before continuing to execute any code that follows. It also includes a timeout feature in case the event never raises a flag that it is finnished.",
+  "path": "VB/DoEventsDemo"
+ },
+ {
+  "title": "Dynamic Intrinsic Controls",
+  "language": "VB",
+  "date": "2001-06-21",
+  "description": "This demo shows you how to dynamically create a FileListBox control via vb Code rather then at design time. The reason I choose to create this was that I needed to get a list of files within a directory via. a DLL. The file system object causes too much overhead and this little trick makes the code run much faster. For testing purposes, just create a new EXE and throw this onto Form1. For more info, See the MS Knowledge Base: Q190670",
+  "path": "VB/DynamicIntrinsicControls"
+ },
+ {
+  "title": "Embed Binary Files In Programs",
+  "language": "VB",
+  "date": "2002-05-22",
+  "description": "Embed binary files within your programs to be written out to the file system once the program runs. This demonstration creates a Word document.",
+  "path": "VB/EmbededFiles"
+ },
+ {
+  "title": "HTML2Word dll",
+  "language": "VB",
+  "date": "2002-03-21",
+  "description": "Converts a web page to a word document.",
+  "path": "VB/HTML2Word"
+ },
+ {
+  "title": "Hyperlink with Hand Icon",
+  "language": "VB",
+  "date": "2002-06-04",
+  "description": "Includes demonstration of how to make labels appear as hyperlinks, open the users default web browser, and uses a hand cursor when hovering over the icon. The hand.cur file is loaded seperately so that you may incorporate it into your other applications.",
+  "path": "VB/HyperlinkWithHandIcon"
+ },
+ {
+  "title": "Image 2 Ascii",
+  "language": "VB",
+  "date": "2002-05-25",
+  "description": "The Image 2 Ascii converter allows you to load a photograph, and then generate an ascii image that looks simular to it. You can use this ascii version to post a picture of your self on news groups, message boards, email signatures, and more. No longer is text-only formatting a constraint for displaying photographs!",
+  "path": "VB/Image2Ascii"
+ },
+ {
+  "title": "Lewie's Hangman",
+  "language": "VB",
+  "date": "2001-07-16",
+  "description": "So why is my version of hang man so cool? well - I don't know. I havn't looked at the others. This one lets you build your own list and \"click\" your way through the came. Click on each letter and it will be filled in (or a new piece of the hang man will be drawn.) Each game gets 6 wrong answers. You may also guess the phrase.",
+  "path": "VB/LewiesHangman"
+ },
+ {
+  "title": "MakePath",
+  "language": "VB",
+  "date": "2002-04-30",
+  "description": "Creates folders and subfolders to the specified path.",
+  "path": "VB/MakePath"
+ },
+ {
+  "title": "PageRange",
+  "language": "VB",
+  "date": "2000-12-02",
+  "description": "I had database searches that were returning way too many pages to display an option to view each page. What I did was set up this procedure to return a range of pages, and also options to jump ahead, back, first page, last page, previouse page, and/or the next page. This routine tells you what those links are.",
+  "path": "VB/PageRange"
+ },
+ {
+  "title": "ParseNumber",
+  "language": "VB",
+  "date": "2002-03-15",
+  "description": "Parses a number from a string. Handles parans for negative numbers.",
+  "path": "VB/ParseNumber"
+ },
+ {
+  "title": "PicMatch2",
+  "language": "VB",
+  "date": "2002-09-05",
+  "description": "Compares each pixels colors in one picture box to another. Determines if pictures are an exact match. Now uses API to copy pictures to memory. Looking for a quicker way to compare arrays. Copy this code into a module and call PicMatch.",
+  "path": "VB/PicMatch2"
+ },
+ {
+  "title": "Raw Clipboard Viewer",
+  "language": "VB",
+  "date": "2002-03-19",
+  "description": "Working on a clip-board spy to understand how data is saved within the clipboard. Still cleaning up a few things - but it works for the most part.",
+  "path": "VB/RawClipboardViewer"
+ },
+ {
+  "title": "Simple Log Routine",
+  "language": "VB",
+  "date": "2001-06-01",
+  "description": "Simple routine that logs a sting to a specified log file. also supports word-wrapping on long lines (more then 80 characters) and inserts an empty line before and after the information so it is easier to read. This code is mainly here for my own personal reference.",
+  "path": "VB/SimpleLogRoutine"
+ },
+ {
+  "title": "SQL Formatting",
+  "language": "VB",
+  "date": "2002-03-15",
+  "description": "Format variables for SQL Syntax.",
+  "path": "VB/SQLFormatting"
+ },
+ {
+  "title": "Text to String Conversion",
+  "language": "VB",
+  "date": "2002-05-22",
+  "description": "Definately been done before. Just couldn't find specifially what I wanted. Converts text to strings in VBScript, Javascript, and T-SQL script. Simple interface, Simple code, Simple to use ...",
+  "path": "VB/TextToStringConversion"
+ },
+ {
+  "title": "URL Thumbnail Generator",
+  "language": "VB",
+  "date": "2002-08-23",
+  "description": "Creates thumbnail versions of web pages and saves to an image. Personal project in development to later store within a database containing links to other sites to offer a link preview. Have not been able to create images when hiding the web browser object. Now supports frames and pages with onLoad javascript events.",
+  "path": "VB/URLThumbnailGenerator"
+ },
+ {
+  "title": "vbScript Decoder - exe",
+  "language": "VB",
+  "date": "2002-11-10",
+  "description": "Decodes script that was encoded by Microsofts Script Encoder. My earlier version was done in ASP and is posted on this site, however i'm porting this to VB to disregard worries about code pages and such for other languages.",
+  "path": "VB/vbScriptDecoder"
+ },
+ {
+  "title": "XOR Encryption Class",
+  "language": "VB",
+  "date": "2002-03-02",
+  "description": "Encrypts and Decrypts messages using the XOR algorithm with support of unicode & method of getting pas the NULL barrier by converting messages to hex strings.",
+  "path": "VB/XOREncryptionClass"
+ },
+ {
+  "title": "Columnizer",
+  "language": "JavaScript",
+  "date": "2004-02-14",
+  "description": "Display content in columns like a news paper. Also allows you to choose what page you want to see.",
+  "path": "JavaScript/Columnizer"
+ },
+ {
+  "title": "sprDataDictionary",
+  "language": "SQL",
+  "date": "2004-07-28",
+  "description": "Goes through information schemas and extended properties to get each table, column, data type, comments, foreign keys, primary keys, constraints, and indexes. This information can then be used to create a data dictionary report in real time. Shows how to get MS_Description property through ::fn_listextendedproperty for columns and tables.",
+  "path": "SQL/sprDataDictionary"
+ },
+ {
+  "title": "Lewies Seti Stats",
+  "language": "ASP / VBScript",
+  "date": "2004-07-29",
+  "description": "Reads an Xml file from the Seti@Home projects web servers and allows you to display the information on your own website. Cache xml files for up to 8 hours and loads via. javascript. Compatible with Netscape, Mozilla, FireFox, and MSIE.",
+  "path": "ASP/LewiesSetiStats"
+ },
+ {
+  "title": "Data Dictionary Report Generator",
+  "language": "ASP / VBScript",
+  "date": "2004-07-28",
+  "description": "Retrieves the structure of your data and displays it into a nice report that you can copy & paste into word documents. Works with SQL Server 2000. Also lists any comments within the database for tables & columns.",
+  "path": "ASP/DataDictionary"
+ },
+ {
+  "title": "Lewies Dice",
+  "language": "VB.Net",
+  "date": "2004-07-30",
+  "description": "Gives you the option to roll any sided dice as many times as you want. Predefined formats with sides of 4, 6, 8, 10, 12, & 20. Fun utility for any AD&D hobbiest.",
+  "path": "VBNet/LewiesDice"
+ },
+ {
+  "title": "Lewies Mini Hex Editor",
+  "language": "C#",
+  "date": "2004-08-01",
+  "description": "This small utility aids programmers into viewing and editing the data within binary files. Works with large files very nicely. Enter either the hex, decimal, or text value of each byte. You can also edit bits. I use programs like these when learning how to read file structures such as MP3, GIF, and JPG files. Also comes with a handy setup project for easy installation.",
+  "path": "CSharp/MiniHexEdit"
+ },
+ {
+  "title": "Lewies ID3v1.1 Tag Editor",
+  "language": "C#",
+  "date": "2004-08-01",
+  "description": "This program can edit MP3 files to include the Song Title, Album, Artist, Year, Genre, Track Number and comments about the music.",
+  "path": "CSharp/ID3v1TagEditor"
+ },
+ {
+  "title": "Lewies Eliza Chatbot",
+  "language": "JavaScript",
+  "date": "2004-08-01",
+  "description": "This chatbot is written in JavaScript and loads its data from Xml files. The xml file should be easy enough to understand and minipulate to make your own variation of the ELIZA chatbot.",
+  "path": "JavaScript/ElizaChatbot"
+ },
+ {
+  "title": "Relay email through CDO ",
+  "language": "C#",
+  "date": "2004-08-02",
+  "description": "Send email through the CDO objects that .Net interfaces with. Now you can choose your ISP's mail server and log in with username/password to relay mail to the outside world.",
+  "path": "CSharp/CdoMailRelay"
+ },
+ {
+  "title": "Lewies Ansi/Ascii Painter",
+  "language": "VB.Net",
+  "date": "2004-08-03",
+  "description": "Read and Edit *.ANS files.  Old BBS systems used to have Ansi files to display text as graphics before the days of the internet were popular.  This program can read just about any ansi file in ascii format and display it accurately.  It does not support Music or Animations.",
+  "path": "VBNet/AsciiPainter"
+ },
+ {
+  "title": "Lewies RSA Encryption Example",
+  "language": "C#",
+  "date": "2004-08-03",
+  "description": "Create new key pairs for asymmetric encryption or copy/paste strings into text fields provided. Encrypts and decrypts text to encrypted base64 strings. Main benefit here is I got around a problem with where the key was stored and can now load keys on the fly. Asymmetric keys are usually used to encrypt Session Keys and Digital Signatures. Session Keys are used with Symmetric Encryption on the Message itself because it is much faster then Assymetric encryption. This is great for anyone beginning to learn about Security or how to Implement RSA Public Key / Private Key Infrastructure.",
+  "path": "CSharp/RsaExample"
+ },
+ {
+  "title": "Lewies Memory Game",
+  "language": "VB.Net",
+  "date": "2004-08-04",
+  "description": "This is a simple memory game. Start a new game. Wait for the squares to blink and repeat the pattern. An extra sequence is added after each round.",
+  "path": "VBNet/Memory"
+ },
+ {
+  "title": "Get Embedded Text Files",
+  "language": "C#",
+  "date": "2004-08-05",
+  "description": "Load an embedded text from from within your assembly and assign it to a variable. I primarily use this when storing sql, data, or some pieces of code that I need to have access to. Simply add text files to your solution and change the \"Build Action\" property to \"Embedded Resource\" on each one. No need to distribute extra files with your programs - they get compiled as resources inside executables and DLLs.",
+  "path": "CSharp/EmbeddedText"
+ },
+ {
+  "title": "Ultima Player Administration",
+  "language": "C#",
+  "date": "2004-08-08",
+  "description": "Maintain a list of player names, accounts, IP addresses, and assign flags. Search, Edit, Delete, Export, Import. This little utility was made at the request of my wife who is an administrator on an Ultima emulator shard. Greate for beginners wanting to learn how to do some of the basics.",
+  "path": "CSharp/PlayerAdmin"
+ }
+]

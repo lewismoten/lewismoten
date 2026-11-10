@@ -1,0 +1,2164 @@
+[
+ {
+  "name": "Lewies-Code-Library-PSC",
+  "description": "All open source projects that I had published to Planet Source Code",
+  "origin": "2000",
+  "last": "2024",
+  "language": "HTML",
+  "topics": [
+   "classic-asp",
+   "code-library",
+   "archive",
+   "asp"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/Lewies-Code-Library-PSC/Browse.htm",
+  "thumb": true,
+  "estimate": true,
+  "ndesc": false
+ },
+ {
+  "name": "Second-Life-Projects",
+  "description": "A collection of projects that I made in Second Life as Dedric Mauriac",
+  "origin": "2012",
+  "last": "2012",
+  "language": "LSL",
+  "topics": [
+   "linden-scripting-language",
+   "lsl",
+   "notepad-plus-plus",
+   "prim"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "PhpProject1",
+  "description": "An early PHP experiment: a login service with nonce-based session tokens",
+  "origin": "2012",
+  "last": "2012",
+  "language": "PHP",
+  "topics": [
+   "authentication",
+   "learning",
+   "php"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "BowlingKata",
+  "description": "The bowling game kata in C#",
+  "origin": "2013",
+  "last": "2013",
+  "language": "C#",
+  "topics": [
+   "bowling",
+   "csharp",
+   "kata",
+   "mstest"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "TechDayLabs",
+  "description": "Code from a 2013 tech day lab: a test-first bowling kata in C#.",
+  "origin": "2013",
+  "last": "2013",
+  "language": "C#",
+  "topics": [
+   "csharp",
+   "kata",
+   "nunit",
+   "tdd"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "CheerfulDrill",
+  "description": "Extracts data from text and HTML content with regular expressions",
+  "origin": "2013",
+  "last": "2014",
+  "language": "C#",
+  "topics": [
+   "csharp",
+   "data-extraction",
+   "dotnet",
+   "regex"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "tic-tac-toe",
+  "description": "Tic-tac-toe in JavaScript and HTML5, optimized for offline play on a mobile device",
+  "origin": "2014",
+  "last": "2014",
+  "language": "JavaScript",
+  "topics": [
+   "game-ai",
+   "html5",
+   "jasmine",
+   "javascript"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "drop-kicking-babies",
+  "description": "Cute babies drop-kicking objects",
+  "origin": "2015",
+  "last": "2023",
+  "language": "TypeScript",
+  "topics": [
+   "angular",
+   "game",
+   "howler",
+   "soccer"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/drop-kicking-babies/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Frisky-Bomberman-Live",
+  "description": "A frisky bomber is trying to plant a bomb on you! A small HTML5 canvas game.",
+  "origin": "2015",
+  "last": "2015",
+  "language": "JavaScript",
+  "topics": [
+   "bomberman",
+   "game",
+   "html5-canvas",
+   "javascript"
+  ],
+  "pages": true,
+  "homepage": "http://lewismoten.github.io/Frisky-Bomberman-Live/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Brain-Damaged-Bubblegum-Interceptor",
+  "description": "Brain-Damaged Bubblegum Interceptor",
+  "origin": "2015",
+  "last": "2015",
+  "language": null,
+  "topics": [
+   "placeholder"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Unstoppable-Banjo-in-Busytown",
+  "description": "Working with client/server architecture in JavaScript: WebSocket and WebRTC experiments",
+  "origin": "2015",
+  "last": "2015",
+  "language": "JavaScript",
+  "topics": [
+   "client-server",
+   "experiment",
+   "javascript",
+   "webrtc"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "KeyValueStore-NoSQL",
+  "description": "Key/value store NoSQL database using PHP and MySQL",
+  "origin": "2015",
+  "last": "2015",
+  "language": "PHP",
+  "topics": [
+   "key-value-store",
+   "mysql",
+   "nosql",
+   "php"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "8-Bit-Sewer-Tale",
+  "description": "Start of a JavaScript text-based adventure game.",
+  "origin": "2015",
+  "last": "2015",
+  "language": "JavaScript",
+  "topics": [
+   "game",
+   "javascript",
+   "text-adventure"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Wild-West-Puppy-Theater",
+  "description": "A maze game in the console",
+  "origin": "2015",
+  "last": "2015",
+  "language": "JavaScript",
+  "topics": [
+   "console",
+   "game",
+   "javascript",
+   "maze"
+  ],
+  "pages": true,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Prim-Import-Export-Library",
+  "description": "LSL scripts for exporting Second Life objects (prims) and rebuilding them",
+  "origin": "2015",
+  "last": "2015",
+  "language": "LSL",
+  "topics": [
+   "linden-scripting-language",
+   "lsl",
+   "prims",
+   "second-life"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Eliza-Chatbot-LSL",
+  "description": "Second Life chatbot: a parody of a Rogerian therapist, in Linden Scripting Language.",
+  "origin": "2015",
+  "last": "2024",
+  "language": "LSL",
+  "topics": [
+   "chatbot",
+   "eliza",
+   "lsl",
+   "second-life"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Tic-Tac-Toe-lsl",
+  "description": "A game of Tic-Tac-Toe in Linden Scripting Language for Second Life",
+  "origin": "2015",
+  "last": "2015",
+  "language": "LSL",
+  "topics": [
+   "ai",
+   "game",
+   "lsl",
+   "second-life"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Password-Generator",
+  "description": "Second Life gadget that generates random passwords and sends them by instant message.",
+  "origin": "2015",
+  "last": "2015",
+  "language": "LSL",
+  "topics": [
+   "lsl",
+   "password-generator",
+   "second-life"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Concentration-Game",
+  "description": "Match playing cards of the same color and value (a Second Life game)",
+  "origin": "2015",
+  "last": "2015",
+  "language": "LSL",
+  "topics": [
+   "card-game",
+   "lsl",
+   "memory-game",
+   "second-life"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "rc-sailboat",
+  "description": "Radio controlled 3D printed sailboat",
+  "origin": "2015",
+  "last": "2015",
+  "language": null,
+  "topics": [
+   "3d-printing",
+   "electronics",
+   "rc",
+   "sailboat"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "web-rtc-cam",
+  "description": "Display the end user's webcam stream on a web page",
+  "origin": "2015",
+  "last": "2020",
+  "language": "JavaScript",
+  "topics": [
+   "getusermedia",
+   "javascript",
+   "webcam",
+   "webrtc"
+  ],
+  "pages": true,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "web-gl",
+  "description": "Learning the basics of WebGL",
+  "origin": "2015",
+  "last": "2015",
+  "language": "JavaScript",
+  "topics": [
+   "3d-graphics",
+   "javascript",
+   "shaders",
+   "webgl"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "device-orientation",
+  "description": "Browser demo of device orientation and motion data, with a compass heading.",
+  "origin": "2015",
+  "last": "2015",
+  "language": "JavaScript",
+  "topics": [
+   "compass",
+   "deviceorientation",
+   "javascript",
+   "sensors"
+  ],
+  "pages": true,
+  "homepage": "http://lewismoten.github.io/device-orientation/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "quiet-raccoon-training",
+  "description": "Training Raccoons... Quietly",
+  "origin": "2015",
+  "last": "2015",
+  "language": "JavaScript",
+  "topics": [
+   "bower",
+   "gulp",
+   "javascript",
+   "project-template"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "mystery-robot-joe",
+  "description": "Researching microcontrollers with robotics in mind",
+  "origin": "2015",
+  "last": "2015",
+  "language": "C++",
+  "topics": [
+   "arduino",
+   "electronics",
+   "fritzing",
+   "microcontroller"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "atom-video-game-name-generator",
+  "description": "Video game name generator for Atom, ported from videogamena.me",
+  "origin": "2016",
+  "last": "2016",
+  "language": "CoffeeScript",
+  "topics": [
+   "atom",
+   "atom-package",
+   "name-generator",
+   "video-games"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "about-me",
+  "description": "GeoJSON outlines of towns and neighborhoods.",
+  "origin": "2016",
+  "last": "2016",
+  "language": null,
+  "topics": [
+   "geojson",
+   "maps"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "sinister-chicken-syndicate",
+  "description": "Node.js project template with continuous integration",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "continuous-integration",
+   "javascript",
+   "nodejs",
+   "template"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "arduboy-rvgng",
+  "description": "Random Video Game Name Generator on Arduboy",
+  "origin": "2016",
+  "last": "2016",
+  "language": "C++",
+  "topics": [
+   "arduboy",
+   "arduino",
+   "game",
+   "name-generator"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "glowing-katana-legend",
+  "description": "RPG game editor for Arduboy",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "arduboy",
+   "game-editor",
+   "javascript",
+   "rpg"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "arduboy-font",
+  "description": "Display each glyph on Arduboy",
+  "origin": "2016",
+  "last": "2016",
+  "language": "C++",
+  "topics": [
+   "arduboy",
+   "arduino",
+   "embedded",
+   "font"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "arduboy-maze",
+  "description": "A maze game for the Arduboy handheld.",
+  "origin": "2016",
+  "last": "2016",
+  "language": "C++",
+  "topics": [
+   "arduboy",
+   "arduino",
+   "game",
+   "maze"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "lil-game",
+  "description": "'lil game",
+  "origin": "2016",
+  "last": "2016",
+  "language": null,
+  "topics": [
+   "game",
+   "placeholder"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "impossible-croquet-tribe",
+  "description": "An experiment with Unity and the HTC Vive Headset",
+  "origin": "2016",
+  "last": "2016",
+  "language": "C#",
+  "topics": [
+   "htc-vive",
+   "steamvr",
+   "unity",
+   "virtual-reality"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "artificial-neural-network",
+  "description": "Artificial neural network in JavaScript, built for learning",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "backpropagation",
+   "javascript",
+   "machine-learning",
+   "neural-network"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "softmax",
+  "description": "The softmax function in JavaScript",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "javascript",
+   "machine-learning",
+   "math",
+   "npm-package"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "inda",
+  "description": "Create a new multi-dimensional array with initialized values.",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "arrays",
+   "javascript",
+   "npm-module"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "array-walker",
+  "description": "Multi-dimensional array walker with observation",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "arrays",
+   "javascript",
+   "nodejs",
+   "npm"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "make-word",
+  "description": "Generate pronounceable English-like text",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "javascript",
+   "nodejs",
+   "npm-package",
+   "random"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "get-key-or-default",
+  "description": "Get an object key or a default value",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "javascript",
+   "npm-package",
+   "utility"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "indexed-template",
+  "description": "A processor for indexed template literals.",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "javascript",
+   "npm-module",
+   "template-literals"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "octothorpe-xo",
+  "description": "A tic-tac-toe game engine for Node.js",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "game",
+   "javascript",
+   "nodejs",
+   "npm-package"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "octothorpe",
+  "description": "Creates an octothorpe with values provided",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "ascii",
+   "nodejs",
+   "npm",
+   "tic-tac-toe"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "tic-tac-toe-ai",
+  "description": "A Tic-Tac-Toe AI in JavaScript that plays by ordered strategies.",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "ai",
+   "game-ai",
+   "javascript",
+   "nodejs"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "observer-subject-js",
+  "description": "Observer pattern's Subject in JavaScript",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "design-patterns",
+   "javascript",
+   "npm-package",
+   "observer-pattern"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "screeps.com",
+  "description": "Scripts for playing Screeps",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "ai-scripts",
+   "game",
+   "javascript",
+   "screeps"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "book-smith",
+  "description": "Create random lists of words and sentences from books",
+  "origin": "2016",
+  "last": "2016",
+  "language": "C#",
+  "topics": [
+   "csharp",
+   "project-gutenberg",
+   "random-sentences",
+   "text-generation"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "emulation-station-theme-builder",
+  "description": "Unfinished browser tool for building EmulationStation themes.",
+  "origin": "2016",
+  "last": "2016",
+  "language": "JavaScript",
+  "topics": [
+   "emulationstation",
+   "gulp",
+   "theme-builder"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "lewies-grow-box",
+  "description": "Automated indoor gardening",
+  "origin": "2017",
+  "last": "2017",
+  "language": "C++",
+  "topics": [
+   "arduino",
+   "automation",
+   "embedded",
+   "gardening"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "open-vr-hello-world",
+  "description": "A \"Hello World\" app for OpenVR using Unity",
+  "origin": "2017",
+  "last": "2017",
+  "language": null,
+  "topics": [
+   "csharp",
+   "hello-world",
+   "openvr",
+   "unity"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "intelligent-rabbit-3000",
+  "description": "Early Unity project (2017) with a rabbit sprite and one scene",
+  "origin": "2017",
+  "last": "2017",
+  "language": null,
+  "topics": [
+   "csharp",
+   "game-development",
+   "unity"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Drunken-Blimp-Assassins",
+  "description": "A small HTML5 canvas game about a pirate ship with a balloon stopping drunken assassins.",
+  "origin": "2017",
+  "last": "2017",
+  "language": "JavaScript",
+  "topics": [
+   "game-2d",
+   "game",
+   "games",
+   "pirates"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "solar-log",
+  "description": "Log viewer of solar data from an EPEVER eLOG01 Record Accessory Adapter",
+  "origin": "2017",
+  "last": "2021",
+  "language": "JavaScript",
+  "topics": [
+   "data-logger",
+   "epever",
+   "modbus",
+   "python"
+  ],
+  "pages": true,
+  "homepage": "http://lewismoten.github.io/solar-log",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "viking-walrus-master",
+  "description": "Viking Walrus Master: a tile-mapped game in progress",
+  "origin": "2018",
+  "last": "2018",
+  "language": "JavaScript",
+  "topics": [
+   "game",
+   "javascript",
+   "nodejs",
+   "tile-map"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Altair8800",
+  "description": "Code for the Altair 8800",
+  "origin": "2018",
+  "last": "2018",
+  "language": null,
+  "topics": [
+   "altair-8800",
+   "assembly",
+   "intel-8080",
+   "retrocomputing"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "magic-pixel-box",
+  "description": "Arduino sketches for a 16x16 RGB LED pixel box drawn on from a phone over Bluetooth LE",
+  "origin": "2018",
+  "last": "2018",
+  "language": "C++",
+  "topics": [
+   "arduino",
+   "bluetooth-le",
+   "esp32",
+   "led-matrix"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "ghost-ticker",
+  "description": "Making a glowing ticker using UV LEDs and glow-in-the-dark masking tape",
+  "origin": "2018",
+  "last": "2018",
+  "language": "C++",
+  "topics": [
+   "diy",
+   "electronics",
+   "led-ticker",
+   "uv-led"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "cute-piano-odyssey",
+  "description": "Experiments reading and generating 8-bit WAV audio files.",
+  "origin": "2019",
+  "last": "2019",
+  "language": "JavaScript",
+  "topics": [
+   "8-bit",
+   "audio",
+   "nodejs",
+   "wav"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "riff-wave-reader",
+  "description": "Read 8-bit WAVE files with PCM data in the RIFF file format",
+  "origin": "2019",
+  "last": "2019",
+  "language": "JavaScript",
+  "topics": [
+   "wave",
+   "wav",
+   "audio-library",
+   "javascript"
+  ],
+  "pages": true,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "node-commit-hooks",
+  "description": "Example of how to set up commit hooks (husky and commitlint)",
+  "origin": "2019",
+  "last": "2019",
+  "language": "JavaScript",
+  "topics": [
+   "commitlint",
+   "conventional-commits",
+   "git-hooks",
+   "husky"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "lewie-repo-b",
+  "description": "monorepo test",
+  "origin": "2019",
+  "last": "2019",
+  "language": "JavaScript",
+  "topics": [
+   "experiment",
+   "monorepo",
+   "nodejs"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "lewie-repo-a",
+  "description": "Scratch repository with a tiny npm module.",
+  "origin": "2019",
+  "last": "2019",
+  "language": "JavaScript",
+  "topics": [
+   "npm-module",
+   "test"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "dumb-luck",
+  "description": "Playing around with numbers: neural networks, tic-tac-toe and pick 3",
+  "origin": "2019",
+  "last": "2019",
+  "language": "JavaScript",
+  "topics": [
+   "experiment",
+   "javascript",
+   "neural-network",
+   "nodejs"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "lewie-lerna-all",
+  "description": "Lerna monorepo for trying out publishing several npm packages together",
+  "origin": "2019",
+  "last": "2019",
+  "language": "JavaScript",
+  "topics": [
+   "javascript",
+   "lerna",
+   "monorepo",
+   "npm"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "6502-program-1",
+  "description": "Learning how to write assembly language for the 6502 microprocessor",
+  "origin": "2019",
+  "last": "2019",
+  "language": "C",
+  "topics": [
+   "6502",
+   "6502-assembly",
+   "retrocomputing",
+   "retrogaming"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "bit-font-88",
+  "description": "A pixelated monochrome 8x8 font with a drawing page.",
+  "origin": "2019",
+  "last": "2019",
+  "language": "JavaScript",
+  "topics": [
+   "8x8",
+   "bitmap-font",
+   "font",
+   "pixel-font"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/bit-font-88/draw/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "crypto-bip39",
+  "description": "Experimenting with what is involved in creating blockchain wallets with mnemonic backup",
+  "origin": "2021",
+  "last": "2021",
+  "language": "JavaScript",
+  "topics": [
+   "bip39",
+   "blockchain",
+   "cryptocurrency",
+   "javascript"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Queen-of-the-Llama-Dynasty",
+  "description": "A tile-based, turn-based 2D RPG experiment with React, Redux and cryptocurrency.",
+  "origin": "2021",
+  "last": "2021",
+  "language": "JavaScript",
+  "topics": [
+   "canvas",
+   "game",
+   "react",
+   "redux"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "log-fetcher-cashapp",
+  "description": "Pull logs from Cash App",
+  "origin": "2021",
+  "last": "2021",
+  "language": "JavaScript",
+  "topics": [
+   "cash-app",
+   "nodejs",
+   "stub"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "financial-trends",
+  "description": "place to log and view finances from a \"big picture\"",
+  "origin": "2021",
+  "last": "2021",
+  "language": "JavaScript",
+  "topics": [
+   "finance",
+   "javascript",
+   "portfolio",
+   "react"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "schmuck-miser",
+  "description": "Tool to track my finances and sometimes foolish decisions.",
+  "origin": "2021",
+  "last": "2021",
+  "language": "JavaScript",
+  "topics": [
+   "money-tracker",
+   "networth",
+   "finances",
+   "wealth-management"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/schmuck-miser/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "emoji",
+  "description": "A localized Unicode emoji library for JavaScript, with an Emoji Explorer app",
+  "origin": "2021",
+  "last": "2026",
+  "language": "TypeScript",
+  "topics": [
+   "emoji",
+   "emoji-picker",
+   "javascript",
+   "npm-package"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/emoji/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "emoji-ui",
+  "description": "Lookup emoji",
+  "origin": "2021",
+  "last": "2021",
+  "language": "JavaScript",
+  "topics": [
+   "emoji",
+   "emojis",
+   "emoji-picker",
+   "emoji-unicode"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/emoji-ui/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "emporia-daily",
+  "description": "Planned script to fetch Emporia energy sensor data daily.",
+  "origin": "2022",
+  "last": "2022",
+  "language": null,
+  "topics": [
+   "emporia",
+   "energy-monitoring"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Accounts",
+  "description": "PHP and MySQL account service with email verification, password rules and two-factor authentication.",
+  "origin": "2023",
+  "last": "2023",
+  "language": "JavaScript",
+  "topics": [
+   "2fa",
+   "accounts",
+   "authentication",
+   "mysql"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "sculpted-prim-toolkit",
+  "description": "In-browser viewer and editor for Second Life-style sculpted prim maps, with glTF, OBJ and STL export.",
+  "origin": "2024",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "3d-editor",
+   "gltf",
+   "second-life",
+   "threejs"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/sculpted-prim-toolkit/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "data-over-audio",
+  "description": "Transfer data via Web Audio API",
+  "origin": "2024",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "modem",
+   "web-audio-api",
+   "offline-transfer",
+   "audio"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/data-over-audio/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "7th-son",
+  "description": "7th Son podcast audio player in Second Life",
+  "origin": "2024",
+  "last": "2024",
+  "language": "LSL",
+  "topics": [
+   "audio",
+   "linden-scripting-language",
+   "lsl",
+   "podcast"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Athens-Acropolis-4507",
+  "description": "My old GeoCities web page, restored",
+  "origin": "2024",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "geocities",
+   "personal-website",
+   "html",
+   "restoration"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/Athens-Acropolis-4507/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Barcode-Detection",
+  "description": "Experiment with barcode detection",
+  "origin": "2024",
+  "last": "2024",
+  "language": "JavaScript",
+  "topics": [
+   "barcode",
+   "barcode-detection",
+   "barcode-scanner",
+   "qrcode"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/Barcode-Detection/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "va-chronical-missing-issues",
+  "description": "Detect which issues are missing from an online newspaper archive.",
+  "origin": "2024",
+  "last": "2024",
+  "language": "JavaScript",
+  "topics": [
+   "archives",
+   "newspapers",
+   "nodejs",
+   "web-scraping"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Eliza-Doolittle-Chatbot",
+  "description": "Port of ELIZA to Linden Scripting Language in Second Life",
+  "origin": "2024",
+  "last": "2024",
+  "language": "LSL",
+  "topics": [
+   "chatbot",
+   "eliza",
+   "linden-scripting-language",
+   "lsl"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "synthesized-voice-box",
+  "description": "Second Life text-to-speech robotic voice emulator",
+  "origin": "2024",
+  "last": "2024",
+  "language": "LSL",
+  "topics": [
+   "lsl",
+   "robot-voice",
+   "second-life",
+   "speech-synthesis"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "brain-experiment-number-two",
+  "description": "Talk with a brain in a jar of liquid - created in Second Life",
+  "origin": "2024",
+  "last": "2024",
+  "language": "LSL",
+  "topics": [
+   "alice",
+   "art-project",
+   "chatbot",
+   "experiment"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "download-financial-reports",
+  "description": "Download financial reports from the Handley library (placeholder, no code yet)",
+  "origin": "2024",
+  "last": "2024",
+  "language": null,
+  "topics": [
+   "downloader",
+   "financial-reports",
+   "library"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Wooden-Pipe-Organ",
+  "description": "Calculate dimensions for wooden organ pipes, for laser cutting",
+  "origin": "2025",
+  "last": "2025",
+  "language": "JavaScript",
+  "topics": [
+   "acoustics",
+   "laser-cutter",
+   "music",
+   "nodejs"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "inky-fingers",
+  "description": "Planned tool to parse newspapers with OCR.",
+  "origin": "2025",
+  "last": "2025",
+  "language": null,
+  "topics": [
+   "newspapers",
+   "ocr"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Find-SPL-Books",
+  "description": "Grab a collection of all books in the library",
+  "origin": "2025",
+  "last": "2025",
+  "language": null,
+  "topics": [
+   "books",
+   "library",
+   "placeholder"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "royal-downloader",
+  "description": "Archive news from the Royal Examiner (placeholder, no code yet)",
+  "origin": "2025",
+  "last": "2025",
+  "language": null,
+  "topics": [
+   "archive",
+   "downloader",
+   "news",
+   "scraper"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "qr-bricked",
+  "description": "Create a QR code with building blocks",
+  "origin": "2025",
+  "last": "2025",
+  "language": "TypeScript",
+  "topics": [
+   "blocks",
+   "building-block",
+   "layout-algorithm",
+   "lego"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/qr-bricked/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "wcfac-parser",
+  "description": "Convert fuel card transaction reports copied from PDFs into CSV",
+  "origin": "2025",
+  "last": "2025",
+  "language": "JavaScript",
+  "topics": [
+   "csv",
+   "data-extraction",
+   "nodejs",
+   "parser"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "bibliostat-db",
+  "description": "Node.js script that reads the Virginia Public Library Survey spreadsheet.",
+  "origin": "2025",
+  "last": "2025",
+  "language": "JavaScript",
+  "topics": [
+   "data",
+   "libraries",
+   "nodejs",
+   "xlsx"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "wcfac-general-ledger",
+  "description": "Warren County Finance Audit Committee - General Ledger Viewer",
+  "origin": "2025",
+  "last": "2026",
+  "language": "TypeScript",
+  "topics": [
+   "data-visualization",
+   "general-ledger",
+   "public-finance",
+   "react"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "identity-service",
+  "description": "Centralized identity and authentication service supporting SSO, JWT sessions, MFA (TOTP), account recovery, audit logging, and security controls.",
+  "origin": "2025",
+  "last": "2025",
+  "language": "PHP",
+  "topics": [
+   "audit-log",
+   "authentication",
+   "identity",
+   "jwt"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "story-forge",
+  "description": "Create stories using AI",
+  "origin": "2026",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "ai",
+   "nodejs",
+   "openai",
+   "story-generator"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "dreamy-tags",
+  "description": "WordPress plugin that shows a tag cloud filtered by categories and tags, as a shortcode or block.",
+  "origin": "2026",
+  "last": "2026",
+  "language": "PHP",
+  "topics": [
+   "tag-cloud",
+   "wordpress-plugin",
+   "gutenberg-block",
+   "php"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Time-Sheet",
+  "description": "Quick and dirty local time sheet",
+  "origin": "2026",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "css",
+   "html",
+   "javascript",
+   "localstorage"
+  ],
+  "pages": true,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "lewismoten.com",
+  "description": "Custom CSS for lewismoten.com",
+  "origin": "2026",
+  "last": "2026",
+  "language": "CSS",
+  "topics": [
+   "css",
+   "website"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "anilewie-scriptlet",
+  "description": "An old 1999 scriptlet converted to modern JavaScript: animated eyes and mouth on a photo.",
+  "origin": "2026",
+  "last": "2026",
+  "language": "HTML",
+  "topics": [
+   "animation",
+   "javascript",
+   "nostalgia",
+   "retro-web"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/anilewie-scriptlet/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Flash-Card-Sheet-Maker",
+  "description": "Generate printable flash cards from any text",
+  "origin": "2026",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "flashcards",
+   "memory-game",
+   "recite",
+   "training-materials"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/Flash-Card-Sheet-Maker/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Phone-Exhibit",
+  "description": "Allow audio to be uploaded and managed for a PBX",
+  "origin": "2026",
+  "last": "2026",
+  "language": "PHP",
+  "topics": [
+   "exhibit",
+   "pbx",
+   "phone",
+   "phonebook"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Tiny-Pockets-Press",
+  "description": "Build microfiction, chapbooks, miniature bindings, and tiny print experiments.",
+  "origin": "2026",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "bookmaker",
+   "books",
+   "printing-engine",
+   "printing-press"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/Tiny-Pockets-Press/#editor",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "storage-d64",
+  "description": "Read, Repair, Optimize, Visualize, and Transfer files on D64 disk images used by the Commodore 64 1541 Drive",
+  "origin": "2026",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "1541",
+   "c64",
+   "c64-emulator",
+   "c64-tool"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/storage-d64/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "qr",
+  "description": "QR Code creator and inspector",
+  "origin": "2026",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "inspector",
+   "qr",
+   "qrcode",
+   "javascript"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "bworlds",
+  "description": "Procedural world explorer with seamless 2D and 3D views, written as a JavaScript monorepo",
+  "origin": "2026",
+  "last": "2026",
+  "language": "TypeScript",
+  "topics": [
+   "2d",
+   "3d",
+   "game-development",
+   "javascript"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "Zogograph",
+  "description": "Planning, rebrand and migration records for the Zogograph server monitoring projects.",
+  "origin": "2026",
+  "last": "2026",
+  "language": "Shell",
+  "topics": [
+   "planning",
+   "server-monitoring"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "zogograph-client",
+  "description": "Primary client application to monitor a server: a PHP collector and static dashboard",
+  "origin": "2026",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "dashboard",
+   "diagnostics",
+   "disk-usage",
+   "monitoring"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "palace-9",
+  "description": "Predictive Autonomous Learning And N\u0335u\u0335c\u0335l\u0335e\u0335a\u0335r Command Evaluation Model",
+  "origin": "2026",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "llama-cpp",
+   "minimax",
+   "mixture-of-experts",
+   "ollama"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/palace-9/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "crystal-9",
+  "description": "A tiny local mixture-of-experts model that plays Tic-Tac-Toe",
+  "origin": "2026",
+  "last": "2026",
+  "language": "Python",
+  "topics": [
+   "experiment",
+   "machine-learning",
+   "mixture-of-experts",
+   "neural-network"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "crystal-palace",
+  "description": "Tic-Tac-Toe on the Commodore 64 using the crystal-9 model (ANN)",
+  "origin": "2026",
+  "last": "2026",
+  "language": "Python",
+  "topics": [
+   "1541",
+   "6502-assembly",
+   "c64",
+   "commodore-64"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/crystal-palace/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "sector-256",
+  "description": "Commodore 64 games and utilities that fit in a 256-byte sector.",
+  "origin": "2026",
+  "last": "2026",
+  "language": "Assembly",
+  "topics": [
+   "6502-assembly",
+   "commodore-64",
+   "commodore64",
+   "games"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/sector-256/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "streamscribe",
+  "description": "A local toolkit for recording public meetings and making them searchable: livestream capture, archive backfill, Whisper transcripts, speaker and vote tracking.",
+  "origin": "2026",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "archive",
+   "civic-tech",
+   "livestream",
+   "local-first"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/streamscribe/",
+  "thumb": false,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "shoomis-soundtrack",
+  "description": "HTML-based MIDI player with visual track sequences",
+  "origin": "2026",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "github-pages",
+   "javascript",
+   "midi",
+   "midi-player"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/shoomis-soundtrack/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "local-agent-lab",
+  "description": "A local-first browser workspace for small AI models, coding projects, research, and scheduled agents.",
+  "origin": "2026",
+  "last": "2026",
+  "language": "TypeScript",
+  "topics": [
+   "ai-agents",
+   "browser-ai",
+   "harness-ai",
+   "local-ai"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/local-agent-lab/",
+  "thumb": false,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "GameMaker-SandboxEdition",
+  "description": "Sandbox Edition of Recreational Software Design's GameMaker product, released in 1994",
+  "origin": "2026",
+  "last": "2026",
+  "language": "TypeScript",
+  "topics": [
+   "90s-games",
+   "90s-retro",
+   "dos-games",
+   "game-development"
+  ],
+  "pages": true,
+  "homepage": "http://lewismoten.github.io/GameMaker-SandboxEdition/",
+  "thumb": false,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "the-chez",
+  "description": "A game about a CitiCar using RSD Game Maker SE engine.",
+  "origin": "2026",
+  "last": "2026",
+  "language": "TypeScript",
+  "topics": [],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/the-chez/",
+  "thumb": false,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "falken-9",
+  "description": "Small model with MoE targeting the Commodore 64 to play Tic-Tac-Toe",
+  "origin": "2026",
+  "last": "2026",
+  "language": "Python",
+  "topics": [
+   "artificial-intelligence",
+   "artificial-neural-networks",
+   "commodore-64",
+   "commodore64"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/falken-9/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "gamemaker-pocket",
+  "description": "DOS Game-Maker games in your pocket: firmware for cheap ESP32 touch-screen boards (CYD 2.8\" and 3.5\"), with games built in or on microSD and a one-click browser flasher.",
+  "origin": "2026",
+  "last": "2026",
+  "language": "C++",
+  "topics": [
+   "arduino",
+   "cheap-yellow-display",
+   "cyd",
+   "dos-games"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/gamemaker-pocket/",
+  "thumb": false,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "gamemaker-os",
+  "description": "A game-library operating system for the Raspberry Pi Zero W: plays DOS Game-Maker games straight from the SD card on HDMI, with demo previews, high scores and saves. Runs on sandbox-kernel.",
+  "origin": "2026",
+  "last": "2026",
+  "language": "C",
+  "topics": [
+   "arm",
+   "bare-metal",
+   "c",
+   "dos-games"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": false,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "sandbox-kernel",
+  "description": "A small bare-metal kernel for your own OS. Raspberry Pi Zero W first: your OS is one program on the SD card, with files, framebuffer, input, saves, e-ink status and a recovery console. A/B updates, POSIX-style ABI, MIT.",
+  "origin": "2026",
+  "last": "2026",
+  "language": "Python",
+  "topics": [
+   "arm",
+   "armv6",
+   "bare-metal",
+   "c"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": false,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "ghostjack",
+  "description": "The port AI agents jack into when they need eyes, ears and a mouth in meatspace: a local bridge and cyberpunk control deck for a $2 network camera. See, listen, aim, night vision and speak. No cloud.",
+  "origin": "2026",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [
+   "ai-agents",
+   "embodied-ai",
+   "ip-camera",
+   "llm-tools"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/ghostjack/",
+  "thumb": false,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "pocket-fleet",
+  "description": "Space combat with a Cheap Yellow Display (CYD)",
+  "origin": "2026",
+  "last": "2026",
+  "language": null,
+  "topics": [
+   "cheap-yellow-display",
+   "cyd",
+   "esp32",
+   "game"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ }
+]

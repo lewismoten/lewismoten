@@ -15,6 +15,10 @@
       "label": "Projects"
     },
     {
+      "href": "/archive/",
+      "label": "Archive"
+    },
+    {
       "href": "/posts/",
       "label": "Posts"
     },

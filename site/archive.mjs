@@ -42,7 +42,7 @@ export function archivePages({ esc, img, projects }) {
     const f = featured[r.name.toLowerCase()];
     const href = isPsc ? '/archive/psc/' : `https://github.com/lewismoten/${r.name}`;
     const alt = f ? `Preview of ${f.title}` : r.thumb ? `Social preview of ${r.name}` : '';
-    const image = img(thumbOf(r, f), alt, 160, 80).replace(/width="160"/, 'width="160" class="athumb"');
+    const image = img(thumbOf(r, f), alt, 320, 160).replace(/width="320"/, 'width="320" class="athumb"');
     const lang = r.language ? `<span>${esc(r.language)}</span>` : '';
     const live = r.pages && r.homepage ? ` <a href="${esc(r.homepage)}">Live<span class="vh"> site for ${esc(r.name)}</span></a>` : '';
     const feat = f ? ` <a class="badge" href="/projects/${f.slug}/">Featured<span class="vh">: case study of ${esc(r.name)}</span></a>` : '';

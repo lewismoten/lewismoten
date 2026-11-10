@@ -87,8 +87,8 @@ p,li{overflow-wrap:break-word}
 .alist{list-style:none;margin:0;padding:0}
 .arow{display:flex;gap:1rem;padding:.75rem 0;border-top:1px solid var(--line)}
 .arow[hidden]{display:none}
-.athumbbox{flex:0 0 160px}
-.athumb{display:block;width:160px;height:80px;border:1px solid var(--line);border-radius:6px;background:var(--line)}
+.athumbbox{flex:0 0 320px;max-width:100%}
+.athumb{display:block;width:320px;max-width:100%;height:auto;aspect-ratio:2/1;border:1px solid var(--line);border-radius:6px;background:var(--line)}
 .abody{min-width:0;flex:1}
 .abody h3{margin:0;overflow-wrap:anywhere}
 .abody p{margin:.2rem 0;font-size:.95rem}

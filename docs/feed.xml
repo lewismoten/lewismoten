@@ -5,8 +5,15 @@
 <link href="https://lewismoten.github.io/lewismoten/feed.xml" rel="self"/>
 <link href="https://lewismoten.github.io/lewismoten/posts/"/>
 <id>https://lewismoten.github.io/lewismoten/posts/</id>
-<updated>2026-11-09T12:00:00Z</updated>
+<updated>2026-11-10T12:00:00Z</updated>
 <author><name>Lewis Moten</name></author>
+<entry>
+<title>A Camera That Reads the Pi's Screen, First Sound Over HDMI, and Site 3.4.0</title>
+<link href="https://lewismoten.github.io/lewismoten/posts/2026-11-10-camera-reads-the-pi-hdmi-site-340/"/>
+<id>https://lewismoten.github.io/lewismoten/posts/2026-11-10-camera-reads-the-pi-hdmi-site-340/</id>
+<updated>2026-11-10T12:00:00Z</updated>
+<summary>Ghost Jack read the Pi's games list in the dark, my bare-metal kernel played its first sound over HDMI, my agents made a Pi keyboard build safe, my GitHub repos got an Archive page, and Game-Maker: Sandbox Edition site 3.4.0 shipped. In the post: night shots from the $2 camera, F5 and F6 saves on the Pi, the new screens on the pocket player, the sweep that gave about a hundred repositories social previews, weekly burn-down charts for my AI usage, and a release that stalled once before it went out. The full write-up is on my blog.</summary>
+</entry>
 <entry>
 <title>Drawing Hands, a Pi That Said No, and a $2 Camera Named Ghost Jack</title>
 <link href="https://lewismoten.github.io/lewismoten/posts/2026-11-09-drawing-hands-ghost-jack/"/>
@@ -43,11 +50,25 @@
 <summary>Within two days, RSD Game-Maker gained a handheld player, 94 playable lessons, graduation features, and a level generator. Read how it came together on my blog.</summary>
 </entry>
 <entry>
+<title>How RSD Game-Maker Grew Beyond the Screen</title>
+<link href="https://lewismoten.github.io/lewismoten/posts/2026-11-04-game-maker-grew-beyond-the-screen/"/>
+<id>https://lewismoten.github.io/lewismoten/posts/2026-11-04-game-maker-grew-beyond-the-screen/</id>
+<updated>2026-11-04T12:00:00Z</updated>
+<summary>A missed jump in a DOS game remake led to better playtesting tools and a closer look at how I work with AI agents. Along the way, RSD Game-Maker spilled off the screen into decoder wheels and printable models. The full write-up is on my blog.</summary>
+</entry>
+<entry>
 <title>Falken-9: a whole AI-vs-AI game in just over a minute</title>
 <link href="https://lewismoten.github.io/lewismoten/posts/2026-11-02-falken-9-a-game-in-a-minute/"/>
 <id>https://lewismoten.github.io/lewismoten/posts/2026-11-02-falken-9-a-game-in-a-minute/</id>
 <updated>2026-11-02T12:00:00Z</updated>
 <summary>Crystal Palace 9, my Commodore 64 tic-tac-toe game, now runs on Falken-9, a new model I trained for the C64's arithmetic and memory from the start. The whole 5,195-byte model stays in RAM, so a complete AI-vs-AI game takes just over a minute in an emulator. The earlier model took about 20 minutes. The second picture is the tensor workflow: every decoded weight, from the board embeddings through attention, the router and the four experts. The research report probes the network with interventions and charts what it found.</summary>
+</entry>
+<entry>
+<title>Rebuilding RSD Game-Maker with Parallel AI Agents</title>
+<link href="https://lewismoten.github.io/lewismoten/posts/2026-10-28-rebuilding-game-maker-parallel-agents/"/>
+<id>https://lewismoten.github.io/lewismoten/posts/2026-10-28-rebuilding-game-maker-parallel-agents/</id>
+<updated>2026-10-28T12:00:00Z</updated>
+<summary>After decades of remembering the DOS games I made as a teenager, I used parallel AI agents to bring RSD Game-Maker to the web, preserving its formats while building new games, paper extras, and a nostalgic world around it. The full write-up is on my blog.</summary>
 </entry>
 <entry>
 <title>Tic-tac-toe and Crystal Palace 9</title>

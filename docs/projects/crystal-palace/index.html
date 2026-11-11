@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Crystal Palace 9: AI on 8-bit hardware | Lewis Moten</title>
-<meta name="description" content="A Commodore 64 tic-tac-toe game whose AI moves come from a real neural network running in 6502 assembly; now powered by Falken-9, a complete AI-vs-AI game takes just over a minute.">
+<meta name="description" content="A Commodore 64 tic-tac-toe game whose AI moves come from a real neural network running in 6502 assembly; now powered by Falken-9, a complete AI-vs-AI game takes just over a minute in an emulator.">
 <link rel="canonical" href="https://lewismoten.github.io/projects/crystal-palace/">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Lewis Moten">
 <meta property="og:title" content="Crystal Palace 9: AI on 8-bit hardware | Lewis Moten">
-<meta property="og:description" content="A Commodore 64 tic-tac-toe game whose AI moves come from a real neural network running in 6502 assembly; now powered by Falken-9, a complete AI-vs-AI game takes just over a minute.">
+<meta property="og:description" content="A Commodore 64 tic-tac-toe game whose AI moves come from a real neural network running in 6502 assembly; now powered by Falken-9, a complete AI-vs-AI game takes just over a minute in an emulator.">
 <meta property="og:url" content="https://lewismoten.github.io/projects/crystal-palace/">
 <meta property="og:image" content="https://lewismoten.github.io/img/projects/crystal-palace.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Crystal Palace 9: AI on 8-bit hardware | Lewis Moten">
-<meta name="twitter:description" content="A Commodore 64 tic-tac-toe game whose AI moves come from a real neural network running in 6502 assembly; now powered by Falken-9, a complete AI-vs-AI game takes just over a minute.">
+<meta name="twitter:description" content="A Commodore 64 tic-tac-toe game whose AI moves come from a real neural network running in 6502 assembly; now powered by Falken-9, a complete AI-vs-AI game takes just over a minute in an emulator.">
 <meta name="twitter:image" content="https://lewismoten.github.io/img/projects/crystal-palace.jpg">
 <link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
@@ -45,7 +45,7 @@
 <h1>Crystal Palace 9</h1>
 <p class="sub">AI on 8-bit hardware</p>
 <img class="hero-img" src="../../img/projects/crystal-palace.jpg" alt="Crystal Palace 9" width="640" height="320" decoding="async" fetchpriority="high">
-<p class="lede">A Commodore 64 tic-tac-toe game whose AI moves come from a real neural network running in 6502 assembly; now powered by Falken-9, a complete AI-vs-AI game takes just over a minute.</p>
+<p class="lede">A Commodore 64 tic-tac-toe game whose AI moves come from a real neural network running in 6502 assembly; now powered by Falken-9, a complete AI-vs-AI game takes just over a minute in an emulator.</p>
 <p class="links"><a class="btn" href="https://github.com/lewismoten/crystal-palace">Source</a> <a class="btn" href="https://lewismoten.github.io/projects/falken-9/">Falken-9</a> <a class="btn" href="https://www.youtube.com/watch?v=UJME73NxyfA">Video</a></p>
 <nav class="series" aria-label="The tic-tac-toe models"><p>Part of a series: <a href="../../series/tic-tac-toe-models/index.html">The tic-tac-toe models</a></p><ol><li><a href="../../projects/palace-9/index.html">1. Palace-9</a></li><li><a href="../../projects/crystal-9/index.html">2. Crystal-9</a></li><li aria-current="page"><strong>3. Crystal Palace 9</strong></li><li><a href="../../projects/falken-9/index.html">4. Falken-9</a></li></ol></nav>
 <nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
@@ -54,8 +54,8 @@
 <h3>Outcome</h3><p>The first version ran the original Crystal-9 weights on the C64: 436 passing tests, and 13 complete output vectors that matched byte for byte between Py65 and real-ROM VICE, over full human-against-model and AI-vs-AI games. It proved the idea but took roughly 20 minutes for a self-play game. The game now runs Falken-9, a model designed for the C64, and a complete AI-vs-AI game takes just over a minute in an emulator, with progress feedback, console animation and sound during each move's thinking.</p>
 <h3>My role</h3><p>Designer, director and maintainer. AI coding assistants: GPT-5.6-terra, then GPT-6.1 Sol from mid-October, through Hermes.</p></section>
 <section class="part" id="technical-overview"><h2>Technical overview</h2>
-<h3>How it works</h3><p>A command-room interface and presentation assets drawn for the machine's 8 x 8 multicolor graphics, a disk-backed INFO archive, a playable human board, and 6502 assembly with an isolated module that materializes the original tokens. Python scripts export 48 pageable model packets from the verified Crystal-9 release and package everything into a D64 disk image. A static GitHub Pages asset editor supports the artwork.</p>
-<h3>Hard parts</h3><p>Memory and disk. Crystal-9 didn't fit in the C64's memory, so its original INT4 weights travel as 48 disk packets and load during each move, run in fixed-point 6502 math. Testing in VICE with the real C64 and 1541 ROMs found bugs a simpler emulator hid: a disk load that relocated to the wrong address, and an eight-bit memory offset that wrapped later history slots onto earlier ones. Later releases grouped tensors to cut disk loads per move from many to 12.</p>
+<h3>How it works</h3><p>A command-room interface and presentation assets drawn for the machine's 8 x 8 multicolor graphics, a disk-backed INFO archive, a playable human board, and 6502 assembly with an isolated module that materializes the original tokens. In its first version, Python scripts exported 48 pageable model packets from the verified Crystal-9 release and package everything into a D64 disk image. A static GitHub Pages asset editor supports the artwork.</p>
+<h3>Hard parts</h3><p>Memory and disk. Crystal-9 didn't fit in the C64's memory, so in the first version its original INT4 weights traveled as 48 disk packets, loaded during each move and run in fixed-point 6502 math. Testing in VICE with the real C64 and 1541 ROMs found bugs a simpler emulator hid: a disk load that relocated to the wrong address, and an eight-bit memory offset that wrapped later history slots onto earlier ones. Later releases grouped tensors to cut disk loads per move from many to 12.</p>
 <h3>How it was made</h3><p>I chose the Commodore 64 because I enjoy the 6502 processor and many emulators exist for it. I often watch The 8-Bit Guy's videos about the chip, and I built Ben Eater's 6502 computer, which still sits on a breadboard in my basement (<a href="https://github.com/lewismoten/6502-program-1">my 6502 practice code</a> has its files). Most of the work on the first version went into loading each layer from disk, because Crystal-9 was too big for the C64's memory.</p>
 <p>The name joins the two models, Palace-9 and Crystal-9, both named for Crystal Palace, the NORAD call sign in <em>WarGames</em> where an AI plays against itself. Like the Palace-9 website, the game has a Cold War theme: the computer plays itself over maps of the USA and USSR. Lessons from it went into Falken-9, which now powers the game.</p><h3>Stack</h3>
 <ul class="tags plain-tags"><li>6502 assembly</li><li>Commodore 64</li><li>Python</li><li>PyTorch</li><li>Model packaging</li></ul></section>

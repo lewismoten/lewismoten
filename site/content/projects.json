@@ -15,7 +15,7 @@
       "subtitle": "Portable AI workspace",
       "group": "Applied AI and model engineering",
       "featured": true,
-      "pitch": "A private AI workspace for chat, code, images, and audio that runs on local models, even offline, so conversations never have to leave your device.",
+      "pitch": "A private AI workspace for chat, code, images, and audio that runs on local models, even offline after setup and model downloads, so conversations never have to leave your device.",
       "tags": [
         "React",
         "TypeScript",
@@ -32,7 +32,7 @@
       },
       "role": "Author and maintainer.",
       "problem": "Most AI tools send every conversation to a frontier model in someone else's data center. I wanted privacy without depending on those models: a workspace that keeps working without an internet connection, keeps conversations on the device, and that someone could carry on a USB drive, even to a shared or public library computer, without buying a computer or subscribing to an AI service.",
-      "built": "A browser workspace built with React, TypeScript, and Vite for chat, coding, research, and scheduled agents. It runs small models in the browser or on a local web server through Ollama, so it works offline with no data leaving the device; API profiles are optional. Projects and conversations live in a folder or on a removable drive, with browser storage as a fallback. It also covers browser image generation, depth maps, SVG tracing, text to speech, voice profiles, and transcription, and it installs as a web app that can reload offline.",
+      "built": "A browser workspace built with React, TypeScript, and Vite for chat, coding, research, and scheduled agents. It runs small models in the browser or on a local web server through Ollama, so with local models it works offline after setup with no data leaving the device; API profiles are optional. Projects and conversations live in a folder or on a removable drive, with browser storage as a fallback. It also covers browser image generation, depth maps, SVG tracing, text to speech, voice profiles, and transcription, and it installs as a web app that can reload offline.",
       "hard": "Browsers differ in what they allow. A folder workspace needs desktop Chrome or Edge, model capability varies by device, and scheduled agents only run while the app tab is open. Removing a drive safely needed an **Eject workspace** step that stops new work, waits for active file operations, and unloads browser models. Nothing downloads automatically; optional engines and models are fetched on request and can resume.",
       "results": "A live demo you can try today. The README keeps an honest feature table with each current limit beside it: image editing, face animation, and production-quality mesh reconstruction are still open work, and there is no verified generative image-to-video."
     },
@@ -132,7 +132,7 @@
       },
       "problem": "I wanted my Game-Maker games to run on their own small machine you plug into a TV, with no PC, browser or desktop in between. Game-Maker: Sandbox Edition already plays them in a browser, so the next step was an operating system whose only job is the games.",
       "built": "A program in C that [sandbox-kernel](https://github.com/lewismoten/sandbox-kernel) loads from the SD card on a Raspberry Pi Zero W. It shows a castle boot splash, then a game library on HDMI with category tabs, cards with each game's title screen read from its own files, and a details page. Play runs the game from its original DOS files with the same play core as the Pocket Player in Game-Maker: Sandbox Edition, shared rather than copied by hand. Leave a game on its details page for 3 seconds and its demo plays in the picture. Saves and high scores live on the card, with a Top Ten like PLAYGAME's. A separate experimental `JS.ELF` runs small JavaScript apps with QuickJS-ng; it is a spike, not the main program.",
-      "hard": "The Zero W has little memory and no operating system underneath, so the library, the game player and the card reader all have to be small and careful. I kept PLAYGAME's behavior, so a game draws the same frames tick for tick as the host tests do, and a saved score survives power loss. The e-ink status screens are drawn but not wired in yet, and sound is still being worked on.",
+      "hard": "The Zero W has little memory and no operating system underneath, so the library, the game player and the card reader all have to be small and careful. I kept PLAYGAME's behavior, so a game draws the same frames tick for tick as the host tests do. The e-ink status screens are drawn but not wired in yet, and sound is still being worked on.",
       "results": "On a Pi Zero W the library lists games, plays them from their DOS files with the arrow keys, Space and Enter, and keeps saves and high scores. Roll the Dice and five more Starters draw the same frames as the host tests. Input comes from the development computer over USB for now, and the e-ink status, a gamepad and a TV remote are still ahead.",
       "role": "Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art, including the boot art and social preview, was made with ChatGPT GPT-6.1 Sol from my directions, and Game-Maker OS's background tune was composed in code by Claude.",
       "made": "The program, its tests and its documentation were written with Claude Code and reviewed by an agent on my Linux machine. The boot art and social preview came from ChatGPT GPT-6.1 Sol and my directions. The library's background tune was composed in code by Claude."
@@ -227,7 +227,7 @@
       "problem": "A model that has to run on tight memory budgets can't borrow a general vocabulary or a standard runtime. The goal was the smallest truthful local MoE tic-tac-toe policy model, built clean-room.",
       "built": "A separately trained attention and mixture-of-experts policy with its own 13-token vocabulary and an eight-move history: token and position embeddings, one causal attention layer with 8 heads at width 32, a learned router, and 9 experts (each 32 to 32 to 32) with top-2 selection, 24,726 parameters in all. INT4 and INT3 versions run in independent packed runtimes, and an INT4 artifact was released for a custom local runtime.",
       "hard": "Precision is a policy, not a promise. FP32 is the baseline; F16, Q6_K, Q4_K_M, Q3_K, Q2_K, and experimental 1-bit-family formats are only candidates. A format is publishable after the exact target runtime passes the complete legal-policy and invalid-input gates. The custom vocabulary is separate from the earlier Ollama-compatible one, so Crystal-9 has to prove token-ID parity before claiming Ollama compatibility. For a standard llama.cpp or Ollama model I point to Palace-9.",
-      "results": "The released artifact is 46,299 bytes, with zero policy misses across 294,778 legal histories. A compact adaptation powers Crystal Palace 9 on the Commodore 64. Releases are packaged with checksums when a version tag is pushed.",
+      "results": "The released artifact is 46,299 bytes, with zero policy misses across 294,778 legal histories. A compact adaptation powered the first version of Crystal Palace 9 on the Commodore 64. Releases are packaged with checksums when a version tag is pushed.",
       "made": "Crystal-9 made the network smaller and gave each layer 32 nodes, to use tensor operations that compute 32 values at the same time. In the end that was more than the task needed, a lesson that went into Falken-9. The name, like Palace-9's, comes from Crystal Palace, the NORAD call sign in *WarGames*.\n\nTraining used PyTorch with AdamW on an RTX 3080 Ti: 100 epochs over all 294,778 move histories reached zero misses at full precision. Quantization went in stages, part of the network at a time, with quantization-aware training at each step; a trial that ended with even one miss was rejected. INT2 was explored as research, ending in a 20,737-byte copy that still had zero misses but wasn't released. A tensor inspector drew every weight as an image, and tests compared the Python and JavaScript runtimes."
     },
     {
@@ -236,7 +236,7 @@
       "subtitle": "A neural network designed for the Commodore 64",
       "group": "Applied AI and model engineering",
       "featured": true,
-      "pitch": "A mixture-of-experts tic-tac-toe model trained for the Commodore 64 from the start: a 5,195-byte model that stays in RAM and now lets Crystal Palace 9 play a complete AI-vs-AI game in just over a minute.",
+      "pitch": "A mixture-of-experts tic-tac-toe model trained for the Commodore 64 from the start: a 5,195-byte model that stays in RAM and now lets Crystal Palace 9 play a complete AI-vs-AI game in just over a minute in an emulator.",
       "tags": [
         "PyTorch",
         "MoE",
@@ -274,7 +274,7 @@
       "subtitle": "AI on 8-bit hardware",
       "group": "Applied AI and model engineering",
       "featured": false,
-      "pitch": "A Commodore 64 tic-tac-toe game whose AI moves come from a real neural network running in 6502 assembly; now powered by Falken-9, a complete AI-vs-AI game takes just over a minute.",
+      "pitch": "A Commodore 64 tic-tac-toe game whose AI moves come from a real neural network running in 6502 assembly; now powered by Falken-9, a complete AI-vs-AI game takes just over a minute in an emulator.",
       "tags": [
         "6502 assembly",
         "Commodore 64",
@@ -300,8 +300,8 @@
       },
       "role": "Designer, director and maintainer. AI coding assistants: GPT-5.6-terra, then GPT-6.1 Sol from mid-October, through Hermes.",
       "problem": "Could the original Crystal-9 neural-network weights run on a Commodore 64 from a 1541 disk? The repository, called Crystal Palace 64 (CP64), treats this as a feasibility project, with no substitute move table, hand-written policy, distilled model, or requantized weights.",
-      "built": "A command-room interface and presentation assets drawn for the machine's 8 x 8 multicolor graphics, a disk-backed INFO archive, a playable human board, and 6502 assembly with an isolated module that materializes the original tokens. Python scripts export 48 pageable model packets from the verified Crystal-9 release and package everything into a D64 disk image. A static GitHub Pages asset editor supports the artwork.",
-      "hard": "Memory and disk. Crystal-9 didn't fit in the C64's memory, so its original INT4 weights travel as 48 disk packets and load during each move, run in fixed-point 6502 math. Testing in VICE with the real C64 and 1541 ROMs found bugs a simpler emulator hid: a disk load that relocated to the wrong address, and an eight-bit memory offset that wrapped later history slots onto earlier ones. Later releases grouped tensors to cut disk loads per move from many to 12.",
+      "built": "A command-room interface and presentation assets drawn for the machine's 8 x 8 multicolor graphics, a disk-backed INFO archive, a playable human board, and 6502 assembly with an isolated module that materializes the original tokens. In its first version, Python scripts exported 48 pageable model packets from the verified Crystal-9 release and package everything into a D64 disk image. A static GitHub Pages asset editor supports the artwork.",
+      "hard": "Memory and disk. Crystal-9 didn't fit in the C64's memory, so in the first version its original INT4 weights traveled as 48 disk packets, loaded during each move and run in fixed-point 6502 math. Testing in VICE with the real C64 and 1541 ROMs found bugs a simpler emulator hid: a disk load that relocated to the wrong address, and an eight-bit memory offset that wrapped later history slots onto earlier ones. Later releases grouped tensors to cut disk loads per move from many to 12.",
       "results": "The first version ran the original Crystal-9 weights on the C64: 436 passing tests, and 13 complete output vectors that matched byte for byte between Py65 and real-ROM VICE, over full human-against-model and AI-vs-AI games. It proved the idea but took roughly 20 minutes for a self-play game. The game now runs Falken-9, a model designed for the C64, and a complete AI-vs-AI game takes just over a minute in an emulator, with progress feedback, console animation and sound during each move's thinking.",
       "made": "I chose the Commodore 64 because I enjoy the 6502 processor and many emulators exist for it. I often watch The 8-Bit Guy's videos about the chip, and I built Ben Eater's 6502 computer, which still sits on a breadboard in my basement ([my 6502 practice code](https://github.com/lewismoten/6502-program-1) has its files). Most of the work on the first version went into loading each layer from disk, because Crystal-9 was too big for the C64's memory.\n\nThe name joins the two models, Palace-9 and Crystal-9, both named for Crystal Palace, the NORAD call sign in *WarGames* where an AI plays against itself. Like the Palace-9 website, the game has a Cold War theme: the computer plays itself over maps of the USA and USSR. Lessons from it went into Falken-9, which now powers the game."
     },
@@ -418,7 +418,7 @@
       "subtitle": "Web Audio API",
       "group": "Browser tools and visualization",
       "featured": true,
-      "pitch": "Sends text and binary files through sound using MFSK, packets, CRC checks, Hamming error correction, interleaving, and repeat requests.",
+      "pitch": "Sends text and binary files through sound, with error detection, error correction, and requests to resend data.",
       "tags": [
         "Web Audio API",
         "JavaScript",
@@ -535,7 +535,7 @@
       },
       "role": "Maintainer of the fork. Much of the recent code was written by AI agents under my direction, as my blog posts describe.",
       "problem": "RSD Game-Maker 3.0 was a 1991-1995 game construction kit, and its source was released under the MIT License in 2014. I shoveled Fort Ashby driveways in the winter of 1992 to buy it. This fork makes and plays DOS-style games in a web browser, with no programming, and keeps the original DOS files intact.",
-      "built": "A port, not a PC emulator: Game-Maker and its PLAYGAME player are re-implemented in TypeScript from the released C source. Games are read and written byte for byte in the original formats, so a game made here still runs in DOS Game-Maker and DOSBox. There are three ways in: a 1994 desk with a simulated PC, the DOS screen alone, and a point-and-click web editor. A Level check plays each scene on the real engine, draws a heat map, marks places a player can get stuck, and offers fixes; a bot can record a walkthrough. The engine, archive tools, and builders are reusable npm packages. Original games are written entirely in code.",
+      "built": "A port, not a PC emulator: Game-Maker and its PLAYGAME player are re-implemented in TypeScript from the released C source. Games are read and written byte for byte in the original formats, so a game made here still runs in DOS Game-Maker and DOSBox. There are three ways in: a 1994 desk with a simulated PC, the DOS screen alone, and a point-and-click web editor. A Level check plays each scene on the real engine, draws a heat map, marks places a player can get stuck, and offers fixes; a bot can record a walkthrough. The engine, archive tools, and builders are reusable npm packages. The new games built for this fork are written entirely in code.",
       "hard": "Matching the original exactly. The same code must make the same bytes: a check builds each game twice into separate folders and fails if any file differs, and another reads every original file, writes it back, and compares. Refactors must not change a generated byte.",
       "results": "A live, playable site with offline play and desktop exports. My November 2026 posts describe the project's growth, including a parallel-AI-agent workflow and the 3.2.0 release."
     },
@@ -602,7 +602,7 @@
       },
       "role": "Author and maintainer.",
       "problem": "An exhibit celebrating 150 years of communication needed a phone visitors could dial, and a way for people to contribute audio to it.",
-      "built": "A live installation at Stone Branch Center for the Arts built from a Raspberry Pi, an Asterisk PBX server, and a PHP contribution site. The site converts audio with a 300-3000 Hz high-pass filter into 8 kHz, 16-bit mono WAV files to sound like a telephone and match what Asterisk plays. Transcriptions use AI, and Minimodem handles TTY teletype machines. A deploy script uploads only the files whose hash or size changed, using a remote manifest.",
+      "built": "A live installation at Stone Branch Center for the Arts built from a Raspberry Pi, an Asterisk PBX server, and a PHP contribution site. The site converts audio with a 300-3000 Hz telephone-band filter into 8 kHz, 16-bit mono WAV files to sound like a telephone and match what Asterisk plays. Transcriptions use AI, and Minimodem handles TTY teletype machines. A deploy script uploads only the files whose hash or size changed, using a remote manifest.",
       "hard": "Secrets. FTP credentials are kept out of the project folder, even in ignored files, because local tools working in the repository can read anything saved there. The deploy script reads them from a file in my home directory.",
       "results": "A working public exhibit with a live website. The local newspaper covered it as an interactive exhibit celebrating 150 years of communication."
     },
@@ -813,7 +813,7 @@
       "subtitle": "VB.NET Windows service, January 2004",
       "group": "Earlier open source",
       "featured": false,
-      "pitch": "A Windows service that watches a Visual SourceSafe database and sends alerts and daily reports, so a team in several time zones stops waiting on exclusive checkouts.",
+      "pitch": "A Windows service that watches a Visual SourceSafe database and sends alerts and daily reports, so teammates in several time zones are told when a file is checked in.",
       "tags": [
         "VB.NET",
         ".NET",

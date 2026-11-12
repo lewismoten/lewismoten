@@ -53,7 +53,7 @@
 <h3>Outcome</h3><p>A working public exhibit with a live website. The local newspaper covered it as an interactive exhibit celebrating 150 years of communication.</p>
 <h3>My role</h3><p>Author and maintainer.</p></section>
 <section class="part" id="technical-overview"><h2>Technical overview</h2>
-<h3>How it works</h3><p>A live installation at Stone Branch Center for the Arts built from a Raspberry Pi, an Asterisk PBX server, and a PHP contribution site. The site converts audio with a 300-3000 Hz high-pass filter into 8 kHz, 16-bit mono WAV files to sound like a telephone and match what Asterisk plays. Transcriptions use AI, and Minimodem handles TTY teletype machines. A deploy script uploads only the files whose hash or size changed, using a remote manifest.</p>
+<h3>How it works</h3><p>A live installation at Stone Branch Center for the Arts built from a Raspberry Pi, an Asterisk PBX server, and a PHP contribution site. The site converts audio with a 300-3000 Hz telephone-band filter into 8 kHz, 16-bit mono WAV files to sound like a telephone and match what Asterisk plays. Transcriptions use AI, and Minimodem handles TTY teletype machines. A deploy script uploads only the files whose hash or size changed, using a remote manifest.</p>
 <h3>Hard parts</h3><p>Secrets. FTP credentials are kept out of the project folder, even in ignored files, because local tools working in the repository can read anything saved there. The deploy script reads them from a file in my home directory.</p><h3>Stack</h3>
 <ul class="tags plain-tags"><li>PHP</li><li>Asterisk</li><li>Raspberry Pi</li><li>ffmpeg</li><li>Audio</li><li>Accessibility</li></ul></section>
 

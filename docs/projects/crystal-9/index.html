@@ -51,7 +51,7 @@
 <nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
 <section class="part" id="executive-summary"><h2>Executive summary</h2>
 <h3>Why it exists</h3><p>A model that has to run on tight memory budgets can't borrow a general vocabulary or a standard runtime. The goal was the smallest truthful local MoE tic-tac-toe policy model, built clean-room.</p>
-<h3>Outcome</h3><p>The released artifact is 46,299 bytes, with zero policy misses across 294,778 legal histories. A compact adaptation powers Crystal Palace 9 on the Commodore 64. Releases are packaged with checksums when a version tag is pushed.</p>
+<h3>Outcome</h3><p>The released artifact is 46,299 bytes, with zero policy misses across 294,778 legal histories. A compact adaptation powered the first version of Crystal Palace 9 on the Commodore 64. Releases are packaged with checksums when a version tag is pushed.</p>
 <h3>My role</h3><p>Designer, director, maintainer, and publisher. Code and documentation were developed with assistance from GPT-5.6-terra Med, accessed through Hermes with Honcho for project memory.</p></section>
 <section class="part" id="technical-overview"><h2>Technical overview</h2>
 <h3>How it works</h3><p>A separately trained attention and mixture-of-experts policy with its own 13-token vocabulary and an eight-move history: token and position embeddings, one causal attention layer with 8 heads at width 32, a learned router, and 9 experts (each 32 to 32 to 32) with top-2 selection, 24,726 parameters in all. INT4 and INT3 versions run in independent packed runtimes, and an INT4 artifact was released for a custom local runtime.</p>

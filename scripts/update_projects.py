@@ -77,6 +77,11 @@ def load_catalog():
     return index, cards
 
 
+# GitHub shrinks a table's image column to fit long text beside it, and the img width
+# attribute does not stop it; non-breaking spaces cannot wrap, so they hold the column open.
+SPACER = '&nbsp;' * 40
+
+
 def markdown_link(label, url):
     return f'[{label}]({url})'
 
@@ -85,7 +90,7 @@ def project_table(index, cards):
     pages = site_pages()
     lines = []
     for group in index['profile_groups']:
-        lines += [f"### {group['heading']}", '', '| Project image | Project |',
+        lines += [f"### {group['heading']}", '', f'| Project image{SPACER} | Project |',
                   '| :--- | :--- |']
         for slug in group['projects']:
             card = cards[slug]

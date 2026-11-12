@@ -30,7 +30,7 @@ Each project's **More details** page on [my portfolio site](https://lewismoten.g
 <!-- PROJECTS:START -->
 ### Applied AI and model engineering
 
-| Project image | Project |
+| Project image&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Project |
 | :--- | :--- |
 | <a href="https://github.com/lewismoten/local-agent-lab"><img src="./projects/local-agent-lab.jpg" alt="Local Agent Lab" width="320"></a> | **Local Agent Lab \| Portable AI workspace**<br>Built a private React and TypeScript AI workspace for chat, code, images, and audio. Runs models in the browser or on a local Ollama server, so it works offline and conversations never have to leave the device; API providers are optional. Projects stay in a folder or on a removable drive.<br>[Live demo](https://lewismoten.github.io/local-agent-lab/) · [Source](https://github.com/lewismoten/local-agent-lab) · [More details](https://lewismoten.github.io/projects/local-agent-lab/) |
 | <a href="https://github.com/lewismoten/ghostjack"><img src="./projects/ghostjack.jpg" alt="Ghost Jack" width="320"></a> | **Ghost Jack \| Eyes, ears and a mouth for AI agents**<br>Built a local bridge and cyberpunk control deck that gives people and AI agents eyes, ears and a mouth through a $2 thrift-store pan/tilt camera, with no cloud app. Reverse-engineered its sign-in, live RTSP stream, pan/tilt, night vision and speaker (found through the vendor's old Flash engine), with recording and a three.js aiming model.<br>[Live demo](https://lewismoten.github.io/ghostjack/) · [Source](https://github.com/lewismoten/ghostjack) · [More details](https://lewismoten.github.io/projects/ghostjack/) |
@@ -42,7 +42,7 @@ Each project's **More details** page on [my portfolio site](https://lewismoten.g
 
 ### Embedded systems and hardware
 
-| Project image | Project |
+| Project image&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Project |
 | :--- | :--- |
 | <a href="https://github.com/lewismoten/sandbox-kernel"><img src="./projects/sandbox-kernel.jpg" alt="sandbox-kernel" width="320"></a> | **sandbox-kernel \| A small bare-metal kernel for your own OS**<br>Built a small bare-metal kernel for the Raspberry Pi Zero W that loads your own operating system as one user-mode program from the SD card. It has A/B kernel slots with trial boot and confirm, recovery to a diagnostic program, a POSIX-style ABI, an e-ink status panel and USB development commands. Game-Maker OS is the first OS built on it.<br>[Source](https://github.com/lewismoten/sandbox-kernel) · [The guide](https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md) · [Game-Maker OS](https://github.com/lewismoten/gamemaker-os) · [More details](https://lewismoten.github.io/projects/sandbox-kernel/) |
 | <a href="https://github.com/lewismoten/gamemaker-os"><img src="./projects/gamemaker-os.jpg" alt="Game-Maker OS" width="320"></a> | **Game-Maker OS \| DOS Game-Maker games from the SD card, on a Pi Zero W**<br>Built an operating system that turns a Raspberry Pi Zero W into a Game-Maker machine. It boots with a castle splash to a game library on a TV, with category tabs, demo previews, saves and high scores, and plays the games' original DOS files from the SD card. It runs on sandbox-kernel; an experimental QuickJS layer runs small JavaScript apps.<br>[Source](https://github.com/lewismoten/gamemaker-os) · [sandbox-kernel](https://github.com/lewismoten/sandbox-kernel) · [More details](https://lewismoten.github.io/projects/gamemaker-os/) |
@@ -50,7 +50,7 @@ Each project's **More details** page on [my portfolio site](https://lewismoten.g
 
 ### Browser tools and visualization
 
-| Project image | Project |
+| Project image&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Project |
 | :--- | :--- |
 | <a href="https://github.com/lewismoten/sculpted-prim-toolkit"><img src="./projects/sculpted-prim-toolkit.jpg" alt="Sculpted Prim Toolkit" width="320"></a> | **Sculpted Prim Toolkit \| Three.js editor**<br>Decodes Second Life-style RGB sculpt maps into editable 3D geometry. Camera views, mesh overlays, textures, and vertex tools support PNG, glTF/GLB, OBJ, and STL exports.<br>[Live demo](https://lewismoten.github.io/sculpted-prim-toolkit/) · [Source](https://github.com/lewismoten/sculpted-prim-toolkit) · [Videos](https://www.youtube.com/watch?v=egAIXJwAAHw&list=PLIyz44ZkJ3sk) · [More details](https://lewismoten.github.io/projects/sculpted-prim-toolkit/) |
 | <a href="https://github.com/lewismoten/data-over-audio"><img src="./projects/data-over-audio.jpg" alt="Data Over Audio" width="320"></a> | **Data Over Audio \| Web Audio API**<br>Transfers text and binary data through sound using MFSK modulation, packetization, CRC checks, Hamming error correction, interleaving, and repeat requests.<br>[Live demo](https://lewismoten.github.io/data-over-audio/) · [Source](https://github.com/lewismoten/data-over-audio) · [Videos](https://www.youtube.com/watch?v=_6qxB3gKN_E&list=PLEyaach61fdU-OPcb5Aqgah2l6TTsaLia) · [More details](https://lewismoten.github.io/projects/data-over-audio/) |
@@ -59,7 +59,7 @@ Each project's **More details** page on [my portfolio site](https://lewismoten.g
 
 ### Publishing and interactive experiences
 
-| Project image | Project |
+| Project image&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Project |
 | :--- | :--- |
 | <a href="https://github.com/lewismoten/GameMaker-SandboxEdition"><img src="./projects/gamemaker-sandbox.png" alt="Game-Maker: Sandbox Edition" width="320"></a> | **Game-Maker: Sandbox Edition \| DOS engine port and visual editors**<br>Reimplemented and extended RSD Game-Maker 3.0 in TypeScript, preserving original DOS file formats while adding browser-based visual editors, OPL2 audio, offline play, and desktop exports. Built automated level checks and replayable walkthroughs, reusable engine and tooling packages, and original games within an interactive 1994 desktop.<br>[Live demo](https://lewismoten.github.io/GameMaker-SandboxEdition/) · [Source](https://github.com/lewismoten/GameMaker-SandboxEdition) · [Video](https://www.youtube.com/watch?v=0riemzdF8gc) · [More details](https://lewismoten.github.io/projects/gamemaker-sandbox/) |
 | <a href="https://github.com/lewismoten/dreamy-tags"><img src="./projects/dreamy-tags.jpg" alt="Dreamy Tags" width="320"></a> | **Dreamy Tags \| WordPress plugin**<br>An open-source PHP/Gutenberg plugin for category- and tag-filtered clouds, with exclusion rules and minimum-use thresholds. Published as a block, widget, and shortcode.<br>[Plugin directory](https://wordpress.org/plugins/dreamy-tags/) · [Source](https://github.com/lewismoten/dreamy-tags) · [More details](https://lewismoten.github.io/projects/dreamy-tags/) |
@@ -69,14 +69,14 @@ Each project's **More details** page on [my portfolio site](https://lewismoten.g
 
 ### 8-bit retro Commodore 64 projects
 
-| Project image | Project |
+| Project image&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Project |
 | :--- | :--- |
 | <a href="https://github.com/lewismoten/storage-d64"><img src="./projects/storage-d64.jpg" alt="D64 Storage Lab" width="320"></a> | **D64 Storage Lab \| Repair and optimization**<br>A JavaScript workbench maps Commodore 64 disk sectors and file chains, estimates read efficiency, repairs corruption, restores deleted files, and compares optimized and fragmented layouts.<br>[Live demo](https://lewismoten.github.io/storage-d64/) · [Source](https://github.com/lewismoten/storage-d64) · [Video](https://www.youtube.com/watch?v=cXeIy4AZewY) · [More details](https://lewismoten.github.io/projects/storage-d64/) |
 | <a href="https://github.com/lewismoten/sector-256"><img src="./projects/sector-256.png" alt="Sector 256" width="320"></a> | **Sector 256 \| Tiny programs for the C64**<br>Built a graphical Commodore 64 launcher for games, utilities, demos, and experiments with stored payloads of 256 bytes or less. Combines 6502 assembly, shared routines, and a Python build pipeline to package programs into a D64 disk image, with automated machine-code tests.<br>[Live demo](https://lewismoten.github.io/sector-256/) · [Source](https://github.com/lewismoten/sector-256) · [Video](https://www.youtube.com/watch?v=dptHv4-RSWo) · [More details](https://lewismoten.github.io/projects/sector-256/) |
 
 ### Government Transparency
 
-| Project image | Project |
+| Project image&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Project |
 | :--- | :--- |
 | <a href="https://github.com/lewismoten/streamscribe"><img src="./projects/stream-scribe.jpg" alt="Stream Scribe" width="320"></a> | **Stream Scribe \| Independent meeting archive and research**<br>Developing an independent archive and research tool for livestreamed government meetings. Captures video, transcribes locally with Whisper, and supports searching transcripts and navigating thumbnails while meetings are still live. Adds speaker, topic, and vote annotations, exports short clips, and fills capture gaps from official recordings. Built with React, TypeScript, Node.js, and SQLite.<br>[Source](https://github.com/lewismoten/streamscribe) · [More details](https://lewismoten.github.io/projects/stream-scribe/) |
 <!-- PROJECTS:END -->

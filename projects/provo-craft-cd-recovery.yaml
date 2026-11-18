@@ -1,0 +1,12 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Provo Craft CD Recovery
+title: Provo Craft CD Recovery | Preserving 1996 clip-art CD-ROMs
+image: provo-craft-cd-recovery.jpg
+description: >-
+  Built a macOS recovery workflow for classic HFS Provo Craft clip-art CD-ROMs
+  that modern macOS cannot read. It preserves raw disc images, extracts artwork
+  and Mac suitcase fonts, creates PNG and SVG derivatives locally, and documents
+  the restrictive original license while keeping recovered media out of Git.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/provo-craft-cd-recovery

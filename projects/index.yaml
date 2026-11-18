@@ -20,6 +20,7 @@ profile_groups:
     projects:
       - sculpted-prim-toolkit
       - data-over-audio
+      - dial-to-eleven
       - emoji
       - qr
   - heading: Publishing and interactive experiences

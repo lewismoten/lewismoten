@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dial to Eleven: Browser audio amp with an actual eleven | Lewis Moten</title>
+<meta name="description" content="A browser-only amp for your own audio files, with a rotary dial from silence to eleven and a stage show that follows the music.">
+<link rel="canonical" href="https://lewismoten.github.io/projects/dial-to-eleven/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Dial to Eleven: Browser audio amp with an actual eleven | Lewis Moten">
+<meta property="og:description" content="A browser-only amp for your own audio files, with a rotary dial from silence to eleven and a stage show that follows the music.">
+<meta property="og:url" content="https://lewismoten.github.io/projects/dial-to-eleven/">
+<meta property="og:image" content="https://lewismoten.github.io/img/projects/dial-to-eleven.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dial to Eleven: Browser audio amp with an actual eleven | Lewis Moten">
+<meta name="twitter:description" content="A browser-only amp for your own audio files, with a rotary dial from silence to eleven and a stage show that follows the music.">
+<meta name="twitter:image" content="https://lewismoten.github.io/img/projects/dial-to-eleven.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../archive/index.html">Archive</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme" hidden>Theme</button>
+</div>
+</header>
+<main id="main" class="wrap" tabindex="-1">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Browser tools and visualization</nav>
+<article class="project">
+<h1>Dial to Eleven</h1>
+<p class="sub">Browser audio amp with an actual eleven</p>
+<img class="hero-img" src="../../img/projects/dial-to-eleven.jpg" alt="Dial to Eleven poster with a glowing rotary dial set to 11, stage lights, and cold sparks." width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">A browser-only amp for your own audio files, with a rotary dial from silence to eleven and a stage show that follows the music.</p>
+<p class="links"><a class="btn" href="https://lewismoten.github.io/dial-to-eleven/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/dial-to-eleven">Source</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>I found Spinal Tap: Break Like the Wind on the last day of a library book sale. CDs normally went for 50 cents, but this one still wore a $6.99 Ear Candy markdown sticker. I knew the band from the movie, took the CD home, and found that nothing in the house had a dial past ten.</p>
+<h3>Outcome</h3><p>The live demo runs on GitHub Pages without a server or bundled recordings. Users choose their own track, and the README documents the audio safety warning and the project's book-sale origin.</p>
+<h3>My role</h3><p>Concept, direction, and hands-on testing; implemented with AI coding assistance.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A dependency-free page loads a local audio file into a Web Audio chain for gain, compression, filtering, and saturation. A rotary dial has clickable numbers, with a deliberate jump at eleven and an optional saved More eleven setting. Audio samples drive separate cabinet, lettering, speaker, and jack motion. CSS lights and side fog follow playback; a canvas launches simulated fireballs and cold sparks only when music plays at eleven. The file never leaves the browser.</p>
+<h3>Hard parts</h3><p>The stage had to stop when playback stopped, even when someone pressed Stop and Play quickly enough for old media events to arrive late. The amp also had to fit a phone screen without scrolling or clipping and honor reduced-motion settings.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>JavaScript</li><li>Web Audio API</li><li>Canvas</li><li>Audio effects</li><li>Accessibility</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

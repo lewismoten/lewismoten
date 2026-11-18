@@ -1,0 +1,14 @@
+# Project card used by the profile README.
+name: Dial to Eleven
+title: Dial to Eleven | Browser audio amp
+image: dial-to-eleven.jpg
+description: >-
+  Built a browser-only amp for local audio files, with a rotary dial from
+  silence to eleven. Web Audio gain, compression, and saturation drive an
+  audio-reactive cabinet and stage show with lights, fog, fireballs, and cold
+  sparks. The music never leaves the browser.
+links:
+  - label: Live demo
+    url: https://lewismoten.github.io/dial-to-eleven/
+  - label: Source
+    url: https://github.com/lewismoten/dial-to-eleven

@@ -1,0 +1,11 @@
+# Project card used by the profile README.
+name: "Game-Maker Sandbox Archives"
+title: "Game-Maker Sandbox Archives | Find and unpack games in ZIPs, EXEs and packs"
+image: gamemaker-sandbox-archives.jpg
+description: >-
+  Split the Game-Maker: Sandbox Edition importer into its own npm package. It finds and unpacks Game-Maker games inside ZIPs, nested archives, game packs and player executables, in browsers or Node.js, reading executables as data and never running them.
+links:
+  - label: npm
+    url: https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-archives
+  - label: Source
+    url: https://github.com/lewismoten/gamemaker-sandbox-archives

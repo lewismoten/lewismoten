@@ -26,6 +26,9 @@ profile_groups:
   - heading: Publishing and interactive experiences
     projects:
       - gamemaker-sandbox
+      - gamemaker-sandbox-engine
+      - gamemaker-sandbox-archives
+      - gamemaker-sandbox-tools
       - dreamy-tags
       - phone-exhibit
       - tiny-pockets-press

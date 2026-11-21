@@ -1,0 +1,11 @@
+# Project card used by the profile README.
+name: "Game-Maker Sandbox Engine"
+title: "Game-Maker Sandbox Engine | Browser engine for original DOS games"
+image: gamemaker-sandbox-engine.jpg
+description: >-
+  Split the Game-Maker: Sandbox Edition player engine into its own npm package. It runs RSD Game-Maker games in a browser straight from their original DOS files, with an audio worklet, TypeScript declarations, and no runtime npm dependencies. The file codecs also run in Node.
+links:
+  - label: npm
+    url: https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-engine
+  - label: Source
+    url: https://github.com/lewismoten/gamemaker-sandbox-engine

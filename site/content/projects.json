@@ -194,7 +194,7 @@
         "source": "https://github.com/lewismoten/pocket-fleet"
       },
       "problem": "I wanted a bridge game for a room of people with whatever screens they have: a laptop hosts the fleet, a projector shows the forward view, and everyone else takes a station on a phone browser or a cheap ESP32 board.",
-      "built": "A browser app and a small Node host that uses only the standard library, with shared game rules for both. The host keeps fleet state on the local Wi-Fi; players find fleets, pick a ship and a station (Helm, Weapons, Engineering, Communications) and can lock a fleet or ship with a code. Firmware in C++ runs the same stations on the 2.8 and 3.5 inch CYDs and the M5 Cardputer ADV; a CYD can scan for short \ud83d\ude80 hotspot names and board a ship. Players start in personal quarters with an animated cadet they can customize, and keep a service record. A flash page installs the firmware from Chrome or Edge with Web Serial.",
+      "built": "A browser app and a small Node host that uses only the standard library, with shared game rules for both. The host keeps fleet state on the local Wi-Fi; players find fleets, pick a ship and a station (Helm, Weapons, Engineering, Communications) and can lock a fleet or ship with a code. Firmware in C++ runs the same stations on the 2.8 and 3.5 inch CYDs and the M5 Cardputer ADV; a CYD can scan for short 🚀 hotspot names and board a ship. Players start in personal quarters with an animated cadet they can customize, and keep a service record. A flash page installs the firmware from Chrome or Edge with Web Serial.",
       "hard": "The CYD has a 320 x 240 touch screen, so each station's controls had to fit pages of large buttons. Browser pages cannot scan Wi-Fi or read signal strength, so only the boards list nearby hotspots. The local connection is unencrypted, so the fleet lock is a casual room gate, not account security.",
       "results": "It plays solo in a browser, including the [GitHub Pages demo](https://lewismoten.github.io/pocket-fleet/), and hosts a room from one computer. The firmware builds for the 2.8 inch CYD with about 50 KB of static RAM and 1.02 MB of app flash; touch calibration and the hotspot gateway still need testing on the boards. The game rules have Node tests.",
       "role": "Designer and director. Built with OpenAI Codex (GPT-6 Sol) from my directions over October 2 and 3, 2026. The social preview was made with ChatGPT.",
@@ -566,6 +566,100 @@
       "results": "A live, playable site with offline play and desktop exports. My November 2026 posts describe the project's growth, including a parallel-AI-agent workflow and the 3.2.0 release."
     },
     {
+      "slug": "gamemaker-sandbox-engine",
+      "title": "Game-Maker Sandbox Engine",
+      "subtitle": "Browser engine for original DOS games",
+      "group": "Publishing and interactive experiences",
+      "featured": false,
+      "pitch": "The TypeScript engine behind the Game-Maker: Sandbox Edition web player, as its own npm package: hand it a game's original DOS files and it plays them in a browser.",
+      "tags": [
+        "TypeScript",
+        "Web Audio",
+        "AudioWorklet",
+        "File formats",
+        "npm packages",
+        "Automated testing"
+      ],
+      "alt": "Game-Maker Sandbox Engine: original DOS games, browser playback",
+      "links": {
+        "source": "https://github.com/lewismoten/gamemaker-sandbox-engine",
+        "other": [
+          {
+            "label": "npm package",
+            "url": "https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-engine"
+          }
+        ]
+      },
+      "role": "Maintainer. The split was done by AI agents under my direction, as with the rest of Game-Maker: Sandbox Edition.",
+      "problem": "Game-Maker: Sandbox Edition grew its engine inside one large repository. Anyone who wanted to play or read RSD Game-Maker games elsewhere had to take the whole app. I split the engine into its own public repository and npm package, keeping its git history.",
+      "built": "`GameFiles` takes the files from one game's DOS directory (DOS 8.3 names, original bytes) and finds the main `.GAM` file. `runGame` plays it on a `Machine` that owns the screen, keyboard and audio, including the native title menu, instructions, credits, scores and function keys, with hooks that report play without changing timing or game data. The same codecs read `.GAM` and other native files in Node.js. The package ships its audio worklet and TypeScript declarations and has no runtime npm dependencies.",
+      "hard": "Staying the same engine as the web player while living in its own repository, and refusing bad input: the parsers reject scene tables that run past the file, and the GIF decoder caps image size.",
+      "results": "Published on npmjs and GitHub Packages, with its own tests, changelog and releases. It is the same engine the Game-Maker: Sandbox Edition web player runs."
+    },
+    {
+      "slug": "gamemaker-sandbox-archives",
+      "title": "Game-Maker Sandbox Archives",
+      "subtitle": "Find and unpack games in ZIPs, EXEs and packs",
+      "group": "Publishing and interactive experiences",
+      "featured": false,
+      "pitch": "The Game-Maker: Sandbox Edition importer as its own npm package: scan ZIPs, nested archives, game packs and player EXEs, choose the games, and unpack them in a browser or Node.js.",
+      "tags": [
+        "TypeScript",
+        "ZIP",
+        "Compression Streams",
+        "File formats",
+        "npm packages",
+        "Automated testing"
+      ],
+      "alt": "Game-Maker Sandbox Archives: scan, unpack and discover games in ZIP, EXE and GMPAK files",
+      "links": {
+        "source": "https://github.com/lewismoten/gamemaker-sandbox-archives",
+        "other": [
+          {
+            "label": "npm package",
+            "url": "https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-archives"
+          }
+        ]
+      },
+      "role": "Maintainer. The split was done by AI agents under my direction, as with the rest of Game-Maker: Sandbox Edition.",
+      "problem": "Old Game-Maker games turn up inside ZIPs, ZIPs inside ZIPs, and customized player executables. The importer that handles them lived inside the Game-Maker: Sandbox Edition app. I split it into its own public repository and npm package, keeping its git history.",
+      "built": "A scanner reads game headers and archive directories first, so a person can choose games before any files are read; a report explains bad, empty and loose files. `unpackGame` and `unpackGames` return the chosen games. ZIPs are searched up to three levels deep, with limits on entries and bytes. A ZIP writer, a game-pack format with an incremental reader, and player-EXE identification (by build, size, MD5 and its About text) are included. Compression uses the browser's own streams, so the only runtime dependency is the engine package.",
+      "hard": "Handling untrusted archives safely: executables are inspected as data and never run, and every archive and returned game has an entry and size limit.",
+      "results": "Published on npmjs and GitHub Packages, with its own tests and releases. It is the same importer the Game-Maker: Sandbox Edition site uses."
+    },
+    {
+      "slug": "gamemaker-sandbox-tools",
+      "title": "Game-Maker Sandbox Tools",
+      "subtitle": "Build, inspect and verify Game-Maker data",
+      "group": "Publishing and interactive experiences",
+      "featured": false,
+      "pitch": "The tooling that builds the new Game-Maker: Sandbox Edition games in code, as its own npm package: drawing, native formats, audio, headless simulation and disc images.",
+      "tags": [
+        "TypeScript",
+        "Node.js",
+        "Image processing",
+        "Audio",
+        "File formats",
+        "npm packages",
+        "Automated testing"
+      ],
+      "alt": "Game-Maker Sandbox Tools: build, inspect and verify Game-Maker data",
+      "links": {
+        "source": "https://github.com/lewismoten/gamemaker-sandbox-tools",
+        "other": [
+          {
+            "label": "npm package",
+            "url": "https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-tools"
+          }
+        ]
+      },
+      "role": "Maintainer. The split was done by AI agents under my direction, as with the rest of Game-Maker: Sandbox Edition.",
+      "problem": "The new games for Game-Maker: Sandbox Edition are written entirely in code, and the helpers that draw, compose and check them lived inside the app. I split them into their own public repository and npm package, keeping their git history.",
+      "built": "Subpath imports instead of one root: `drawing` (pixels, palettes, fonts, text, compositing, shading), native format writers re-exported from the engine (blocks, characters, monsters, maps, games, palettes, sound, VOC, FLI and more), `audio` (songs, instruments, resampling with a windowed-sinc filter), `simulation` for headless play checks and route assertions, and `iso9660` for disc images with long names. Browser-safe parts are kept apart from the parts that need Node.js.",
+      "hard": "Keeping generated games byte-identical while the code moves: the tools must build the same bytes in their own repository as they did inside the app.",
+      "results": "Published on npmjs and GitHub Packages, with its own tests and releases."
+    },
+    {
       "slug": "dreamy-tags",
       "title": "Dreamy Tags",
       "subtitle": "WordPress plugin",
@@ -927,6 +1021,15 @@
         "falken-9"
       ],
       "page": "tic-tac-toe-models"
+    },
+    {
+      "name": "Game-Maker: Sandbox Edition and its packages",
+      "slugs": [
+        "gamemaker-sandbox",
+        "gamemaker-sandbox-engine",
+        "gamemaker-sandbox-archives",
+        "gamemaker-sandbox-tools"
+      ]
     }
   ]
 }

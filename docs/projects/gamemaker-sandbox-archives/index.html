@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game-Maker Sandbox Archives: Find and unpack games in ZIPs, EXEs and packs | Lewis Moten</title>
+<meta name="description" content="The Game-Maker: Sandbox Edition importer as its own npm package: scan ZIPs, nested archives, game packs and player EXEs, choose the games, and unpack them in a browser or Node.js.">
+<link rel="canonical" href="https://lewismoten.github.io/projects/gamemaker-sandbox-archives/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Game-Maker Sandbox Archives: Find and unpack games in ZIPs, EXEs and packs | Lewis Moten">
+<meta property="og:description" content="The Game-Maker: Sandbox Edition importer as its own npm package: scan ZIPs, nested archives, game packs and player EXEs, choose the games, and unpack them in a browser or Node.js.">
+<meta property="og:url" content="https://lewismoten.github.io/projects/gamemaker-sandbox-archives/">
+<meta property="og:image" content="https://lewismoten.github.io/img/projects/gamemaker-sandbox-archives.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Game-Maker Sandbox Archives: Find and unpack games in ZIPs, EXEs and packs | Lewis Moten">
+<meta name="twitter:description" content="The Game-Maker: Sandbox Edition importer as its own npm package: scan ZIPs, nested archives, game packs and player EXEs, choose the games, and unpack them in a browser or Node.js.">
+<meta name="twitter:image" content="https://lewismoten.github.io/img/projects/gamemaker-sandbox-archives.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../archive/index.html">Archive</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme" hidden>Theme</button>
+</div>
+</header>
+<main id="main" class="wrap" tabindex="-1">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Publishing and interactive experiences</nav>
+<article class="project">
+<h1>Game-Maker Sandbox Archives</h1>
+<p class="sub">Find and unpack games in ZIPs, EXEs and packs</p>
+<img class="hero-img" src="../../img/projects/gamemaker-sandbox-archives.jpg" alt="Game-Maker Sandbox Archives: scan, unpack and discover games in ZIP, EXE and GMPAK files" width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">The Game-Maker: Sandbox Edition importer as its own npm package: scan ZIPs, nested archives, game packs and player EXEs, choose the games, and unpack them in a browser or Node.js.</p>
+<p class="links"><a class="btn" href="https://github.com/lewismoten/gamemaker-sandbox-archives">Source</a> <a class="btn" href="https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-archives">npm package</a></p>
+<nav class="series" aria-label="Game-Maker: Sandbox Edition and its packages"><p>Part of a series: Game-Maker: Sandbox Edition and its packages</p><ol><li><a href="../../projects/gamemaker-sandbox/index.html">1. Game-Maker: Sandbox Edition</a></li><li><a href="../../projects/gamemaker-sandbox-engine/index.html">2. Game-Maker Sandbox Engine</a></li><li aria-current="page"><strong>3. Game-Maker Sandbox Archives</strong></li><li><a href="../../projects/gamemaker-sandbox-tools/index.html">4. Game-Maker Sandbox Tools</a></li></ol></nav>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>Old Game-Maker games turn up inside ZIPs, ZIPs inside ZIPs, and customized player executables. The importer that handles them lived inside the Game-Maker: Sandbox Edition app. I split it into its own public repository and npm package, keeping its git history.</p>
+<h3>Outcome</h3><p>Published on npmjs and GitHub Packages, with its own tests and releases. It is the same importer the Game-Maker: Sandbox Edition site uses.</p>
+<h3>My role</h3><p>Maintainer. The split was done by AI agents under my direction, as with the rest of Game-Maker: Sandbox Edition.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A scanner reads game headers and archive directories first, so a person can choose games before any files are read; a report explains bad, empty and loose files. <code>unpackGame</code> and <code>unpackGames</code> return the chosen games. ZIPs are searched up to three levels deep, with limits on entries and bytes. A ZIP writer, a game-pack format with an incremental reader, and player-EXE identification (by build, size, MD5 and its About text) are included. Compression uses the browser's own streams, so the only runtime dependency is the engine package.</p>
+<h3>Hard parts</h3><p>Handling untrusted archives safely: executables are inspected as data and never run, and every archive and returned game has an entry and size limit.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>TypeScript</li><li>ZIP</li><li>Compression Streams</li><li>File formats</li><li>npm packages</li><li>Automated testing</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

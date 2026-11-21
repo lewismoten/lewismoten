@@ -1,0 +1,11 @@
+# Project card used by the profile README.
+name: "Game-Maker Sandbox Tools"
+title: "Game-Maker Sandbox Tools | Build, inspect and verify Game-Maker data"
+image: gamemaker-sandbox-tools.jpg
+description: >-
+  Split the Game-Maker: Sandbox Edition build tooling into its own npm package: drawing, palettes, fonts, native file formats, music and sound, headless play simulation and ISO images, used to make and check native RSD Game-Maker data in code.
+links:
+  - label: npm
+    url: https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-tools
+  - label: Source
+    url: https://github.com/lewismoten/gamemaker-sandbox-tools

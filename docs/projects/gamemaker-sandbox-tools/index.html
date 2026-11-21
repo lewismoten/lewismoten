@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game-Maker Sandbox Tools: Build, inspect and verify Game-Maker data | Lewis Moten</title>
+<meta name="description" content="The tooling that builds the new Game-Maker: Sandbox Edition games in code, as its own npm package: drawing, native formats, audio, headless simulation and disc images.">
+<link rel="canonical" href="https://lewismoten.github.io/projects/gamemaker-sandbox-tools/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Game-Maker Sandbox Tools: Build, inspect and verify Game-Maker data | Lewis Moten">
+<meta property="og:description" content="The tooling that builds the new Game-Maker: Sandbox Edition games in code, as its own npm package: drawing, native formats, audio, headless simulation and disc images.">
+<meta property="og:url" content="https://lewismoten.github.io/projects/gamemaker-sandbox-tools/">
+<meta property="og:image" content="https://lewismoten.github.io/img/projects/gamemaker-sandbox-tools.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Game-Maker Sandbox Tools: Build, inspect and verify Game-Maker data | Lewis Moten">
+<meta name="twitter:description" content="The tooling that builds the new Game-Maker: Sandbox Edition games in code, as its own npm package: drawing, native formats, audio, headless simulation and disc images.">
+<meta name="twitter:image" content="https://lewismoten.github.io/img/projects/gamemaker-sandbox-tools.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../archive/index.html">Archive</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme" hidden>Theme</button>
+</div>
+</header>
+<main id="main" class="wrap" tabindex="-1">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Publishing and interactive experiences</nav>
+<article class="project">
+<h1>Game-Maker Sandbox Tools</h1>
+<p class="sub">Build, inspect and verify Game-Maker data</p>
+<img class="hero-img" src="../../img/projects/gamemaker-sandbox-tools.jpg" alt="Game-Maker Sandbox Tools: build, inspect and verify Game-Maker data" width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">The tooling that builds the new Game-Maker: Sandbox Edition games in code, as its own npm package: drawing, native formats, audio, headless simulation and disc images.</p>
+<p class="links"><a class="btn" href="https://github.com/lewismoten/gamemaker-sandbox-tools">Source</a> <a class="btn" href="https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-tools">npm package</a></p>
+<nav class="series" aria-label="Game-Maker: Sandbox Edition and its packages"><p>Part of a series: Game-Maker: Sandbox Edition and its packages</p><ol><li><a href="../../projects/gamemaker-sandbox/index.html">1. Game-Maker: Sandbox Edition</a></li><li><a href="../../projects/gamemaker-sandbox-engine/index.html">2. Game-Maker Sandbox Engine</a></li><li><a href="../../projects/gamemaker-sandbox-archives/index.html">3. Game-Maker Sandbox Archives</a></li><li aria-current="page"><strong>4. Game-Maker Sandbox Tools</strong></li></ol></nav>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>The new games for Game-Maker: Sandbox Edition are written entirely in code, and the helpers that draw, compose and check them lived inside the app. I split them into their own public repository and npm package, keeping their git history.</p>
+<h3>Outcome</h3><p>Published on npmjs and GitHub Packages, with its own tests and releases.</p>
+<h3>My role</h3><p>Maintainer. The split was done by AI agents under my direction, as with the rest of Game-Maker: Sandbox Edition.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>Subpath imports instead of one root: <code>drawing</code> (pixels, palettes, fonts, text, compositing, shading), native format writers re-exported from the engine (blocks, characters, monsters, maps, games, palettes, sound, VOC, FLI and more), <code>audio</code> (songs, instruments, resampling with a windowed-sinc filter), <code>simulation</code> for headless play checks and route assertions, and <code>iso9660</code> for disc images with long names. Browser-safe parts are kept apart from the parts that need Node.js.</p>
+<h3>Hard parts</h3><p>Keeping generated games byte-identical while the code moves: the tools must build the same bytes in their own repository as they did inside the app.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>TypeScript</li><li>Node.js</li><li>Image processing</li><li>Audio</li><li>File formats</li><li>npm packages</li><li>Automated testing</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

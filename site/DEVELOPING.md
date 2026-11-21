@@ -1,6 +1,6 @@
 # Developing the portfolio site
 
-How my portfolio site is laid out and built. It lives in `site/` of my profile repository; the profile `README.md` at the root is separate (its project tables come from `projects/*.yaml` through `scripts/update-projects.sh`). The site is served at https://lewismoten.github.io/ from the lewismoten.github.io repository (this same code, pushed there); the profile repository lewismoten keeps the README and its own Pages copy at /lewismoten/.
+How my portfolio site is laid out and built. It lives in `site/` of my profile repository; the profile `README.md` at the root is separate (its project tables come from `projects/*.yaml` through `scripts/update-projects.sh`). The site is served at https://github.lewismoten.com/ (my own hosting; `site.json` `url` is the canonical address) and at https://lewismoten.github.io/ from the lewismoten.github.io repository (this same code, pushed there); the profile repository lewismoten keeps the README and its own Pages copy at /lewismoten/.
 
 The site: a home page, a case study for each project, and short dated project posts that link to my blog for the long write-ups. It is plain static HTML made by one small Node script, with no framework and no dependencies.
 
@@ -9,7 +9,7 @@ The site: a home page, a case study for each project, and short dated project po
 | Path | What it holds |
 | --- | --- |
 | `build.mjs` | The build script. Reads the content, writes `../docs/`. |
-| `site.json` | Name, headline, intro, About text, contact links, resume links, navigation. |
+| `site.json` | Name, headline, intro, About text, contact links, resume links, navigation; `url` (canonical base) and `hosted` (links to projects that moved to my own domain: old URL prefix -> new URL, applied to every page at build time). |
 | `content/projects.json` | One entry per project, in groups. |
 | `content/posts/*.md` | One short post per file. |
 | `img/` | Images. `img/projects/<slug>.jpg` is the project's social preview (640 x 320, the hero and the `og:image`). `<slug>-sm.jpg` is its miniature (320 x 160) for cards. |

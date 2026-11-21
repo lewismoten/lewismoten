@@ -295,7 +295,7 @@
         "other": [
           {
             "label": "Falken-9",
-            "url": "https://lewismoten.github.io/projects/falken-9/"
+            "url": "https://github.lewismoten.com/projects/falken-9/"
           }
         ]
       },
@@ -544,7 +544,7 @@
       ],
       "alt": "Game-Maker: Sandbox Edition. Make 1994 DOS games. No programming.",
       "links": {
-        "demo": "https://lewismoten.github.io/GameMaker-SandboxEdition/",
+        "demo": "https://game-maker.games.lewismoten.com/",
         "source": "https://github.com/lewismoten/GameMaker-SandboxEdition",
         "video": [
           {

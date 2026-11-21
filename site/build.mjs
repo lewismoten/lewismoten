@@ -10,6 +10,9 @@ const OUT = join(ROOT, '..', 'docs');
 const site = JSON.parse(readFileSync(join(ROOT, 'site.json'), 'utf8'));
 const { groups, projects, groupNotes = {}, series = [] } = JSON.parse(readFileSync(join(ROOT, 'content/projects.json'), 'utf8'));
 const BASE = site.url;
+// Links to projects now hosted on my own domain (site.json `hosted`: old URL prefix -> new one).
+const HOSTED = Object.entries(site.hosted || {});
+const rehost = (text) => HOSTED.reduce((s, [from, to]) => s.split(from).join(to), text);
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
@@ -449,10 +452,10 @@ mkdirSync(OUT, { recursive: true });
 for (const p of pages) {
   const dir = join(OUT, p.path);
   mkdirSync(dir, { recursive: true });
-  writeFileSync(join(dir, 'index.html'), relativize(p.html, p.path));
+  writeFileSync(join(dir, 'index.html'), relativize(rehost(p.html), p.path));
 }
-writeFileSync(join(OUT, '404.html'), absolutize(notFound));
-writeFileSync(join(OUT, 'feed.xml'), feed);
+writeFileSync(join(OUT, '404.html'), absolutize(rehost(notFound)));
+writeFileSync(join(OUT, 'feed.xml'), rehost(feed));
 writeFileSync(join(OUT, 'sitemap.xml'), sitemap);
 writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${BASE}/sitemap.xml\n`);
 writeFileSync(join(OUT, '.nojekyll'), '');

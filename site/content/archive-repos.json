@@ -2129,5 +2129,56 @@
   "thumb": true,
   "estimate": false,
   "ndesc": false
+ },
+ {
+  "name": "texture-mapper",
+  "description": "Find Second Life texture repeats and offsets by drawing a box on the texture. Web version, plus the 2010 Windows tool's recovered source",
+  "origin": "2010",
+  "last": "2026",
+  "language": "C#",
+  "topics": [
+   "lsl",
+   "second-life",
+   "texture"
+  ],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/texture-mapper/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "text-to-speech",
+  "description": "Windows Forms text-to-speech example (2010) using System.Speech",
+  "origin": "2010",
+  "last": "2026",
+  "language": "C#",
+  "topics": [
+   "csharp",
+   "text-to-speech",
+   "winforms"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": false,
+  "estimate": false,
+  "ndesc": false
+ },
+ {
+  "name": "lewies-color-picker",
+  "description": "Photoshop-style JavaScript color picker (2004), versions 1.0 and 1.1",
+  "origin": "2004",
+  "last": "2004",
+  "language": "JavaScript",
+  "topics": [
+   "color-picker",
+   "hsb",
+   "javascript"
+  ],
+  "pages": false,
+  "homepage": "",
+  "thumb": false,
+  "estimate": false,
+  "ndesc": false
  }
 ]

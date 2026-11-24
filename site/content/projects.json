@@ -498,6 +498,31 @@
       "results": "A live generator at qr.lewismoten.com and an encoder module you can import on its own. The README names git.lewismoten.com as the canonical repository."
     },
     {
+      "slug": "food-run",
+      "title": "Food Run",
+      "subtitle": "Meal planning on a budget",
+      "group": "Browser tools and visualization",
+      "featured": false,
+      "pitch": "Give it a spending limit, your kitchen equipment and how much cooking you'll do, and it suggests meals, snacks and drinks for the coming days with a shopping list and an estimated total.",
+      "tags": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "JSON",
+        "Local storage"
+      ],
+      "alt": "Food Run: Plan meals. Build a buy list. Stay on budget.",
+      "links": {
+        "demo": "https://lewismoten.github.io/food-run/",
+        "source": "https://github.com/lewismoten/food-run"
+      },
+      "role": "Author. Shared under the MIT license for anyone who wants to customize it or play with the idea.",
+      "problem": "I wanted a quick idea of what to buy at the grocery store: enough meals for the next few days without going over a set amount.",
+      "built": "A small browser app in plain JavaScript with no build step. On the Buy list tab you set the days to cover and a spending limit; each day gets breakfast, lunch, dinner, three snacks and a drink with each meal. Food settings cover equipment (refrigerator, freezer, microwave, hotplate, oven), pantry basics, taste and spice, preparation level from No prep to Skilled, and variety. Starter foods, prices and 184 meals, snacks and drinks are plain JSON that seed the browser, and everything you enter stays on your computer, with JSON backups and USB folder sync.",
+      "hard": "Fitting whole packages to a budget. Groceries come in whole packages, so variety costs money; the planner rounds up to whole packages, covers as many days as the limit allows, and only adds variety that fits without covering fewer days. A meal, snack or drink never repeats on the same day or on back-to-back days, except morning coffee and evening tea.",
+      "results": "Live on GitHub Pages. Starter prices are rough U.S. estimates as of November 2026, and you can enter your own store's prices. It is a budgeting toy, not nutritional or dietary advice."
+    },
+    {
       "slug": "texture-mapper",
       "title": "Texture Mapper",
       "subtitle": "Second Life texture repeats and offsets",

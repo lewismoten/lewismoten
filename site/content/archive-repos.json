@@ -2180,5 +2180,18 @@
   "thumb": false,
   "estimate": false,
   "ndesc": false
+ },
+ {
+  "name": "food-run",
+  "description": "Meal planning on a budget: suggests meals for the coming days and builds a grocery list with an estimated total",
+  "origin": "2026",
+  "last": "2026",
+  "language": "JavaScript",
+  "topics": [],
+  "pages": true,
+  "homepage": "https://lewismoten.github.io/food-run/",
+  "thumb": true,
+  "estimate": false,
+  "ndesc": false
  }
 ]

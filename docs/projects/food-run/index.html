@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Food Run: Meal planning on a budget | Lewis Moten</title>
+<meta name="description" content="Give it a spending limit, your kitchen equipment and how much cooking you'll do, and it suggests meals, snacks and drinks for the coming days with a shopping list and an estimated total.">
+<link rel="canonical" href="https://github.lewismoten.com/projects/food-run/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Food Run: Meal planning on a budget | Lewis Moten">
+<meta property="og:description" content="Give it a spending limit, your kitchen equipment and how much cooking you'll do, and it suggests meals, snacks and drinks for the coming days with a shopping list and an estimated total.">
+<meta property="og:url" content="https://github.lewismoten.com/projects/food-run/">
+<meta property="og:image" content="https://github.lewismoten.com/img/projects/food-run.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Food Run: Meal planning on a budget | Lewis Moten">
+<meta name="twitter:description" content="Give it a spending limit, your kitchen equipment and how much cooking you'll do, and it suggests meals, snacks and drinks for the coming days with a shopping list and an estimated total.">
+<meta name="twitter:image" content="https://github.lewismoten.com/img/projects/food-run.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../archive/index.html">Archive</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme" hidden>Theme</button>
+</div>
+</header>
+<main id="main" class="wrap" tabindex="-1">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Browser tools and visualization</nav>
+<article class="project">
+<h1>Food Run</h1>
+<p class="sub">Meal planning on a budget</p>
+<img class="hero-img" src="../../img/projects/food-run.jpg" alt="Food Run: Plan meals. Build a buy list. Stay on budget." width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">Give it a spending limit, your kitchen equipment and how much cooking you'll do, and it suggests meals, snacks and drinks for the coming days with a shopping list and an estimated total.</p>
+<p class="links"><a class="btn" href="https://lewismoten.github.io/food-run/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/food-run">Source</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>I wanted a quick idea of what to buy at the grocery store: enough meals for the next few days without going over a set amount.</p>
+<h3>Outcome</h3><p>Live on GitHub Pages. Starter prices are rough U.S. estimates as of November 2026, and you can enter your own store's prices. It is a budgeting toy, not nutritional or dietary advice.</p>
+<h3>My role</h3><p>Author. Shared under the MIT license for anyone who wants to customize it or play with the idea.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A small browser app in plain JavaScript with no build step. On the Buy list tab you set the days to cover and a spending limit; each day gets breakfast, lunch, dinner, three snacks and a drink with each meal. Food settings cover equipment (refrigerator, freezer, microwave, hotplate, oven), pantry basics, taste and spice, preparation level from No prep to Skilled, and variety. Starter foods, prices and 184 meals, snacks and drinks are plain JSON that seed the browser, and everything you enter stays on your computer, with JSON backups and USB folder sync.</p>
+<h3>Hard parts</h3><p>Fitting whole packages to a budget. Groceries come in whole packages, so variety costs money; the planner rounds up to whole packages, covers as many days as the limit allows, and only adds variety that fits without covering fewer days. A meal, snack or drink never repeats on the same day or on back-to-back days, except morning coffee and evening tea.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>JavaScript</li><li>HTML</li><li>CSS</li><li>JSON</li><li>Local storage</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

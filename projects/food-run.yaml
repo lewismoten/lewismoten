@@ -1,0 +1,13 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Food Run
+title: "Food Run | Meal planning on a budget"
+image: food-run.jpg
+description: >-
+  Give it a spending limit, your kitchen equipment and how much cooking you'll do, and it
+  suggests meals, snacks and drinks for the coming days, then builds a shopping list with
+  an estimated total. Plain JavaScript with no build step; your data stays in your browser.
+links:
+  - label: Live demo
+    url: https://lewismoten.github.io/food-run/
+  - label: Source
+    url: https://github.com/lewismoten/food-run

@@ -1,1255 +1,1255 @@
 {
- "groups": [
-  "Applied AI and model engineering",
-  "Embedded systems and hardware",
-  "Browser tools and visualization",
-  "Second Life",
-  "Publishing and interactive experiences",
-  "Media preservation and recovery",
-  "8-bit retro Commodore 64 projects",
-  "Government Transparency",
-  "Earlier open source"
- ],
- "projects": [
-  {
-   "slug": "local-agent-lab",
-   "title": "Local Agent Lab",
-   "subtitle": "Portable AI workspace",
-   "group": "Applied AI and model engineering",
-   "featured": true,
-   "pitch": "A private AI workspace for chat, code, images, and audio that runs on local models, even offline after setup and model downloads, so conversations never have to leave your device.",
-   "tags": [
-    "React",
-    "TypeScript",
-    "Vite",
-    "Privacy",
-    "Local AI",
-    "Ollama",
-    "PWA"
-   ],
-   "alt": "Local Agent Lab: Local Models. Portable Workspaces.",
-   "links": {
-    "demo": "https://lewismoten.github.io/local-agent-lab/",
-    "source": "https://github.com/lewismoten/local-agent-lab"
-   },
-   "role": "Author and maintainer.",
-   "problem": "Most AI tools send every conversation to a frontier model in someone else's data center. I wanted privacy without depending on those models: a workspace that keeps working without an internet connection, keeps conversations on the device, and that someone could carry on a USB drive, even to a shared or public library computer, without buying a computer or subscribing to an AI service.",
-   "built": "A browser workspace built with React, TypeScript, and Vite for chat, coding, research, and scheduled agents. It runs small models in the browser or on a local web server through Ollama, so with local models it works offline after setup with no data leaving the device; API profiles are optional. Projects and conversations live in a folder or on a removable drive, with browser storage as a fallback. It also covers browser image generation, depth maps, SVG tracing, text to speech, voice profiles, and transcription, and it installs as a web app that can reload offline.",
-   "hard": "Browsers differ in what they allow. A folder workspace needs desktop Chrome or Edge, model capability varies by device, and scheduled agents only run while the app tab is open. Removing a drive safely needed an **Eject workspace** step that stops new work, waits for active file operations, and unloads browser models. Nothing downloads automatically; optional engines and models are fetched on request and can resume.",
-   "results": "A live demo you can try today. The README keeps an honest feature table with each current limit beside it: image editing, face animation, and production-quality mesh reconstruction are still open work, and there is no verified generative image-to-video."
-  },
-  {
-   "slug": "ghostjack",
-   "title": "Ghost Jack",
-   "subtitle": "Eyes, ears and a mouth for AI agents",
-   "group": "Applied AI and model engineering",
-   "featured": true,
-   "pitch": "A local bridge and cyberpunk control deck that gives people and AI agents eyes, ears and a mouth in meatspace through a $2 thrift-store pan/tilt camera, with no cloud app.",
-   "tags": [
-    "Node.js",
-    "Reverse engineering",
-    "RTSP",
-    "ffmpeg",
-    "three.js",
-    "Web Audio",
-    "AI agents"
-   ],
-   "alt": "Ghost Jack: One glass eye. A dozen voices. A neon wireframe pan/tilt camera.",
-   "links": {
-    "demo": "https://lewismoten.github.io/ghostjack/",
-    "source": "https://github.com/lewismoten/ghostjack"
-   },
-   "problem": "I wanted AI agents to be able to look at my workbench, listen and talk to me, without a cloud service watching my room. A $2 thrift-store camera seemed perfect, but its maker says it only works through its phone app: no local video, no RTSP.",
-   "built": "A Node service on my Mac that signs in to the camera by driving the camera's own web page in a headless browser, then talks to its private API: 1080p snapshots, a live RTSP stream (H.264 and AAC) repackaged so browsers can play it, pan and tilt, night vision, image settings and the clock, plus speech through the camera's speaker. A control deck (plain HTML, CSS and JavaScript with three.js) puts the controls on the video, with a 3D model of the camera to aim with, recording, and Glassmouth, a dry night-shift character voice. It runs behind an access token, on this computer only unless shared over Tailscale.",
-   "hard": "Everything the maker said wasn't possible. The talk protocol lived in long-gone browser plugins; the vendor's leftover 2013 Flash engine showed it publishes the microphone over RTMP, and only AAC at 16 kHz plays. Each talk address works once, and an unused one jams the speaker until a power cycle. The speaker is alarm-loud, wakes on sound and clips first syllables, so the bridge caps levels and sends a wake pulse first. Pan and tilt moves queue and can't be stopped, and the camera never reports where it points.",
-   "results": "A working 0.1 release: see, listen, aim, night vision, speak and record, all local, with a public demo of the deck and a dated log of how each piece was found.",
-   "role": "Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5); Glassmouth's character sketch came from a conversation with GPT-6.1 Sol.",
-   "made": "Discovery started on an isolated cable: tcpdump showed the camera's built-in address and a discovery broadcast, then its own web app's JavaScript showed the API. The character, the cyberpunk wording and the one-screen layout came from my own testing at the desk."
-  },
-  {
-   "slug": "sandbox-kernel",
-   "title": "sandbox-kernel",
-   "subtitle": "A small bare-metal kernel for your own OS",
-   "group": "Embedded systems and hardware",
-   "featured": true,
-   "pitch": "A small, reusable bare-metal kernel that starts on a Raspberry Pi Zero W and loads your own operating system as one user-mode program from the SD card.",
-   "tags": [
-    "C",
-    "ARM",
-    "Bare metal",
-    "Raspberry Pi Zero W",
-    "E-ink",
-    "FAT32",
-    "USB",
-    "JavaScript"
-   ],
-   "alt": "sandbox-kernel: A small bare-metal kernel for your own OS, with a pixel-art chip badge beside a block of colored squares.",
-   "links": {
-    "demo": "https://lewismoten.github.io/sandbox-kernel/",
-    "source": "https://github.com/lewismoten/sandbox-kernel",
-    "other": [
-     {
-      "label": "The guide",
-      "url": "https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md"
-     },
-     {
-      "label": "Game-Maker OS",
-      "url": "https://github.com/lewismoten/gamemaker-os"
-     }
-    ]
-   },
-   "problem": "I want anyone to be able to make their own operating system without first writing the part that talks to the hardware. That should include a JavaScript one, so it needs to be very easy to build a custom OS on top. I picked the Raspberry Pi Zero W as the lowest common denominator. The kernel isn't meant to stay Raspberry Pi-only.",
-   "built": "A kernel in C that runs bare metal on the Pi Zero W. It keeps two kernel slots, A and B, and updates into the idle one with a trial boot that has to be confirmed, so a bad update falls back. The operating system is one user-mode ELF file on the SD card. If it fails, the kernel recovers to a DIAG program and a recovery console. Programs get a POSIX-style ABI: files, framebuffer, input, clock, cache and saves in `/OS/SAVES`. An e-ink panel shows status, and USB development commands send files and updates from a computer. [Game-Maker OS](https://github.com/lewismoten/gamemaker-os) is the first OS built on it.",
-   "hard": "The kernel has to protect itself from the program it loads, so a broken OS can't take the board down with it. Updates have to survive a failed boot. Work in progress: game music over HDMI, a USB keyboard through OTG, and HDMI-CEC.",
-   "results": "M0 is qualified on the Zero W v1.1 and M1 is in progress. HDMI sound is in testing: a test tone and game music have played on a board over HDMI. An e-ink API lets an OS show its own title and page, and the kernel reads the OTG ID pin at boot and shows OTG on the e-ink panel, with keyboard input next. [The guide](https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md) covers boot, what a program may do and developing over USB, and a Hello World example gives a first program to start from.",
-   "role": "Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art was made with ChatGPT GPT-6.1 Sol from my directions.",
-   "made": "The kernel, its tests and its documentation were written with Claude Code and reviewed by an agent on my Linux machine. The social preview image was made with ChatGPT GPT-6.1 Sol from my directions."
-  },
-  {
-   "slug": "gamemaker-os",
-   "title": "Game-Maker OS",
-   "subtitle": "DOS Game-Maker games from the SD card, on a Pi Zero W",
-   "group": "Embedded systems and hardware",
-   "featured": true,
-   "pitch": "An operating system that turns a Raspberry Pi Zero W into a Game-Maker machine: it boots to a library of games on a TV and plays their original DOS files straight from the SD card.",
-   "tags": [
-    "C",
-    "ARM",
-    "Raspberry Pi Zero W",
-    "sandbox-kernel",
-    "FAT32",
-    "E-ink",
-    "JavaScript (experimental)"
-   ],
-   "alt": "Game-Maker OS: Play DOS Game-Maker games straight from the SD card. A pixel-art castle badge beside a screenshot of the game library.",
-   "links": {
-    "demo": "https://lewismoten.github.io/gamemaker-os/",
-    "source": "https://github.com/lewismoten/gamemaker-os",
-    "other": [
-     {
-      "label": "sandbox-kernel",
-      "url": "https://github.com/lewismoten/sandbox-kernel"
-     }
-    ]
-   },
-   "problem": "I wanted my Game-Maker games to run on their own small machine you plug into a TV, with no PC, browser or desktop in between. Game-Maker: Sandbox Edition already plays them in a browser, so the next step was an operating system whose only job is the games.",
-   "built": "A program in C that [sandbox-kernel](https://github.com/lewismoten/sandbox-kernel) loads from the SD card on a Raspberry Pi Zero W. It shows a castle boot splash, then a game library on HDMI with category tabs, cards with each game's title screen read from its own files, and a details page. Play runs the game from its original DOS files with the same play core as the Pocket Player in Game-Maker: Sandbox Edition, shared rather than copied by hand. Leave a game on its details page for 3 seconds and its demo plays in the picture. Saves and high scores live on the card, with a Top Ten like PLAYGAME's. A separate experimental `JS.ELF` runs small JavaScript apps with QuickJS-ng; it is a spike, not the main program.",
-   "hard": "The Zero W has little memory and no operating system underneath, so the library, the game player and the card reader all have to be small and careful. I kept PLAYGAME's behavior, so a game draws the same frames tick for tick as the host tests do. The e-ink status screens are drawn but not wired in yet, and sound is still being worked on.",
-   "results": "On a Pi Zero W the library lists games, plays them from their DOS files with the arrow keys, Space and Enter, and keeps saves and high scores. Roll the Dice and five more Starters draw the same frames as the host tests. Input comes from the development computer over USB for now, and the e-ink status, a gamepad and a TV remote are still ahead.",
-   "role": "Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art, including the boot art and social preview, was made with ChatGPT GPT-6.1 Sol from my directions, and Game-Maker OS's background tune was composed in code by Claude.",
-   "made": "The program, its tests and its documentation were written with Claude Code and reviewed by an agent on my Linux machine. The boot art and social preview came from ChatGPT GPT-6.1 Sol and my directions. The library's background tune was composed in code by Claude."
-  },
-  {
-   "slug": "gamemaker-pocket",
-   "title": "Game-Maker Pocket",
-   "subtitle": "DOS games in your pocket on a cheap ESP32 touch screen",
-   "group": "Embedded systems and hardware",
-   "featured": true,
-   "pitch": "A pocket player for Game-Maker: Sandbox Edition games on cheap ESP32 touch-screen boards, with a web flasher that installs it from the browser.",
-   "tags": [
-    "C++",
-    "ESP32",
-    "PlatformIO",
-    "LittleFS",
-    "microSD",
-    "ESP Web Tools",
-    "Python"
-   ],
-   "alt": "Game-Maker Pocket: DOS games in your pocket. A castle badge beside a 3.5-inch ESP32 touch board showing the game library.",
-   "links": {
-    "demo": "https://lewismoten.github.io/gamemaker-pocket/",
-    "source": "https://github.com/lewismoten/gamemaker-pocket",
-    "other": [
-     {
-      "label": "Game-Maker OS",
-      "url": "https://github.com/lewismoten/gamemaker-os"
-     }
-    ]
-   },
-   "problem": "I wanted to carry my Game-Maker games in a pocket-sized player. The ESP32 touch-screen boards sold cheaply online have a screen and a microSD slot, so the question was how much of a 1990s DOS game could fit on one.",
-   "built": "Firmware in C++ for two boards, the ESP32-2432S028 (2.8 inch) and the ESP32-3248S035 (3.5 inch). It plays the Starter lessons from the games' real DOS files, packed small, and a library from a microSD card with categories, search and a library browser. It has touch controls for fingers and a stylus, a settings screen, a status strip and the PC speaker sounds. A first-start setup walks through each display's mirror, orientation, colors and touch calibration. The packs are made by Game-Maker: Sandbox Edition. A GitHub Pages install page, using ESP Web Tools, lets a visitor pick a board and flash it from Chrome or Edge.",
-   "hard": "The play rules had to be ported to a board with 4 MB of flash while still matching the web engine, which follows PLAYGAME. The 2.8 inch boards also come in several display revisions, so the screen can be mirrored, rotated or the wrong color until the setup is done. Sound is the PC speaker only for now, with no Sound Blaster clips or music yet.",
-   "results": "Two boards run it from a flashed image, with the Starters in the board's own flash and more games on a microSD card in a /pocket folder. The web flasher offers a Player-only, a Starter-courses or a Player-plus-starter-games install per board, and the host tests cover the play loop, cards and controls on the Mac. It pairs with [Game-Maker OS](https://github.com/lewismoten/gamemaker-os) for the Raspberry Pi.",
-   "role": "Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art, including the social preview and favicon, was made with ChatGPT GPT-6.1 Sol from my directions.",
-   "made": "The firmware, tests and install page were written with Claude Code and reviewed by an agent on my Linux machine. The social preview, favicon and hand art came from ChatGPT and my directions, and Claude drew the small category icons in code."
-  },
-  {
-   "slug": "pocket-fleet",
-   "title": "Pocket Fleet",
-   "subtitle": "A co-op starship bridge simulator for browsers, CYDs and Cardputers",
-   "group": "Embedded systems and hardware",
-   "featured": false,
-   "pitch": "A starship bridge simulator for one player or a room full of people, where each person crews a station from a browser, a Cheap Yellow Display or an M5 Cardputer ADV over local Wi-Fi.",
-   "tags": [
-    "JavaScript",
-    "Node.js",
-    "C++",
-    "ESP32",
-    "PlatformIO",
-    "Web Serial",
-    "ESP Web Tools"
-   ],
-   "alt": "Pocket Fleet: a co-op starship bridge simulator. A CYD showing the helm station, a browser forward view of a planet, and an M5 Cardputer ADV.",
-   "links": {
-    "demo": "https://lewismoten.github.io/pocket-fleet/",
-    "source": "https://github.com/lewismoten/pocket-fleet"
-   },
-   "problem": "I wanted a bridge game for a room of people with whatever screens they have: a laptop hosts the fleet, a projector shows the forward view, and everyone else takes a station on a phone browser or a cheap ESP32 board.",
-   "built": "A browser app and a small Node host that uses only the standard library, with shared game rules for both. The host keeps fleet state on the local Wi-Fi; players find fleets, pick a ship and a station (Helm, Weapons, Engineering, Communications) and can lock a fleet or ship with a code. Firmware in C++ runs the same stations on the 2.8 and 3.5 inch CYDs and the M5 Cardputer ADV; a CYD can scan for short 🚀 hotspot names and board a ship. Players start in personal quarters with an animated cadet they can customize, and keep a service record. A flash page installs the firmware from Chrome or Edge with Web Serial.",
-   "hard": "The CYD has a 320 x 240 touch screen, so each station's controls had to fit pages of large buttons. Browser pages cannot scan Wi-Fi or read signal strength, so only the boards list nearby hotspots. The local connection is unencrypted, so the fleet lock is a casual room gate, not account security.",
-   "results": "It plays solo in a browser, including the [GitHub Pages demo](https://lewismoten.github.io/pocket-fleet/), and hosts a room from one computer. The firmware builds for the 2.8 inch CYD with about 50 KB of static RAM and 1.02 MB of app flash; touch calibration and the hotspot gateway still need testing on the boards. The game rules have Node tests.",
-   "role": "Designer and director. Built with OpenAI Codex (GPT-6 Sol) from my directions over October 2 and 3, 2026. The social preview was made with ChatGPT.",
-   "made": "The web app, Node host, firmware and tests were written with OpenAI Codex (GPT-6 Sol) in six sessions. The cadet art is an AI-generated asset pack, rebuilt into indexed frames, and the social preview came from ChatGPT."
-  },
-  {
-   "slug": "crystal-9",
-   "title": "Crystal-9",
-   "subtitle": "Tiny MoE for 8-bit hardware",
-   "group": "Applied AI and model engineering",
-   "featured": true,
-   "pitch": "A compact, validated mixture-of-experts tic-tac-toe policy model: a 46,299-byte packed INT4 artifact with zero policy misses across 294,778 legal histories.",
-   "tags": [
-    "PyTorch",
-    "MoE",
-    "INT4",
-    "Model validation",
-    "Python"
-   ],
-   "alt": "Crystal-9: Tiny model. Nine possibilities",
-   "links": {
-    "source": "https://github.com/lewismoten/crystal-9",
-    "other": [
-     {
-      "label": "Hugging Face",
-      "url": "https://huggingface.co/lewismoten/crystal-9"
-     }
-    ]
-   },
-   "role": "Designer, director, maintainer, and publisher. Code and documentation were developed with assistance from GPT-5.6-terra Med, accessed through Hermes with Honcho for project memory.",
-   "problem": "A model that has to run on tight memory budgets can't borrow a general vocabulary or a standard runtime. The goal was the smallest truthful local MoE tic-tac-toe policy model, built clean-room.",
-   "built": "A separately trained attention and mixture-of-experts policy with its own 13-token vocabulary and an eight-move history: token and position embeddings, one causal attention layer with 8 heads at width 32, a learned router, and 9 experts (each 32 to 32 to 32) with top-2 selection, 24,726 parameters in all. INT4 and INT3 versions run in independent packed runtimes, and an INT4 artifact was released for a custom local runtime.",
-   "hard": "Precision is a policy, not a promise. FP32 is the baseline; F16, Q6_K, Q4_K_M, Q3_K, Q2_K, and experimental 1-bit-family formats are only candidates. A format is publishable after the exact target runtime passes the complete legal-policy and invalid-input gates. The custom vocabulary is separate from the earlier Ollama-compatible one, so Crystal-9 has to prove token-ID parity before claiming Ollama compatibility. For a standard llama.cpp or Ollama model I point to Palace-9.",
-   "results": "The released artifact is 46,299 bytes, with zero policy misses across 294,778 legal histories. A compact adaptation powered the first version of Crystal Palace 9 on the Commodore 64. Releases are packaged with checksums when a version tag is pushed.",
-   "made": "Crystal-9 made the network smaller and gave each layer 32 nodes, to use tensor operations that compute 32 values at the same time. In the end that was more than the task needed, a lesson that went into Falken-9. The name, like Palace-9's, comes from Crystal Palace, the NORAD call sign in *WarGames*.\n\nTraining used PyTorch with AdamW on an RTX 3080 Ti: 100 epochs over all 294,778 move histories reached zero misses at full precision. Quantization went in stages, part of the network at a time, with quantization-aware training at each step; a trial that ended with even one miss was rejected. INT2 was explored as research, ending in a 20,737-byte copy that still had zero misses but wasn't released. A tensor inspector drew every weight as an image, and tests compared the Python and JavaScript runtimes."
-  },
-  {
-   "slug": "falken-9",
-   "title": "Falken-9",
-   "subtitle": "A neural network designed for the Commodore 64",
-   "group": "Applied AI and model engineering",
-   "featured": true,
-   "pitch": "A mixture-of-experts tic-tac-toe model trained for the Commodore 64 from the start: a 5,195-byte model that stays in RAM and now lets Crystal Palace 9 play a complete AI-vs-AI game in just over a minute in an emulator.",
-   "tags": [
-    "PyTorch",
-    "MoE",
-    "6502 assembly",
-    "Commodore 64",
-    "Integer inference",
-    "Interpretability",
-    "ONNX"
-   ],
-   "alt": "Crystal Palace 9 title screen on the Commodore 64: Number of players? 1 player vs AI, 2 player vs player, 0 AI vs AI.",
-   "links": {
-    "demo": "https://lewismoten.github.io/falken-9/",
-    "source": "https://github.com/lewismoten/falken-9",
-    "other": [
-     {
-      "label": "Hugging Face",
-      "url": "https://huggingface.co/lewismoten/falken-9"
-     },
-     {
-      "label": "Research report",
-      "url": "https://github.com/lewismoten/falken-9/blob/main/report.md"
-     }
-    ]
-   },
-   "problem": "Crystal-9 proved a learned network could run on a C64, but its weights had to be paged from disk and a self-play game took roughly 20 minutes. I wanted a network designed around the C64's arithmetic, memory and responsiveness, small enough to verify and investigate exhaustively, without hiding a move table or minimax behind it.",
-   "built": "Falken-9 searches model width, expert count and numerical precision against the whole deployment cost on the C64. The accepted model has nine board-square tokens, width 8, four learned experts with top-2 routing, real full-board attention and exact integer execution in 6502 assembly. Symmetry reduces the learned domain to 627 canonical boards; a fixed wrapper restores the original board, masks occupied squares and applies a documented tie order. The whole model stays in RAM, and every AI move runs it.",
-   "hard": "Keeping it honest. The network predicts the complete set of optimal moves, because mapping one canonical move back would break tie behavior. Offline minimax supplies labels and checks but is never a gameplay fallback, and exact logits, packed arithmetic, chosen moves and whole games each have their own evidence gate. Interpreting the network was its own project: the research report probes it with interventions and counterexamples, and found context-dependent effects rather than a tidy fork expert or block neuron.",
-   "results": "A 5,195-byte model packet with all 627 canonical boards passing assembled numerical checks. Crystal Palace 9, now powered by Falken-9, plays a complete AI-vs-AI game in just over a minute in an emulator, down from about 20 minutes with the earlier model. The project ships a ready-to-run PRG and D64, an exact-integer ONNX graph for Netron, a tensor-workflow chart and a research report with annotated figures. Tested in emulators only so far.",
-   "role": "Designer, director and maintainer. AI agents (GPT-6.1 Sol through Hermes Agent) ran the training, integer conversion and probing work I directed; PyTorch did the heavy lifting.",
-   "made": "Built October 31 to November 1, 2026. Hermes Agent delegated the training, integer conversion and probing to GPT-6.1 Sol workers (openai-codex provider). Training used Python and PyTorch with AdamW: early experiments on an RTX 3080 Ti compared float, binary and ternary candidates, and the compact models trained on a single CPU thread with binary cross-entropy over the complete set of optimal moves. Falken-9 was trained from scratch, not fine-tuned from Crystal-9, and the 5,195-byte integer packet came from direct conversion with no extra training.\n\nProbing ran on the CPU against frozen weights, not by another model judging answers: linear readouts with held-out splits and shuffled-label controls, ablations, dose-response tests, activation patching, paired lesions, and attention, router and gate interventions. Integer forwards were checked against an independent arbitrary-integer oracle across 627 canonical positions, 4,520 boards and 294,778 histories. C64 execution was checked with 64tass, py65 and VICE; inspection used ONNX Runtime, Netron and Pillow, with pytest for the tests."
-  },
-  {
-   "slug": "crystal-palace",
-   "title": "Crystal Palace 9",
-   "subtitle": "AI on 8-bit hardware",
-   "group": "Applied AI and model engineering",
-   "featured": false,
-   "pitch": "A Commodore 64 tic-tac-toe game whose AI moves come from a real neural network running in 6502 assembly; now powered by Falken-9, a complete AI-vs-AI game takes just over a minute in an emulator.",
-   "tags": [
-    "6502 assembly",
-    "Commodore 64",
-    "Python",
-    "PyTorch",
-    "Model packaging"
-   ],
-   "alt": "Crystal Palace 9",
-   "links": {
-    "source": "https://github.com/lewismoten/crystal-palace",
-    "video": [
-     {
-      "label": "Video",
-      "url": "https://www.youtube.com/watch?v=UJME73NxyfA"
-     }
-    ],
-    "other": [
-     {
-      "label": "Falken-9",
-      "url": "https://github.lewismoten.com/projects/falken-9/"
-     }
-    ]
-   },
-   "role": "Designer, director and maintainer. AI coding assistants: GPT-5.6-terra, then GPT-6.1 Sol from mid-October, through Hermes.",
-   "problem": "Could the original Crystal-9 neural-network weights run on a Commodore 64 from a 1541 disk? The repository, called Crystal Palace 64 (CP64), treats this as a feasibility project, with no substitute move table, hand-written policy, distilled model, or requantized weights.",
-   "built": "A command-room interface and presentation assets drawn for the machine's 8 x 8 multicolor graphics, a disk-backed INFO archive, a playable human board, and 6502 assembly with an isolated module that materializes the original tokens. In its first version, Python scripts exported 48 pageable model packets from the verified Crystal-9 release and package everything into a D64 disk image. A static GitHub Pages asset editor supports the artwork.",
-   "hard": "Memory and disk. Crystal-9 didn't fit in the C64's memory, so in the first version its original INT4 weights traveled as 48 disk packets, loaded during each move and run in fixed-point 6502 math. Testing in VICE with the real C64 and 1541 ROMs found bugs a simpler emulator hid: a disk load that relocated to the wrong address, and an eight-bit memory offset that wrapped later history slots onto earlier ones. Later releases grouped tensors to cut disk loads per move from many to 12.",
-   "results": "The first version ran the original Crystal-9 weights on the C64: 436 passing tests, and 13 complete output vectors that matched byte for byte between Py65 and real-ROM VICE, over full human-against-model and AI-vs-AI games. It proved the idea but took roughly 20 minutes for a self-play game. The game now runs Falken-9, a model designed for the C64, and a complete AI-vs-AI game takes just over a minute in an emulator, with progress feedback, console animation and sound during each move's thinking.",
-   "made": "I chose the Commodore 64 because I enjoy the 6502 processor and many emulators exist for it. I often watch The 8-Bit Guy's videos about the chip, and I built Ben Eater's 6502 computer, which still sits on a breadboard in my basement ([my 6502 practice code](https://github.com/lewismoten/6502-program-1) has its files). Most of the work on the first version went into loading each layer from disk, because Crystal-9 was too big for the C64's memory.\n\nThe name joins the two models, Palace-9 and Crystal-9, both named for Crystal Palace, the NORAD call sign in *WarGames* where an AI plays against itself. Like the Palace-9 website, the game has a Cold War theme: the computer plays itself over maps of the USA and USSR. Lessons from it went into Falken-9, which now powers the game."
-  },
-  {
-   "slug": "palace-9",
-   "title": "Palace-9",
-   "subtitle": "Local model inspection",
-   "group": "Applied AI and model engineering",
-   "featured": false,
-   "pitch": "A playable tic-tac-toe lab that pairs a deterministic controller with a compact MoE model trained from scratch, and a browser inspector that reads the checkpoint locally.",
-   "tags": [
-    "Qwen2-MoE",
-    "Ollama",
-    "llama.cpp",
-    "JavaScript",
-    "Model visualization"
-   ],
-   "alt": "Palace-9: Tic-tac-toe & model inspection",
-   "links": {
-    "demo": "https://lewismoten.github.io/palace-9/",
-    "source": "https://github.com/lewismoten/palace-9",
-    "video": [
-     {
-      "label": "Video",
-      "url": "https://www.youtube.com/watch?v=J7bgpmks_KM"
-     }
-    ],
-    "other": [
-     {
-      "label": "Ollama",
-      "url": "https://ollama.com/lewismoten/palace-9"
-     },
-     {
-      "label": "Hugging Face",
-      "url": "https://huggingface.co/lewismoten/palace-9"
-     },
-     {
-      "label": "Dataset",
-      "url": "https://huggingface.co/datasets/lewismoten/tic-tac-toe"
-     }
-    ]
-   },
-   "role": "Designer, director, maintainer and publisher. AI coding assistant: GPT-5.6-terra (medium reasoning) through Hermes, with Honcho for project memory.",
-   "problem": "I wanted to look inside a small model, not only run it. That meant keeping two things separate: a perfect-play controller for the game, and a trained model that reads raw move histories.",
-   "built": "A 3x3 simulation with 0-, 1-, and 2-player modes. A deterministic minimax policy in browser JavaScript is the perfect-play oracle. A separate compact causal model uses the Qwen2-MoE architecture, so it works with Ollama and llama.cpp without a custom fork. The browser decodes the packed FP32, F16, Q6_K, or Q4_K_M release artifact locally and computes a forward trace from its weights.",
-   "hard": "Keeping real and fictional parts apart. The site never calls Ollama; its board moves come from the local oracle, and the visualizer is a local trace. The map, DEFCON strip, trajectories, and cipher are labeled visual fiction. My September post on the project describes the visualization, training, and tokenizer problems I hit, and how they led to the smaller Crystal-9.",
-   "results": "A live demo, a published Ollama model, and a Hugging Face release in F16, Q6_K and Q4_K_M GGUF. Each GGUF file had zero errors in llama.cpp on 294,777 valid and 683,226 generated invalid move histories. A routing analysis across every history showed which experts favored which kinds of positions, as a description rather than a causal test.",
-   "made": "Palace-9 started as a model trained in the web browser, ten years after my first [neural network experiment](https://github.com/lewismoten/artificial-neural-network) taught 200 small networks tic-tac-toe; then I moved training to PyTorch on my GPU. Along the way I learned to publish models and make them run on Ollama. With no control over the token set, the first model was very large, so I worked it down to the smallest vocabulary possible. The architecture follows Qwen2-MoE only so that Ollama knows how to run its mixture of experts; it is not a Qwen model.\n\nThe website has a Cold War theme, after Crystal Palace, the NORAD call sign in *WarGames* where an AI plays against itself. The computer plays itself over maps of the USA and USSR, missiles launch with each player's mark and speed up as the game goes on, and a launch code is worked out digit by digit, but the last digit never locks in.\n\nThe browser model went through three designs: a dense network under an illustrative expert diagram, then a real trainable soft-routed mixture of experts, then the separately trained Qwen2-MoE model that became the release. Training ran in JavaScript workers, then custom CUDA compiled with nvcc, then PyTorch with AdamW on an RTX 3080 Ti. The release model has 648,528 parameters; one last history error was fixed with 24 focused training updates. Conversion used llama.cpp's GGUF tools, and Q8_0 wasn't possible because the layer widths don't fit its 32-value blocks, so Q6_K took its place."
-  },
-  {
-   "slug": "zogograph-client",
-   "title": "Zogograph Client",
-   "subtitle": "AI-assisted server monitoring",
-   "group": "Applied AI and model engineering",
-   "featured": true,
-   "pitch": "PHP and SQLite collectors with a JavaScript dashboard make server telemetry, alerts, and diagnostics readable, and an AI assistant calls diagnostic tools and tracks what an investigation costs.",
-   "tags": [
-    "PHP",
-    "SQLite",
-    "JavaScript",
-    "WHM/cPanel",
-    "Tool calling",
-    "Linux hosting"
-   ],
-   "alt": "Zogograph dashboard social preview",
-   "links": {
-    "source": "https://github.com/lewismoten/zogograph-client",
-    "video": [
-     {
-      "label": "Videos",
-      "url": "https://www.youtube.com/watch?v=OKndBMPknmQ&list=PLaLeerEZeFMs"
-     }
-    ]
-   },
-   "role": "Author and maintainer.",
-   "problem": "A monitor you have to remember to look at tells you afterwards. Zogograph answers three questions: what is happening now, what is growing, and where to go to fix it. It also emails when something jumps, and it can tell you before a home directory fills up.",
-   "built": "A PHP account collector run by cron, a host collector run by root from WHM's crontab (it sees what CageFS hides from the account), and a static dashboard that talks to a single API file. Readings go into SQLite databases that are never served. A health page depends on nothing, so it works when the rest does not. A setup wizard runs in a browser or at a prompt. An AI assistant calls diagnostic tools and tracks the cost of an investigation.",
-   "hard": "The account collector and the host collector see different things, so they run separately. Collectors are command-line only, with `.htaccess` denying them over HTTP, and the README documents migration safety.",
-   "results": "The source release has no dependencies and ships a CycloneDX software bill of materials, third-party notices, and a security policy. It is source-available under FSL-1.1-Apache-2.0, and each release becomes Apache-2.0 two years after it ships."
-  },
-  {
-   "slug": "data-over-audio",
-   "title": "Data Over Audio",
-   "subtitle": "Web Audio API",
-   "group": "Browser tools and visualization",
-   "featured": true,
-   "pitch": "Sends text and binary files through sound, with error detection, error correction, and requests to resend data.",
-   "tags": [
-    "Web Audio API",
-    "JavaScript",
-    "MFSK",
-    "Error correction",
-    "Signal processing"
-   ],
-   "alt": "Data Over Audio",
-   "links": {
-    "demo": "https://lewismoten.github.io/data-over-audio/",
-    "source": "https://github.com/lewismoten/data-over-audio",
-    "video": [
-     {
-      "label": "Videos",
-      "url": "https://www.youtube.com/watch?v=_6qxB3gKN_E&list=PLEyaach61fdU-OPcb5Aqgah2l6TTsaLia"
-     }
-    ]
-   },
-   "role": "Author and maintainer.",
-   "problem": "The experiment's goal was to transfer text or a binary file using sound waves, between two browsers or on one device.",
-   "built": "Binary data is modulated with many oscillators using multi-frequency shift keying (MFSK), and the audio analyzer demodulates it again. Data is split into packets with CRC checks so failed packets can be discarded, Hamming codes so the receiver can try to repair a packet, and interleaving. An Automatic Repeat Request mode asks again for packets that failed, and the receiver lists packet errors.",
-   "hard": "I found the first packet often failed, and it carries the length header, so there is an option to send it twice. Sender and receiver must share the same frequencies, FSK pairs, packetization, and sampling period.",
-   "results": "Using only telephone frequencies (300 Hz to 3.4 kHz), one laptop alone reached just under 1 Kbps. Between a laptop and a mobile phone it was much slower: 138 bps for telephone frequencies and 538 bps for human hearing frequencies, and about half of that effective once error correction and packet headers are counted. It is a pure JavaScript app, with Vite only for local running."
-  },
-  {
-   "slug": "dial-to-eleven",
-   "title": "Dial to Eleven",
-   "subtitle": "Browser audio amp with an actual eleven",
-   "group": "Browser tools and visualization",
-   "featured": true,
-   "pitch": "A browser-only amp for your own audio files, with a rotary dial from silence to eleven and a stage show that follows the music.",
-   "tags": [
-    "JavaScript",
-    "Web Audio API",
-    "Canvas",
-    "Audio effects",
-    "Accessibility"
-   ],
-   "alt": "Dial to Eleven poster with a glowing rotary dial set to 11, stage lights, and cold sparks.",
-   "links": {
-    "demo": "https://lewismoten.github.io/dial-to-eleven/",
-    "source": "https://github.com/lewismoten/dial-to-eleven"
-   },
-   "role": "Concept, direction, and hands-on testing; implemented with AI coding assistance.",
-   "problem": "I found Spinal Tap: Break Like the Wind on the last day of a library book sale. CDs normally went for 50 cents, but this one still wore a $6.99 Ear Candy markdown sticker. I knew the band from the movie, took the CD home, and found that nothing in the house had a dial past ten.",
-   "built": "A dependency-free page loads a local audio file into a Web Audio chain for gain, compression, filtering, and saturation. A rotary dial has clickable numbers, with a deliberate jump at eleven and an optional saved More eleven setting. Audio samples drive separate cabinet, lettering, speaker, and jack motion. CSS lights and side fog follow playback; a canvas launches simulated fireballs and cold sparks only when music plays at eleven. The file never leaves the browser.",
-   "hard": "The stage had to stop when playback stopped, even when someone pressed Stop and Play quickly enough for old media events to arrive late. The amp also had to fit a phone screen without scrolling or clipping and honor reduced-motion settings.",
-   "results": "The live demo runs on GitHub Pages without a server or bundled recordings. Users choose their own track, and the README documents the audio safety warning and the project's book-sale origin."
-  },
-  {
-   "slug": "emoji",
-   "title": "Emoji Explorer",
-   "subtitle": "Unicode and pixel font",
-   "group": "Browser tools and visualization",
-   "featured": false,
-   "pitch": "A localized, installable Unicode emoji explorer with sequence filters and offline support, plus a 12 x 12 Pixel Emoji font and an npm package of lookup packs.",
-   "tags": [
-    "JavaScript",
-    "TypeScript",
-    "Unicode",
-    "PWA",
-    "npm",
-    "Accessibility"
-   ],
-   "alt": "Emoji Explorer: Unicode emoji for JavaScript",
-   "links": {
-    "demo": "https://lewismoten.github.io/emoji/",
-    "source": "https://github.com/lewismoten/emoji",
-    "other": [
-     {
-      "label": "npm",
-      "url": "https://www.npmjs.com/package/@lewismoten/emoji"
-     }
-    ]
-   },
-   "role": "Author and maintainer.",
-   "problem": "Emoji keep growing, and operating-system fonts on older devices stop updating. Finding the right sequence, such as a skin-tone, hair, gender, family, or joined (ZWJ) variant, is also harder than it looks.",
-   "built": "Three connected projects in one repository. Emoji Explorer is a localized research and discovery app with search, version and sequence filters, sequence visualization, rendering diagnostics, favorites, keyboard navigation, and offline support. Pixel Emoji is an original 12 x 12 color font with a pixel-art editor, made to give newer emoji to devices with outdated fonts. The npm package `@lewismoten/emoji` holds typed lookup packs of every Unicode-recommended fully-qualified sequence.",
-   "hard": "Keeping proposed Emoji 18.0 candidates separate from released emoji across the package, the Explorer, and the font. The root export is a small curated pack, and the full lookup is imported only when needed, in both ES module and CommonJS forms.",
-   "results": "A live explorer, a downloadable fallback font, and a typed npm package where editors autocomplete exact emoji keys and show the emoji name and glyph in declaration comments."
-  },
-  {
-   "slug": "qr",
-   "title": "QR Code Generator",
-   "subtitle": "Creator and inspector",
-   "group": "Browser tools and visualization",
-   "featured": false,
-   "pitch": "A browser tool backed by my own ES module for QR codes, with mixed segmentation, versions 1-40, Reed-Solomon correction, mask selection, and structural inspection.",
-   "tags": [
-    "JavaScript",
-    "ES modules",
-    "Reed-Solomon",
-    "Testing",
-    "Performance budgets"
-   ],
-   "alt": "QR Code Generator",
-   "links": {
-    "demo": "https://qr.lewismoten.com/",
-    "source": "https://github.com/lewismoten/qr"
-   },
-   "role": "Author and maintainer.",
-   "problem": "Most QR tools only make a code. I wanted one that also lets you look at how the code is built.",
-   "built": "A first-party QR encoder, published as a stable, self-contained ES module (`dist/qr.min.js`) that the app reuses and anyone else can download or import. The app covers mixed segmentation, versions 1 through 40, Reed-Solomon error correction, mask selection, and structural inspection. Browser code is organized into app and encoder folders with separate JavaScript and CSS entry points.",
-   "hard": "Staying small. The project pins its single development dependency and has a `verify` command that runs source linting, tests with coverage thresholds, the production build, and asset-budget checks. The size audit estimates transferred HTML, CSS, and JavaScript using the same Brotli quality as the local server.",
-   "results": "A live generator at qr.lewismoten.com and an encoder module you can import on its own. The README names git.lewismoten.com as the canonical repository."
-  },
-  {
-   "slug": "texture-mapper",
-   "title": "Texture Mapper",
-   "subtitle": "Second Life texture repeats and offsets",
-   "group": "Second Life",
-   "featured": false,
-   "pitch": "Draw a box on a texture and get the Second Life repeats and offsets for it. A 2010 Windows tool, now free, recovered and rebuilt for the browser.",
-   "tags": [
-    "JavaScript",
-    "Canvas",
-    "C#",
-    "Windows Forms",
-    "Second Life"
-   ],
-   "alt": "Texture Mapper: textures for Second Life builds, repeats and offsets",
-   "links": {
-    "demo": "https://lewismoten.github.io/texture-mapper/",
-    "source": "https://github.com/lewismoten/texture-mapper",
-    "other": [
-     {
-      "label": "Blog: Texture Mapper Released (2010)",
-      "url": "https://dedricmauriac.wordpress.com/2010/02/10/texture-mapper-released-2/"
-     }
-    ]
-   },
-   "role": "Author. I wrote the Windows program in 2008 and released it in 2010; in 2026 I made it free and open source under the MIT license.",
-   "problem": "In Second Life, one uploaded image can cover many faces if each face shows only part of it. That saves upload fees and loads faster, but working out the repeats and offsets by hand was tedious unless the image was laid out in a strict grid.",
-   "built": "A Windows Forms program (C#, .NET 2.0) where you drag a box on a texture and it shows the repeats per face and offsets, with Default and Planar mapping, flipping and a preview. Only the published build survived, so the source was decompiled with ILSpy and rebuilt as a Visual Studio 2008 project. The web version does the same math in the browser, keeps images local, adds an LSL line to copy, and its About box makes serial numbers so anyone can still register the old program.",
-   "hard": "Proving the recovered source was faithful: it was compiled again and decompiled, and every class matches the original except two spots where today's compiler writes the same logic differently. The web serial generator was checked against the original program's own check code run under .NET.",
-   "results": "Public under the MIT license, with the original 2010 build attached to the v1.0 release and the web version live on GitHub Pages.",
-   "made": "The source recovery, its round-trip check and the web version were done with Claude (Opus 5.5) from my directions."
-  },
-  {
-   "slug": "sculpted-prim-toolkit",
-   "title": "Sculpted Prim Toolkit",
-   "subtitle": "Three.js editor",
-   "group": "Second Life",
-   "featured": false,
-   "pitch": "Decodes Second Life-style RGB sculpt maps into editable 3D geometry in the browser, with exports to PNG, glTF/GLB, OBJ, and STL.",
-   "tags": [
-    "Three.js",
-    "WebGL",
-    "JavaScript",
-    "3D export"
-   ],
-   "alt": "Sculpted Prim Toolkit",
-   "links": {
-    "demo": "https://lewismoten.github.io/sculpted-prim-toolkit/",
-    "source": "https://github.com/lewismoten/sculpted-prim-toolkit",
-    "video": [
-     {
-      "label": "Videos",
-      "url": "https://www.youtube.com/watch?v=egAIXJwAAHw&list=PLIyz44ZkJ3sk"
-     }
-    ]
-   },
-   "role": "Author and maintainer.",
-   "problem": "A sculpted prim stores its shape as position data in the red, green, and blue channels of an image. Without a tool, that shape is hard to see, inspect, or change.",
-   "built": "An in-browser viewer and editor that reads the RGB position data and turns it into an interactive Three.js model. Camera views include orbit, orthographic, perspective, isometric, and face-oriented. You can show wireframes, point clouds, NURBS surfaces, and performance statistics, and select and edit single vertices from the 2D map or the 3D scene. Textures can be applied, along with generated vertex-color, density, distance, and face-angle maps.",
-   "hard": "Editing happens in two places, the 2D map and the 3D scene, and the tool previews source RGB data, selected pixel coordinates, rows, columns, and mesh statistics. Unused map pixels can be shown several ways, including a live camera view.",
-   "results": "Exports a PNG sculpt map, and glTF, GLB, OBJ (with optional MTL and PNG texture), or binary STL models. It runs as a static page from GitHub Pages with no server runtime."
-  },
-  {
-   "slug": "synthesized-voice-box",
-   "title": "Synthesized Voice Box",
-   "subtitle": "Robotic speech in Second Life",
-   "group": "Second Life",
-   "featured": false,
-   "pitch": "Text-to-speech inside Second Life, built by stringing together just under sixty 8-bit sounds from the SPO256-AL2 speech chip.",
-   "tags": [
-    "LSL",
+  "groups": [
+    "Applied AI and model engineering",
+    "Embedded systems and hardware",
+    "Browser tools and visualization",
     "Second Life",
-    "Audio",
-    "Speech synthesis"
-   ],
-   "alt": "Synthesized Voice Box: Second Life robotic text-to-speech",
-   "links": {
-    "source": "https://github.com/lewismoten/synthesized-voice-box",
-    "video": [
-     {
-      "label": "Video: versions 1.0 and 1.6",
-      "url": "https://youtu.be/TnB-0aerqBg"
-     }
-    ]
-   },
-   "role": "Author.",
-   "problem": "Second Life had no speech. A small research project asked whether words could be built from the allophones of the General Instrument SPO256-AL2 chip, played one after another inside the platform's sound limits.",
-   "built": "A voice box object that strings just under sixty 8-bit allophone sounds together to form words and pauses. The repository holds the versions from 1.0 to 1.6, three sets of allophone recordings (including my own voice trying every sound in a monotone), and an add-on that lets the Eliza Doolittle chatbot speak.",
-   "hard": "With the platform's limits, the first versions did not sound fluid. As I learned ways to push Second Life further, I worked around some of those limits.",
-   "results": "The project was donated as open source to Second Life's third anniversary and was in the SL3B vault. Later versions produce speech that can be understood."
+    "Publishing and interactive experiences",
+    "Media preservation and recovery",
+    "8-bit retro Commodore 64 projects",
+    "Government Transparency",
+    "Earlier open source"
+  ],
+  "projects": [
+    {
+      "slug": "local-agent-lab",
+      "title": "Local Agent Lab",
+      "subtitle": "Portable AI workspace",
+      "group": "Applied AI and model engineering",
+      "featured": true,
+      "pitch": "A private AI workspace for chat, code, images, and audio that runs on local models, even offline after setup and model downloads, so conversations never have to leave your device.",
+      "tags": [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Privacy",
+        "Local AI",
+        "Ollama",
+        "PWA"
+      ],
+      "alt": "Local Agent Lab: Local Models. Portable Workspaces.",
+      "links": {
+        "demo": "https://lewismoten.github.io/local-agent-lab/",
+        "source": "https://github.com/lewismoten/local-agent-lab"
+      },
+      "role": "Author and maintainer.",
+      "problem": "Most AI tools send every conversation to a frontier model in someone else's data center. I wanted privacy without depending on those models: a workspace that keeps working without an internet connection, keeps conversations on the device, and that someone could carry on a USB drive, even to a shared or public library computer, without buying a computer or subscribing to an AI service.",
+      "built": "A browser workspace built with React, TypeScript, and Vite for chat, coding, research, and scheduled agents. It runs small models in the browser or on a local web server through Ollama, so with local models it works offline after setup with no data leaving the device; API profiles are optional. Projects and conversations live in a folder or on a removable drive, with browser storage as a fallback. It also covers browser image generation, depth maps, SVG tracing, text to speech, voice profiles, and transcription, and it installs as a web app that can reload offline.",
+      "hard": "Browsers differ in what they allow. A folder workspace needs desktop Chrome or Edge, model capability varies by device, and scheduled agents only run while the app tab is open. Removing a drive safely needed an **Eject workspace** step that stops new work, waits for active file operations, and unloads browser models. Nothing downloads automatically; optional engines and models are fetched on request and can resume.",
+      "results": "A live demo you can try today. The README keeps an honest feature table with each current limit beside it: image editing, face animation, and production-quality mesh reconstruction are still open work, and there is no verified generative image-to-video."
+    },
+    {
+      "slug": "ghostjack",
+      "title": "Ghost Jack",
+      "subtitle": "Eyes, ears and a mouth for AI agents",
+      "group": "Applied AI and model engineering",
+      "featured": true,
+      "pitch": "A local bridge and cyberpunk control deck that gives people and AI agents eyes, ears and a mouth in meatspace through a $2 thrift-store pan/tilt camera, with no cloud app.",
+      "tags": [
+        "Node.js",
+        "Reverse engineering",
+        "RTSP",
+        "ffmpeg",
+        "three.js",
+        "Web Audio",
+        "AI agents"
+      ],
+      "alt": "Ghost Jack: One glass eye. A dozen voices. A neon wireframe pan/tilt camera.",
+      "links": {
+        "demo": "https://lewismoten.github.io/ghostjack/",
+        "source": "https://github.com/lewismoten/ghostjack"
+      },
+      "problem": "I wanted AI agents to be able to look at my workbench, listen and talk to me, without a cloud service watching my room. A $2 thrift-store camera seemed perfect, but its maker says it only works through its phone app: no local video, no RTSP.",
+      "built": "A Node service on my Mac that signs in to the camera by driving the camera's own web page in a headless browser, then talks to its private API: 1080p snapshots, a live RTSP stream (H.264 and AAC) repackaged so browsers can play it, pan and tilt, night vision, image settings and the clock, plus speech through the camera's speaker. A control deck (plain HTML, CSS and JavaScript with three.js) puts the controls on the video, with a 3D model of the camera to aim with, recording, and Glassmouth, a dry night-shift character voice. It runs behind an access token, on this computer only unless shared over Tailscale.",
+      "hard": "Everything the maker said wasn't possible. The talk protocol lived in long-gone browser plugins; the vendor's leftover 2013 Flash engine showed it publishes the microphone over RTMP, and only AAC at 16 kHz plays. Each talk address works once, and an unused one jams the speaker until a power cycle. The speaker is alarm-loud, wakes on sound and clips first syllables, so the bridge caps levels and sends a wake pulse first. Pan and tilt moves queue and can't be stopped, and the camera never reports where it points.",
+      "results": "A working 0.1 release: see, listen, aim, night vision, speak and record, all local, with a public demo of the deck and a dated log of how each piece was found.",
+      "role": "Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5); Glassmouth's character sketch came from a conversation with GPT-6.1 Sol.",
+      "made": "Discovery started on an isolated cable: tcpdump showed the camera's built-in address and a discovery broadcast, then its own web app's JavaScript showed the API. The character, the cyberpunk wording and the one-screen layout came from my own testing at the desk."
+    },
+    {
+      "slug": "sandbox-kernel",
+      "title": "sandbox-kernel",
+      "subtitle": "A small bare-metal kernel for your own OS",
+      "group": "Embedded systems and hardware",
+      "featured": true,
+      "pitch": "A small, reusable bare-metal kernel that starts on a Raspberry Pi Zero W and loads your own operating system as one user-mode program from the SD card.",
+      "tags": [
+        "C",
+        "ARM",
+        "Bare metal",
+        "Raspberry Pi Zero W",
+        "E-ink",
+        "FAT32",
+        "USB",
+        "JavaScript"
+      ],
+      "alt": "sandbox-kernel: A small bare-metal kernel for your own OS, with a pixel-art chip badge beside a block of colored squares.",
+      "links": {
+        "demo": "https://lewismoten.github.io/sandbox-kernel/",
+        "source": "https://github.com/lewismoten/sandbox-kernel",
+        "other": [
+          {
+            "label": "The guide",
+            "url": "https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md"
+          },
+          {
+            "label": "Game-Maker OS",
+            "url": "https://github.com/lewismoten/gamemaker-os"
+          }
+        ]
+      },
+      "problem": "I want anyone to be able to make their own operating system without first writing the part that talks to the hardware. That should include a JavaScript one, so it needs to be very easy to build a custom OS on top. I picked the Raspberry Pi Zero W as the lowest common denominator. The kernel isn't meant to stay Raspberry Pi-only.",
+      "built": "A kernel in C that runs bare metal on the Pi Zero W. It keeps two kernel slots, A and B, and updates into the idle one with a trial boot that has to be confirmed, so a bad update falls back. The operating system is one user-mode ELF file on the SD card. If it fails, the kernel recovers to a DIAG program and a recovery console. Programs get a POSIX-style ABI: files, framebuffer, input, clock, cache and saves in `/OS/SAVES`. An e-ink panel shows status, and USB development commands send files and updates from a computer. [Game-Maker OS](https://github.com/lewismoten/gamemaker-os) is the first OS built on it.",
+      "hard": "The kernel has to protect itself from the program it loads, so a broken OS can't take the board down with it. Updates have to survive a failed boot. Work in progress: game music over HDMI, a USB keyboard through OTG, and HDMI-CEC.",
+      "results": "M0 is qualified on the Zero W v1.1 and M1 is in progress. HDMI sound is in testing: a test tone and game music have played on a board over HDMI. An e-ink API lets an OS show its own title and page, and the kernel reads the OTG ID pin at boot and shows OTG on the e-ink panel, with keyboard input next. [The guide](https://github.com/lewismoten/sandbox-kernel/blob/develop/docs/os-authors.md) covers boot, what a program may do and developing over USB, and a Hello World example gives a first program to start from.",
+      "role": "Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art was made with ChatGPT GPT-6.1 Sol from my directions.",
+      "made": "The kernel, its tests and its documentation were written with Claude Code and reviewed by an agent on my Linux machine. The social preview image was made with ChatGPT GPT-6.1 Sol from my directions."
+    },
+    {
+      "slug": "gamemaker-os",
+      "title": "Game-Maker OS",
+      "subtitle": "DOS Game-Maker games from the SD card, on a Pi Zero W",
+      "group": "Embedded systems and hardware",
+      "featured": true,
+      "pitch": "An operating system that turns a Raspberry Pi Zero W into a Game-Maker machine: it boots to a library of games on a TV and plays their original DOS files straight from the SD card.",
+      "tags": [
+        "C",
+        "ARM",
+        "Raspberry Pi Zero W",
+        "sandbox-kernel",
+        "FAT32",
+        "E-ink",
+        "JavaScript (experimental)"
+      ],
+      "alt": "Game-Maker OS: Play DOS Game-Maker games straight from the SD card. A pixel-art castle badge beside a screenshot of the game library.",
+      "links": {
+        "demo": "https://lewismoten.github.io/gamemaker-os/",
+        "source": "https://github.com/lewismoten/gamemaker-os",
+        "other": [
+          {
+            "label": "sandbox-kernel",
+            "url": "https://github.com/lewismoten/sandbox-kernel"
+          }
+        ]
+      },
+      "problem": "I wanted my Game-Maker games to run on their own small machine you plug into a TV, with no PC, browser or desktop in between. Game-Maker: Sandbox Edition already plays them in a browser, so the next step was an operating system whose only job is the games.",
+      "built": "A program in C that [sandbox-kernel](https://github.com/lewismoten/sandbox-kernel) loads from the SD card on a Raspberry Pi Zero W. It shows a castle boot splash, then a game library on HDMI with category tabs, cards with each game's title screen read from its own files, and a details page. Play runs the game from its original DOS files with the same play core as the Pocket Player in Game-Maker: Sandbox Edition, shared rather than copied by hand. Leave a game on its details page for 3 seconds and its demo plays in the picture. Saves and high scores live on the card, with a Top Ten like PLAYGAME's. A separate experimental `JS.ELF` runs small JavaScript apps with QuickJS-ng; it is a spike, not the main program.",
+      "hard": "The Zero W has little memory and no operating system underneath, so the library, the game player and the card reader all have to be small and careful. I kept PLAYGAME's behavior, so a game draws the same frames tick for tick as the host tests do. The e-ink status screens are drawn but not wired in yet, and sound is still being worked on.",
+      "results": "On a Pi Zero W the library lists games, plays them from their DOS files with the arrow keys, Space and Enter, and keeps saves and high scores. Roll the Dice and five more Starters draw the same frames as the host tests. Input comes from the development computer over USB for now, and the e-ink status, a gamepad and a TV remote are still ahead.",
+      "role": "Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art, including the boot art and social preview, was made with ChatGPT GPT-6.1 Sol from my directions, and Game-Maker OS's background tune was composed in code by Claude.",
+      "made": "The program, its tests and its documentation were written with Claude Code and reviewed by an agent on my Linux machine. The boot art and social preview came from ChatGPT GPT-6.1 Sol and my directions. The library's background tune was composed in code by Claude."
+    },
+    {
+      "slug": "gamemaker-pocket",
+      "title": "Game-Maker Pocket",
+      "subtitle": "DOS games in your pocket on a cheap ESP32 touch screen",
+      "group": "Embedded systems and hardware",
+      "featured": true,
+      "pitch": "A pocket player for Game-Maker: Sandbox Edition games on cheap ESP32 touch-screen boards, with a web flasher that installs it from the browser.",
+      "tags": [
+        "C++",
+        "ESP32",
+        "PlatformIO",
+        "LittleFS",
+        "microSD",
+        "ESP Web Tools",
+        "Python"
+      ],
+      "alt": "Game-Maker Pocket: DOS games in your pocket. A castle badge beside a 3.5-inch ESP32 touch board showing the game library.",
+      "links": {
+        "demo": "https://lewismoten.github.io/gamemaker-pocket/",
+        "source": "https://github.com/lewismoten/gamemaker-pocket",
+        "other": [
+          {
+            "label": "Game-Maker OS",
+            "url": "https://github.com/lewismoten/gamemaker-os"
+          }
+        ]
+      },
+      "problem": "I wanted to carry my Game-Maker games in a pocket-sized player. The ESP32 touch-screen boards sold cheaply online have a screen and a microSD slot, so the question was how much of a 1990s DOS game could fit on one.",
+      "built": "Firmware in C++ for two boards, the ESP32-2432S028 (2.8 inch) and the ESP32-3248S035 (3.5 inch). It plays the Starter lessons from the games' real DOS files, packed small, and a library from a microSD card with categories, search and a library browser. It has touch controls for fingers and a stylus, a settings screen, a status strip and the PC speaker sounds. A first-start setup walks through each display's mirror, orientation, colors and touch calibration. The packs are made by Game-Maker: Sandbox Edition. A GitHub Pages install page, using ESP Web Tools, lets a visitor pick a board and flash it from Chrome or Edge.",
+      "hard": "The play rules had to be ported to a board with 4 MB of flash while still matching the web engine, which follows PLAYGAME. The 2.8 inch boards also come in several display revisions, so the screen can be mirrored, rotated or the wrong color until the setup is done. Sound is the PC speaker only for now, with no Sound Blaster clips or music yet.",
+      "results": "Two boards run it from a flashed image, with the Starters in the board's own flash and more games on a microSD card in a /pocket folder. The web flasher offers a Player-only, a Starter-courses or a Player-plus-starter-games install per board, and the host tests cover the play loop, cards and controls on the Mac. It pairs with [Game-Maker OS](https://github.com/lewismoten/gamemaker-os) for the Raspberry Pi.",
+      "role": "Designer, director and maintainer. Built with AI coding assistance from Claude (Opus 5.5 and Sonnet 5.5) plus reviews by an agent on my Linux machine. The art, including the social preview and favicon, was made with ChatGPT GPT-6.1 Sol from my directions.",
+      "made": "The firmware, tests and install page were written with Claude Code and reviewed by an agent on my Linux machine. The social preview, favicon and hand art came from ChatGPT and my directions, and Claude drew the small category icons in code."
+    },
+    {
+      "slug": "pocket-fleet",
+      "title": "Pocket Fleet",
+      "subtitle": "A co-op starship bridge simulator for browsers, CYDs and Cardputers",
+      "group": "Embedded systems and hardware",
+      "featured": false,
+      "pitch": "A starship bridge simulator for one player or a room full of people, where each person crews a station from a browser, a Cheap Yellow Display or an M5 Cardputer ADV over local Wi-Fi.",
+      "tags": [
+        "JavaScript",
+        "Node.js",
+        "C++",
+        "ESP32",
+        "PlatformIO",
+        "Web Serial",
+        "ESP Web Tools"
+      ],
+      "alt": "Pocket Fleet: a co-op starship bridge simulator. A CYD showing the helm station, a browser forward view of a planet, and an M5 Cardputer ADV.",
+      "links": {
+        "demo": "https://lewismoten.github.io/pocket-fleet/",
+        "source": "https://github.com/lewismoten/pocket-fleet"
+      },
+      "problem": "I wanted a bridge game for a room of people with whatever screens they have: a laptop hosts the fleet, a projector shows the forward view, and everyone else takes a station on a phone browser or a cheap ESP32 board.",
+      "built": "A browser app and a small Node host that uses only the standard library, with shared game rules for both. The host keeps fleet state on the local Wi-Fi; players find fleets, pick a ship and a station (Helm, Weapons, Engineering, Communications) and can lock a fleet or ship with a code. Firmware in C++ runs the same stations on the 2.8 and 3.5 inch CYDs and the M5 Cardputer ADV; a CYD can scan for short 🚀 hotspot names and board a ship. Players start in personal quarters with an animated cadet they can customize, and keep a service record. A flash page installs the firmware from Chrome or Edge with Web Serial.",
+      "hard": "The CYD has a 320 x 240 touch screen, so each station's controls had to fit pages of large buttons. Browser pages cannot scan Wi-Fi or read signal strength, so only the boards list nearby hotspots. The local connection is unencrypted, so the fleet lock is a casual room gate, not account security.",
+      "results": "It plays solo in a browser, including the [GitHub Pages demo](https://lewismoten.github.io/pocket-fleet/), and hosts a room from one computer. The firmware builds for the 2.8 inch CYD with about 50 KB of static RAM and 1.02 MB of app flash; touch calibration and the hotspot gateway still need testing on the boards. The game rules have Node tests.",
+      "role": "Designer and director. Built with OpenAI Codex (GPT-6 Sol) from my directions over October 2 and 3, 2026. The social preview was made with ChatGPT.",
+      "made": "The web app, Node host, firmware and tests were written with OpenAI Codex (GPT-6 Sol) in six sessions. The cadet art is an AI-generated asset pack, rebuilt into indexed frames, and the social preview came from ChatGPT."
+    },
+    {
+      "slug": "crystal-9",
+      "title": "Crystal-9",
+      "subtitle": "Tiny MoE for 8-bit hardware",
+      "group": "Applied AI and model engineering",
+      "featured": true,
+      "pitch": "A compact, validated mixture-of-experts tic-tac-toe policy model: a 46,299-byte packed INT4 artifact with zero policy misses across 294,778 legal histories.",
+      "tags": [
+        "PyTorch",
+        "MoE",
+        "INT4",
+        "Model validation",
+        "Python"
+      ],
+      "alt": "Crystal-9: Tiny model. Nine possibilities",
+      "links": {
+        "source": "https://github.com/lewismoten/crystal-9",
+        "other": [
+          {
+            "label": "Hugging Face",
+            "url": "https://huggingface.co/lewismoten/crystal-9"
+          }
+        ]
+      },
+      "role": "Designer, director, maintainer, and publisher. Code and documentation were developed with assistance from GPT-5.6-terra Med, accessed through Hermes with Honcho for project memory.",
+      "problem": "A model that has to run on tight memory budgets can't borrow a general vocabulary or a standard runtime. The goal was the smallest truthful local MoE tic-tac-toe policy model, built clean-room.",
+      "built": "A separately trained attention and mixture-of-experts policy with its own 13-token vocabulary and an eight-move history: token and position embeddings, one causal attention layer with 8 heads at width 32, a learned router, and 9 experts (each 32 to 32 to 32) with top-2 selection, 24,726 parameters in all. INT4 and INT3 versions run in independent packed runtimes, and an INT4 artifact was released for a custom local runtime.",
+      "hard": "Precision is a policy, not a promise. FP32 is the baseline; F16, Q6_K, Q4_K_M, Q3_K, Q2_K, and experimental 1-bit-family formats are only candidates. A format is publishable after the exact target runtime passes the complete legal-policy and invalid-input gates. The custom vocabulary is separate from the earlier Ollama-compatible one, so Crystal-9 has to prove token-ID parity before claiming Ollama compatibility. For a standard llama.cpp or Ollama model I point to Palace-9.",
+      "results": "The released artifact is 46,299 bytes, with zero policy misses across 294,778 legal histories. A compact adaptation powered the first version of Crystal Palace 9 on the Commodore 64. Releases are packaged with checksums when a version tag is pushed.",
+      "made": "Crystal-9 made the network smaller and gave each layer 32 nodes, to use tensor operations that compute 32 values at the same time. In the end that was more than the task needed, a lesson that went into Falken-9. The name, like Palace-9's, comes from Crystal Palace, the NORAD call sign in *WarGames*.\n\nTraining used PyTorch with AdamW on an RTX 3080 Ti: 100 epochs over all 294,778 move histories reached zero misses at full precision. Quantization went in stages, part of the network at a time, with quantization-aware training at each step; a trial that ended with even one miss was rejected. INT2 was explored as research, ending in a 20,737-byte copy that still had zero misses but wasn't released. A tensor inspector drew every weight as an image, and tests compared the Python and JavaScript runtimes."
+    },
+    {
+      "slug": "falken-9",
+      "title": "Falken-9",
+      "subtitle": "A neural network designed for the Commodore 64",
+      "group": "Applied AI and model engineering",
+      "featured": true,
+      "pitch": "A mixture-of-experts tic-tac-toe model trained for the Commodore 64 from the start: a 5,195-byte model that stays in RAM and now lets Crystal Palace 9 play a complete AI-vs-AI game in just over a minute in an emulator.",
+      "tags": [
+        "PyTorch",
+        "MoE",
+        "6502 assembly",
+        "Commodore 64",
+        "Integer inference",
+        "Interpretability",
+        "ONNX"
+      ],
+      "alt": "Crystal Palace 9 title screen on the Commodore 64: Number of players? 1 player vs AI, 2 player vs player, 0 AI vs AI.",
+      "links": {
+        "demo": "https://lewismoten.github.io/falken-9/",
+        "source": "https://github.com/lewismoten/falken-9",
+        "other": [
+          {
+            "label": "Hugging Face",
+            "url": "https://huggingface.co/lewismoten/falken-9"
+          },
+          {
+            "label": "Research report",
+            "url": "https://github.com/lewismoten/falken-9/blob/main/report.md"
+          }
+        ]
+      },
+      "problem": "Crystal-9 proved a learned network could run on a C64, but its weights had to be paged from disk and a self-play game took roughly 20 minutes. I wanted a network designed around the C64's arithmetic, memory and responsiveness, small enough to verify and investigate exhaustively, without hiding a move table or minimax behind it.",
+      "built": "Falken-9 searches model width, expert count and numerical precision against the whole deployment cost on the C64. The accepted model has nine board-square tokens, width 8, four learned experts with top-2 routing, real full-board attention and exact integer execution in 6502 assembly. Symmetry reduces the learned domain to 627 canonical boards; a fixed wrapper restores the original board, masks occupied squares and applies a documented tie order. The whole model stays in RAM, and every AI move runs it.",
+      "hard": "Keeping it honest. The network predicts the complete set of optimal moves, because mapping one canonical move back would break tie behavior. Offline minimax supplies labels and checks but is never a gameplay fallback, and exact logits, packed arithmetic, chosen moves and whole games each have their own evidence gate. Interpreting the network was its own project: the research report probes it with interventions and counterexamples, and found context-dependent effects rather than a tidy fork expert or block neuron.",
+      "results": "A 5,195-byte model packet with all 627 canonical boards passing assembled numerical checks. Crystal Palace 9, now powered by Falken-9, plays a complete AI-vs-AI game in just over a minute in an emulator, down from about 20 minutes with the earlier model. The project ships a ready-to-run PRG and D64, an exact-integer ONNX graph for Netron, a tensor-workflow chart and a research report with annotated figures. Tested in emulators only so far.",
+      "role": "Designer, director and maintainer. AI agents (GPT-6.1 Sol through Hermes Agent) ran the training, integer conversion and probing work I directed; PyTorch did the heavy lifting.",
+      "made": "Built October 31 to November 1, 2026. Hermes Agent delegated the training, integer conversion and probing to GPT-6.1 Sol workers (openai-codex provider). Training used Python and PyTorch with AdamW: early experiments on an RTX 3080 Ti compared float, binary and ternary candidates, and the compact models trained on a single CPU thread with binary cross-entropy over the complete set of optimal moves. Falken-9 was trained from scratch, not fine-tuned from Crystal-9, and the 5,195-byte integer packet came from direct conversion with no extra training.\n\nProbing ran on the CPU against frozen weights, not by another model judging answers: linear readouts with held-out splits and shuffled-label controls, ablations, dose-response tests, activation patching, paired lesions, and attention, router and gate interventions. Integer forwards were checked against an independent arbitrary-integer oracle across 627 canonical positions, 4,520 boards and 294,778 histories. C64 execution was checked with 64tass, py65 and VICE; inspection used ONNX Runtime, Netron and Pillow, with pytest for the tests."
+    },
+    {
+      "slug": "crystal-palace",
+      "title": "Crystal Palace 9",
+      "subtitle": "AI on 8-bit hardware",
+      "group": "Applied AI and model engineering",
+      "featured": false,
+      "pitch": "A Commodore 64 tic-tac-toe game whose AI moves come from a real neural network running in 6502 assembly; now powered by Falken-9, a complete AI-vs-AI game takes just over a minute in an emulator.",
+      "tags": [
+        "6502 assembly",
+        "Commodore 64",
+        "Python",
+        "PyTorch",
+        "Model packaging"
+      ],
+      "alt": "Crystal Palace 9",
+      "links": {
+        "source": "https://github.com/lewismoten/crystal-palace",
+        "video": [
+          {
+            "label": "Video",
+            "url": "https://www.youtube.com/watch?v=UJME73NxyfA"
+          }
+        ],
+        "other": [
+          {
+            "label": "Falken-9",
+            "url": "https://github.lewismoten.com/projects/falken-9/"
+          }
+        ]
+      },
+      "role": "Designer, director and maintainer. AI coding assistants: GPT-5.6-terra, then GPT-6.1 Sol from mid-October, through Hermes.",
+      "problem": "Could the original Crystal-9 neural-network weights run on a Commodore 64 from a 1541 disk? The repository, called Crystal Palace 64 (CP64), treats this as a feasibility project, with no substitute move table, hand-written policy, distilled model, or requantized weights.",
+      "built": "A command-room interface and presentation assets drawn for the machine's 8 x 8 multicolor graphics, a disk-backed INFO archive, a playable human board, and 6502 assembly with an isolated module that materializes the original tokens. In its first version, Python scripts exported 48 pageable model packets from the verified Crystal-9 release and package everything into a D64 disk image. A static GitHub Pages asset editor supports the artwork.",
+      "hard": "Memory and disk. Crystal-9 didn't fit in the C64's memory, so in the first version its original INT4 weights traveled as 48 disk packets, loaded during each move and run in fixed-point 6502 math. Testing in VICE with the real C64 and 1541 ROMs found bugs a simpler emulator hid: a disk load that relocated to the wrong address, and an eight-bit memory offset that wrapped later history slots onto earlier ones. Later releases grouped tensors to cut disk loads per move from many to 12.",
+      "results": "The first version ran the original Crystal-9 weights on the C64: 436 passing tests, and 13 complete output vectors that matched byte for byte between Py65 and real-ROM VICE, over full human-against-model and AI-vs-AI games. It proved the idea but took roughly 20 minutes for a self-play game. The game now runs Falken-9, a model designed for the C64, and a complete AI-vs-AI game takes just over a minute in an emulator, with progress feedback, console animation and sound during each move's thinking.",
+      "made": "I chose the Commodore 64 because I enjoy the 6502 processor and many emulators exist for it. I often watch The 8-Bit Guy's videos about the chip, and I built Ben Eater's 6502 computer, which still sits on a breadboard in my basement ([my 6502 practice code](https://github.com/lewismoten/6502-program-1) has its files). Most of the work on the first version went into loading each layer from disk, because Crystal-9 was too big for the C64's memory.\n\nThe name joins the two models, Palace-9 and Crystal-9, both named for Crystal Palace, the NORAD call sign in *WarGames* where an AI plays against itself. Like the Palace-9 website, the game has a Cold War theme: the computer plays itself over maps of the USA and USSR. Lessons from it went into Falken-9, which now powers the game."
+    },
+    {
+      "slug": "palace-9",
+      "title": "Palace-9",
+      "subtitle": "Local model inspection",
+      "group": "Applied AI and model engineering",
+      "featured": false,
+      "pitch": "A playable tic-tac-toe lab that pairs a deterministic controller with a compact MoE model trained from scratch, and a browser inspector that reads the checkpoint locally.",
+      "tags": [
+        "Qwen2-MoE",
+        "Ollama",
+        "llama.cpp",
+        "JavaScript",
+        "Model visualization"
+      ],
+      "alt": "Palace-9: Tic-tac-toe & model inspection",
+      "links": {
+        "demo": "https://lewismoten.github.io/palace-9/",
+        "source": "https://github.com/lewismoten/palace-9",
+        "video": [
+          {
+            "label": "Video",
+            "url": "https://www.youtube.com/watch?v=J7bgpmks_KM"
+          }
+        ],
+        "other": [
+          {
+            "label": "Ollama",
+            "url": "https://ollama.com/lewismoten/palace-9"
+          },
+          {
+            "label": "Hugging Face",
+            "url": "https://huggingface.co/lewismoten/palace-9"
+          },
+          {
+            "label": "Dataset",
+            "url": "https://huggingface.co/datasets/lewismoten/tic-tac-toe"
+          }
+        ]
+      },
+      "role": "Designer, director, maintainer and publisher. AI coding assistant: GPT-5.6-terra (medium reasoning) through Hermes, with Honcho for project memory.",
+      "problem": "I wanted to look inside a small model, not only run it. That meant keeping two things separate: a perfect-play controller for the game, and a trained model that reads raw move histories.",
+      "built": "A 3x3 simulation with 0-, 1-, and 2-player modes. A deterministic minimax policy in browser JavaScript is the perfect-play oracle. A separate compact causal model uses the Qwen2-MoE architecture, so it works with Ollama and llama.cpp without a custom fork. The browser decodes the packed FP32, F16, Q6_K, or Q4_K_M release artifact locally and computes a forward trace from its weights.",
+      "hard": "Keeping real and fictional parts apart. The site never calls Ollama; its board moves come from the local oracle, and the visualizer is a local trace. The map, DEFCON strip, trajectories, and cipher are labeled visual fiction. My September post on the project describes the visualization, training, and tokenizer problems I hit, and how they led to the smaller Crystal-9.",
+      "results": "A live demo, a published Ollama model, and a Hugging Face release in F16, Q6_K and Q4_K_M GGUF. Each GGUF file had zero errors in llama.cpp on 294,777 valid and 683,226 generated invalid move histories. A routing analysis across every history showed which experts favored which kinds of positions, as a description rather than a causal test.",
+      "made": "Palace-9 started as a model trained in the web browser, ten years after my first [neural network experiment](https://github.com/lewismoten/artificial-neural-network) taught 200 small networks tic-tac-toe; then I moved training to PyTorch on my GPU. Along the way I learned to publish models and make them run on Ollama. With no control over the token set, the first model was very large, so I worked it down to the smallest vocabulary possible. The architecture follows Qwen2-MoE only so that Ollama knows how to run its mixture of experts; it is not a Qwen model.\n\nThe website has a Cold War theme, after Crystal Palace, the NORAD call sign in *WarGames* where an AI plays against itself. The computer plays itself over maps of the USA and USSR, missiles launch with each player's mark and speed up as the game goes on, and a launch code is worked out digit by digit, but the last digit never locks in.\n\nThe browser model went through three designs: a dense network under an illustrative expert diagram, then a real trainable soft-routed mixture of experts, then the separately trained Qwen2-MoE model that became the release. Training ran in JavaScript workers, then custom CUDA compiled with nvcc, then PyTorch with AdamW on an RTX 3080 Ti. The release model has 648,528 parameters; one last history error was fixed with 24 focused training updates. Conversion used llama.cpp's GGUF tools, and Q8_0 wasn't possible because the layer widths don't fit its 32-value blocks, so Q6_K took its place."
+    },
+    {
+      "slug": "zogograph-client",
+      "title": "Zogograph Client",
+      "subtitle": "AI-assisted server monitoring",
+      "group": "Applied AI and model engineering",
+      "featured": true,
+      "pitch": "PHP and SQLite collectors with a JavaScript dashboard make server telemetry, alerts, and diagnostics readable, and an AI assistant calls diagnostic tools and tracks what an investigation costs.",
+      "tags": [
+        "PHP",
+        "SQLite",
+        "JavaScript",
+        "WHM/cPanel",
+        "Tool calling",
+        "Linux hosting"
+      ],
+      "alt": "Zogograph dashboard social preview",
+      "links": {
+        "source": "https://github.com/lewismoten/zogograph-client",
+        "video": [
+          {
+            "label": "Videos",
+            "url": "https://www.youtube.com/watch?v=OKndBMPknmQ&list=PLaLeerEZeFMs"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "A monitor you have to remember to look at tells you afterwards. Zogograph answers three questions: what is happening now, what is growing, and where to go to fix it. It also emails when something jumps, and it can tell you before a home directory fills up.",
+      "built": "A PHP account collector run by cron, a host collector run by root from WHM's crontab (it sees what CageFS hides from the account), and a static dashboard that talks to a single API file. Readings go into SQLite databases that are never served. A health page depends on nothing, so it works when the rest does not. A setup wizard runs in a browser or at a prompt. An AI assistant calls diagnostic tools and tracks the cost of an investigation.",
+      "hard": "The account collector and the host collector see different things, so they run separately. Collectors are command-line only, with `.htaccess` denying them over HTTP, and the README documents migration safety.",
+      "results": "The source release has no dependencies and ships a CycloneDX software bill of materials, third-party notices, and a security policy. It is source-available under FSL-1.1-Apache-2.0, and each release becomes Apache-2.0 two years after it ships."
+    },
+    {
+      "slug": "data-over-audio",
+      "title": "Data Over Audio",
+      "subtitle": "Web Audio API",
+      "group": "Browser tools and visualization",
+      "featured": true,
+      "pitch": "Sends text and binary files through sound, with error detection, error correction, and requests to resend data.",
+      "tags": [
+        "Web Audio API",
+        "JavaScript",
+        "MFSK",
+        "Error correction",
+        "Signal processing"
+      ],
+      "alt": "Data Over Audio",
+      "links": {
+        "demo": "https://lewismoten.github.io/data-over-audio/",
+        "source": "https://github.com/lewismoten/data-over-audio",
+        "video": [
+          {
+            "label": "Videos",
+            "url": "https://www.youtube.com/watch?v=_6qxB3gKN_E&list=PLEyaach61fdU-OPcb5Aqgah2l6TTsaLia"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "The experiment's goal was to transfer text or a binary file using sound waves, between two browsers or on one device.",
+      "built": "Binary data is modulated with many oscillators using multi-frequency shift keying (MFSK), and the audio analyzer demodulates it again. Data is split into packets with CRC checks so failed packets can be discarded, Hamming codes so the receiver can try to repair a packet, and interleaving. An Automatic Repeat Request mode asks again for packets that failed, and the receiver lists packet errors.",
+      "hard": "I found the first packet often failed, and it carries the length header, so there is an option to send it twice. Sender and receiver must share the same frequencies, FSK pairs, packetization, and sampling period.",
+      "results": "Using only telephone frequencies (300 Hz to 3.4 kHz), one laptop alone reached just under 1 Kbps. Between a laptop and a mobile phone it was much slower: 138 bps for telephone frequencies and 538 bps for human hearing frequencies, and about half of that effective once error correction and packet headers are counted. It is a pure JavaScript app, with Vite only for local running."
+    },
+    {
+      "slug": "dial-to-eleven",
+      "title": "Dial to Eleven",
+      "subtitle": "Browser audio amp with an actual eleven",
+      "group": "Browser tools and visualization",
+      "featured": true,
+      "pitch": "A browser-only amp for your own audio files, with a rotary dial from silence to eleven and a stage show that follows the music.",
+      "tags": [
+        "JavaScript",
+        "Web Audio API",
+        "Canvas",
+        "Audio effects",
+        "Accessibility"
+      ],
+      "alt": "Dial to Eleven poster with a glowing rotary dial set to 11, stage lights, and cold sparks.",
+      "links": {
+        "demo": "https://lewismoten.github.io/dial-to-eleven/",
+        "source": "https://github.com/lewismoten/dial-to-eleven"
+      },
+      "role": "Concept, direction, and hands-on testing; implemented with AI coding assistance.",
+      "problem": "I found Spinal Tap: Break Like the Wind on the last day of a library book sale. CDs normally went for 50 cents, but this one still wore a $6.99 Ear Candy markdown sticker. I knew the band from the movie, took the CD home, and found that nothing in the house had a dial past ten.",
+      "built": "A dependency-free page loads a local audio file into a Web Audio chain for gain, compression, filtering, and saturation. A rotary dial has clickable numbers, with a deliberate jump at eleven and an optional saved More eleven setting. Audio samples drive separate cabinet, lettering, speaker, and jack motion. CSS lights and side fog follow playback; a canvas launches simulated fireballs and cold sparks only when music plays at eleven. The file never leaves the browser.",
+      "hard": "The stage had to stop when playback stopped, even when someone pressed Stop and Play quickly enough for old media events to arrive late. The amp also had to fit a phone screen without scrolling or clipping and honor reduced-motion settings.",
+      "results": "The live demo runs on GitHub Pages without a server or bundled recordings. Users choose their own track, and the README documents the audio safety warning and the project's book-sale origin."
+    },
+    {
+      "slug": "emoji",
+      "title": "Emoji Explorer",
+      "subtitle": "Unicode and pixel font",
+      "group": "Browser tools and visualization",
+      "featured": false,
+      "pitch": "A localized, installable Unicode emoji explorer with sequence filters and offline support, plus a 12 x 12 Pixel Emoji font and an npm package of lookup packs.",
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "Unicode",
+        "PWA",
+        "npm",
+        "Accessibility"
+      ],
+      "alt": "Emoji Explorer: Unicode emoji for JavaScript",
+      "links": {
+        "demo": "https://lewismoten.github.io/emoji/",
+        "source": "https://github.com/lewismoten/emoji",
+        "other": [
+          {
+            "label": "npm",
+            "url": "https://www.npmjs.com/package/@lewismoten/emoji"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "Emoji keep growing, and operating-system fonts on older devices stop updating. Finding the right sequence, such as a skin-tone, hair, gender, family, or joined (ZWJ) variant, is also harder than it looks.",
+      "built": "Three connected projects in one repository. Emoji Explorer is a localized research and discovery app with search, version and sequence filters, sequence visualization, rendering diagnostics, favorites, keyboard navigation, and offline support. Pixel Emoji is an original 12 x 12 color font with a pixel-art editor, made to give newer emoji to devices with outdated fonts. The npm package `@lewismoten/emoji` holds typed lookup packs of every Unicode-recommended fully-qualified sequence.",
+      "hard": "Keeping proposed Emoji 18.0 candidates separate from released emoji across the package, the Explorer, and the font. The root export is a small curated pack, and the full lookup is imported only when needed, in both ES module and CommonJS forms.",
+      "results": "A live explorer, a downloadable fallback font, and a typed npm package where editors autocomplete exact emoji keys and show the emoji name and glyph in declaration comments."
+    },
+    {
+      "slug": "qr",
+      "title": "QR Code Generator",
+      "subtitle": "Creator and inspector",
+      "group": "Browser tools and visualization",
+      "featured": false,
+      "pitch": "A browser tool backed by my own ES module for QR codes, with mixed segmentation, versions 1-40, Reed-Solomon correction, mask selection, and structural inspection.",
+      "tags": [
+        "JavaScript",
+        "ES modules",
+        "Reed-Solomon",
+        "Testing",
+        "Performance budgets"
+      ],
+      "alt": "QR Code Generator",
+      "links": {
+        "demo": "https://qr.lewismoten.com/",
+        "source": "https://github.com/lewismoten/qr"
+      },
+      "role": "Author and maintainer.",
+      "problem": "Most QR tools only make a code. I wanted one that also lets you look at how the code is built.",
+      "built": "A first-party QR encoder, published as a stable, self-contained ES module (`dist/qr.min.js`) that the app reuses and anyone else can download or import. The app covers mixed segmentation, versions 1 through 40, Reed-Solomon error correction, mask selection, and structural inspection. Browser code is organized into app and encoder folders with separate JavaScript and CSS entry points.",
+      "hard": "Staying small. The project pins its single development dependency and has a `verify` command that runs source linting, tests with coverage thresholds, the production build, and asset-budget checks. The size audit estimates transferred HTML, CSS, and JavaScript using the same Brotli quality as the local server.",
+      "results": "A live generator at qr.lewismoten.com and an encoder module you can import on its own. The README names git.lewismoten.com as the canonical repository."
+    },
+    {
+      "slug": "texture-mapper",
+      "title": "Texture Mapper",
+      "subtitle": "Second Life texture repeats and offsets",
+      "group": "Second Life",
+      "featured": false,
+      "pitch": "Draw a box on a texture and get the Second Life repeats and offsets for it. A 2010 Windows tool, now free, recovered and rebuilt for the browser.",
+      "tags": [
+        "JavaScript",
+        "Canvas",
+        "C#",
+        "Windows Forms",
+        "Second Life"
+      ],
+      "alt": "Texture Mapper: textures for Second Life builds, repeats and offsets",
+      "links": {
+        "demo": "https://lewismoten.github.io/texture-mapper/",
+        "source": "https://github.com/lewismoten/texture-mapper",
+        "other": [
+          {
+            "label": "Blog: Texture Mapper Released (2010)",
+            "url": "https://dedricmauriac.wordpress.com/2010/02/10/texture-mapper-released-2/"
+          }
+        ]
+      },
+      "role": "Author. I wrote the Windows program in 2008 and released it in 2010; in 2026 I made it free and open source under the MIT license.",
+      "problem": "In Second Life, one uploaded image can cover many faces if each face shows only part of it. That saves upload fees and loads faster, but working out the repeats and offsets by hand was tedious unless the image was laid out in a strict grid.",
+      "built": "A Windows Forms program (C#, .NET 2.0) where you drag a box on a texture and it shows the repeats per face and offsets, with Default and Planar mapping, flipping and a preview. Only the published build survived, so the source was decompiled with ILSpy and rebuilt as a Visual Studio 2008 project. The web version does the same math in the browser, keeps images local, adds an LSL line to copy, and its About box makes serial numbers so anyone can still register the old program.",
+      "hard": "Proving the recovered source was faithful: it was compiled again and decompiled, and every class matches the original except two spots where today's compiler writes the same logic differently. The web serial generator was checked against the original program's own check code run under .NET.",
+      "results": "Public under the MIT license, with the original 2010 build attached to the v1.0 release and the web version live on GitHub Pages.",
+      "made": "The source recovery, its round-trip check and the web version were done with Claude (Opus 5.5) from my directions."
+    },
+    {
+      "slug": "sculpted-prim-toolkit",
+      "title": "Sculpted Prim Toolkit",
+      "subtitle": "Three.js editor",
+      "group": "Second Life",
+      "featured": false,
+      "pitch": "Decodes Second Life-style RGB sculpt maps into editable 3D geometry in the browser, with exports to PNG, glTF/GLB, OBJ, and STL.",
+      "tags": [
+        "Three.js",
+        "WebGL",
+        "JavaScript",
+        "3D export"
+      ],
+      "alt": "Sculpted Prim Toolkit",
+      "links": {
+        "demo": "https://lewismoten.github.io/sculpted-prim-toolkit/",
+        "source": "https://github.com/lewismoten/sculpted-prim-toolkit",
+        "video": [
+          {
+            "label": "Videos",
+            "url": "https://www.youtube.com/watch?v=egAIXJwAAHw&list=PLIyz44ZkJ3sk"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "A sculpted prim stores its shape as position data in the red, green, and blue channels of an image. Without a tool, that shape is hard to see, inspect, or change.",
+      "built": "An in-browser viewer and editor that reads the RGB position data and turns it into an interactive Three.js model. Camera views include orbit, orthographic, perspective, isometric, and face-oriented. You can show wireframes, point clouds, NURBS surfaces, and performance statistics, and select and edit single vertices from the 2D map or the 3D scene. Textures can be applied, along with generated vertex-color, density, distance, and face-angle maps.",
+      "hard": "Editing happens in two places, the 2D map and the 3D scene, and the tool previews source RGB data, selected pixel coordinates, rows, columns, and mesh statistics. Unused map pixels can be shown several ways, including a live camera view.",
+      "results": "Exports a PNG sculpt map, and glTF, GLB, OBJ (with optional MTL and PNG texture), or binary STL models. It runs as a static page from GitHub Pages with no server runtime."
+    },
+    {
+      "slug": "synthesized-voice-box",
+      "title": "Synthesized Voice Box",
+      "subtitle": "Robotic speech in Second Life",
+      "group": "Second Life",
+      "featured": false,
+      "pitch": "Text-to-speech inside Second Life, built by stringing together just under sixty 8-bit sounds from the SPO256-AL2 speech chip.",
+      "tags": [
+        "LSL",
+        "Second Life",
+        "Audio",
+        "Speech synthesis"
+      ],
+      "alt": "Synthesized Voice Box: Second Life robotic text-to-speech",
+      "links": {
+        "source": "https://github.com/lewismoten/synthesized-voice-box",
+        "video": [
+          {
+            "label": "Video: versions 1.0 and 1.6",
+            "url": "https://youtu.be/TnB-0aerqBg"
+          }
+        ]
+      },
+      "role": "Author.",
+      "problem": "Second Life had no speech. A small research project asked whether words could be built from the allophones of the General Instrument SPO256-AL2 chip, played one after another inside the platform's sound limits.",
+      "built": "A voice box object that strings just under sixty 8-bit allophone sounds together to form words and pauses. The repository holds the versions from 1.0 to 1.6, three sets of allophone recordings (including my own voice trying every sound in a monotone), and an add-on that lets the Eliza Doolittle chatbot speak.",
+      "hard": "With the platform's limits, the first versions did not sound fluid. As I learned ways to push Second Life further, I worked around some of those limits.",
+      "results": "The project was donated as open source to Second Life's third anniversary and was in the SL3B vault. Later versions produce speech that can be understood."
+    },
+    {
+      "slug": "eliza-doolittle-chatbot",
+      "title": "Eliza Doolittle Chatbot",
+      "subtitle": "ELIZA in Linden Scripting Language",
+      "group": "Second Life",
+      "featured": false,
+      "pitch": "A port of Joseph Weizenbaum's 1966 ELIZA into Second Life: a parody of a Rogerian therapist that listens to nearby residents and answers.",
+      "tags": [
+        "LSL",
+        "Second Life",
+        "Chatbot"
+      ],
+      "alt": "Eliza Doolittle Chatbot: the 1966 ELIZA chatbot ported into Second Life",
+      "links": {
+        "source": "https://github.com/lewismoten/Eliza-Doolittle-Chatbot"
+      },
+      "role": "Author.",
+      "problem": "ELIZA is a famous 1966 program, a parody of a Rogerian therapist that turns your statements back into questions. Its code was freely available in many forms, but not inside Second Life.",
+      "built": "An object that listens to nearby residents and rephrases what they say into a reply, without depending on any outside website. Its responses live in a notecard that can be changed. The repository has versions 1.0 to 1.2, a script that offered update subscriptions, and notes on a Synthesized Voice Box add-on that speaks Eliza's replies.",
+      "hard": "Second Life has no file for an object, so getting it out was its own job: a script writes LSL that rebuilds each prim, plus notes on permissions and contents. Textures exist only as asset IDs.",
+      "results": "Eliza was given away free with full permissions, one of the many products from my Second Life shop, Dedric Mauriac's Gadget Shop."
+    },
+    {
+      "slug": "brain-experiment-number-two",
+      "title": "Brain Experiment #2",
+      "subtitle": "Talk to a brain in a jar",
+      "group": "Second Life",
+      "featured": false,
+      "pitch": "A brain in a jar you can feed and talk to in Second Life, later wired to a Pandorabots ALICE chatbot through a retro phone.",
+      "tags": [
+        "LSL",
+        "Second Life",
+        "Chatbot"
+      ],
+      "alt": "Brain Experiment #2: a brain in a jar of liquid with a retro phone",
+      "links": {
+        "source": "https://github.com/lewismoten/brain-experiment-number-two"
+      },
+      "role": "Author.",
+      "problem": "Inspired by \"Look Around You: The Brain\", a parody in which a brain in a jar phones a scientist to say how many nuts are in a jar. I built it as a display to make people laugh.",
+      "built": "A display with a brain in a jar. Touching different parts gives different responses from the brain. Touching the phone starts and stops a session with the brain through Pandorabots.com, which runs ALICE-based chatbots.",
+      "results": "It started as a joke and became a working chatbot you could call."
+    },
+    {
+      "slug": "7th-son",
+      "title": "7th Son in Second Life",
+      "subtitle": "A podcast player as an audio CD",
+      "group": "Second Life",
+      "featured": false,
+      "pitch": "A 2006 player that brought the 7th Son audio-drama podcast into Second Life, ten seconds of sound at a time.",
+      "tags": [
+        "LSL",
+        "Second Life",
+        "Audio",
+        "Podcast"
+      ],
+      "alt": "7th Son: an audio-drama podcast CD in Second Life",
+      "links": {
+        "source": "https://github.com/lewismoten/7th-son"
+      },
+      "role": "Author.",
+      "problem": "In 2006 a sound in Second Life could be no longer than 10 seconds, and clips had to be preloaded to play one after another without a pause. A podcast episode is much longer than that.",
+      "built": "A box that looks like an old audio CD jewel case. Clicking it offers to play the CD, visit the book's web page or get a notecard. While playing, floating text shows the play time, the total time and a progress bar. The scripts are generic: paste the uploaded clips' asset IDs into one notecard and set the name and links in another, and anyone could make their own.",
+      "hard": "The episode was split into 262 clips of exactly 10 seconds, uploaded one by one, and played in order with each next clip preloaded.",
+      "results": "Following the fictional Ministry of Propaganda's Mission #2, I gave copies of the prologue away throughout Second Life. The author, J. C. Hutchins, held a release party in Second Life."
+    },
+    {
+      "slug": "tic-tac-toe-lsl",
+      "title": "Tic-Tac-Toe",
+      "subtitle": "One prim, four levels of play",
+      "group": "Second Life",
+      "featured": false,
+      "pitch": "Tic-tac-toe on a single Second Life prim, against an AI with four levels from easy to impossible.",
+      "tags": [
+        "LSL",
+        "Second Life",
+        "Game AI"
+      ],
+      "alt": "Tic-Tac-Toe: a tic-tac-toe prim in Second Life",
+      "links": {
+        "source": "https://github.com/lewismoten/Tic-Tac-Toe-lsl"
+      },
+      "role": "Author.",
+      "problem": "A simple game that a passer-by can walk up to and play, using as few prims as possible.",
+      "built": "A one-prim board with a title and a status panel. A player touches an empty cell to start; the AI answers with O. Easy chooses a random empty cell. Normal goes for the win, blocks a win, then takes the center, the opposite corner, any corner or a side. Hard adds a 50% chance of forking and of blocking a fork. Impossible always forks and blocks forks.",
+      "hard": "Fitting the whole board on one prim: version 2.0 moved to a five-faced prim. Once a game starts no one else can interact, and it times out after five minutes if the player walks away.",
+      "results": "Version 2.1 added the four levels of play."
+    },
+    {
+      "slug": "password-generator",
+      "title": "Password Generator",
+      "subtitle": "Random passwords by instant message",
+      "group": "Second Life",
+      "featured": false,
+      "pitch": "A Second Life gadget that makes random passwords and sends them to you by instant message, so channel scanners cannot pick them up.",
+      "tags": [
+        "LSL",
+        "Second Life",
+        "Security"
+      ],
+      "alt": "Password Generator: a Second Life password gadget",
+      "links": {
+        "source": "https://github.com/lewismoten/Password-Generator"
+      },
+      "role": "Author.",
+      "problem": "Chat in Second Life can be overheard by scripts listening on channels, so a password tool cannot simply say the password out loud.",
+      "built": "A panel with checkboxes for lowercase, uppercase, hex, numbers and punctuation, a numeric up/down for the length (1 to 64 characters), and radio buttons to remove look-alike characters such as 0 and O. Presets: Default (8 lowercase characters, no look-alikes), Strong (12 characters of every kind) and Guid (32 hex characters).",
+      "results": "Each password is sent to you by instant message, so channel scanners cannot pick it up."
+    },
+    {
+      "slug": "prim-import-export-library",
+      "title": "Prim Import/Export Library",
+      "subtitle": "Getting objects out of Second Life",
+      "group": "Second Life",
+      "featured": false,
+      "pitch": "LSL scripts from 2015 that read a prim's parameters and write code to rebuild it somewhere else.",
+      "tags": [
+        "LSL",
+        "Second Life",
+        "Export"
+      ],
+      "alt": "Prim Import/Export Library: Second Life prim export and import",
+      "links": {
+        "source": "https://github.com/lewismoten/Prim-Import-Export-Library"
+      },
+      "role": "Author.",
+      "problem": "Second Life has no file you can save an object to, so moving your own builds anywhere else means reading them out piece by piece.",
+      "built": "Scripts that read a prim's parameters and generate code to recreate it, plus a source and a destination script that copy a build across. The readme includes a video showing how to use them.",
+      "results": "Written in 2015. Only export objects you created or have permission to copy."
+    },
+    {
+      "slug": "second-life-projects",
+      "title": "Second Life Projects",
+      "subtitle": "LSL scripts as Dedric Mauriac",
+      "group": "Second Life",
+      "featured": false,
+      "pitch": "A collection of Linden Scripting Language projects made as Dedric Mauriac: a prim copier and exporter, and a message in a bottle.",
+      "tags": [
+        "LSL",
+        "Second Life",
+        "Notepad++"
+      ],
+      "alt": "Second Life Projects: LSL scripts as Dedric Mauriac",
+      "links": {
+        "source": "https://github.com/lewismoten/Second-Life-Projects",
+        "other": [
+          {
+            "label": "My Second Life blog",
+            "url": "https://dedricmauriac.wordpress.com/"
+          }
+        ]
+      },
+      "role": "Author.",
+      "problem": "Old Second Life work kept together in one place, from about 2012.",
+      "built": "PrimExporter: scripts that copy a prim's parameters from a source object to a destination object (source prim, copier, exporter, destination prim and server). Bottled Message: a bottle that gives its message as a text file to whoever touches it. A Notepad++ project file groups the scripts.",
+      "results": "Not maintained. Copy a script into a prim's contents in Second Life to try it."
+    },
+    {
+      "slug": "gamemaker-sandbox",
+      "title": "Game-Maker: Sandbox Edition",
+      "subtitle": "DOS engine port and visual editors",
+      "group": "Publishing and interactive experiences",
+      "featured": true,
+      "pitch": "RSD Game-Maker 3.0 reimplemented and extended in TypeScript: original DOS file formats, browser editors, OPL2 audio, offline play, automated level checks, and an interactive 1994 desktop.",
+      "tags": [
+        "TypeScript",
+        "Vite",
+        "Web Audio",
+        "File formats",
+        "npm packages",
+        "Automated testing",
+        "AI-assisted development"
+      ],
+      "alt": "Game-Maker: Sandbox Edition. Make 1994 DOS games. No programming.",
+      "links": {
+        "demo": "https://game-maker.games.lewismoten.com/",
+        "source": "https://github.com/lewismoten/GameMaker-SandboxEdition",
+        "video": [
+          {
+            "label": "Video",
+            "url": "https://www.youtube.com/watch?v=0riemzdF8gc"
+          }
+        ],
+        "other": [
+          {
+            "label": "npm packages",
+            "url": "https://www.npmjs.com/~lewismoten"
+          }
+        ]
+      },
+      "role": "Maintainer of the fork. Much of the recent code was written by AI agents under my direction, as my blog posts describe.",
+      "problem": "RSD Game-Maker 3.0 was a 1991-1995 game construction kit, and its source was released under the MIT License in 2014. I shoveled Fort Ashby driveways in the winter of 1992 to buy it. This fork makes and plays DOS-style games in a web browser, with no programming, and keeps the original DOS files intact.",
+      "built": "A port, not a PC emulator: Game-Maker and its PLAYGAME player are re-implemented in TypeScript from the released C source. Games are read and written byte for byte in the original formats, so a game made here still runs in DOS Game-Maker and DOSBox. There are three ways in: a 1994 desk with a simulated PC, the DOS screen alone, and a point-and-click web editor. A Level check plays each scene on the real engine, draws a heat map, marks places a player can get stuck, and offers fixes; a bot can record a walkthrough. The engine, archive tools, and builders are reusable npm packages. The new games built for this fork are written entirely in code.",
+      "hard": "Matching the original exactly. The same code must make the same bytes: a check builds each game twice into separate folders and fails if any file differs, and another reads every original file, writes it back, and compares. Refactors must not change a generated byte.",
+      "results": "A live, playable site with offline play and desktop exports. My November 2026 posts describe the project's growth, including a parallel-AI-agent workflow and the 3.2.0 release."
+    },
+    {
+      "slug": "gamemaker-sandbox-engine",
+      "title": "Game-Maker Sandbox Engine",
+      "subtitle": "Browser engine for original DOS games",
+      "group": "Publishing and interactive experiences",
+      "featured": false,
+      "pitch": "The TypeScript engine behind the Game-Maker: Sandbox Edition web player, as its own npm package: hand it a game's original DOS files and it plays them in a browser.",
+      "tags": [
+        "TypeScript",
+        "Web Audio",
+        "AudioWorklet",
+        "File formats",
+        "npm packages",
+        "Automated testing"
+      ],
+      "alt": "Game-Maker Sandbox Engine: original DOS games, browser playback",
+      "links": {
+        "source": "https://github.com/lewismoten/gamemaker-sandbox-engine",
+        "other": [
+          {
+            "label": "npm package",
+            "url": "https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-engine"
+          }
+        ]
+      },
+      "role": "Maintainer. The split was done by AI agents under my direction, as with the rest of Game-Maker: Sandbox Edition.",
+      "problem": "Game-Maker: Sandbox Edition grew its engine inside one large repository. Anyone who wanted to play or read RSD Game-Maker games elsewhere had to take the whole app. I split the engine into its own public repository and npm package, keeping its git history.",
+      "built": "`GameFiles` takes the files from one game's DOS directory (DOS 8.3 names, original bytes) and finds the main `.GAM` file. `runGame` plays it on a `Machine` that owns the screen, keyboard and audio, including the native title menu, instructions, credits, scores and function keys, with hooks that report play without changing timing or game data. The same codecs read `.GAM` and other native files in Node.js. The package ships its audio worklet and TypeScript declarations and has no runtime npm dependencies.",
+      "hard": "Staying the same engine as the web player while living in its own repository, and refusing bad input: the parsers reject scene tables that run past the file, and the GIF decoder caps image size.",
+      "results": "Published on npmjs and GitHub Packages, with its own tests, changelog and releases. It is the same engine the Game-Maker: Sandbox Edition web player runs."
+    },
+    {
+      "slug": "gamemaker-sandbox-archives",
+      "title": "Game-Maker Sandbox Archives",
+      "subtitle": "Find and unpack games in ZIPs, EXEs and packs",
+      "group": "Publishing and interactive experiences",
+      "featured": false,
+      "pitch": "The Game-Maker: Sandbox Edition importer as its own npm package: scan ZIPs, nested archives, game packs and player EXEs, choose the games, and unpack them in a browser or Node.js.",
+      "tags": [
+        "TypeScript",
+        "ZIP",
+        "Compression Streams",
+        "File formats",
+        "npm packages",
+        "Automated testing"
+      ],
+      "alt": "Game-Maker Sandbox Archives: scan, unpack and discover games in ZIP, EXE and GMPAK files",
+      "links": {
+        "source": "https://github.com/lewismoten/gamemaker-sandbox-archives",
+        "other": [
+          {
+            "label": "npm package",
+            "url": "https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-archives"
+          }
+        ]
+      },
+      "role": "Maintainer. The split was done by AI agents under my direction, as with the rest of Game-Maker: Sandbox Edition.",
+      "problem": "Old Game-Maker games turn up inside ZIPs, ZIPs inside ZIPs, and customized player executables. The importer that handles them lived inside the Game-Maker: Sandbox Edition app. I split it into its own public repository and npm package, keeping its git history.",
+      "built": "A scanner reads game headers and archive directories first, so a person can choose games before any files are read; a report explains bad, empty and loose files. `unpackGame` and `unpackGames` return the chosen games. ZIPs are searched up to three levels deep, with limits on entries and bytes. A ZIP writer, a game-pack format with an incremental reader, and player-EXE identification (by build, size, MD5 and its About text) are included. Compression uses the browser's own streams, so the only runtime dependency is the engine package.",
+      "hard": "Handling untrusted archives safely: executables are inspected as data and never run, and every archive and returned game has an entry and size limit.",
+      "results": "Published on npmjs and GitHub Packages, with its own tests and releases. It is the same importer the Game-Maker: Sandbox Edition site uses."
+    },
+    {
+      "slug": "gamemaker-sandbox-tools",
+      "title": "Game-Maker Sandbox Tools",
+      "subtitle": "Build, inspect and verify Game-Maker data",
+      "group": "Publishing and interactive experiences",
+      "featured": false,
+      "pitch": "The tooling that builds the new Game-Maker: Sandbox Edition games in code, as its own npm package: drawing, native formats, audio, headless simulation and disc images.",
+      "tags": [
+        "TypeScript",
+        "Node.js",
+        "Image processing",
+        "Audio",
+        "File formats",
+        "npm packages",
+        "Automated testing"
+      ],
+      "alt": "Game-Maker Sandbox Tools: build, inspect and verify Game-Maker data",
+      "links": {
+        "source": "https://github.com/lewismoten/gamemaker-sandbox-tools",
+        "other": [
+          {
+            "label": "npm package",
+            "url": "https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-tools"
+          }
+        ]
+      },
+      "role": "Maintainer. The split was done by AI agents under my direction, as with the rest of Game-Maker: Sandbox Edition.",
+      "problem": "The new games for Game-Maker: Sandbox Edition are written entirely in code, and the helpers that draw, compose and check them lived inside the app. I split them into their own public repository and npm package, keeping their git history.",
+      "built": "Subpath imports instead of one root: `drawing` (pixels, palettes, fonts, text, compositing, shading), native format writers re-exported from the engine (blocks, characters, monsters, maps, games, palettes, sound, VOC, FLI and more), `audio` (songs, instruments, resampling with a windowed-sinc filter), `simulation` for headless play checks and route assertions, and `iso9660` for disc images with long names. Browser-safe parts are kept apart from the parts that need Node.js.",
+      "hard": "Keeping generated games byte-identical while the code moves: the tools must build the same bytes in their own repository as they did inside the app.",
+      "results": "Published on npmjs and GitHub Packages, with its own tests and releases."
+    },
+    {
+      "slug": "dreamy-tags",
+      "title": "Dreamy Tags",
+      "subtitle": "WordPress plugin",
+      "group": "Publishing and interactive experiences",
+      "featured": false,
+      "pitch": "An open-source PHP and Gutenberg plugin that shows tag clouds filtered by category and tag, with exclusion rules and minimum-use thresholds.",
+      "tags": [
+        "PHP",
+        "WordPress",
+        "Gutenberg",
+        "Open source"
+      ],
+      "alt": "Dreamy Tags banner",
+      "links": {
+        "other": [
+          {
+            "label": "Plugin directory",
+            "url": "https://wordpress.org/plugins/dreamy-tags/"
+          }
+        ],
+        "source": "https://github.com/lewismoten/dreamy-tags"
+      },
+      "role": "Author and maintainer.",
+      "problem": "A WordPress tag cloud normally lists every tag. On a site with many topics, I wanted a cloud of only the tags that appear within a chosen category or tag.",
+      "built": "A plugin published as a Block Editor block, a widget, and a shortcode. Options include the categories a post must belong to, whether child categories count, the tags a post must have, tags to exclude, auto-exclusion of the filter tags themselves, and a minimum number of appearances before a tag shows. Block settings map directly to the shortcode options.",
+      "hard": "Performance on larger sites. The block scans at most 2000 posts by default, and developers can change that with the `dreamy_tags_max_posts` filter.",
+      "results": "Listed in the WordPress Plugin Directory, so anyone can install it from Plugins, Add New."
+    },
+    {
+      "slug": "phone-exhibit",
+      "title": "Restoring the Signal",
+      "subtitle": "Dialable exhibit",
+      "group": "Publishing and interactive experiences",
+      "featured": true,
+      "pitch": "A live installation at Stone Branch Center for the Arts that joins a Raspberry Pi, Asterisk, and a PHP contribution site, with telephone audio, dialplans, transcription, and TTY support.",
+      "tags": [
+        "PHP",
+        "Asterisk",
+        "Raspberry Pi",
+        "ffmpeg",
+        "Audio",
+        "Accessibility"
+      ],
+      "alt": "Restoring the Signal",
+      "links": {
+        "demo": "https://phone.lewismoten.com/",
+        "source": "https://github.com/lewismoten/Phone-Exhibit",
+        "video": [
+          {
+            "label": "Videos",
+            "url": "https://www.youtube.com/watch?v=kmOV7_2MKPg&list=PLHG0YVBnnA7k"
+          }
+        ],
+        "press": [
+          {
+            "label": "Press and photos",
+            "url": "https://www.nvdaily.com/nvdaily/dial-i-for-interactive-new-exhibit-celebrates-150-years-of-communication/article_06d37f43-5f2d-5ee3-9621-2dc1853ef4c2.html"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "An exhibit celebrating 150 years of communication needed a phone visitors could dial, and a way for people to contribute audio to it.",
+      "built": "A live installation at Stone Branch Center for the Arts built from a Raspberry Pi, an Asterisk PBX server, and a PHP contribution site. The site converts audio with a 300-3000 Hz telephone-band filter into 8 kHz, 16-bit mono WAV files to sound like a telephone and match what Asterisk plays. Transcriptions use AI, and Minimodem handles TTY teletype machines. A deploy script uploads only the files whose hash or size changed, using a remote manifest.",
+      "hard": "Secrets. FTP credentials are kept out of the project folder, even in ignored files, because local tools working in the repository can read anything saved there. The deploy script reads them from a file in my home directory.",
+      "results": "A working public exhibit with a live website. The local newspaper covered it as an interactive exhibit celebrating 150 years of communication."
+    },
+    {
+      "slug": "tiny-pockets-press",
+      "title": "Tiny Pockets Press",
+      "subtitle": "Miniature publishing",
+      "group": "Publishing and interactive experiences",
+      "featured": false,
+      "pitch": "A modular JavaScript editor for miniature books, with page layout, imposition logic, and separate interior and cover print and PDF views.",
+      "tags": [
+        "JavaScript",
+        "Print layout",
+        "Imposition",
+        "Markdown",
+        "PDF"
+      ],
+      "alt": "Tiny Pockets Press",
+      "links": {
+        "demo": "https://lewismoten.github.io/Tiny-Pockets-Press/#editor",
+        "source": "https://github.com/lewismoten/Tiny-Pockets-Press",
+        "video": [
+          {
+            "label": "Videos",
+            "url": "https://www.youtube.com/watch?v=w9IwuwX7BkE&list=PLAgk77H8yVCA"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "A miniature book has to be laid out so that its pages, folded and cut, come out in the right order. That is an imposition problem, and it is easy to get wrong by hand.",
+      "built": "A browser editor for miniature books, split into small JavaScript modules: configuration, state, Markdown and media handling, a layout engine, page rendering, imposition, a library, the editor, export, and the app shell. It keeps interior and cover as separate print and PDF views, and includes a sample book as data.",
+      "hard": "Version 6.1 is a syntax-corrected build of version 6. I rebuilt the JavaScript modules to remove invalid escaped strings and broken regular-expression literals, and added a `node --check` validation step to packaging so that cannot slip through again.",
+      "results": "A live editor on GitHub Pages that runs locally with one command."
+    },
+    {
+      "slug": "athens-acropolis",
+      "title": "Shoomi's HomePage",
+      "subtitle": "GeoCities restoration",
+      "group": "Publishing and interactive experiences",
+      "featured": false,
+      "pitch": "A restoration of my first web page from the 1990s, with a Canvas recreation of its Java applet marquee, Web Audio MIDI playback, and a browser version of a Visual Basic color editor.",
+      "tags": [
+        "JavaScript",
+        "Canvas",
+        "Web Audio",
+        "Web restoration",
+        "CSS"
+      ],
+      "alt": "Shoomi's HomePage: The Beginning of All Dreams",
+      "links": {
+        "demo": "https://lewismoten.github.io/Athens-Acropolis-4507/",
+        "source": "https://github.com/lewismoten/Athens-Acropolis-4507",
+        "video": [
+          {
+            "label": "Videos",
+            "url": "https://www.youtube.com/watch?v=UgJgb0VUaHw&list=PLI4A73VhrZT4"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "I got a GeoCities page in the 1990s, my first web page, under the account name moonhalo and the persona Shoomi. I archived it on a CD resume in 1999. Today's browsers can't run its Java applet, its embedded MIDI, or its Visual Basic editor.",
+      "built": "A partly modernized archive that still looks and sounds like the original. The Java applet marquee is recreated with HTML5 canvas, using the original message flow. A small Web Audio sampler player reads the original MIDI file directly. The title font loads as a webfont, which restores the look of the navigation and page titles. The old Visual Basic color writer is recreated as a browser app with a palette picker, per-letter colors, gradient HTML output, and a live preview.",
+      "hard": "Making the original experience viewable in a current browser without legacy plugins or local font installs.",
+      "results": "The original experience works in a current browser, with the restoration notes kept in the README."
+    },
+    {
+      "slug": "provo-craft-cd-recovery",
+      "title": "Provo Craft CD Recovery",
+      "subtitle": "Classic CD-ROM preservation",
+      "group": "Media preservation and recovery",
+      "featured": false,
+      "pitch": "A macOS recovery workflow for six 1996 Provo Craft clip-art CD-ROMs that current macOS cannot read, preserving the original media while keeping recovered content local.",
+      "tags": [
+        "Python",
+        "macOS",
+        "HFS",
+        "Optical media",
+        "ImageMagick",
+        "Digital preservation"
+      ],
+      "alt": "Provo Craft CD Recovery: classic CD-ROM to archive, PNG, SVG, and TTF.",
+      "links": {
+        "source": "https://github.com/lewismoten/provo-craft-cd-recovery"
+      },
+      "role": "Preservation tooling and documentation.",
+      "problem": "Six 1996 Provo Craft electronic clip-art CD-ROMs use classic Macintosh HFS layouts that current macOS reports as unreadable. I wanted to preserve the original discs, make the artwork usable on current tools, and avoid publishing material that remains subject to the original package license.",
+      "built": "A Python workflow for raw 2352-byte-sector CD capture, SHA-256 validation, derived ISO creation, read-only HFS extraction, TIFF-to-PNG conversion, EPS-to-SVG conversion, suitcase-font conversion, and labeled contact sheets. It detects the optical drive, preserves a complete archive before extraction, and handles the different folder layouts found across the discs.",
+      "hard": "The discs vary in their Macintosh folder layouts, and modern macOS cannot directly mount the classic HFS volume. The workflow had to preserve raw images without altering them, support multiple artwork and font paths, avoid treating an interrupted capture as resumable, and eject the physical disc even when later extraction fails.",
+      "results": "Recovered six discs with their raw archives, modern local derivatives, and generated font files. The public repository contains only scripts and documentation, including a reading of the unusually restrictive 1996 license terms; recovered media stays in a Git-ignored local directory."
+    },
+    {
+      "slug": "storage-d64",
+      "title": "D64 Storage Lab",
+      "subtitle": "Repair and optimization",
+      "group": "8-bit retro Commodore 64 projects",
+      "featured": true,
+      "pitch": "A browser workbench that maps Commodore 64 disk sectors and file chains, estimates read efficiency, repairs corruption, restores deleted files, and compares optimized and fragmented layouts.",
+      "tags": [
+        "JavaScript",
+        "Data visualization",
+        "Commodore 64",
+        "Disk formats",
+        "Binary parsing"
+      ],
+      "alt": "storage-d64 disk layout visualizer",
+      "links": {
+        "demo": "https://lewismoten.github.io/storage-d64/",
+        "source": "https://github.com/lewismoten/storage-d64",
+        "video": [
+          {
+            "label": "Video",
+            "url": "https://www.youtube.com/watch?v=cXeIy4AZewY"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "Some disk images generated with AI help passed basic validation but failed to load in emulators. A pass or fail wasn't enough; I needed to see the disk's structure and connect suspicious bytes to the structures they affect.",
+      "built": "A reusable JavaScript support layer and an interactive visual lab. You can create, load, inspect, and download 35-, 40-, and 42-track images, browse a visual disk map, and follow directory and file-sector chains. The lab finds the structural problems I met in real generated images, offers targeted repairs, and has an Auto Repair for low-risk fixes. You can drop files onto an image and download files directly.",
+      "hard": "Once integrity was covered, the question became how placement affects reading. The lab models a stock 1541 from its DOS ROM: rotation, head stepping, read-ahead, and the slow C64 serial bus. A speed map shows the delay each link adds to a stock LOAD and how closely the layout follows the DOS placement rule.",
+      "results": "Optimize and Deoptimize make layout tradeoffs visible and testable. A live lab is on GitHub Pages."
+    },
+    {
+      "slug": "sector-256",
+      "title": "Sector 256",
+      "subtitle": "Tiny programs for the C64",
+      "group": "8-bit retro Commodore 64 projects",
+      "featured": false,
+      "pitch": "A graphical Commodore 64 launcher for games, utilities, demos, and experiments whose stored payloads are 256 bytes or less.",
+      "tags": [
+        "6502 assembly",
+        "Python",
+        "Commodore 64",
+        "Build pipeline",
+        "Automated testing"
+      ],
+      "alt": "Sector 256: One block. Many worlds.",
+      "links": {
+        "demo": "https://lewismoten.github.io/sector-256/",
+        "source": "https://github.com/lewismoten/sector-256",
+        "video": [
+          {
+            "label": "Video",
+            "url": "https://www.youtube.com/watch?v=dptHv4-RSWo"
+          }
+        ]
+      },
+      "role": "Author and maintainer.",
+      "problem": "One disk block holds 256 bytes. How much can a program do inside one? The limit is a disk-storage constraint, not a runtime one: launched programs run at $c000 and share a launcher API.",
+      "built": "A graphical launcher with a catalog of 288 programs, written in 6502 assembly with shared routines and a Python build pipeline. The build packages programs into a D64 disk image, and also writes a standalone PRG for each program, each with a BASIC loader and its own copy of the 795-byte API implementation. Automated machine-code tests check the programs.",
+      "hard": "Every catalog payload has to fit in 256 bytes, so programs lean on the shared launcher API instead of carrying their own routines.",
+      "results": "A playable disk image for VICE or a real 1541, a standalone PRG and a ZIP for every program, and a static catalog page on GitHub Pages that can send a program to a C64."
+    },
+    {
+      "slug": "stream-scribe",
+      "title": "Stream Scribe",
+      "subtitle": "Independent meeting archive and research",
+      "group": "Government Transparency",
+      "featured": true,
+      "pitch": "An independent archive and research tool for livestreamed government meetings: capture, local Whisper transcription, search, and annotation. Still in development.",
+      "tags": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "SQLite",
+        "Whisper",
+        "ffmpeg"
+      ],
+      "alt": "Stream Scribe: capture, search, research. Independent archives for live government meetings.",
+      "links": {
+        "source": "https://github.com/lewismoten/streamscribe"
+      },
+      "role": "Author and maintainer.",
+      "problem": "Public meetings are streamed live, and an independent record of them helps people review who spoke, the agenda, and the votes. This tool keeps that archive on your own computer.",
+      "built": "A tool that records a livestream, fills capture gaps from the official recording, and transcribes it on your own computer with Whisper. You can search transcripts and navigate thumbnails while the meeting is live, add speaker, topic, and vote annotations, and export short clips. Notes, transcripts, and clips can be published with links back to the official sources. It is built with React, TypeScript, Node.js, and SQLite.",
+      "hard": "Three ways to run it from one codebase: on your own computer with everything, in a browser with your data kept there (from a fork on GitHub Pages), or against a shared hub on PHP hosting for scheduled recorders, accounts, publishing, and podcasts.",
+      "results": "In development. The source is public; there is no live demo yet."
+    },
+    {
+      "slug": "upload-without-com",
+      "title": "Upload Files Without COM",
+      "subtitle": "Classic ASP file uploads, 2001 to 2003",
+      "group": "Earlier open source",
+      "featured": false,
+      "pitch": "A pure-ASP parser for multipart form uploads, so a site on IIS could accept files without buying a COM component.",
+      "tags": [
+        "Classic ASP",
+        "VBScript",
+        "ADODB"
+      ],
+      "alt": "The Upload Files Without COM version 3 example page.",
+      "links": {
+        "source": "https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/ASP/UploadFilesWithoutCOMv3",
+        "other": [
+          {
+            "label": "Version 2 on Planet Source Code (archived 2010: 210,297 views, 231 comments)",
+            "url": "https://web.archive.org/web/20101229090110/http://www.pscode.com/vb/scripts/ShowCode.asp?txtCodeId=7361&lngWId=4"
+          },
+          {
+            "label": "Version 3 on Planet Source Code (archived)",
+            "url": "https://web.archive.org/web/20200604164655/http://planet-source-code.com/vb/scripts/ShowCode.asp?txtCodeId=8525&lngWId=4"
+          },
+          {
+            "label": "Stack Overflow, 2012: \"solution credit goes to Lewis Moten\"",
+            "url": "https://stackoverflow.com/a/12200970"
+          },
+          {
+            "label": "evolt.org list, 2008: used on several client sites (archived)",
+            "url": "https://web.archive.org/web/20240910180039/https://lists.evolt.org/archive/Week-of-Mon-20080630/125069.html"
+          },
+          {
+            "label": "WebmasterWorld, 2006: a reader points to it",
+            "url": "https://www.webmasterworld.com/forum47/3290.htm"
+          },
+          {
+            "label": "Tek-Tips, 2007: a developer's upload built on it",
+            "url": "https://www.tek-tips.com/threads/uploading-images-to-a-record.1338773"
+          },
+          {
+            "label": "My Planet Source Code archive (2000s)",
+            "url": "https://github.com/lewismoten/Lewies-Code-Library-PSC"
+          }
+        ]
+      },
+      "role": "Author. Three versions: January 2001, March 2002, September 2003.",
+      "problem": "In 2001, accepting an upload in classic ASP on IIS meant buying a component from one of two companies, about $700, and finding a host willing to install a DLL.",
+      "built": "I read the RFC for multipart form uploads and wrote a parser in plain ASP. It saved files to disk or to a database, for free. Version 1 (1/13/2001) used classes instead of dictionary objects. Version 2 (3/20/2002) was faster, fixed bugs and commented every step. Version 3 (9/1/2003) has an object-oriented interface, saves binary data through ADODB, manages memory so larger files work, shows a real-time progress bar, and comes with a FAQ and a support site.",
+      "hard": "Parsing raw binary form data with only what a shared host already had, and keeping memory in check for large files.",
+      "results": "It was my most famous published code and won an award on Planet Source Code. By the end of 2010, version 2's page there had been read 210,297 times, rated by 50 users and drawn 231 comments from 2002 to 2010. Developers kept recommending it for years: an OpenWiki attachment patch on SourceForge (2003) was built on it, a WebmasterWorld reader pointed others to it in 2006, a developer on the evolt.org list said in 2008 that they had used it on several client sites, and a 2012 Stack Overflow answer to \"How to upload files with asp-classic\" (now over 100,000 views) used it, with \"solution credit goes to Lewis Moten\"."
+    },
+    {
+      "slug": "vss-journal-monitor",
+      "title": "Visual SourceSafe Journal Monitor Service",
+      "subtitle": "VB.NET Windows service, January 2004",
+      "group": "Earlier open source",
+      "featured": false,
+      "pitch": "A Windows service that watches a Visual SourceSafe database and sends alerts and daily reports, so teammates in several time zones are told when a file is checked in.",
+      "tags": [
+        "VB.NET",
+        ".NET",
+        "Windows service",
+        "SQL Server"
+      ],
+      "alt": "A VSS Monitor daily report email and a Windows Messenger pop-up.",
+      "links": {
+        "source": "https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/VBNet/VSSMonitorService",
+        "other": [
+          {
+            "label": "My Planet Source Code archive (2000s)",
+            "url": "https://github.com/lewismoten/Lewies-Code-Library-PSC"
+          }
+        ]
+      },
+      "role": "Author.",
+      "problem": "I worked with remote teammates in other time zones, and Visual SourceSafe used exclusive checkouts. A file checked out overnight somewhere else meant waiting.",
+      "built": "A service built from scratch, inspired by Doug Schmidt's SSMonitor. It reads the SourceSafe journal and sends alerts by email, MSN or Windows Messenger, or a plug-in. Each alert has its own filters and recipients, and each user has a time zone. Daily reports include who checked in without a comment. Storage is SQL Server or XML, and there is an installer.",
+      "results": "Published on Planet Source Code in January 2004."
+    },
+    {
+      "slug": "javascript-sha1",
+      "title": "JavaScript SHA-1",
+      "subtitle": "A hash function in the browser, April 2001",
+      "group": "Earlier open source",
+      "featured": false,
+      "pitch": "A JavaScript port of the SHA-1 hash, published in April 2001, before its collision weaknesses were known.",
+      "tags": [
+        "JavaScript",
+        "Cryptography"
+      ],
+      "alt": "A card showing the SHA-1 digest of abc.",
+      "links": {
+        "source": "https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/JavaScript/SecureHashAlgorithm(SHA-1)",
+        "other": [
+          {
+            "label": "My Planet Source Code archive (2000s)",
+            "url": "https://github.com/lewismoten/Lewies-Code-Library-PSC"
+          }
+        ]
+      },
+      "role": "Author.",
+      "problem": "The function makes a 160-bit digest, 40 hex digits, from a message of any length, and in 2001 there was little hashing code for the browser.",
+      "built": "A JavaScript port of SHA-1 that I published in April 2001.",
+      "results": "Years later, while contracting at a company, I found my own code in their commercial codebase with someone's SHA-256 additions on top. I told them. They checked their history, confirmed it predated me, and announced it to every team."
+    }
+  ],
+  "groupNotes": {
+    "Earlier open source": "Code I published in the 2000s, before the work above. The whole archive is on GitHub as [my Planet Source Code archive (2000s)](https://github.com/lewismoten/Lewies-Code-Library-PSC), and it has its own [browsable catalog](https://lewismoten.github.io/Lewies-Code-Library-PSC/Browse.htm).",
+    "Applied AI and model engineering": "Four of these projects are one series, built step by step: [The tic-tac-toe models](/series/tic-tac-toe-models/), side by side.",
+    "Second Life": "Made as my avatar, Dedric Mauriac, from 2005 on, and written about on [my Second Life blog](https://dedricmauriac.wordpress.com/). Every public Second Life repository is in the [Archive](/archive/) under the second-life tag."
   },
-  {
-   "slug": "eliza-doolittle-chatbot",
-   "title": "Eliza Doolittle Chatbot",
-   "subtitle": "ELIZA in Linden Scripting Language",
-   "group": "Second Life",
-   "featured": false,
-   "pitch": "A port of Joseph Weizenbaum's 1966 ELIZA into Second Life: a parody of a Rogerian therapist that listens to nearby residents and answers.",
-   "tags": [
-    "LSL",
-    "Second Life",
-    "Chatbot"
-   ],
-   "alt": "Eliza Doolittle Chatbot: the 1966 ELIZA chatbot ported into Second Life",
-   "links": {
-    "source": "https://github.com/lewismoten/Eliza-Doolittle-Chatbot"
-   },
-   "role": "Author.",
-   "problem": "ELIZA is a famous 1966 program, a parody of a Rogerian therapist that turns your statements back into questions. Its code was freely available in many forms, but not inside Second Life.",
-   "built": "An object that listens to nearby residents and rephrases what they say into a reply, without depending on any outside website. Its responses live in a notecard that can be changed. The repository has versions 1.0 to 1.2, a script that offered update subscriptions, and notes on a Synthesized Voice Box add-on that speaks Eliza's replies.",
-   "hard": "Second Life has no file for an object, so getting it out was its own job: a script writes LSL that rebuilds each prim, plus notes on permissions and contents. Textures exist only as asset IDs.",
-   "results": "Eliza was given away free with full permissions, one of the many products from my Second Life shop, Dedric Mauriac's Gadget Shop."
-  },
-  {
-   "slug": "brain-experiment-number-two",
-   "title": "Brain Experiment #2",
-   "subtitle": "Talk to a brain in a jar",
-   "group": "Second Life",
-   "featured": false,
-   "pitch": "A brain in a jar you can feed and talk to in Second Life, later wired to a Pandorabots ALICE chatbot through a retro phone.",
-   "tags": [
-    "LSL",
-    "Second Life",
-    "Chatbot"
-   ],
-   "alt": "Brain Experiment #2: a brain in a jar of liquid with a retro phone",
-   "links": {
-    "source": "https://github.com/lewismoten/brain-experiment-number-two"
-   },
-   "role": "Author.",
-   "problem": "Inspired by \"Look Around You: The Brain\", a parody in which a brain in a jar phones a scientist to say how many nuts are in a jar. I built it as a display to make people laugh.",
-   "built": "A display with a brain in a jar. Touching different parts gives different responses from the brain. Touching the phone starts and stops a session with the brain through Pandorabots.com, which runs ALICE-based chatbots.",
-   "results": "It started as a joke and became a working chatbot you could call."
-  },
-  {
-   "slug": "7th-son",
-   "title": "7th Son in Second Life",
-   "subtitle": "A podcast player as an audio CD",
-   "group": "Second Life",
-   "featured": false,
-   "pitch": "A 2006 player that brought the 7th Son audio-drama podcast into Second Life, ten seconds of sound at a time.",
-   "tags": [
-    "LSL",
-    "Second Life",
-    "Audio",
-    "Podcast"
-   ],
-   "alt": "7th Son: an audio-drama podcast CD in Second Life",
-   "links": {
-    "source": "https://github.com/lewismoten/7th-son"
-   },
-   "role": "Author.",
-   "problem": "In 2006 a sound in Second Life could be no longer than 10 seconds, and clips had to be preloaded to play one after another without a pause. A podcast episode is much longer than that.",
-   "built": "A box that looks like an old audio CD jewel case. Clicking it offers to play the CD, visit the book's web page or get a notecard. While playing, floating text shows the play time, the total time and a progress bar. The scripts are generic: paste the uploaded clips' asset IDs into one notecard and set the name and links in another, and anyone could make their own.",
-   "hard": "The episode was split into 262 clips of exactly 10 seconds, uploaded one by one, and played in order with each next clip preloaded.",
-   "results": "Following the fictional Ministry of Propaganda's Mission #2, I gave copies of the prologue away throughout Second Life. The author, J. C. Hutchins, held a release party in Second Life."
-  },
-  {
-   "slug": "tic-tac-toe-lsl",
-   "title": "Tic-Tac-Toe",
-   "subtitle": "One prim, four levels of play",
-   "group": "Second Life",
-   "featured": false,
-   "pitch": "Tic-tac-toe on a single Second Life prim, against an AI with four levels from easy to impossible.",
-   "tags": [
-    "LSL",
-    "Second Life",
-    "Game AI"
-   ],
-   "alt": "Tic-Tac-Toe: a tic-tac-toe prim in Second Life",
-   "links": {
-    "source": "https://github.com/lewismoten/Tic-Tac-Toe-lsl"
-   },
-   "role": "Author.",
-   "problem": "A simple game that a passer-by can walk up to and play, using as few prims as possible.",
-   "built": "A one-prim board with a title and a status panel. A player touches an empty cell to start; the AI answers with O. Easy chooses a random empty cell. Normal goes for the win, blocks a win, then takes the center, the opposite corner, any corner or a side. Hard adds a 50% chance of forking and of blocking a fork. Impossible always forks and blocks forks.",
-   "hard": "Fitting the whole board on one prim: version 2.0 moved to a five-faced prim. Once a game starts no one else can interact, and it times out after five minutes if the player walks away.",
-   "results": "Version 2.1 added the four levels of play."
-  },
-  {
-   "slug": "password-generator",
-   "title": "Password Generator",
-   "subtitle": "Random passwords by instant message",
-   "group": "Second Life",
-   "featured": false,
-   "pitch": "A Second Life gadget that makes random passwords and sends them to you by instant message, so channel scanners cannot pick them up.",
-   "tags": [
-    "LSL",
-    "Second Life",
-    "Security"
-   ],
-   "alt": "Password Generator: a Second Life password gadget",
-   "links": {
-    "source": "https://github.com/lewismoten/Password-Generator"
-   },
-   "role": "Author.",
-   "problem": "Chat in Second Life can be overheard by scripts listening on channels, so a password tool cannot simply say the password out loud.",
-   "built": "A panel with checkboxes for lowercase, uppercase, hex, numbers and punctuation, a numeric up/down for the length (1 to 64 characters), and radio buttons to remove look-alike characters such as 0 and O. Presets: Default (8 lowercase characters, no look-alikes), Strong (12 characters of every kind) and Guid (32 hex characters).",
-   "results": "Each password is sent to you by instant message, so channel scanners cannot pick it up."
-  },
-  {
-   "slug": "prim-import-export-library",
-   "title": "Prim Import/Export Library",
-   "subtitle": "Getting objects out of Second Life",
-   "group": "Second Life",
-   "featured": false,
-   "pitch": "LSL scripts from 2015 that read a prim's parameters and write code to rebuild it somewhere else.",
-   "tags": [
-    "LSL",
-    "Second Life",
-    "Export"
-   ],
-   "alt": "Prim Import/Export Library: Second Life prim export and import",
-   "links": {
-    "source": "https://github.com/lewismoten/Prim-Import-Export-Library"
-   },
-   "role": "Author.",
-   "problem": "Second Life has no file you can save an object to, so moving your own builds anywhere else means reading them out piece by piece.",
-   "built": "Scripts that read a prim's parameters and generate code to recreate it, plus a source and a destination script that copy a build across. The readme includes a video showing how to use them.",
-   "results": "Written in 2015. Only export objects you created or have permission to copy."
-  },
-  {
-   "slug": "second-life-projects",
-   "title": "Second Life Projects",
-   "subtitle": "LSL scripts as Dedric Mauriac",
-   "group": "Second Life",
-   "featured": false,
-   "pitch": "A collection of Linden Scripting Language projects made as Dedric Mauriac: a prim copier and exporter, and a message in a bottle.",
-   "tags": [
-    "LSL",
-    "Second Life",
-    "Notepad++"
-   ],
-   "alt": "Second Life Projects: LSL scripts as Dedric Mauriac",
-   "links": {
-    "source": "https://github.com/lewismoten/Second-Life-Projects",
-    "other": [
-     {
-      "label": "My Second Life blog",
-      "url": "https://dedricmauriac.wordpress.com/"
-     }
-    ]
-   },
-   "role": "Author.",
-   "problem": "Old Second Life work kept together in one place, from about 2012.",
-   "built": "PrimExporter: scripts that copy a prim's parameters from a source object to a destination object (source prim, copier, exporter, destination prim and server). Bottled Message: a bottle that gives its message as a text file to whoever touches it. A Notepad++ project file groups the scripts.",
-   "results": "Not maintained. Copy a script into a prim's contents in Second Life to try it."
-  },
-  {
-   "slug": "gamemaker-sandbox",
-   "title": "Game-Maker: Sandbox Edition",
-   "subtitle": "DOS engine port and visual editors",
-   "group": "Publishing and interactive experiences",
-   "featured": true,
-   "pitch": "RSD Game-Maker 3.0 reimplemented and extended in TypeScript: original DOS file formats, browser editors, OPL2 audio, offline play, automated level checks, and an interactive 1994 desktop.",
-   "tags": [
-    "TypeScript",
-    "Vite",
-    "Web Audio",
-    "File formats",
-    "npm packages",
-    "Automated testing",
-    "AI-assisted development"
-   ],
-   "alt": "Game-Maker: Sandbox Edition. Make 1994 DOS games. No programming.",
-   "links": {
-    "demo": "https://game-maker.games.lewismoten.com/",
-    "source": "https://github.com/lewismoten/GameMaker-SandboxEdition",
-    "video": [
-     {
-      "label": "Video",
-      "url": "https://www.youtube.com/watch?v=0riemzdF8gc"
-     }
-    ],
-    "other": [
-     {
-      "label": "npm packages",
-      "url": "https://www.npmjs.com/~lewismoten"
-     }
-    ]
-   },
-   "role": "Maintainer of the fork. Much of the recent code was written by AI agents under my direction, as my blog posts describe.",
-   "problem": "RSD Game-Maker 3.0 was a 1991-1995 game construction kit, and its source was released under the MIT License in 2014. I shoveled Fort Ashby driveways in the winter of 1992 to buy it. This fork makes and plays DOS-style games in a web browser, with no programming, and keeps the original DOS files intact.",
-   "built": "A port, not a PC emulator: Game-Maker and its PLAYGAME player are re-implemented in TypeScript from the released C source. Games are read and written byte for byte in the original formats, so a game made here still runs in DOS Game-Maker and DOSBox. There are three ways in: a 1994 desk with a simulated PC, the DOS screen alone, and a point-and-click web editor. A Level check plays each scene on the real engine, draws a heat map, marks places a player can get stuck, and offers fixes; a bot can record a walkthrough. The engine, archive tools, and builders are reusable npm packages. The new games built for this fork are written entirely in code.",
-   "hard": "Matching the original exactly. The same code must make the same bytes: a check builds each game twice into separate folders and fails if any file differs, and another reads every original file, writes it back, and compares. Refactors must not change a generated byte.",
-   "results": "A live, playable site with offline play and desktop exports. My November 2026 posts describe the project's growth, including a parallel-AI-agent workflow and the 3.2.0 release."
-  },
-  {
-   "slug": "gamemaker-sandbox-engine",
-   "title": "Game-Maker Sandbox Engine",
-   "subtitle": "Browser engine for original DOS games",
-   "group": "Publishing and interactive experiences",
-   "featured": false,
-   "pitch": "The TypeScript engine behind the Game-Maker: Sandbox Edition web player, as its own npm package: hand it a game's original DOS files and it plays them in a browser.",
-   "tags": [
-    "TypeScript",
-    "Web Audio",
-    "AudioWorklet",
-    "File formats",
-    "npm packages",
-    "Automated testing"
-   ],
-   "alt": "Game-Maker Sandbox Engine: original DOS games, browser playback",
-   "links": {
-    "source": "https://github.com/lewismoten/gamemaker-sandbox-engine",
-    "other": [
-     {
-      "label": "npm package",
-      "url": "https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-engine"
-     }
-    ]
-   },
-   "role": "Maintainer. The split was done by AI agents under my direction, as with the rest of Game-Maker: Sandbox Edition.",
-   "problem": "Game-Maker: Sandbox Edition grew its engine inside one large repository. Anyone who wanted to play or read RSD Game-Maker games elsewhere had to take the whole app. I split the engine into its own public repository and npm package, keeping its git history.",
-   "built": "`GameFiles` takes the files from one game's DOS directory (DOS 8.3 names, original bytes) and finds the main `.GAM` file. `runGame` plays it on a `Machine` that owns the screen, keyboard and audio, including the native title menu, instructions, credits, scores and function keys, with hooks that report play without changing timing or game data. The same codecs read `.GAM` and other native files in Node.js. The package ships its audio worklet and TypeScript declarations and has no runtime npm dependencies.",
-   "hard": "Staying the same engine as the web player while living in its own repository, and refusing bad input: the parsers reject scene tables that run past the file, and the GIF decoder caps image size.",
-   "results": "Published on npmjs and GitHub Packages, with its own tests, changelog and releases. It is the same engine the Game-Maker: Sandbox Edition web player runs."
-  },
-  {
-   "slug": "gamemaker-sandbox-archives",
-   "title": "Game-Maker Sandbox Archives",
-   "subtitle": "Find and unpack games in ZIPs, EXEs and packs",
-   "group": "Publishing and interactive experiences",
-   "featured": false,
-   "pitch": "The Game-Maker: Sandbox Edition importer as its own npm package: scan ZIPs, nested archives, game packs and player EXEs, choose the games, and unpack them in a browser or Node.js.",
-   "tags": [
-    "TypeScript",
-    "ZIP",
-    "Compression Streams",
-    "File formats",
-    "npm packages",
-    "Automated testing"
-   ],
-   "alt": "Game-Maker Sandbox Archives: scan, unpack and discover games in ZIP, EXE and GMPAK files",
-   "links": {
-    "source": "https://github.com/lewismoten/gamemaker-sandbox-archives",
-    "other": [
-     {
-      "label": "npm package",
-      "url": "https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-archives"
-     }
-    ]
-   },
-   "role": "Maintainer. The split was done by AI agents under my direction, as with the rest of Game-Maker: Sandbox Edition.",
-   "problem": "Old Game-Maker games turn up inside ZIPs, ZIPs inside ZIPs, and customized player executables. The importer that handles them lived inside the Game-Maker: Sandbox Edition app. I split it into its own public repository and npm package, keeping its git history.",
-   "built": "A scanner reads game headers and archive directories first, so a person can choose games before any files are read; a report explains bad, empty and loose files. `unpackGame` and `unpackGames` return the chosen games. ZIPs are searched up to three levels deep, with limits on entries and bytes. A ZIP writer, a game-pack format with an incremental reader, and player-EXE identification (by build, size, MD5 and its About text) are included. Compression uses the browser's own streams, so the only runtime dependency is the engine package.",
-   "hard": "Handling untrusted archives safely: executables are inspected as data and never run, and every archive and returned game has an entry and size limit.",
-   "results": "Published on npmjs and GitHub Packages, with its own tests and releases. It is the same importer the Game-Maker: Sandbox Edition site uses."
-  },
-  {
-   "slug": "gamemaker-sandbox-tools",
-   "title": "Game-Maker Sandbox Tools",
-   "subtitle": "Build, inspect and verify Game-Maker data",
-   "group": "Publishing and interactive experiences",
-   "featured": false,
-   "pitch": "The tooling that builds the new Game-Maker: Sandbox Edition games in code, as its own npm package: drawing, native formats, audio, headless simulation and disc images.",
-   "tags": [
-    "TypeScript",
-    "Node.js",
-    "Image processing",
-    "Audio",
-    "File formats",
-    "npm packages",
-    "Automated testing"
-   ],
-   "alt": "Game-Maker Sandbox Tools: build, inspect and verify Game-Maker data",
-   "links": {
-    "source": "https://github.com/lewismoten/gamemaker-sandbox-tools",
-    "other": [
-     {
-      "label": "npm package",
-      "url": "https://www.npmjs.com/package/@lewismoten/gamemaker-sandbox-tools"
-     }
-    ]
-   },
-   "role": "Maintainer. The split was done by AI agents under my direction, as with the rest of Game-Maker: Sandbox Edition.",
-   "problem": "The new games for Game-Maker: Sandbox Edition are written entirely in code, and the helpers that draw, compose and check them lived inside the app. I split them into their own public repository and npm package, keeping their git history.",
-   "built": "Subpath imports instead of one root: `drawing` (pixels, palettes, fonts, text, compositing, shading), native format writers re-exported from the engine (blocks, characters, monsters, maps, games, palettes, sound, VOC, FLI and more), `audio` (songs, instruments, resampling with a windowed-sinc filter), `simulation` for headless play checks and route assertions, and `iso9660` for disc images with long names. Browser-safe parts are kept apart from the parts that need Node.js.",
-   "hard": "Keeping generated games byte-identical while the code moves: the tools must build the same bytes in their own repository as they did inside the app.",
-   "results": "Published on npmjs and GitHub Packages, with its own tests and releases."
-  },
-  {
-   "slug": "dreamy-tags",
-   "title": "Dreamy Tags",
-   "subtitle": "WordPress plugin",
-   "group": "Publishing and interactive experiences",
-   "featured": false,
-   "pitch": "An open-source PHP and Gutenberg plugin that shows tag clouds filtered by category and tag, with exclusion rules and minimum-use thresholds.",
-   "tags": [
-    "PHP",
-    "WordPress",
-    "Gutenberg",
-    "Open source"
-   ],
-   "alt": "Dreamy Tags banner",
-   "links": {
-    "other": [
-     {
-      "label": "Plugin directory",
-      "url": "https://wordpress.org/plugins/dreamy-tags/"
-     }
-    ],
-    "source": "https://github.com/lewismoten/dreamy-tags"
-   },
-   "role": "Author and maintainer.",
-   "problem": "A WordPress tag cloud normally lists every tag. On a site with many topics, I wanted a cloud of only the tags that appear within a chosen category or tag.",
-   "built": "A plugin published as a Block Editor block, a widget, and a shortcode. Options include the categories a post must belong to, whether child categories count, the tags a post must have, tags to exclude, auto-exclusion of the filter tags themselves, and a minimum number of appearances before a tag shows. Block settings map directly to the shortcode options.",
-   "hard": "Performance on larger sites. The block scans at most 2000 posts by default, and developers can change that with the `dreamy_tags_max_posts` filter.",
-   "results": "Listed in the WordPress Plugin Directory, so anyone can install it from Plugins, Add New."
-  },
-  {
-   "slug": "phone-exhibit",
-   "title": "Restoring the Signal",
-   "subtitle": "Dialable exhibit",
-   "group": "Publishing and interactive experiences",
-   "featured": true,
-   "pitch": "A live installation at Stone Branch Center for the Arts that joins a Raspberry Pi, Asterisk, and a PHP contribution site, with telephone audio, dialplans, transcription, and TTY support.",
-   "tags": [
-    "PHP",
-    "Asterisk",
-    "Raspberry Pi",
-    "ffmpeg",
-    "Audio",
-    "Accessibility"
-   ],
-   "alt": "Restoring the Signal",
-   "links": {
-    "demo": "https://phone.lewismoten.com/",
-    "source": "https://github.com/lewismoten/Phone-Exhibit",
-    "video": [
-     {
-      "label": "Videos",
-      "url": "https://www.youtube.com/watch?v=kmOV7_2MKPg&list=PLHG0YVBnnA7k"
-     }
-    ],
-    "press": [
-     {
-      "label": "Press and photos",
-      "url": "https://www.nvdaily.com/nvdaily/dial-i-for-interactive-new-exhibit-celebrates-150-years-of-communication/article_06d37f43-5f2d-5ee3-9621-2dc1853ef4c2.html"
-     }
-    ]
-   },
-   "role": "Author and maintainer.",
-   "problem": "An exhibit celebrating 150 years of communication needed a phone visitors could dial, and a way for people to contribute audio to it.",
-   "built": "A live installation at Stone Branch Center for the Arts built from a Raspberry Pi, an Asterisk PBX server, and a PHP contribution site. The site converts audio with a 300-3000 Hz telephone-band filter into 8 kHz, 16-bit mono WAV files to sound like a telephone and match what Asterisk plays. Transcriptions use AI, and Minimodem handles TTY teletype machines. A deploy script uploads only the files whose hash or size changed, using a remote manifest.",
-   "hard": "Secrets. FTP credentials are kept out of the project folder, even in ignored files, because local tools working in the repository can read anything saved there. The deploy script reads them from a file in my home directory.",
-   "results": "A working public exhibit with a live website. The local newspaper covered it as an interactive exhibit celebrating 150 years of communication."
-  },
-  {
-   "slug": "tiny-pockets-press",
-   "title": "Tiny Pockets Press",
-   "subtitle": "Miniature publishing",
-   "group": "Publishing and interactive experiences",
-   "featured": false,
-   "pitch": "A modular JavaScript editor for miniature books, with page layout, imposition logic, and separate interior and cover print and PDF views.",
-   "tags": [
-    "JavaScript",
-    "Print layout",
-    "Imposition",
-    "Markdown",
-    "PDF"
-   ],
-   "alt": "Tiny Pockets Press",
-   "links": {
-    "demo": "https://lewismoten.github.io/Tiny-Pockets-Press/#editor",
-    "source": "https://github.com/lewismoten/Tiny-Pockets-Press",
-    "video": [
-     {
-      "label": "Videos",
-      "url": "https://www.youtube.com/watch?v=w9IwuwX7BkE&list=PLAgk77H8yVCA"
-     }
-    ]
-   },
-   "role": "Author and maintainer.",
-   "problem": "A miniature book has to be laid out so that its pages, folded and cut, come out in the right order. That is an imposition problem, and it is easy to get wrong by hand.",
-   "built": "A browser editor for miniature books, split into small JavaScript modules: configuration, state, Markdown and media handling, a layout engine, page rendering, imposition, a library, the editor, export, and the app shell. It keeps interior and cover as separate print and PDF views, and includes a sample book as data.",
-   "hard": "Version 6.1 is a syntax-corrected build of version 6. I rebuilt the JavaScript modules to remove invalid escaped strings and broken regular-expression literals, and added a `node --check` validation step to packaging so that cannot slip through again.",
-   "results": "A live editor on GitHub Pages that runs locally with one command."
-  },
-  {
-   "slug": "athens-acropolis",
-   "title": "Shoomi's HomePage",
-   "subtitle": "GeoCities restoration",
-   "group": "Publishing and interactive experiences",
-   "featured": false,
-   "pitch": "A restoration of my first web page from the 1990s, with a Canvas recreation of its Java applet marquee, Web Audio MIDI playback, and a browser version of a Visual Basic color editor.",
-   "tags": [
-    "JavaScript",
-    "Canvas",
-    "Web Audio",
-    "Web restoration",
-    "CSS"
-   ],
-   "alt": "Shoomi's HomePage: The Beginning of All Dreams",
-   "links": {
-    "demo": "https://lewismoten.github.io/Athens-Acropolis-4507/",
-    "source": "https://github.com/lewismoten/Athens-Acropolis-4507",
-    "video": [
-     {
-      "label": "Videos",
-      "url": "https://www.youtube.com/watch?v=UgJgb0VUaHw&list=PLI4A73VhrZT4"
-     }
-    ]
-   },
-   "role": "Author and maintainer.",
-   "problem": "I got a GeoCities page in the 1990s, my first web page, under the account name moonhalo and the persona Shoomi. I archived it on a CD resume in 1999. Today's browsers can't run its Java applet, its embedded MIDI, or its Visual Basic editor.",
-   "built": "A partly modernized archive that still looks and sounds like the original. The Java applet marquee is recreated with HTML5 canvas, using the original message flow. A small Web Audio sampler player reads the original MIDI file directly. The title font loads as a webfont, which restores the look of the navigation and page titles. The old Visual Basic color writer is recreated as a browser app with a palette picker, per-letter colors, gradient HTML output, and a live preview.",
-   "hard": "Making the original experience viewable in a current browser without legacy plugins or local font installs.",
-   "results": "The original experience works in a current browser, with the restoration notes kept in the README."
-  },
-  {
-   "slug": "provo-craft-cd-recovery",
-   "title": "Provo Craft CD Recovery",
-   "subtitle": "Classic CD-ROM preservation",
-   "group": "Media preservation and recovery",
-   "featured": false,
-   "pitch": "A macOS recovery workflow for six 1996 Provo Craft clip-art CD-ROMs that current macOS cannot read, preserving the original media while keeping recovered content local.",
-   "tags": [
-    "Python",
-    "macOS",
-    "HFS",
-    "Optical media",
-    "ImageMagick",
-    "Digital preservation"
-   ],
-   "alt": "Provo Craft CD Recovery: classic CD-ROM to archive, PNG, SVG, and TTF.",
-   "links": {
-    "source": "https://github.com/lewismoten/provo-craft-cd-recovery"
-   },
-   "role": "Preservation tooling and documentation.",
-   "problem": "Six 1996 Provo Craft electronic clip-art CD-ROMs use classic Macintosh HFS layouts that current macOS reports as unreadable. I wanted to preserve the original discs, make the artwork usable on current tools, and avoid publishing material that remains subject to the original package license.",
-   "built": "A Python workflow for raw 2352-byte-sector CD capture, SHA-256 validation, derived ISO creation, read-only HFS extraction, TIFF-to-PNG conversion, EPS-to-SVG conversion, suitcase-font conversion, and labeled contact sheets. It detects the optical drive, preserves a complete archive before extraction, and handles the different folder layouts found across the discs.",
-   "hard": "The discs vary in their Macintosh folder layouts, and modern macOS cannot directly mount the classic HFS volume. The workflow had to preserve raw images without altering them, support multiple artwork and font paths, avoid treating an interrupted capture as resumable, and eject the physical disc even when later extraction fails.",
-   "results": "Recovered six discs with their raw archives, modern local derivatives, and generated font files. The public repository contains only scripts and documentation, including a reading of the unusually restrictive 1996 license terms; recovered media stays in a Git-ignored local directory."
-  },
-  {
-   "slug": "storage-d64",
-   "title": "D64 Storage Lab",
-   "subtitle": "Repair and optimization",
-   "group": "8-bit retro Commodore 64 projects",
-   "featured": true,
-   "pitch": "A browser workbench that maps Commodore 64 disk sectors and file chains, estimates read efficiency, repairs corruption, restores deleted files, and compares optimized and fragmented layouts.",
-   "tags": [
-    "JavaScript",
-    "Data visualization",
-    "Commodore 64",
-    "Disk formats",
-    "Binary parsing"
-   ],
-   "alt": "storage-d64 disk layout visualizer",
-   "links": {
-    "demo": "https://lewismoten.github.io/storage-d64/",
-    "source": "https://github.com/lewismoten/storage-d64",
-    "video": [
-     {
-      "label": "Video",
-      "url": "https://www.youtube.com/watch?v=cXeIy4AZewY"
-     }
-    ]
-   },
-   "role": "Author and maintainer.",
-   "problem": "Some disk images generated with AI help passed basic validation but failed to load in emulators. A pass or fail wasn't enough; I needed to see the disk's structure and connect suspicious bytes to the structures they affect.",
-   "built": "A reusable JavaScript support layer and an interactive visual lab. You can create, load, inspect, and download 35-, 40-, and 42-track images, browse a visual disk map, and follow directory and file-sector chains. The lab finds the structural problems I met in real generated images, offers targeted repairs, and has an Auto Repair for low-risk fixes. You can drop files onto an image and download files directly.",
-   "hard": "Once integrity was covered, the question became how placement affects reading. The lab models a stock 1541 from its DOS ROM: rotation, head stepping, read-ahead, and the slow C64 serial bus. A speed map shows the delay each link adds to a stock LOAD and how closely the layout follows the DOS placement rule.",
-   "results": "Optimize and Deoptimize make layout tradeoffs visible and testable. A live lab is on GitHub Pages."
-  },
-  {
-   "slug": "sector-256",
-   "title": "Sector 256",
-   "subtitle": "Tiny programs for the C64",
-   "group": "8-bit retro Commodore 64 projects",
-   "featured": false,
-   "pitch": "A graphical Commodore 64 launcher for games, utilities, demos, and experiments whose stored payloads are 256 bytes or less.",
-   "tags": [
-    "6502 assembly",
-    "Python",
-    "Commodore 64",
-    "Build pipeline",
-    "Automated testing"
-   ],
-   "alt": "Sector 256: One block. Many worlds.",
-   "links": {
-    "demo": "https://lewismoten.github.io/sector-256/",
-    "source": "https://github.com/lewismoten/sector-256",
-    "video": [
-     {
-      "label": "Video",
-      "url": "https://www.youtube.com/watch?v=dptHv4-RSWo"
-     }
-    ]
-   },
-   "role": "Author and maintainer.",
-   "problem": "One disk block holds 256 bytes. How much can a program do inside one? The limit is a disk-storage constraint, not a runtime one: launched programs run at $c000 and share a launcher API.",
-   "built": "A graphical launcher with a catalog of 288 programs, written in 6502 assembly with shared routines and a Python build pipeline. The build packages programs into a D64 disk image, and also writes a standalone PRG for each program, each with a BASIC loader and its own copy of the 795-byte API implementation. Automated machine-code tests check the programs.",
-   "hard": "Every catalog payload has to fit in 256 bytes, so programs lean on the shared launcher API instead of carrying their own routines.",
-   "results": "A playable disk image for VICE or a real 1541, a standalone PRG and a ZIP for every program, and a static catalog page on GitHub Pages that can send a program to a C64."
-  },
-  {
-   "slug": "stream-scribe",
-   "title": "Stream Scribe",
-   "subtitle": "Independent meeting archive and research",
-   "group": "Government Transparency",
-   "featured": true,
-   "pitch": "An independent archive and research tool for livestreamed government meetings: capture, local Whisper transcription, search, and annotation. Still in development.",
-   "tags": [
-    "React",
-    "TypeScript",
-    "Node.js",
-    "SQLite",
-    "Whisper",
-    "ffmpeg"
-   ],
-   "alt": "Stream Scribe: capture, search, research. Independent archives for live government meetings.",
-   "links": {
-    "source": "https://github.com/lewismoten/streamscribe"
-   },
-   "role": "Author and maintainer.",
-   "problem": "Public meetings are streamed live, and an independent record of them helps people review who spoke, the agenda, and the votes. This tool keeps that archive on your own computer.",
-   "built": "A tool that records a livestream, fills capture gaps from the official recording, and transcribes it on your own computer with Whisper. You can search transcripts and navigate thumbnails while the meeting is live, add speaker, topic, and vote annotations, and export short clips. Notes, transcripts, and clips can be published with links back to the official sources. It is built with React, TypeScript, Node.js, and SQLite.",
-   "hard": "Three ways to run it from one codebase: on your own computer with everything, in a browser with your data kept there (from a fork on GitHub Pages), or against a shared hub on PHP hosting for scheduled recorders, accounts, publishing, and podcasts.",
-   "results": "In development. The source is public; there is no live demo yet."
-  },
-  {
-   "slug": "upload-without-com",
-   "title": "Upload Files Without COM",
-   "subtitle": "Classic ASP file uploads, 2001 to 2003",
-   "group": "Earlier open source",
-   "featured": false,
-   "pitch": "A pure-ASP parser for multipart form uploads, so a site on IIS could accept files without buying a COM component.",
-   "tags": [
-    "Classic ASP",
-    "VBScript",
-    "ADODB"
-   ],
-   "alt": "The Upload Files Without COM version 3 example page.",
-   "links": {
-    "source": "https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/ASP/UploadFilesWithoutCOMv3",
-    "other": [
-     {
-      "label": "Version 2 on Planet Source Code (archived 2010: 210,297 views, 231 comments)",
-      "url": "https://web.archive.org/web/20101229090110/http://www.pscode.com/vb/scripts/ShowCode.asp?txtCodeId=7361&lngWId=4"
-     },
-     {
-      "label": "Version 3 on Planet Source Code (archived)",
-      "url": "https://web.archive.org/web/20200604164655/http://planet-source-code.com/vb/scripts/ShowCode.asp?txtCodeId=8525&lngWId=4"
-     },
-     {
-      "label": "Stack Overflow, 2012: \"solution credit goes to Lewis Moten\"",
-      "url": "https://stackoverflow.com/a/12200970"
-     },
-     {
-      "label": "evolt.org list, 2008: used on several client sites (archived)",
-      "url": "https://web.archive.org/web/20240910180039/https://lists.evolt.org/archive/Week-of-Mon-20080630/125069.html"
-     },
-     {
-      "label": "WebmasterWorld, 2006: a reader points to it",
-      "url": "https://www.webmasterworld.com/forum47/3290.htm"
-     },
-     {
-      "label": "Tek-Tips, 2007: a developer's upload built on it",
-      "url": "https://www.tek-tips.com/threads/uploading-images-to-a-record.1338773"
-     },
-     {
-      "label": "My Planet Source Code archive (2000s)",
-      "url": "https://github.com/lewismoten/Lewies-Code-Library-PSC"
-     }
-    ]
-   },
-   "role": "Author. Three versions: January 2001, March 2002, September 2003.",
-   "problem": "In 2001, accepting an upload in classic ASP on IIS meant buying a component from one of two companies, about $700, and finding a host willing to install a DLL.",
-   "built": "I read the RFC for multipart form uploads and wrote a parser in plain ASP. It saved files to disk or to a database, for free. Version 1 (1/13/2001) used classes instead of dictionary objects. Version 2 (3/20/2002) was faster, fixed bugs and commented every step. Version 3 (9/1/2003) has an object-oriented interface, saves binary data through ADODB, manages memory so larger files work, shows a real-time progress bar, and comes with a FAQ and a support site.",
-   "hard": "Parsing raw binary form data with only what a shared host already had, and keeping memory in check for large files.",
-   "results": "It was my most famous published code and won an award on Planet Source Code. By the end of 2010, version 2's page there had been read 210,297 times, rated by 50 users and drawn 231 comments from 2002 to 2010. Developers kept recommending it for years: an OpenWiki attachment patch on SourceForge (2003) was built on it, a WebmasterWorld reader pointed others to it in 2006, a developer on the evolt.org list said in 2008 that they had used it on several client sites, and a 2012 Stack Overflow answer to \"How to upload files with asp-classic\" (now over 100,000 views) used it, with \"solution credit goes to Lewis Moten\"."
-  },
-  {
-   "slug": "vss-journal-monitor",
-   "title": "Visual SourceSafe Journal Monitor Service",
-   "subtitle": "VB.NET Windows service, January 2004",
-   "group": "Earlier open source",
-   "featured": false,
-   "pitch": "A Windows service that watches a Visual SourceSafe database and sends alerts and daily reports, so teammates in several time zones are told when a file is checked in.",
-   "tags": [
-    "VB.NET",
-    ".NET",
-    "Windows service",
-    "SQL Server"
-   ],
-   "alt": "A VSS Monitor daily report email and a Windows Messenger pop-up.",
-   "links": {
-    "source": "https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/VBNet/VSSMonitorService",
-    "other": [
-     {
-      "label": "My Planet Source Code archive (2000s)",
-      "url": "https://github.com/lewismoten/Lewies-Code-Library-PSC"
-     }
-    ]
-   },
-   "role": "Author.",
-   "problem": "I worked with remote teammates in other time zones, and Visual SourceSafe used exclusive checkouts. A file checked out overnight somewhere else meant waiting.",
-   "built": "A service built from scratch, inspired by Doug Schmidt's SSMonitor. It reads the SourceSafe journal and sends alerts by email, MSN or Windows Messenger, or a plug-in. Each alert has its own filters and recipients, and each user has a time zone. Daily reports include who checked in without a comment. Storage is SQL Server or XML, and there is an installer.",
-   "results": "Published on Planet Source Code in January 2004."
-  },
-  {
-   "slug": "javascript-sha1",
-   "title": "JavaScript SHA-1",
-   "subtitle": "A hash function in the browser, April 2001",
-   "group": "Earlier open source",
-   "featured": false,
-   "pitch": "A JavaScript port of the SHA-1 hash, published in April 2001, before its collision weaknesses were known.",
-   "tags": [
-    "JavaScript",
-    "Cryptography"
-   ],
-   "alt": "A card showing the SHA-1 digest of abc.",
-   "links": {
-    "source": "https://github.com/lewismoten/Lewies-Code-Library-PSC/tree/master/JavaScript/SecureHashAlgorithm(SHA-1)",
-    "other": [
-     {
-      "label": "My Planet Source Code archive (2000s)",
-      "url": "https://github.com/lewismoten/Lewies-Code-Library-PSC"
-     }
-    ]
-   },
-   "role": "Author.",
-   "problem": "The function makes a 160-bit digest, 40 hex digits, from a message of any length, and in 2001 there was little hashing code for the browser.",
-   "built": "A JavaScript port of SHA-1 that I published in April 2001.",
-   "results": "Years later, while contracting at a company, I found my own code in their commercial codebase with someone's SHA-256 additions on top. I told them. They checked their history, confirmed it predated me, and announced it to every team."
-  }
- ],
- "groupNotes": {
-  "Earlier open source": "Code I published in the 2000s, before the work above. The whole archive is on GitHub as [my Planet Source Code archive (2000s)](https://github.com/lewismoten/Lewies-Code-Library-PSC), and it has its own [browsable catalog](https://lewismoten.github.io/Lewies-Code-Library-PSC/Browse.htm).",
-  "Applied AI and model engineering": "Four of these projects are one series, built step by step: [The tic-tac-toe models](/series/tic-tac-toe-models/), side by side.",
-  "Second Life": "Made as my avatar, Dedric Mauriac, from 2005 on, and written about on [my Second Life blog](https://dedricmauriac.wordpress.com/). Every public Second Life repository is in the [Archive](/archive/) under the second-life tag."
- },
- "series": [
-  {
-   "name": "The tic-tac-toe models",
-   "slugs": [
-    "palace-9",
-    "crystal-9",
-    "crystal-palace",
-    "falken-9"
-   ],
-   "page": "tic-tac-toe-models"
-  },
-  {
-   "name": "Game-Maker: Sandbox Edition and its packages",
-   "slugs": [
-    "gamemaker-sandbox",
-    "gamemaker-sandbox-engine",
-    "gamemaker-sandbox-archives",
-    "gamemaker-sandbox-tools"
-   ]
-  }
- ]
+  "series": [
+    {
+      "name": "The tic-tac-toe models",
+      "slugs": [
+        "palace-9",
+        "crystal-9",
+        "crystal-palace",
+        "falken-9"
+      ],
+      "page": "tic-tac-toe-models"
+    },
+    {
+      "name": "Game-Maker: Sandbox Edition and its packages",
+      "slugs": [
+        "gamemaker-sandbox",
+        "gamemaker-sandbox-engine",
+        "gamemaker-sandbox-archives",
+        "gamemaker-sandbox-tools"
+      ]
+    }
+  ]
 }

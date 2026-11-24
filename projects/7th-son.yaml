@@ -1,0 +1,11 @@
+# Project card used by the profile README and selected-projects PDF.
+name: 7th Son in Second Life
+title: "7th Son in Second Life | A podcast player as an audio CD"
+image: 7th-son.jpg
+description: >-
+  A 2006 player that brought the prologue of the 7th Son audio-drama podcast into Second
+  Life as an old CD jewel case, ten seconds of sound at a time, with play time and a
+  progress bar in floating text. Handed out free as part of the podcast's fan missions.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/7th-son

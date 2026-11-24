@@ -1,0 +1,11 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Second Life Projects
+title: "Second Life Projects | LSL scripts as Dedric Mauriac"
+image: second-life-projects.jpg
+description: >-
+  A collection of LSL scripts made as Dedric Mauriac: a set that copies one prim's
+  parameters onto another (source, copier, exporter, destination and server), and a
+  message in a bottle that gives its text to whoever touches it.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/Second-Life-Projects

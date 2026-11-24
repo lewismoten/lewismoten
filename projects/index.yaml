@@ -18,11 +18,22 @@ profile_groups:
       - gamemaker-pocket
   - heading: Browser tools and visualization
     projects:
-      - sculpted-prim-toolkit
       - data-over-audio
       - dial-to-eleven
       - emoji
       - qr
+  - heading: Second Life
+    projects:
+      - texture-mapper
+      - sculpted-prim-toolkit
+      - synthesized-voice-box
+      - eliza-doolittle-chatbot
+      - brain-experiment-number-two
+      - 7th-son
+      - tic-tac-toe-lsl
+      - password-generator
+      - prim-import-export-library
+      - second-life-projects
   - heading: Publishing and interactive experiences
     projects:
       - gamemaker-sandbox

@@ -1,0 +1,11 @@
+# Project card used by the profile README and selected-projects PDF.
+name: "Brain Experiment #2"
+title: "Brain Experiment #2 | Talk to a brain in a jar"
+image: brain-experiment-number-two.jpg
+description: >-
+  Feed and talk to a brain in a jar of liquid. Touch parts of the display for different
+  responses, or pick up the phone to start a conversation with an ALICE chatbot through
+  Pandorabots.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/brain-experiment-number-two

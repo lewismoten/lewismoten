@@ -1,0 +1,14 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Synthesized Voice Box
+title: "Synthesized Voice Box | Robotic speech in Second Life"
+image: synthesized-voice-box.jpg
+description: >-
+  Text-to-speech inside Second Life, built by stringing together just under sixty 8-bit
+  sounds from the General Instrument SPO256-AL2 chip. Donated as open source to Second
+  Life's third anniversary; later versions worked around the platform's limits so speech
+  could be understood.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/synthesized-voice-box
+  - label: Video
+    url: https://youtu.be/TnB-0aerqBg

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tic-Tac-Toe: One prim, four levels of play | Lewis Moten</title>
+<meta name="description" content="Tic-tac-toe on a single Second Life prim, against an AI with four levels from easy to impossible.">
+<link rel="canonical" href="https://github.lewismoten.com/projects/tic-tac-toe-lsl/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Tic-Tac-Toe: One prim, four levels of play | Lewis Moten">
+<meta property="og:description" content="Tic-tac-toe on a single Second Life prim, against an AI with four levels from easy to impossible.">
+<meta property="og:url" content="https://github.lewismoten.com/projects/tic-tac-toe-lsl/">
+<meta property="og:image" content="https://github.lewismoten.com/img/projects/tic-tac-toe-lsl.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tic-Tac-Toe: One prim, four levels of play | Lewis Moten">
+<meta name="twitter:description" content="Tic-tac-toe on a single Second Life prim, against an AI with four levels from easy to impossible.">
+<meta name="twitter:image" content="https://github.lewismoten.com/img/projects/tic-tac-toe-lsl.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../archive/index.html">Archive</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme" hidden>Theme</button>
+</div>
+</header>
+<main id="main" class="wrap" tabindex="-1">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Second Life</nav>
+<article class="project">
+<h1>Tic-Tac-Toe</h1>
+<p class="sub">One prim, four levels of play</p>
+<img class="hero-img" src="../../img/projects/tic-tac-toe-lsl.jpg" alt="Tic-Tac-Toe: a tic-tac-toe prim in Second Life" width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">Tic-tac-toe on a single Second Life prim, against an AI with four levels from easy to impossible.</p>
+<p class="links"><a class="btn" href="https://github.com/lewismoten/Tic-Tac-Toe-lsl">Source</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>A simple game that a passer-by can walk up to and play, using as few prims as possible.</p>
+<h3>Outcome</h3><p>Version 2.1 added the four levels of play.</p>
+<h3>My role</h3><p>Author.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A one-prim board with a title and a status panel. A player touches an empty cell to start; the AI answers with O. Easy chooses a random empty cell. Normal goes for the win, blocks a win, then takes the center, the opposite corner, any corner or a side. Hard adds a 50% chance of forking and of blocking a fork. Impossible always forks and blocks forks.</p>
+<h3>Hard parts</h3><p>Fitting the whole board on one prim: version 2.0 moved to a five-faced prim. Once a game starts no one else can interact, and it times out after five minutes if the player walks away.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>LSL</li><li>Second Life</li><li>Game AI</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Prim Import/Export Library
+title: "Prim Import/Export Library | Getting objects out of Second Life"
+image: prim-import-export-library.jpg
+description: >-
+  LSL scripts from 2015 that read a Second Life prim's parameters and generate code to
+  rebuild it elsewhere, with source and destination scripts and a video of how to use
+  them. Only for objects you made or may copy.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/Prim-Import-Export-Library

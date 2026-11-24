@@ -1,0 +1,11 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Tic-Tac-Toe
+title: "Tic-Tac-Toe | One prim, four levels of play"
+image: tic-tac-toe-lsl.jpg
+description: >-
+  Tic-tac-toe on a single Second Life prim, against an AI with four levels: easy picks a
+  random cell; impossible always wins, blocks, forks and blocks forks. Touch the title to
+  change the level.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/Tic-Tac-Toe-lsl

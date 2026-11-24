@@ -1,0 +1,11 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Eliza Doolittle Chatbot
+title: "Eliza Doolittle Chatbot | ELIZA in Linden Scripting Language"
+image: eliza-doolittle-chatbot.jpg
+description: >-
+  A port of Joseph Weizenbaum's 1966 ELIZA into Linden Scripting Language: a parody of a
+  Rogerian therapist that listens to nearby residents and rephrases what they say. Given
+  away free with full permissions, with responses in an editable notecard.
+links:
+  - label: Source
+    url: https://github.com/lewismoten/Eliza-Doolittle-Chatbot

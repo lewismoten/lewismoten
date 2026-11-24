@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Texture Mapper: Second Life texture repeats and offsets | Lewis Moten</title>
+<meta name="description" content="Draw a box on a texture and get the Second Life repeats and offsets for it. A 2010 Windows tool, now free, recovered and rebuilt for the browser.">
+<link rel="canonical" href="https://github.lewismoten.com/projects/texture-mapper/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Lewis Moten">
+<meta property="og:title" content="Texture Mapper: Second Life texture repeats and offsets | Lewis Moten">
+<meta property="og:description" content="Draw a box on a texture and get the Second Life repeats and offsets for it. A 2010 Windows tool, now free, recovered and rebuilt for the browser.">
+<meta property="og:url" content="https://github.lewismoten.com/projects/texture-mapper/">
+<meta property="og:image" content="https://github.lewismoten.com/img/projects/texture-mapper.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Texture Mapper: Second Life texture repeats and offsets | Lewis Moten">
+<meta name="twitter:description" content="Draw a box on a texture and get the Second Life repeats and offsets for it. A 2010 Windows tool, now free, recovered and rebuilt for the browser.">
+<meta name="twitter:image" content="https://github.lewismoten.com/img/projects/texture-mapper.jpg">
+<link rel="alternate" type="application/atom+xml" title="Lewis Moten posts" href="../../feed.xml">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+<div class="wrap bar">
+<a class="brand" href="../../index.html">Lewis Moten</a>
+<nav aria-label="Main">
+<ul>
+<li><a href="../../index.html">Home</a></li>
+<li><a href="../../projects/index.html" aria-current="page">Projects</a></li>
+<li><a href="../../archive/index.html">Archive</a></li>
+<li><a href="../../posts/index.html">Posts</a></li>
+<li><a href="../../about/index.html">About</a></li>
+</ul>
+</nav>
+<button class="theme" type="button" id="theme" hidden>Theme</button>
+</div>
+</header>
+<main id="main" class="wrap" tabindex="-1">
+<nav aria-label="Breadcrumb" class="crumb"><a href="../../projects/index.html">Projects</a> / Second Life</nav>
+<article class="project">
+<h1>Texture Mapper</h1>
+<p class="sub">Second Life texture repeats and offsets</p>
+<img class="hero-img" src="../../img/projects/texture-mapper.jpg" alt="Texture Mapper: textures for Second Life builds, repeats and offsets" width="640" height="320" decoding="async" fetchpriority="high">
+<p class="lede">Draw a box on a texture and get the Second Life repeats and offsets for it. A 2010 Windows tool, now free, recovered and rebuilt for the browser.</p>
+<p class="links"><a class="btn" href="https://lewismoten.github.io/texture-mapper/">Live demo</a> <a class="btn" href="https://github.com/lewismoten/texture-mapper">Source</a> <a class="btn" href="https://dedricmauriac.wordpress.com/2010/02/10/texture-mapper-released-2/">Blog: Texture Mapper Released (2010)</a></p>
+<nav class="toc" aria-label="On this page"><a href="#executive-summary">Executive summary</a> · <a href="#technical-overview">Technical overview</a></nav>
+<section class="part" id="executive-summary"><h2>Executive summary</h2>
+<h3>Why it exists</h3><p>In Second Life, one uploaded image can cover many faces if each face shows only part of it. That saves upload fees and loads faster, but working out the repeats and offsets by hand was tedious unless the image was laid out in a strict grid.</p>
+<h3>Outcome</h3><p>Public under the MIT license, with the original 2010 build attached to the v1.0 release and the web version live on GitHub Pages.</p>
+<h3>My role</h3><p>Author. I wrote the Windows program in 2008 and released it in 2010; in 2026 I made it free and open source under the MIT license.</p></section>
+<section class="part" id="technical-overview"><h2>Technical overview</h2>
+<h3>How it works</h3><p>A Windows Forms program (C#, .NET 2.0) where you drag a box on a texture and it shows the repeats per face and offsets, with Default and Planar mapping, flipping and a preview. Only the published build survived, so the source was decompiled with ILSpy and rebuilt as a Visual Studio 2008 project. The web version does the same math in the browser, keeps images local, adds an LSL line to copy, and its About box makes serial numbers so anyone can still register the old program.</p>
+<h3>Hard parts</h3><p>Proving the recovered source was faithful: it was compiled again and decompiled, and every class matches the original except two spots where today's compiler writes the same logic differently. The web serial generator was checked against the original program's own check code run under .NET.</p>
+<h3>How it was made</h3><p>The source recovery, its round-trip check and the web version were done with Claude (Opus 5.5) from my directions.</p><h3>Stack</h3>
+<ul class="tags plain-tags"><li>JavaScript</li><li>Canvas</li><li>C#</li><li>Windows Forms</li><li>Second Life</li></ul></section>
+
+</article>
+</main>
+<footer class="foot">
+<div class="wrap">
+<p>Written and built by Lewis Moten. Project images are the social previews from each project's repository. <a href="../../feed.xml">Posts feed</a></p>
+</div>
+</footer>
+<script src="../../theme.js" defer></script>
+</body>
+</html>

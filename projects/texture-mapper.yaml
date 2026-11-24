@@ -1,0 +1,14 @@
+# Project card used by the profile README and selected-projects PDF.
+name: Texture Mapper
+title: "Texture Mapper | Second Life texture repeats and offsets"
+image: texture-mapper.jpg
+description: >-
+  Draw a box around part of a texture and read off the Second Life repeats per face and
+  offsets, so one uploaded texture can cover many faces. A 2010 Windows tool, its C#
+  source recovered from the published build, plus a browser version with a serial
+  generator for the old program.
+links:
+  - label: Live demo
+    url: https://lewismoten.github.io/texture-mapper/
+  - label: Source
+    url: https://github.com/lewismoten/texture-mapper
